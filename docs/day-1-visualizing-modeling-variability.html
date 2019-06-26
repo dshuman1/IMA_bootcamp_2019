@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="course-notes.html">
+<link rel="next" href="homework.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="day-1-visualizing-modeling-variability" class="section level2">
+<h2><span class="header-section-number">4.1</span> Day 1: Visualizing &amp; Modeling Variability</h2>
+<!-- this was very long. cut down on some of the plots -->
+<p><br></p>
+<div id="getting-started" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Getting Started</h3>
+<p><strong>If you arrive early, now’s a good time to get started!</strong> Find today’s notes at <a href="https://ajohns24.github.io/IMA_bootcamp_2018/day-1-visualizing-modeling-variability.html" class="uri">https://ajohns24.github.io/IMA_bootcamp_2018/day-1-visualizing-modeling-variability.html</a> &amp; take the following steps:</p>
+<p><br />
+</p>
+<ul>
+<li><p>Open a new RMarkdown (Rmd) document:</p>
+<p><img src="images/new_Rmd.png" height="400px" /></p></li>
+</ul>
+<p><br />
+<br />
+</p>
+<ul>
+<li>Erase everything in the Rmd. At the top, type the following:<br />
+
+<pre><code># Day 1 Notes </code></pre>
+<pre><code>```{r warning = FALSE, message = FALSE}    
+library(ggplot2)    
+library(dplyr)    
+library(readr)    
+library(choroplethr)    
+```</code></pre></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Knit</strong> your document! It’s helpful to do this early and often. If you get any errors, it’s likely because you haven’t yet installed the packages above. If this is the case, return to <a href="https://ajohns24.github.io/IMA_bootcamp_2018/homework.html#homework-1">Exercise 1 of the pre-bootcamp homework</a>.</p>
+<p><img src="images/knit_it.png" height="400px" /></p></li>
+</ul>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p><strong>Overall workshop plan (&amp; how it ties in with the machine learning module):</strong></p>
+<p><img src="images/concept_map.png" height="550px" /></p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p><strong>Today’s plan:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Welcome / intros</li>
+</ol>
+<!-- they know each other.  for intros have them tell me 1 thing about the person to their left -->
+<ol start="2" style="list-style-type: decimal">
+<li><p>A motivating example with a pre-bootcamp homework recap</p></li>
+<li><p>Visualizing relationships</p></li>
+<li><p>Modeling relationships with linear regression</p></li>
+</ol>
+<p><br> <br> <br> <br> <br> <br></p>
+</div>
+<div id="pre-boot-camp-review" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Pre-Boot Camp Review</h3>
+<blockquote>
+<p><strong>Statistics</strong> is the practice of using <em>data</em> from a sample to make inferences about some broader population of interest.</p>
+</blockquote>
+<p><em>Data</em> is a key word here. In the pre-bootcamp homework, you explored the first simple steps of a statistical analysis: familiarizing yourself with the structure of your data and conducting some simple univariate analyses. We’ll build upon this foundation in a motivating example.</p>
+<p><br> <br></p>
+<p><strong>The Story:</strong></p>
+<p>Since the 2016 election, people have examined the following questions:</p>
+<ul>
+<li>How did Trump’s support vary from county to county?<br />
+</li>
+<li>How does this compare to trends in past elections?<br />
+</li>
+<li>In what ways was Trump’s support associated with county demographics?</li>
+</ul>
+<p>We’ll explore these questions using county-level election outcomes made available by Tony McGovern <a href="https://github.com/tonmcg/County_Level_Election_Results_12-16">on github</a>:</p>
+<!-- To import McGovern's csv file from github, we need the `readr` package and the file path (which is obtained by clicking on the "raw" button in github):  -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">elect&lt;-<span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~dshuman1/ima/bootcamp/data/county_election_results.csv&quot;</span>)</code></pre></div>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Explore the structure of the data</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check out the first rows of elect. ID the cases &amp; variables    </span>
+
+<span class="co"># How much data do we have?    </span>
+
+<span class="co"># What are the variable names?    </span>
+
+<span class="co"># Compute the total votes nationwide for each party    </span></code></pre></div></li>
+</ol>
+<p><br></p>
+<p><br />
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Explore <code>win_2016</code> (categorical)</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Construct a bar chart    </span>
+<span class="kw">ggplot</span>(___, <span class="kw">aes</span>(___)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom____</span>()</code></pre></div></li>
+</ol>
+<p><br></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Explore <code>perrep_2016</code> (quantitative)</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Blank canvas</span>
+<span class="kw">ggplot</span>(elect, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>))
+
+<span class="co"># Histogram</span>
+<span class="kw">ggplot</span>(elect, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom____</span>()
+
+<span class="co"># Density plot</span>
+<span class="kw">ggplot</span>(elect, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom____</span>()</code></pre></div></li>
+</ol>
+<p><br></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p><strong>Numerically summarize the trend &amp; variability in <code>perrep_2016</code></strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Trump&#39;s mean &amp; median support</span>
+
+
+<span class="co"># Variance &amp; st dev in Trump&#39;s support</span>
+
+
+<span class="co"># Calculate the exact 2.5th &amp; 97.5th percentiles </span></code></pre></div></li>
+</ol>
+<p><br> <br> <br> <br></p>
+</div>
+<div id="explaining-variability" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Explaining Variability</h3>
+<p><br></p>
+<p>The main goal in statistical modeling is often to explain the variation in one particular variable from case to case (the <em>response</em> variable) using the values of one or more other variables (the <em>explanatory</em> or <em>predictor</em> variables).</p>
+<p><br></p>
+<blockquote>
+<p><strong>THINK</strong></p>
+<p>We now have a good sense for the trends &amp; variability in Trump’s support from county to county. What other variables (ie. county features) might <em>explain</em> some of this variability?</p>
+</blockquote>
+<p><br> <br> <br></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p>In examining <em>relationships</em> between variables, we distinguish between the response &amp; predictors:</p>
+<ul>
+<li><p><strong><span style="color:red">response variable</span></strong>: Trump’s percent of the vote<br />
+(the variable whose variability we would like to explain)</p></li>
+<li><p><strong><span style="color:red">predictors (aka explanatory variables aka features)</span></strong>: percent white, per capita income, state color, etc<br />
+(variables that might explain some of the variability in the response)</p></li>
+</ul>
+<p><br />
+</p>
+<p>None of these predictors are contained within the <code>elect</code> data, but we’re in luck:</p>
+<ul>
+<li><p>the <code>df_county_demographics</code> data set within the <code>choroplethr</code> package contains county level demographic data</p></li>
+<li><p>the <code>RedBlueStates</code> data at <a href="https://www.macalester.edu/~ajohns24/Data/RedBluePurple.csv" class="uri">https://www.macalester.edu/~ajohns24/Data/RedBluePurple.csv</a> categorizes each county as belonging to a blue/red/purple state based on state categorizations at <a href="http://www.270towin.com/" class="uri">http://www.270towin.com/</a>.</p></li>
+</ul>
+<p><br> <br></p>
+<p><strong>JOINING DATA SETS</strong></p>
+<p><strong>Step 1: load new data</strong></p>
+<p>Think: What are the sources of these data? When were they collected? Do they suit our purposes?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load demographic data from choroplethr package</span>
+<span class="kw">data</span>(<span class="st">&quot;df_county_demographics&quot;</span>)
+<span class="kw">head</span>(df_county_demographics, <span class="dv">3</span>)
+##   region total_population percent_white percent_black percent_asian
+## 1   1001            54907            76            18             1
+## 2   1003           187114            83             9             1
+## 3   1005            27321            46            46             0
+##   percent_hispanic per_capita_income median_rent median_age
+## 1                2             24571         668       37.5
+## 2                4             26766         693       41.5
+## 3                5             16829         382       38.3
+
+<span class="co"># Load RedBluePurple data</span>
+RedBlue &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/Data/RedBluePurple.csv&quot;</span>)
+<span class="kw">head</span>(RedBlue, <span class="dv">3</span>)
+##   region polyname abb StateColor
+## 1   1001  alabama  AL        red
+## 2   1003  alabama  AL        red
+## 3   1005  alabama  AL        red</code></pre></div>
+<p><br> <br></p>
+<p><strong>Step 2: join the 3 datasets into a single dataset</strong></p>
+<p>The 3 data sets (<code>elect</code>, <code>df_county_demographics</code>, <code>RedBlue</code>) need to share a common identifying variable. In this case, they all contain the <code>region</code> variable, and we can join them according to it:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Join elect and df_county_demographics </span>
+all_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(df_county_demographics, elect,<span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;region&quot;</span>=<span class="st">&quot;region&quot;</span>))
+
+<span class="co"># Join all_data with RedBlue</span>
+all_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(all_data, RedBlue,<span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;region&quot;</span>=<span class="st">&quot;region&quot;</span>))
+<span class="kw">names</span>(all_data)
+##  [1] &quot;region&quot;            &quot;total_population&quot;  &quot;percent_white&quot;    
+##  [4] &quot;percent_black&quot;     &quot;percent_asian&quot;     &quot;percent_hispanic&quot; 
+##  [7] &quot;per_capita_income&quot; &quot;median_rent&quot;       &quot;median_age&quot;       
+## [10] &quot;county&quot;            &quot;total_2008&quot;        &quot;dem_2008&quot;         
+## [13] &quot;gop_2008&quot;          &quot;oth_2008&quot;          &quot;total_2012&quot;       
+## [16] &quot;dem_2012&quot;          &quot;gop_2012&quot;          &quot;oth_2012&quot;         
+## [19] &quot;total_2016&quot;        &quot;dem_2016&quot;          &quot;gop_2016&quot;         
+## [22] &quot;oth_2016&quot;          &quot;perdem_2016&quot;       &quot;perrep_2016&quot;      
+## [25] &quot;winrep_2016&quot;       &quot;perdem_2012&quot;       &quot;perrep_2012&quot;      
+## [28] &quot;winrep_2012&quot;       &quot;polyname&quot;          &quot;abb&quot;              
+## [31] &quot;StateColor&quot;</code></pre></div>
+<p><br />
+<br />
+</p>
+<p><strong>Step 3: if all else fails…</strong></p>
+<p>If you run into errors (likely due to a missing package), you can load the data from here:</p>
+<pre><code>```r
+all_data &lt;- read.csv(&quot;https://www.macalester.edu/~ajohns24/Data/electionDemographics16.csv&quot;)
+```</code></pre>
+<p><br> <br> <br> <br></p>
+<p><br> <br> <br> <br></p>
+<p><br> <br> <br> <br></p>
+</div>
+<div id="visualizing-relationships" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Visualizing Relationships</h3>
+<p><br></p>
+<blockquote>
+<p><strong>Basic Rules for Constructing Visualizations</strong></p>
+<p>Instead of memorizing which plot is appropriate for which situation, it’s best to recognize patterns in constructing viz:</p>
+<ul>
+<li><p>Each quantitative variable requires a new axis. If we run out of axes, we can illustrate the scale of a quantitative variable using color <em>or</em> discretize it into groups &amp; treat it as categorical.</p></li>
+<li><p>Each categorical variable requires a new way to “group” the graphic (eg: using colors, shapes, separate facets, etc to capture the grouping)</p></li>
+</ul>
+</blockquote>
+<p><br> <br> <br> <br></p>
+<p>It is helpful to visual the data table. Here arejust 6 counties:</p>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">perrep_2016</th>
+<th align="right">perrep_2012</th>
+<th align="right">median_rent</th>
+<th align="left">StateColor</th>
+<th align="left">winrep_2016</th>
+<th align="left">abb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">73.53</td>
+<td align="right">72.52</td>
+<td align="right">948</td>
+<td align="left">blue</td>
+<td align="left">TRUE</td>
+<td align="left">CO</td>
+</tr>
+<tr class="even">
+<td align="right">35.82</td>
+<td align="right">41.37</td>
+<td align="right">742</td>
+<td align="left">purple</td>
+<td align="left">FALSE</td>
+<td align="left">GA</td>
+</tr>
+<tr class="odd">
+<td align="right">46.55</td>
+<td align="right">44.91</td>
+<td align="right">582</td>
+<td align="left">blue</td>
+<td align="left">TRUE</td>
+<td align="left">MN</td>
+</tr>
+<tr class="even">
+<td align="right">79.95</td>
+<td align="right">75.11</td>
+<td align="right">391</td>
+<td align="left">red</td>
+<td align="left">TRUE</td>
+<td align="left">MS</td>
+</tr>
+<tr class="odd">
+<td align="right">80.15</td>
+<td align="right">72.84</td>
+<td align="right">420</td>
+<td align="left">purple</td>
+<td align="left">TRUE</td>
+<td align="left">MO</td>
+</tr>
+<tr class="even">
+<td align="right">87.94</td>
+<td align="right">83.75</td>
+<td align="right">367</td>
+<td align="left">red</td>
+<td align="left">TRUE</td>
+<td align="left">OK</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<blockquote>
+<p><strong>THINK</strong></p>
+<p>Before visualizing the relationships among these variables, we need to understand what features these should have. How might we visualize the relationships among the following sets of variables:</p>
+<ul>
+<li><p><code>perrep_2016</code> vs <code>perrep_2012</code></p></li>
+<li><p><code>perrep_2016</code> vs <code>StateColor</code></p></li>
+<li><p><code>perrep_2016</code> vs <code>perrep_2012</code> <em>and</em> <code>StateColor</code> (in 1 plot)</p></li>
+<li><p><code>perrep_2016</code> vs <code>perrep_2012</code> <em>and</em> <code>median_rent</code> (in 1 plot)</p></li>
+<li><p><code>perrep_2016</code> vs <code>StateColor</code> <em>and</em> <code>winrep_2016</code> (in 1 plot)</p></li>
+</ul>
+</blockquote>
+<p><br> <br> <br> <br></p>
+<p><br />
+<br />
+</p>
+<p>Run through the following exercises which introduce different approaches to visualizing <em>relationships</em>. In doing so, don’t just construct a plot, examine what it tells us about relationship <em>trends</em> &amp; <em>strength</em> (degree of variability from the trend) as well as <em>outliers</em> or deviations from the trend. For each plot, think: <em>what’s the take-home message</em>?</p>
+<p><br> <br></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p><strong>Scatterplots of 2 quantitative variables</strong><br />
+Each quantitative variable has an axis. Each case is represented by a dot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Start with a blank canvas</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> perrep_<span class="dv">2012</span>))
+
+<span class="co"># Add a scatterplot layer</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> perrep_<span class="dv">2012</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>()
+
+<span class="co"># Use text labels instead of points</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> perrep_<span class="dv">2012</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> abb))
+
+<span class="co"># Another predictor</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> median_rent)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>()
+
+<span class="co"># Another predictor</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> percent_white)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>()</code></pre></div></li>
+</ol>
+<p><br> <br></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p><strong>Side-by-side plots of 1 quantitative variable vs 1 categorical variable</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Density plots by group</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_density</span>()
+
+<span class="co"># Add transparency &amp; fix colors</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>))
+
+<span class="co"># Split groups into separate plots</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_density</span>()  <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>StateColor)
+
+<span class="co"># Histograms instead</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>()  <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>StateColor)
+
+<span class="co"># Side-by-side box plots</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x=</span>StateColor,<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_boxplot</span>()  <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>)) 
+
+<span class="co"># Change to individual states</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x=</span>abb,<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_boxplot</span>()  <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>))</code></pre></div></li>
+</ol>
+<p><br> <br></p>
+<ol start="7" style="list-style-type: decimal">
+<li><p><strong>Scatterplots of 1 quantitative variable vs 1 categorical &amp; 1 quantitative variable</strong><br />
+If <code>percent_white</code> and <code>StateColor</code> both explain some of the variability in <code>perrep_2016</code>, why not include both in our analysis?! Let’s.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Scatterplot colored by group</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> percent_white, <span class="dt">color =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)
+
+<span class="co"># Scatterplots split by group</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> percent_white, <span class="dt">color =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>StateColor)</code></pre></div></li>
+</ol>
+<p><br> <br></p>
+<ol start="8" style="list-style-type: decimal">
+<li><p><strong>Plots of 3 quantitative variables</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Scatterplot: use color to represent 3rd variable</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> percent_white, <span class="dt">color =</span> median_rent)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.5</span>)
+
+<span class="co"># Scatterplot: discretize the 3rd variable</span>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> percent_white, <span class="dt">color =</span> <span class="kw">cut</span>(median_rent, <span class="dv">2</span>))) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div></li>
+</ol>
+<p><br> <br></p>
+<ol start="9" style="list-style-type: decimal">
+<li><p><strong>Extra: Maps!</strong></p>
+<p>There is, of course, a geographical component to these data. Though we won’t cover spatial models in bootcamp, the visuals still help us tell a story. If the required <code>choroplethrMaps</code> package isn’t working for you, work with a neighbor (don’t spend too much time with this picky package).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load choroplethrMaps</span>
+<span class="kw">library</span>(choroplethrMaps)
+
+<span class="co"># Map of Trump wins</span>
+all_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_data, <span class="dt">value =</span> winrep_<span class="dv">2016</span>)
+<span class="kw">county_choropleth</span>(all_data)
+
+<span class="co"># Map of Trump support</span>
+all_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_data, <span class="dt">value =</span> perrep_<span class="dv">2016</span>)
+<span class="kw">county_choropleth</span>(all_data)
+
+<span class="co"># Map of percent white</span>
+all_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_data, <span class="dt">value=</span>percent_white)
+<span class="kw">county_choropleth</span>(all_data)</code></pre></div></li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+<blockquote>
+<p><strong>Glyph-Ready Data</strong></p>
+<ul>
+<li>In the layered grammar of graphics used by <code>ggplot</code>, we can add different aesthetics (features such as position, size, shape, color) to each glyph (mark/symbol such as a point or bar or density curve)</li>
+<li>It is important to recognize that we first need to rearrange the data so that one row (case) of the table corresponds to each glyph. The data we just used were already in this so called “glyph-ready form”</li>
+<li>We’ll talk more as the bootcamp proceeds about how to rearrange data so that they are in this form using data wrangling commands</li>
+</ul>
+</blockquote>
+<p><br> <br> <br> <br></p>
+</div>
+<div id="linear-regression-models" class="section level3">
+<h3><span class="header-section-number">4.1.5</span> Linear Regression Models</h3>
+<p>Just as when exploring single variables, there are limitations in relying solely on visualizations to analyze relationships among 2+ variables. <em>Statistical models</em> provide rigorous numerical summaries of relationship trends. Before going into details, examine the plots below and draw a model that captures the trend of the relationships being illustrated.</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-30-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br> <br> <br></p>
+<p><strong>Linear regression</strong> can be used to model each of these relationships. “Linear” here indicates that the linear regression model of a response variable is a <em>linear combination</em> of explanatory variables. It does <em>not</em> mean that the relationship itself is linear!! In general, let <span class="math inline">\(y\)</span> be our response variable and (<span class="math inline">\(x_1, x_2, ..., x_k\)</span>) be <span class="math inline">\(k\)</span> explanatory variables. Then the (population) linear regression model of <span class="math inline">\(y\)</span> vs the <span class="math inline">\(x_i\)</span> is</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(\beta_0\)</span> = intercept coefficient<br />
+average <span class="math inline">\(y\)</span> value when <span class="math inline">\(x_1=x_2=\cdots=x_k=0\)</span></p></li>
+<li><p><span class="math inline">\(\beta_i\)</span> = <span class="math inline">\(x_i\)</span> coefficient<br />
+<em>when holding constant all other <span class="math inline">\(x\)</span></em>, the change <span class="math inline">\(y\)</span> when we increase <span class="math inline">\(x_i\)</span> by 1</p></li>
+</ul>
+<p>In RStudio, we construct <em>sample estimates</em> of linear regression models using the <code>lm()</code> (linear model) function. Consider a simple example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_model &lt;-<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>x1 <span class="op">+</span><span class="st"> </span>x2, <span class="dt">data =</span> mydata)
+<span class="kw">summary</span>(my_model)</code></pre></div>
+<p><img src="images/lm.png" height="475px" /></p>
+<p><br> <br></p>
+<p>Today we’ll focus on visualizing, constructing, and interpreting models. We’ll talk more tomorrow about model quality &amp; deviations from the model trend. <span style="color:red"><strong>IMPORTANT:</strong> Be sure to interpret the coefficients in a <em>contextually meaningful way</em> that tells the audience about the relationships of interest (as opposed to simply providing a definition). </span></p>
+<p><br />
+</p>
+<ol start="10" style="list-style-type: decimal">
+<li><strong>Models with 1 quantitative predictor:</strong> <code>perrep_2016</code> vs <code>median_age</code>
+<ol style="list-style-type: lower-alpha">
+<li><p>Visualize the relationship, add a regression line, &amp; construct the regression model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> median_age, <span class="dt">y =</span> perrep_<span class="dv">2016</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)
+
+model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_age, <span class="dt">data=</span>all_data)
+<span class="kw">summary</span>(model1)</code></pre></div></li>
+<li><p>Write out the estimated model formula:<br />
+<code>perrep_2016 = ___ + ___ median_age</code></p></li>
+<li><p>Interpret all model coefficients.</p></li>
+</ol></li>
+</ol>
+<p><br></p>
+<ol start="11" style="list-style-type: decimal">
+<li><strong>Models with 1 categorical predictor:</strong> <code>perrep_2016</code> vs <code>StateColor</code>
+<ol style="list-style-type: lower-alpha">
+<li><p>Visualize the relationship.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div></li>
+<li><p>It doesn’t make sense to capture the trend of this relationship by fitting a line to the data. Rather, the trend can be captured by the mean Trump support in each group (ie. the location of the densities). This requires new syntax:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Group by StateColor &amp; summarize the means</span>
+all_data <span class="op">%&gt;%</span><span class="st">  </span>
+<span class="st">    </span><span class="kw">group_by</span>(StateColor) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">summarize</span>(<span class="dt">means =</span> <span class="kw">mean</span>(perrep_<span class="dv">2016</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))      </code></pre></div></li>
+</ol>
+<!-- and detaching some `choroplethr` related libraries which overwrite `dplyr` (grrr).   -->
+<!--     #detach/unload libraries (a bug) -->
+<!--     detach(package:choroplethr) -->
+<!--     detach(package:acs) -->
+<!--     detach(package:plyr) -->
+<ol start="3" style="list-style-type: lower-alpha">
+<li><p>Construct the regression model and write out the estimated model formula:<br />
+<code>perrep_2016 = ___ + ___ StateColorpurple + ___ StateColorred</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>StateColor, <span class="dt">data =</span> all_data)
+<span class="kw">summary</span>(model2)</code></pre></div></li>
+<li>Huh?! RStudio splits categorical predictors up into a reference group (the first alphabetically) and indicators for the other groups. Here, <code>blue</code> states are the reference group and <span class="math display">\[\text{StateColorpurple} = \begin{cases} 1 &amp; \text{ if purple} \\ 0 &amp; \text{ otherwise} \\ \end{cases} \;\;\;\; \text{ and } \;\;\;\; \text{StateColorred} = \begin{cases} 1 &amp; \text{ if red} \\ 0 &amp; \text{ otherwise} \\ \end{cases}\]</span> In other words, the <code>StateColor</code> variable is turned into 3 “dummy variables”: <span class="math display">\[\left(\begin{array}{c} \text{red} \\ \text{purple} \\ \text{purple} \\ \text{blue} \\ \text{red} \end{array}\right) \;\;\; \to \;\;\; \text{StateColorblue} =  \left(\begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \\ 0 \end{array}\right), \;\; \text{StateColorpurple} =  \left(\begin{array}{c} 0 \\ 1 \\ 1 \\ 0 \\ 0 \end{array}\right), \;\; \text{StateColorred} =  \left(\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 1 \end{array}\right)\]</span> Since these sum to 1, we only need to put 2 into our model and leave the other out as a reference level. With these ideas in mind, interpret all coefficients in your model. HINTS:
+<ul>
+<li>plug in 0’s and 1’s to obtain 3 separate models for the blue, purple, and red states</li>
+<li>revisit the calculation of the group means</li>
+</ul></li>
+</ol></li>
+</ol>
+<p><br></p>
+<ol start="12" style="list-style-type: decimal">
+<li><strong>Models with 1 quantitative predictor &amp; 1 categorical predictor:</strong> <code>perrep_2016</code> vs <code>median_age</code> and <code>StateColor</code>
+<ol style="list-style-type: lower-alpha">
+<li><p>Visualize the relationship, add a regression line, &amp; construct the regression model. NOTE: Unfortunately, as you’ll see in homework, the <code>geom_smooth</code> lines here don’t directly correspond to the model.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> median_age, <span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">color =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)
+
+model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_age <span class="op">+</span><span class="st"> </span>StateColor, <span class="dt">data =</span> all_data)
+<span class="kw">summary</span>(model3)</code></pre></div></li>
+<li><p>Write out the estimated model formula:<br />
+<code>perrep_2016 = ___ + ___ median_age + ___ StateColorpurple + ___ StateColorred</code></p></li>
+<li><p>Again, the presence of a categorical variable results in the separation of the model formula by group. To this end, plug in 0’s and 1’s to obtain <em>3 separate model formulas</em> for the blue, purple, and red states:</p>
+<p><code>perrep_2016 = ___ + ___ median_age</code>.</p></li>
+<li><p>Putting it all together, interpret all coefficients in your model.</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<blockquote>
+<p><strong>NOTE</strong></p>
+<p>The <code>median_age</code> coefficient in <code>model3</code> differs from that in <code>model1</code> and the <code>StateColor</code> coefficients in <code>model3</code> differ from those in <code>model2</code>. This is because a predictor’s coefficients are defined / interpreted differently depending on what other predictors are in the model.</p>
+</blockquote>
+<p><br></p>
+<ol start="13" style="list-style-type: decimal">
+<li><strong>Models with 2 quantitative predictors:</strong> <code>perrep_2016</code> vs <code>median_age</code> and <code>median_rent</code>
+<ol style="list-style-type: lower-alpha">
+<li><p>Visualize the relationships and construct the regression model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> median_age, <span class="dt">color =</span> median_rent)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)
+
+model4 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_age <span class="op">+</span><span class="st"> </span>median_rent, <span class="dt">data =</span> all_data)
+<span class="kw">summary</span>(model4)</code></pre></div></li>
+<li><p>Write out the estimated model formula:<br />
+<code>perrep_2016 = ___ + ___ median_age + ___ median_rent</code></p></li>
+<li><p>Is this the formula for a line? Multiple lines? A plane?</p></li>
+<li><p>Interpret all coefficients in your model.</p></li>
+</ol></li>
+</ol>
+<p><br></p>
+<ol start="14" style="list-style-type: decimal">
+<li><p><strong>Models with 2 categorical predictors:</strong> <code>perrep_2016</code> vs <code>StateColor</code> and <code>income_bracket</code><br />
+For illustration’s sake, let’s split county <code>per_capita_income</code> (in $) into 2 income brackets: above or below $25,000:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Define income brackets</span>
+all_data &lt;-<span class="st"> </span>all_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">income_bracket =</span> <span class="kw">cut</span>(per_capita_income, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">25000</span>,<span class="dv">65000</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;low&quot;</span>,<span class="st">&quot;high&quot;</span>)))</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Visualize the relationship and construct the model.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> income_bracket)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>StateColor)
+
+model5 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>StateColor <span class="op">+</span><span class="st"> </span>income_bracket, <span class="dt">data =</span> all_data)
+<span class="kw">summary</span>(model5)</code></pre></div></li>
+<li><p>Write out the estimated model formula.</p></li>
+<li>Interpret all coefficients in your model. HINTS:
+<ul>
+<li>plug in 0’s and 1’s for both the <code>StateColor</code> and <code>income_bracket</code> variables<br />
+</li>
+<li>how many possible combinations are there of these 2 variables?</li>
+</ul></li>
+</ol></li>
+</ol>
+<p><br> <br> <br> <br></p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="course-notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

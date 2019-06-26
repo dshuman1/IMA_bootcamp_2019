@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="homework-1-visualizing-modeling-variability" class="section level2">
+<h2><span class="header-section-number">5.2</span> Homework 1: Visualizing &amp; Modeling Variability</h2>
+<p><br></p>
+<p><strong>Directions:</strong></p>
+<p>There are two options to complete this homework:</p>
+<p>Option A. Write your answers in a blank document:</p>
+<ul>
+<li>Start a new RMarkdown document<br />
+</li>
+<li>Load the following packages at the top of your Rmd: <code>dplyr</code>, <code>ggplot2</code>, <code>fivethirtyeight</code>, <code>mosaic</code><br />
+</li>
+<li>Type your answers for each exercise, with some sort of identifying header in between</li>
+</ul>
+<p>Option B. Write your answers in between the questions:</p>
+<ul>
+<li>Download the Rmd file for this homework, which you can find on the course website</li>
+<li>Knit the document before writing any answers to make sure there are no compilation errors</li>
+<li>After each exercise that requires a response, enter your text and/or code chunks. It might be helpful to first include an empty code chunk with the word “solution” replacing the “r” just after the three tick marks, and then write your answer. An example is included in the Rmd file</li>
+</ul>
+<p><br></p>
+<p><strong>Notes: </strong></p>
+<ul>
+<li>When interpreting visualizations, models, etc, be sure to do so in a contextually meaningful way.<br />
+</li>
+<li>This homework is a resource for <em>you</em>. Record all work that is useful for your current learning &amp; future reference. Further, try your best, but don’t stay up all night trying to finish all of the exercises! We’ll discuss any questions / material you didn’t get to tomorrow.</li>
+</ul>
+<p><br></p>
+<p><strong>Goals:</strong></p>
+<p>The goal of this homework is to get extra practice with visualizing relationships, constructing models, and interpreting models. You’ll also explore three new ideas:</p>
+<ul>
+<li><p>interactions between predictors</p></li>
+<li><p>controlling for covariates</p></li>
+<li><p>residuals &amp; least squares estimation</p></li>
+</ul>
+<p><br></p>
+<p><br> <br></p>
+<div id="interaction" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Interaction</h3>
+<p>In their research into the “campaign value of incumbency,” <a href="http://www.kenbenoit.net/pdfs/ajps_348.pdf">Benoit and Marsh (2008)</a> collected data on the campaign spending of 464 candidates for the 2002 elections to the Irish Dail. The authors provide the following data set</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">campaigns &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/CampaignSpending.csv&quot;</span>)</code></pre></div>
+<p>which, for all 464 candidates, measures many variables including</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">variable</th>
+<th align="left">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>votes1st</code></td>
+<td align="left">number of “1st preference” votes the candidate received</td>
+</tr>
+<tr class="even">
+<td align="left"><code>incumb</code></td>
+<td align="left"><code>No</code> if the candidate was a challenger, <code>Yes</code> if the candidate was an incumbent</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>totalexp</code></td>
+<td align="left">number of Euros spent by the candidate’s campaign</td>
+</tr>
+</tbody>
+</table>
+<p>The votes received varies by candidate. Our goal is to explain some of this variability:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(campaigns, <span class="kw">aes</span>(<span class="dt">x =</span> votes1st)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-84-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br> <br></p>
+<ol style="list-style-type: decimal">
+<li><strong>Warm-Up:</strong> Votes vs Incumbency<br />
+We might be able to explain some of the variability in votes received by a candidate’s incumbency status.
+<ol style="list-style-type: lower-alpha">
+<li><p>Construct a visualization of the relationship between <code>votes1st</code> and <code>incumb</code>.</p></li>
+<li><p>Construct a model of <code>votes1st</code> by <code>incumb</code>, write out the model formula, &amp; interpret all coefficients.</p></li>
+<li><p>From the model coefficients, compute the average votes received by incumbents and the average votes received by challengers. We’ll learn another method to do these computations tomorrow.</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Warm-Up:</strong> Votes vs Incumbency Status &amp; Campaign Spending<br />
+Let’s add campaign spending to our analysis.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Construct 1 visualization of the relationship of <code>votes1st</code> vs <code>incumb</code> and <code>totalexp</code>.</p></li>
+<li>Construct a model of <code>votes1st</code> by <code>incumb</code> and <code>totalexp</code>. Store this as <code>model2</code>. Write out the following formulas:
+<ul>
+<li>the full model formula<br />
+</li>
+<li>a simplified formula for challengers<br />
+</li>
+<li>a simplified formula for incumbents</li>
+</ul></li>
+<li><p>Interpret all coefficients. Remember: your interpretation of the <code>incumb</code> coefficient here should be different than in the first model since the models contain different sets of predictors.</p></li>
+<li>Use this model to predict the number of votes received by the following candidates. HINT: plug in the correct values in your model formula.
+<ul>
+<li>Candidate 1: a challenger that spends 10,000 Euros<br />
+</li>
+<li>Candidate 2: an incumbent that spends 10,000 Euros</li>
+</ul></li>
+<li><p>You can check your predictions using the <code>predict()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(model2, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">incumb=</span><span class="st">&quot;No&quot;</span>, <span class="dt">totalexp =</span> <span class="dv">10000</span>))
+<span class="kw">predict</span>(model2, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">incumb=</span><span class="st">&quot;Yes&quot;</span>, <span class="dt">totalexp =</span> <span class="dv">10000</span>))</code></pre></div></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Check out a plot of <code>model2</code>. (RStudio code is included FYI, but don’t worry about it for now!)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(campaigns, <span class="kw">aes</span>(<span class="dt">x =</span> totalexp, <span class="dt">y =</span> votes1st, <span class="dt">color =</span> incumb)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1031</span>, <span class="dt">slope =</span> <span class="fl">0.1745</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">3795</span>, <span class="dt">slope =</span> <span class="fl">0.1745</span>, <span class="dt">color =</span> <span class="st">&quot;cyan3&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-91-1.png" width="\textwidth" style="display: block; margin: auto;" /> Since the lines are parallel, this model assumes that incumbents and challengers enjoy the same return on campaign spending. However, notice from the plot that this may not be the best assumption. Rather, without the parallel model constraint, the trend looks more like this (you’ll make this plot later):<br />
+<img src="IMA_book_2019_files/figure-html/unnamed-chunk-92-1.png" width="\textwidth" style="display: block; margin: auto;" /> To allow our models for challengers and incumbents to have different intercepts <em>and</em> different slopes, we can type <code>totalexp * incumb</code> instead of <code>totalexp + incumb</code> in the <code>lm</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new_model &lt;-<span class="st"> </span><span class="kw">lm</span>(votes1st <span class="op">~</span><span class="st"> </span>totalexp <span class="op">*</span><span class="st"> </span>incumb, campaigns)
+<span class="kw">summary</span>(new_model)</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>The <code>totalexp:incumbYes</code> term that you see in the model summary is called an <strong>interaction term</strong>. Mathematically, it’s the <em>product</em> of these two variables, <code>totalexp * incumbYes</code>. With this in mind, write down the model formulas:
+<ul>
+<li>the full model formula (of the form <code>votes1st = a + b totalexp + c incumbYes + d totalexp * incumbYes</code>)</li>
+<li>a simplified formula for challengers (of the form <code>votes1st = a + b totalexp</code>)<br />
+</li>
+<li>a simplified formula for incumbents (of the form <code>votes1st = a + b totalexp</code>)</li>
+</ul></li>
+<li>Use this model to predict the number of votes received by the following candidates. Calculate these by hand &amp; then check your work using <code>makeFun</code>.
+<ul>
+<li>Candidate 1: a challenger that spends 10,000 Euros<br />
+</li>
+<li>Candidate 2: an incumbent that spends 10,000 Euros</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(new_model, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">incumb=</span><span class="st">&quot;No&quot;</span>, <span class="dt">totalexp =</span> <span class="dv">10000</span>))
+<span class="kw">predict</span>(new_model, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">incumb=</span><span class="st">&quot;Yes&quot;</span>, <span class="dt">totalexp =</span> <span class="dv">10000</span>))</code></pre></div></li>
+<li><p>You can visualize this model by adding a <code>geom_smooth()</code> to your scatterplot:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(campaigns, <span class="kw">aes</span>(<span class="dt">x =</span> totalexp, <span class="dt">y =</span> votes1st, <span class="dt">col =</span> incumb)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p>You should notice the <strong>interaction</strong> between campaign spending &amp; incumbency status, i.e. that the relationship between votes &amp; spending differs for incumbents and challengers. With this in mind, comment on what the differing intercepts and differing slopes indicate about the relationship between the three variables of interest.</p></li>
+<li><p>Putting this all together, interpret all four model coefficients from <code>new_model</code>. Hint: As we have for models in the past, look back to the equations for the incumbent &amp; challenger models.</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<blockquote>
+<p><strong>Interaction</strong></p>
+<p>In modeling <span class="math inline">\(y\)</span>, predictors <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> <strong>interact</strong> if the relationship between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(y\)</span> differs for different values of <span class="math inline">\(x_2\)</span>.</p>
+</blockquote>
+<p><br> <br> <br></p>
+</div>
+<div id="covariates" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Covariates</h3>
+<p>In examining multivariate models, we’ve seen that adding explanatory variables to the model helps to better explain variability in the response. For example, compare the plot on the left which ignores the grouping variable vs the plot on the right that includes it:</p>
+<p><br></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-96-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>However, explaining variability isn’t the <em>only</em> reason to include multiple predictors in a model. When exploring the relationship between response <span class="math inline">\(y\)</span> and predictor <span class="math inline">\(x_1\)</span>, there are typically <strong>covariates</strong> for which we want to control. For example, in comparing the effectiveness of 2 drug treatments, we might want to control for patients’ ages, health statuses, etc.</p>
+<p>We’ll explore the concept of controlling for covariates using the <code>CPS85</code> data in the <code>mosaic</code> package. These data, obtained through the Current Population Survey, contains labor force characteristics for a sample of workers in 1985. Though out of date, these data provide important illustrations of key modeling concepts:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(CPS85)
+<span class="kw">head</span>(CPS85, <span class="dv">3</span>)
+##   wage educ race sex hispanic south married exper union age sector
+## 1  9.0   10    W   M       NH    NS Married    27   Not  43  const
+## 2  5.5   12    W   M       NH    NS Married    20   Not  38  sales
+## 3  3.8   12    W   F       NH    NS  Single     4   Not  22  sales</code></pre></div>
+<p>You can access the “codebook” (description of the variables) by typing the following in your <em>console</em>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?CPS85</code></pre></div>
+<p>We’ll use these data to explore the pay gap between married and single workers, illustrated and modeled below:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(CPS85, <span class="kw">aes</span>(<span class="dt">y=</span>wage, <span class="dt">x=</span>married)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-99-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cpsmod1 &lt;-<span class="st"> </span><span class="kw">lm</span>(wage <span class="op">~</span><span class="st"> </span>married, <span class="dt">data =</span> CPS85)
+<span class="kw">msummary</span>(cpsmod1)
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      9.398      0.274   34.36   &lt;2e-16 ***
+## marriedSingle   -1.087      0.466   -2.33     0.02 *  
+## 
+## Residual standard error: 5.12 on 532 degrees of freedom
+## Multiple R-squared:  0.0101, Adjusted R-squared:  0.00826 
+## F-statistic: 5.44 on 1 and 532 DF,  p-value: 0.0201</code></pre></div>
+<p>From the model coefficients we see that: <strong>On average, married workers make $9.40 per hour and single workers make $1.09 less per hour than married workers</strong>.</p>
+<p><br> <br></p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Correlation does not imply causation</strong><br />
+If you’re single, this model probably didn’t inspire you to go out and find a spouse. Why? Just because there’s a relationship between wages and marital status doesn’t mean being single <em>causes</em> a person to earn less. List a few <em>confounding variables</em> that might explain this relationship between wages and marital status.</li>
+</ol>
+<p><br> <br></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p><strong>Including covariates / confounding variables</strong><br />
+One variable that might explain the observed relationship between wages &amp; marital status is years of experience - people with greater years of experience both tend to make more money and to be older &amp; married. We can control for this covariate by including it in our model.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Fill in the blanks to fit a model of <code>wage</code> by <code>married</code> and <code>exper</code> that <em>includes</em> an interaction term.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cpsmod2 &lt;-<span class="st"> </span><span class="kw">lm</span>(___, <span class="dt">data =</span> CPS85)
+<span class="kw">summary</span>(cpsmod2)</code></pre></div></li>
+<li><p>Construct a visualization of this relationship that eliminates individual data points and focuses on the trend. Use this to explain what it means for <code>exper</code> &amp; <code>married</code> to <em>interact</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(CPS85, <span class="kw">aes</span>(<span class="dt">y =</span> wage, <span class="dt">x =</span> exper, <span class="dt">color =</span> married)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div></li>
+<li><p>Compare two workers that both have 10 years of experience but one is married and the other is single. By how much do their predicted wages to differ? Use the model formula to calculate this difference and the plot to provide intuition.</p></li>
+<li><p>Compare two workers that both have 20 years of experience but one is married and the other is single. By how much do their predicted wages to differ?</p></li>
+<li><p>If you’d like extra practice, interpret every coefficient in this model.</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p><strong>Controlling for more covariates</strong><br />
+Taking experience level into account added some insight into the discrepancy between single and married workers’ wages. Let’s see what happens when we control for even more variables. To this end, model wages (<code>wage</code>) by marital status (<code>married</code>) while controlling for experience (<code>exper</code>), years of education (<code>educ</code>), and the job sector (<code>sector</code>) in which one works. For simplicity, we’ll eliminate all interaction terms:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cpsmod3 &lt;-<span class="st"> </span><span class="kw">lm</span>(wage <span class="op">~</span><span class="st"> </span>exper <span class="op">+</span><span class="st"> </span>educ <span class="op">+</span><span class="st"> </span>sector <span class="op">+</span><span class="st"> </span>married, <span class="dt">data =</span> CPS85)
+<span class="kw">summary</span>(cpsmod3)</code></pre></div>
+<p>Note: This is difficult model to visualize since there are 2 quantitative variables and 2 categorical variables with a possible 16 category combinations (2 marital statuses * 8 sectors). If you <em>had</em> to draw it, it would look like 16 parallel planes.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Compare two workers that both have 10 years of experience, 16 years of education, and work in the <code>service</code> industry. If one is married and the other is single, by how much do their predicted wages to differ?</p></li>
+<li><p>Compare two workers that both have 20 years of experience, 12 years of education, and work in the <code>manuf</code> (manufacturing) industry. If one is married and the other is single, by how much do their predicted wages to differ?</p></li>
+<li><p>In light of a &amp; b, interpret the <code>marriedSingle</code> coefficient.</p></li>
+<li><p>In conclusion, we saw a <code>marriedSingle</code> coefficient of <code>-1.09</code> in <code>cpsmod1</code> and a <code>marriedSingle</code> coefficient of <code>-0.40</code> in <code>cpsmod3</code>. Explain the significance of the difference between these two measurements - what insight does it provide?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Extra interpretation practice</strong><br />
+If you’d like extra practice, answer the following questions related to the coefficients in <code>cpsmod3</code>.
+<ol style="list-style-type: lower-alpha">
+<li><p>What is the reference level of the <code>sector</code> variable? HINT: You need to know what the levels of this variable are.</p></li>
+<li><p>For fixed <code>educ</code>, <code>married</code> status, and <code>exper</code>, in what sector do workers make the most money? The least?</p></li>
+<li><p>Interpret the <code>educ</code> coefficient.</p></li>
+<li><p>Interpret the <code>manag</code> coefficient.</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+</div>
+<div id="least-squares-estimation" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Least Squares Estimation</h3>
+<p>Thus far you’ve been using RStudio to construct models and have focused on interpreting the output. Now let’s discuss how this first step happens, ie. how sample data are used to estimate population models. Due to their simplicity and the fact that these data helped inspire Francis Galton’s development of regression methodology in the 1880’s, we’ll use the data Galton collected on the heights of a person and their parents. From the <code>mosaic</code> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(Galton)
+?Galton</code></pre></div>
+<p>Let response variable <span class="math inline">\(y\)</span> be a person’s height and <span class="math inline">\(x_1\)</span> be the height of their father. Then the (population) linear regression model of <span class="math inline">\(y\)</span> vs the <span class="math inline">\(x_1\)</span> is</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x_1\]</span></p>
+<p>Note that the <span class="math inline">\(\beta_i\)</span> represent the <em>population coefficients</em>. Galton didn’t have data for the entire population of interest thus didn’t know the “true” values of the <span class="math inline">\(\beta_i\)</span>. Rather, he used <em>sample data</em> to estimate the <span class="math inline">\(\beta_i\)</span> by <span class="math inline">\(\hat{\beta}_i\)</span>. That is, the sample estimate of the population model is</p>
+<p><span class="math display">\[y = \hat{\beta}_0 + \hat{\beta}_1 x_1\]</span></p>
+<p>In choosing the “best” estimates <span class="math inline">\(\hat{\beta}_i\)</span>, he was looking for the coefficients that best described the relationship among the sample subjects. In the visual below, we can see that the red line does a better job at capturing this relationship than the blue line does:</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-108-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Mainly, on average, the individual points fall closer to the red line than the blue line. The distance between an individual observation and its model value (prediction) is called a <strong>residual</strong>.</p>
+<p><br> <br></p>
+<blockquote>
+<p><strong>Residuals</strong></p>
+<p>Let case <span class="math inline">\(i\)</span> have observed response <span class="math inline">\(y_i\)</span> and predictor <span class="math inline">\(x_i\)</span>. Then the model / predicted value for this case is <span class="math display">\[\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i\]</span> The difference between the observed and predicted value is the residual <span class="math inline">\(r_i\)</span>: <span class="math display">\[r_i = y_i - \hat{y}_i\]</span></p>
+</blockquote>
+<p><br> <br></p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>We can use Galton’s data to estimate the population model: <span class="math display">\[y = \hat{\beta}_0 + \hat{\beta}_1 x = 39.11039 + 0.39938 x\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">htmodel &lt;-<span class="st"> </span><span class="kw">lm</span>(height <span class="op">~</span><span class="st"> </span>father, <span class="dt">data =</span> Galton)
+<span class="kw">summary</span>(htmodel)
+## 
+## Call:
+## lm(formula = height ~ father, data = Galton)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -10.268  -2.669  -0.209   2.634  11.933 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  39.1104     3.2271   12.12   &lt;2e-16 ***
+## father        0.3994     0.0466    8.57   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.45 on 896 degrees of freedom
+## Multiple R-squared:  0.0758, Adjusted R-squared:  0.0748 
+## F-statistic: 73.5 on 1 and 896 DF,  p-value: &lt;2e-16</code></pre></div>
+<p>Consider the following 2 sample subjects with the following measurements and plotted below:</p>
+<pre><code>##     family father mother sex height nkids
+## 14       4     75     64   F   64.5     5
+## 849    193     65     64   M   67.0     6</code></pre>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-111-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Calculate the residuals (the length of the vertical lines) for both of these subjects.</p></li>
+</ol>
+<p><br> <br></p>
+<ol start="9" style="list-style-type: decimal">
+<li><code>htmodel</code> is an <code>lm</code> “object”. Not only does it contain info about the model coefficients, it contains the numerical values of the residuals (<code>residuals</code>) and model predictions (<code>fitted.values</code>) for each case in the data set.
+<ol style="list-style-type: lower-alpha">
+<li><p>Create a data frame <code>htmodel_results</code> that stores the observed height, model predicted height, and residual for each case in <code>Galton</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">htmodel_results &lt;-<span class="st">  </span><span class="kw">data.frame</span>(<span class="dt">observed =</span> Galton<span class="op">$</span>height, 
+    <span class="dt">predicted =</span> htmodel<span class="op">$</span>fitted.values, <span class="dt">residual =</span> htmodel<span class="op">$</span>residuals)
+<span class="kw">head</span>(htmodel_results)
+##   observed predicted residual
+## 1     73.2     70.46    2.738
+## 2     69.2     70.46   -1.262
+## 3     69.0     70.46   -1.462
+## 4     69.0     70.46   -1.462
+## 5     73.5     69.26    4.236
+## 6     72.5     69.26    3.236</code></pre></div></li>
+<li><p>What is the relationship between the <code>observed</code>, <code>predicted</code>, and <code>residual</code> variables in <code>htmodel_results</code>? (This shouldn’t be a surprise - it’s just a confirmation of the definition of a residual.)</p></li>
+<li><p>Confirm that, within rounding error, the mean residual equals 0. This property always holds for regression models!</p></li>
+<li><p>Obtain summary statistics of the residuals. Where does this information appear in <code>summary(htmodel)</code>?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<p><strong>EXTRA: A COMMENT ON THEORY</strong></p>
+<p>I hope you learned about linear regression in linear algebra! Suppose we have a sample of <span class="math inline">\(n\)</span> subjects. For subject <span class="math inline">\(i \in \{1,...,n\}\)</span> let <span class="math inline">\(y_i\)</span> denote the observed response value and <span class="math inline">\((x_{i1}, x_{i2},...,x_{ik})\)</span> denote the observed values of the <span class="math inline">\(k\)</span> predictors. Then we can collect our response values into a vector <span class="math inline">\(y\)</span>, our predictor values into a matrix <span class="math inline">\(X\)</span>, and our regression coefficients into a vector <span class="math inline">\(\beta\)</span>. Note that a column of 1s is included for an intercept term in <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[ y = \left(\begin{array}{c} y_1 \\ y_2 \\ \vdots \\ y_n \end{array} \right) \;\;\;\; \text{ and } \;\;\;\;
+X = \left(\begin{array}{ccccc} 1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1k} \\
+1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2k} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \cdots &amp; \vdots \\
+1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nk} \\
+\end{array} \right) \;\;\;\; \text{ and } \;\;\;\; \beta = \left(\begin{array}{c} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_k \end{array} \right)\]</span></p>
+<p>Then we can express the model <span class="math inline">\(y_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ik}\)</span> for <span class="math inline">\(i \in \{1,...,n\}\)</span> using linear algebra:</p>
+<p><span class="math display">\[y = X\beta\]</span> Further, let <span class="math inline">\(\hat{\beta}\)</span> denote the vector of sample estimated <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\hat{y}\)</span> denote the vector of predictions / model values:</p>
+<p><span class="math display">\[\hat{y} = X \hat{\beta}\]</span></p>
+<p>Thus the residual vector is</p>
+<p><span class="math display">\[y - \hat{y} = X\beta - X\hat{\beta}\]</span> and the sum of squared residuals is</p>
+<p><span class="math display">\[(y - \hat{y})^T(y - \hat{y})\]</span></p>
+<p><strong>Challenge:</strong> Prove that the following formula for sample coefficients <span class="math inline">\(\hat{\beta}\)</span> are the least squares estimates of <span class="math inline">\(\beta\)</span>, ie. they minimize the sum of squared residuals:</p>
+<p><span class="math display">\[\hat{\beta} = (X^TX)^{-1}X^Ty\]</span></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

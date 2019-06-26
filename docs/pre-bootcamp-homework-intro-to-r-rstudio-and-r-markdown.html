@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="homework.html">
+<link rel="next" href="homework-1-visualizing-modeling-variability.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown" class="section level2">
+<h2><span class="header-section-number">5.1</span> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</h2>
+<div id="objectives" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Objectives</h3>
+<p>Welcome to statistic and data science portion of the Math-to-Industry Bootcamp! In this bootcamp, you will build your statistical, data, and computing literacy. <em>Doing</em> statistics and data science requires statistical software. Preparing for this aspect of the bootcamp is the focus of your pre-bootcamp homework. Specifically, the objectives of this assignment are to</p>
+<ol style="list-style-type: decimal">
+<li>Download and install R and RStudio on your machine.</li>
+<li>Become familiar with the RStudio environment and learn how to perform basic calculations in the console.</li>
+<li>Begin working with data in RStudio, including importing data, examining the structure of data, visualizing single variables, and numerically computing summary statistics.</li>
+<li>Become familiar with using R Markdown to organize, communicate, and save your work in a reproducible format.</li>
+</ol>
+<p>You should allocate 2-3 hours for this assignment prior to the bootcamp. If you are stuck or have questions, feel free to email David Shuman (<a href="mailto:dshuman1@macalester.edu">dshuman1@macalester.edu</a>). David will also be available to answer any questions at the IMA from 2:30-3:30 on Wednesday, June 26th, the day before this section of the bootcamp begins.</p>
+</div>
+<div id="introduction-to-rstudio" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Introduction to RStudio</h3>
+<p>As you might guess from the name, “Data Science” requires <em>data</em>. Working with modern (large, messy) data sets requires statistical software. We’ll exclusively use <strong>RStudio</strong>. Why?</p>
+<ul>
+<li>it’s free</li>
+<li>it’s open source</li>
+<li>it has a huge online community<br />
+</li>
+<li>it’s the industry standard</li>
+<li>it can be used to create <em>reproducible</em> and lovely documents (In fact, this tutorial that you’re currently reading was constructed entirely within RStudio!)</li>
+</ul>
+<div id="download-r-rstudio" class="section level4">
+<h4><span class="header-section-number">5.1.2.1</span> Download R &amp; RStudio</h4>
+<p>To get started, take the following two steps in the given order. Further, if you already have R/RStudio, make sure to update to the most recent versions.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Download &amp; install R</strong>: <a href="https://mirror.las.iastate.edu/CRAN/" class="uri">https://mirror.las.iastate.edu/CRAN/</a><br />
+</li>
+<li><p><strong>Download &amp; install RStudio</strong>: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></p>
+<p>Be sure to download the <em>free</em> version!!</p></li>
+</ol>
+<p><br></p>
+<p>What’s the difference between R and RStudio? Mainly, RStudio requires R – thus it does everything R does <em>and more</em>. We will be using RStudio exclusively.</p>
+</div>
+<div id="rstudio-basics" class="section level4">
+<h4><span class="header-section-number">5.1.2.2</span> RStudio Basics</h4>
+<p>Once you open RStudio, you’ll see four panes, each serving a different function:</p>
+<p><img src="images/RStudioImage.001.jpg" height="475px" /></p>
+<p>The short video below provides a quick tour of RStudio and summarizes some basic features of the console (the main points of which are summarized below).</p>
+<p><a href="http://www.youtube.com/embed/JfIo2Ua_oqQ/" title="Video 1"><img src="images/vid1.png" /></a></p>
+<p><br></p>
+<p><strong>Video summary:</strong></p>
+<p>In the RStudio console we can</p>
+<ul>
+<li><p>perform simple calculations</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span>
+## [1] 5</code></pre></div></li>
+<li><p>utilize built-in RStudio <strong>functions</strong> to which we supply the necessary <strong>arguments</strong>: <code>function(arguments)</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">9</span>)
+## [1] 3
+<span class="kw">sum</span>(<span class="dv">2</span>, <span class="dv">3</span>)
+## [1] 5
+<span class="kw">sum</span>(<span class="dv">3</span>, <span class="dv">2</span>)
+## [1] 5
+<span class="kw">rep</span>(<span class="dv">2</span>, <span class="dv">3</span>)
+## [1] 2 2 2
+<span class="kw">rep</span>(<span class="dv">3</span>, <span class="dv">2</span>)
+## [1] 3 3</code></pre></div></li>
+<li><p>install new (open source) RStudio packages that contain specialized functions written by other RStudio users. For example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div></li>
+</ul>
+<p><br></p>
+<blockquote>
+<p><strong>Debugging &amp; Anti-Frustration Tips</strong></p>
+<p>Making mistakes is inevitable and necessary when learning a new language. The following will save you some time and frustration:</p>
+<ul>
+<li>Spelling and capitalization matter. <code>this</code> and <code>ThiS</code> are different.</li>
+<li>With the cursor at the <code>&gt;</code> in the console, use the up arrow to access previous lines without re-typing. You can also find previous lines in the <code>History</code> tab in the upper-right panel of RStudio.</li>
+<li>Type <code>?rep</code> to get help and examples for the <code>rep</code> function (for example).</li>
+<li>Find help online! There’s a massive RStudio community at <a href="http://stackoverflow.com/" class="uri">http://stackoverflow.com/</a> If you have a question, somebody’s probably already written about it. Or just google.</li>
+</ul>
+</blockquote>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 5.1  (Warm Up)  </strong></span>Use RStudio as a simple calculator to do the following:<br />
+a. Perform a simple calculation: calculate <code>90/3</code>.<br />
+b. RStudio has built-in <em>functions</em> to which we supply the necessary <em>arguments</em>: <code>function(arguments)</code>. Use the built-in function <code>sqrt</code> to calculate the square root of 25.<br />
+c. Use the built-in function <code>rep</code> to repeat the number “5” eight times.<br />
+d. Use the <code>seq</code> function to create the vector <code>(0, 3, 6, 9, 12)</code>. (The video doesnt cover this!)<br />
+e. Create a new vector by concatenating three repetitions of the vector from the previous part.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:assignment" class="exercise"><strong>Exercise 5.2  (Assignment)  </strong></span>We often want to store our output for later use (why?). The basic idea in RStudio:</p>
+<pre><code>`name &lt;- output`</code></pre>
+<p>Try the following syntax line by line. NOTE: RStudio ignores any content after the <code>#</code>. Thus we use this to ‘comment’ and organize our code.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="co">#type square_3</span>
+    square_<span class="dv">3</span>
+    
+    <span class="co">#calculate 3 squared</span>
+    <span class="dv">3</span><span class="op">^</span><span class="dv">2</span>    
+    
+    <span class="co">#store this as &quot;square_3&quot;</span>
+    square_<span class="dv">3</span> &lt;-<span class="st"> </span><span class="dv">3</span><span class="op">^</span><span class="dv">2</span>    
+    
+    <span class="co">#type square_3 again!</span>
+    square_<span class="dv">3</span>
+    
+    <span class="co">#do some math with square_3</span>
+    square_<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span></code></pre></div>
+</div>
+</div>
+<div id="working-with-data-in-rstudio" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Working with Data in RStudio</h3>
+<div id="getting-started-1" class="section level4">
+<h4><span class="header-section-number">5.1.3.1</span> Getting Started</h4>
+<p>RStudio provides a powerful tool for working with data. The following video illustrates some of the basics. It features data related to the fivethirtyeight.com article <a href="https://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/">Hip-Hop is Turning on Donald Trump</a> that we can access through the <code>fivethirtyeight</code> RStudio package. A summary of the video is provided below.</p>
+<p><br></p>
+<p><a href="http://www.youtube.com/embed/_gi0N3EtGp0" title="Video 2"><img src="images/vid2.png" /></a></p>
+<p><br></p>
+<p><strong>Video summary:</strong></p>
+<ul>
+<li><p><strong>Import and name data</strong><br />
+How we import data into RStudio depends on its format (eg: Excel spreadsheet, csv file, txt file) and storage locations (eg: online, within Wiki, desktop). In this example, we work with the <code>hiphop_cand_lyrics</code> data that are stored in the <code>fivethirtyeight</code> RStudio package. We store this under a shorter name (<code>HipHop</code>) using the assignment operator <code>&lt;-</code>. NOTE: RStudio ignores any content after the <code>#</code>. Thus we use this to ‘comment’ and organize our code.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the fivethirtyeight package</span>
+<span class="kw">library</span>(fivethirtyeight)
+
+<span class="co"># store hiphop_cand_lyrics under a shorter name</span>
+HipHop &lt;-<span class="st"> </span>hiphop_cand_lyrics   </code></pre></div></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p><strong>Tidy data</strong></p>
+<p><em>Tidy</em> data tables have three key features:</p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Each row represents a <strong>unit of observation</strong>.<br />
+</li>
+<li>Each column represents a <strong>variable</strong> (ie. an attribute of the cases that can vary from case to case). Each variable is one of two types:
+<ul>
+<li><strong>quantitative</strong> = numerical<br />
+</li>
+<li><strong>categorical</strong> = discrete possibilities/categories<br />
+</li>
+</ul></li>
+<li>Each entry contains a single data value; no analysis, summaries, footnotes, comments, etc., and only one value per cell</li>
+</ol>
+<p>In the video example, cases are individual mentions of a presidential candidate in a song, and variables include the song name, artist, candidate, sentiment, etc.<br />
+<div id="htmlwidget-ef8f383f985f95800168" style="width:100%;height:auto;" class="datatables html-widget"></div>
+    <script type="application/json" data-for="htmlwidget-ef8f383f985f95800168">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377"],["Mike Huckabee","Mike Huckabee","Jeb Bush","Jeb Bush","Jeb Bush","Jeb Bush","Jeb Bush","Jeb Bush","Jeb Bush","Jeb Bush","Jeb Bush","Ben Carson","Chris Christie","Chris Christie","Ted Cruz","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Hillary Clinton","Bernie Sanders","Bernie Sanders","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump","Donald Trump"],["None Shall Pass","Wellstone","Awe","The Truth","Money Man","Hidden Agenda","Bricks and Marijuana","Bush Song","Shoot Me in the Head","Chamber of Fear","Tell Me Why","Next Black President","Daydreaming","Brass Tacks","PNT","Tec in the Church","Thugz Tear Dropz","Gotta Be Insanity","Shorty Baby","Take Notice","Disgusting","My Heart","We Can Get It On","Where They Do That At","What If","We Live This","Set Me Free","Letter to the King","Grillz","Nothing on My Mind","Gossip Folks","No Church in the Wild Freestyle","Again (Stankonia Remix)","Energy","No Sunshine","Unapologetic","Dark Night of the Blood Spiller","Nunca","Datpiff (freeverse series Ep. 4)","One","Single Again (Remix)","Fukinwichu","Opening Day","Role Model","Sway in the Morning Freestyle","A Milli","Hit It for Free","Make U Feel Alright","Dope Boy","Money Man","What's Goin' On","Greasy","Every Girl","Bad Bad Bad","Hand of the Dead Body","Stand Tall","American History X","Twisted Thoughts","Holla at a Playa (Remix)","Mayor Bloomberg: Who's Really in Control?","NYMP","Bitch, Don't Kill My Vibe (Remix)","I Luv Your Girl (Remix)","U Ain't Fresh","Pressure","R.I.P.","Bring It Back","Smilin' Faces","Whatever You Want","Lollipop","Let's Stay Together","Politics as Usual (Obama Is Here)","The Ghetto Won't Change","Bitch I'm Bill Clinton","Fuck the Government","Cradle Rock","Vietnam","A Thing for Me","Poizon Windz","Little This Little That","Male Feminist","Shoot Me a Fair One","Krazy","Happy People","Yzark","PSA","Fall Down Brew","Smells Like","Born to Ball","RNQ","TimeZone","White Girl (Remix)","Now That I'm Paid","Life So Hard","I'm Me Freestyle","Back Together","What the Fuck Is Up?","Shit Iz Real","Badman in Tivoli","Fresh","Sky Lanterns","Gang Love","Nightmares of the Bottom (Triggamix)","Rich the GOAT","I Shoulda Tried Harder","Girls Got a Gun","For Real","Valleys","The Ancap Rap","Johnny Ryall","Protect Ya Neck II the Zoo","My Word Is Bond","50/Banks","Skill Trade","Strip Club Luv","No Shots","Skypager","Dolly and the Rat Trap","The Coup","Give It Up Fast","Trailer","The Ebonic Plague","Yeah Yeah Yeah","Boughetto","Mafioso","Soldiers","Turn It Into Somethin'","Fire","Ba Bump","Open Your Mind","PlaneWalker","New World","Speed Law","Molly (remix)","Cloud Aura","Hey Papi","E.I.","Dipshits","Soundscience","Everywhere I Go","Ghetto Manifesto","Shorty","Crazy","Wet! Wet! Wet!","Get Paid","Hustle Harder","John They're Stealing","Motion","Kick Back Music","SkyScraper V","Take It Off Part 2","Jussummen","What More Can I Say","Nothing More","Tightanic","Feel the Beat","Shyne","Right to Bare Arms","We Gon' Make It","Good Morning","Dumb","I Wish You Would","Money Talks","I'm Ballin' Man","Shut Up Bitch","Trump Change","Heavy Metal Kings","The N","Buy U Some 2","Favorite Drug","Mo Cars Mo Hoes","So What","LIE-Z","Jealousy","Kick it Like That","Playas Only","The Morning News","Blow Ya Mind Remix","Invisible Man","My Drink n My 2 Step (Remix)","Midgets and Giants","We Made Our Own","Suicide","Mo Cars Mo Hoes","Love Don't Cost a Thing (Neptunes Remix)","Truth","Song for the Ville","Don't Trip","Loose","How We Rock","Pimp Slap","I Gotta Say What Up!!!","Three Strikes You In","Folklore","Put Ya in Da Game","Daze","I'm Ballin","So Appalled","Independent","Blue Flame Remix","Success","Zoom Zooms and Wam Wam","Street 2 Street","Still Get It in Ohio","Thug Motivation 101","Trump","Vagina","If You Love Me","Salute","I Don't Play With Guns","Shootin","Tell Me What You're Lookin' For","Tim Westwood Freestyle","Webster's Laboratory","P.A.","Is It Love","Another One","Reputations on the Line","Best Days of Lives","Paid","Lights","Tower Heist","Once Upon a Time","On the Real","Thug Chronicles","K.O.T.T.O.N.M.O.U.T.H.","Your World &amp; My World","You Know What","Elimination Chamber","Help Me","Flex 36","Jet Life (Remix)","What's Up Wit Dat","Get Down","Ice Cream","Racks","Ball","Lil Snupe Meek Mill Freestyle Part 2","Comin' for Ya Head","Blame the Label (Ghida Fakhry)","Perfume","Hip Hop Quotables","Raiders Cap","Donald Trump","Thoughts From a Balcony","Dis Ain't What You Want (Remix)","Don't Drop That","211","Morphine","Off the Corner","Since Day 1","Giv No Fuks","Dag, Philly Too","Neighborhood Scientists","Bars","Minority Report","Red Dot Music","Break My Wrist","Money Is My Bitch","Karate Chop (Freestyle)","The People's Douche","Make the World Go Round","I Shoulda Tried Harder","Break My Wrist","Loco-Motive","Loaded","Country Grammar (Hot Shit)","Its Sad Boy","I Wanna Be With You","Party Ain't A Party","Last Year","InHeiritance","What We Doing","Sirens","Tru Master","Hollow Da Don vs. Joe Budden","Get It (DT)","Bizarre","The Dangerous Three","Up Like Trump","Incarcerated Scarfaces","Flawless Remix","Dart School","New York Minute (Remix)","Google That","Hazelton Trump","Da Funk","Sacrifices","10 2 10 (Remix)","This Is the Life","I Mean It (Remix)","Pirates","Sixteen","Think Like a Man","Maybe You Love Me","Keith Sweat (Jodeci Freestyle)","PNT","She Wanna Fuck","Dope Spot","Florida State","Have a Nice Day","Flavas Back","Making Some Moves","10 Times","Sway in The Morning Freestyle","Straight Drop","So Tight","Spraying My Pen","Money and the Power","Way It Go","Black Friday","One Name","Men of Respect","Ransom","Spend Some Cheese","Bad Boyz","Bonnie &amp; Shyne","Free Enterprise","El Chapo","Blase (Jeezy, Juicy J &amp; Diddy Remix)","Coke &amp; Wet","R.I.C.O. (Remix)","Loco","Big Tyme","Pussy","Computers (Freestyle)","Trap Problems","Zion","MONEY LIKE MY OG","I Think I'm Swipa","I Need Dollas","Buku","Gratitude","Fired","Wet Dollars","Purpose","Datpiff (freeverse series Ep. 4)","Driving Gloves","Gucci Comin Home","Pimps (Free Stylin at the Fortune 500 Club)","World War 6","Pop Style (Remix)","Slenderman","Misconceptions 3","Lost a Fan","FLEM","Living the Life","Thought U Lost It","I Need","Bad Boy on Death Row","CIT4DT","Hard (Freestyle)","High Seas (C+)","Priceless","Billionaire","Which Is Cool","My Speech (Queen's Speech Remix)","Pocket Full of Stones","Nobody Speak","Look Me in My Eyes","Everything's a Go (Remix)","Wicked Freestyle","Castle","Cross 'Em Out and Put a 'K","Muzzle Toe","Red Drops","No Smoke","Out Here","Come Again","Dope","Come Down (Remix)","Miss U","On the Way","Digest It","Constantly Hating","FDT (Fuck Donald Trump)","It's Goin' Down"],["Aesop Rock","Soul Khan","Dez   Nobs","Diabolic","Gorilla Zoe","K Rino","Kase","Macklemore","R A  The Rugged Man","RZA","Zeno","King Los","Awkwafina","Chris Webby","Apollo Brown   Ras Kass","Joyner Lucas","Young Noble","Ice Cube","Bas","Sheek Louch","Logic","Jae Tips","Yo Gotti","Yo Gotti","Nas","Roxanne Shant ","Crunch Lo","The Game","Ali","AllDay","Angel Haze","Angel Haze","Big Boi","Big Boi","Rhymefest","Charles Hamilton","Chino XL","Chino XL","Chris Webby","Corny","Trina","Cunninlynguists","E dubble","Eminem","Eminem","Fabolous","Field Mob","Jay Da Menace","Gorilla Zoe","Gorilla Zoe","Gravediggaz","Gucci Mane","Gudda Gudda","Gucci Mane","Ice Cube","Ice Cube","Ill Bill","ISO","Jae Millz","Jasiri X","Jay Z","Jay Z","Jeezy","KAM","Killer Mike","King Kold","KRS ONE","Kutt Calhoun","Big Sean","Lil Wayne","Ludacris","Ludacris","Master P","Lil B","Mediumjay","Method Man","Mickey Factz","G Eazy","Monsta Island Czars","Naj Murph","Mazeman","Papoose","Pitbull","Prince Ital Joe","Proof","Pryde","R A  the Rugged Man","R A  The Rugged Man","Skeme","Rhymefest","Saba","Rick Ross","Rick Ross","Migos","Royce Da 5 9 ","Nicki Minaj","Scarlett","Shyheim","Skepta","Slick Rick","Social Club","T H U G  Angelz","Trey Songz","Rich The Kid","Wax","Yo Yo","Yung God","Lupe Fiasco","Young Rippa","Beastie Boys","12 O Clock   Brooklyn Zu","Donald D","50 Cent","Nice","69 Boyz","7L   Esoteric","A Tribe Called Quest","Ultramagnetic MC s","The Coup","Nas","Ace Hood","Ras Kass","Akala","Ali","Kool G  Rap","Master P","Frost","Makeba Mooncycle","Black Eyed Peas","Black The Ripper","Bobby Raps","Nas","Yasiin Bey  Mos Def ","Boston George","Brooke Candy","Jay Z","Nelly","Cam ron","Souls of Mischief","Tha Eastsidaz","The Coup","Chingy","50 Cent","Princess Superstar","Styles P","Common","Thirstin Howl III","Curren y","CyHi The Prynce","D R C","Busta Rhymes","Das EFX","Jay Z","DeDa","Demark","LL Cool J","Shyne","Killah Priest","Diddy","Cage","The High   Mighty","Chino XL","Double X Posse","Drama","Lil Kim","E 40","Jedi Mind Tricks","Nas","Erick Sermon","Styles P","Fabolous","Far East Movement","Fat Boys","Fat Joe","Styles P","The Game","Chamillionaire","Jadakiss","Joe Budden","Kanye West","Sage Francis","Future","Fabolous","Freck Billionaire","Ghostface Killah","God","J Cole","Petey Pablo","Spank Rock","Termanology","Tyler the Creator","Ice Cube","Ice Cube","Dumbtron","Fat Joe","Ja Bar","Rick Ross","Kanye West","KXNG Crooked","Lil B","Jay Z","Jay O Felony","Jay O Felony","Machine Gun Kelly","Jeezy","Jeezy","Royce Da 5 9 ","Sheek Louch","The Diplomats","Alley Boy","Juicy J","Kane   Abel","Kanye West","Chris Webby","Mac Miller","Kendrick Lamar","Rock","Kevin Gates","Donnis","Kid Rock","Frank Ocean","Nas","King Sun","Nas","Kool G  Rap","Kottonmouth Kings","Raekwon","Tinie Tempah","Action Bronson","Deuce","Lil B","Jeezy","Lil Wayne","Lil Wayne","Lil Wayne","Lil Wayne","Lil Wayne","Lil  Snupe","Raekwon","The Narcicyst","Aasim","Ludacris","Demigodz","Mac Miller","Mac Miller","French Montana","Futuristic","Master P","Gorilla Warfare Tactics","Meek Mill","Migos","Migos","Homeboy Sandman","Migos","Migos","KXNG Crooked","Loaded Lux","PeeWee Longway","Nas","Shaquille O Neal","Spose","Nas","Wax","Young Thug","Nas","Young Thug","Nelly","Yung Gleesh","Nicki Minaj","2 Chainz","Borgore","King Mez","Fat Trel","Hoodie Allen","Pete Rock","Joe Budden","Pharrell","Mouf","R A  The Rugged Man","Rae Sremmurd","Raekwon","Nicki Minaj","Raekwon","Nicki Minaj","Raekwon","OB O Brien","Redman","Rich Homie Quan","Rick Ross","Rick Ross","Rick Ross","Rick Ross","Rick Ross","Rick Ross","RiFF RAFF","Young Tero","Apollo Brown   Ras Kass","Rick Ross","Cam ron","RiFF RAFF","Ab Stract","Chino Tovar","DAJ","Freddie Gibbs","Eminem","Gucci Mane","Hugh Lee","Saukrates","Scarface","SD","Kendrick Lamar","Sheek Louch","Sheek Louch","Rich White Ladies","Shyne","Shyne","Shyne","Rick Ross","The Game","Ty Dolla  ign","Spank Rock","Waka Flocka Flame","Young Buck","Stretch","Strings","Migos","Migos","Omen","Swagg Porter   Star","Swipa","T I ","Robb Bank ","Talib Kweli","Tech N9ne","Tink","Young Thug","Chris Webby","The Alchemist","BIA","The Coup","Boosie Badazz","Devvon Terrell","Germ","Jgivens","KXNG Crooked","A AP Ferg","The Notorious B I G ","Caskey","Croosh","Dave East","Dooley","Royce Da 5 9 ","Tom Hobbes","Tory Lanez","Twista","Royce da 5  9  ","Sik World","UGK","El P","Vado","Waka Flocka Flame","Jadakiss","Kevin Gates","Westside Connection","Wu Syndicate","Limbz","Montana of 300","The Weeknd","Rockie Fresh","T I ","T I ","Young Thug","Young Thug","Tiara","Young Thug","YG   Nipsey Hussle","Yung Joc"],["neutral","negative","neutral","negative","negative","negative","neutral","negative","negative","neutral","neutral","positive","neutral","neutral","negative","neutral","negative","positive","negative","neutral","neutral","neutral","neutral","positive","neutral","neutral","neutral","neutral","neutral","neutral","negative","negative","neutral","neutral","positive","negative","negative","neutral","neutral","positive","positive","negative","negative","negative","negative","negative","negative","positive","neutral","neutral","neutral","neutral","neutral","positive","negative","negative","negative","neutral","neutral","neutral","neutral","neutral","neutral","neutral","negative","neutral","neutral","negative","positive","neutral","negative","negative","negative","positive","negative","negative","neutral","neutral","neutral","neutral","positive","negative","neutral","negative","neutral","neutral","negative","neutral","positive","negative","positive","positive","neutral","positive","neutral","positive","neutral","neutral","neutral","neutral","neutral","negative","negative","positive","neutral","negative","neutral","positive","negative","neutral","positive","positive","positive","positive","positive","positive","positive","neutral","negative","positive","positive","neutral","positive","positive","positive","neutral","positive","neutral","positive","positive","positive","neutral","positive","positive","positive","positive","positive","positive","neutral","positive","neutral","positive","positive","neutral","positive","positive","neutral","positive","neutral","positive","positive","positive","positive","positive","positive","positive","positive","negative","positive","neutral","negative","neutral","positive","positive","positive","positive","neutral","neutral","positive","positive","positive","positive","positive","positive","positive","neutral","neutral","positive","positive","neutral","neutral","positive","positive","positive","positive","positive","neutral","neutral","positive","neutral","neutral","positive","positive","negative","positive","positive","neutral","neutral","positive","neutral","positive","positive","positive","neutral","positive","positive","positive","positive","neutral","neutral","neutral","positive","positive","neutral","negative","positive","neutral","positive","neutral","positive","neutral","positive","positive","positive","positive","neutral","positive","neutral","positive","neutral","positive","positive","positive","positive","positive","positive","neutral","positive","positive","neutral","positive","positive","negative","positive","positive","negative","neutral","positive","positive","positive","positive","positive","neutral","positive","positive","positive","neutral","neutral","positive","neutral","neutral","positive","neutral","neutral","positive","neutral","positive","neutral","positive","positive","neutral","negative","positive","positive","positive","neutral","positive","neutral","positive","positive","positive","positive","neutral","positive","positive","positive","positive","positive","positive","positive","neutral","positive","positive","positive","positive","neutral","neutral","positive","neutral","positive","negative","negative","negative","positive","negative","neutral","neutral","positive","positive","positive","negative","positive","neutral","negative","positive","positive","neutral","negative","negative","negative","positive","negative","negative","positive","positive","neutral","neutral","neutral","positive","positive","positive","positive","positive","neutral","positive","neutral","neutral","positive","neutral","positive","neutral","neutral","neutral","neutral","neutral","negative","positive","negative","negative","negative","negative","positive","positive","positive","positive","positive","neutral","positive","negative","positive","positive","negative","negative","positive","positive","negative","negative","positive","negative","negative","negative","positive","positive","negative","positive","negative","positive"],[null,null,null,"political","personal","political",null,"political","political","personal","personal",null,null,null,"political",null,null,"personal","personal",null,"personal","personal","personal",null,null,null,null,"political",null,null,null,"political",null,"personal","money","political","sexual",null,null,"money",null,"personal",null,null,"political","personal","personal","personal",null,"personal","personal",null,null,"personal","personal",null,"political","political","political",null,"political",null,null,"personal","political",null,null,null,"money","personal","personal","political","political","political","political","political","political","personal",null,"personal","political","political","personal","political","personal","personal",null,"sexual","money","political","personal",null,null,null,null,null,"personal","money","personal","personal",null,"political","sexual","political","personal","personal","personal","political","political",null,"money",null,"money","money","money","money","money","money","political","hotel","money",null,"money","money","hotel",null,"hotel",null,"money","money","money","money","hotel","money","personal","hotel","hotel","hotel","personal","hotel",null,"money","hotel","hotel","hotel","hotel","money","hotel","hotel","money","hotel","money","hotel","money","money","hotel","hotel",null,"money",null,"personal","The Apprentice","money","money","hotel","money","The Apprentice","personal","money","hotel","money","money","money","money","hotel","hotel",null,"hotel","hotel","The Apprentice","The Apprentice","money","hotel","hotel","money","money","money",null,"hotel","money","personal","money","money","political","hotel","money","money","money","hotel","The Apprentice","hotel","personal","money",null,null,"money","hotel","hotel","hotel",null,"The Apprentice","money","money","The Apprentice","personal","money",null,"money",null,"money","money","hotel","money","hotel","money","The Apprentice","hotel","The Apprentice","hotel","money",null,"hotel","money","money","money","money","The Apprentice","money","hotel","personal","hotel","money","personal","money","money",null,"The Apprentice","money","hotel","money","money",null,null,"money","money","hotel","money","The Apprentice","personal","money","money","hotel",null,"The Apprentice","money",null,"money","hotel","hotel","hotel","power",null,"hotel","hotel","money","The Apprentice","money","The Apprentice","power","personal","money","hotel",null,"hotel","money","hotel","personal","money","hotel","hotel","money","money","hotel","hotel","hotel","The Apprentice","political","money","political","money","political","political",null,"hotel","political",null,"sexual","money","money","political","political","money",null,null,"money","hotel","hotel","political","personal","political","money","political","political","money","money","hotel","The Apprentice",null,"hotel","money","money","hotel","hotel","The Apprentice","hotel",null,null,"money",null,"money","political","personal",null,"political","money","political","money","political","political",null,"political","hotel","money","money","money","hotel","political",null,"personal","hotel","money",null,null,"money","money","money",null,"hotel","political",null,"political","money","money","political","money","political","money"],[2011,2012,2006,2006,2007,2012,2001,2005,2013,2005,2005,2011,2014,2016,2015,2016,2013,2000,2013,2012,2012,2011,2012,2015,2009,2000,2005,2008,2005,2013,2012,2012,2001,2008,2007,2008,1994,2001,2016,2014,2007,2001,2010,1999,2015,2008,2002,2009,2009,2007,1997,2013,2010,2010,1994,2008,2004,2015,2008,2013,1999,2012,2008,2000,2008,2014,1997,2008,2010,2008,2008,2008,1996,2010,2012,1998,2008,2011,2003,2013,2011,2008,2009,1993,2004,2012,2008,2013,2012,2009,2014,2007,2012,2015,2008,2015,1999,1996,2012,1998,2015,2008,2011,2016,2013,1993,2014,2015,2015,1989,1995,1989,2002,1990,1998,2010,1991,1992,1993,1996,2013,1997,2006,2002,1998,1998,1999,1999,2006,2013,2015,1999,1999,2013,2013,2000,2000,2014,2000,2001,2001,2003,2002,2002,2002,2014,2002,2012,2013,2013,2002,1992,2003,2003,2014,2004,2004,2005,2006,2005,2005,2005,1995,2000,2005,1998,2006,2006,2006,2006,2008,2010,1989,2006,2006,2006,2007,2007,2007,2007,2007,2013,2008,2008,2012,2014,2010,2009,2008,2008,2008,1990,1998,2009,2009,2010,2009,2010,2010,2010,2007,1995,1997,2010,2005,2011,2010,2010,2010,2011,2013,1998,2004,2011,2011,2009,2011,2011,2011,1996,2011,2011,1994,2011,2002,2008,2011,2011,2012,2012,2013,2012,2000,2004,2009,2011,2012,2013,2012,2012,2013,2003,2013,2011,2012,2013,2013,1994,2013,2014,2013,2014,2013,2015,2016,2013,2013,2013,1999,2013,2013,2008,2013,2013,2012,2013,2000,2013,2013,2014,2014,2014,2014,2014,1998,2014,2011,2014,2013,2015,1995,2014,2011,2010,2012,2014,1992,2013,2014,2008,2014,2012,2012,2012,2014,2014,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2013,1991,2015,2015,2005,2007,2015,2000,2000,2000,2015,2015,2015,2006,2015,2015,2001,2002,2015,2015,2015,2012,2013,2012,2015,2015,2015,2015,2015,2016,2015,2016,1994,2016,2016,2016,2016,2016,2016,2005,2016,2016,2016,2016,2016,2013,2014,2009,2016,2016,1992,2016,2014,2012,2016,2016,1996,1999,2016,2016,2016,2016,2016,2016,2013,2014,2016,2015,2016,2006]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>candidate<\/th>\n      <th>song<\/th>\n      <th>artist<\/th>\n      <th>sentiment<\/th>\n      <th>theme<\/th>\n      <th>album_release_date<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":3,"columnDefs":[{"className":"dt-right","targets":6},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[3,10,25,50,100]}},"evals":[],"jsHooks":[]}</script> Though not the focus of this course, we can always tidy up our data if it comes to us in a non-tidy format!</p>
+<p><br></p>
+<ul>
+<li><p><strong>Examining data structure</strong><br />
+We can examine the basic structure of our data using the following functions:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(HipHop)          <span class="co"># the first 6 rows</span>
+## # A tibble: 6 x 8
+##   candidate  song  artist sentiment theme album_release_d… line   url   
+##   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;  &lt;ord&gt;     &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; 
+## 1 Mike Huck… None… Aesop… neutral   &lt;NA&gt;              2011 Withe… http:…
+## 2 Mike Huck… Well… Soul … negative  &lt;NA&gt;              2012 Might… http:…
+## 3 Jeb Bush   Awe   Dez &amp;… neutral   &lt;NA&gt;              2006 I hea… http:…
+## 4 Jeb Bush   The … Diabo… negative  poli…             2006 What … http:…
+## 5 Jeb Bush   Mone… Goril… negative  pers…             2007 I&#39;m c… http:…
+## 6 Jeb Bush   Hidd… K-Rino negative  poli…             2012 The R… http:…
+<span class="kw">dim</span>(HipHop)           <span class="co"># dimensions = number of cases &amp; variables</span>
+## [1] 377   8
+<span class="kw">names</span>(HipHop)         <span class="co"># variable labels/names</span>
+## [1] &quot;candidate&quot;          &quot;song&quot;               &quot;artist&quot;            
+## [4] &quot;sentiment&quot;          &quot;theme&quot;              &quot;album_release_date&quot;
+## [7] &quot;line&quot;               &quot;url&quot;</code></pre></div></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p><strong>Examining a single variable</strong><br />
+To access and focus on a single variable, we can use the <code>$</code> notation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">HipHop<span class="op">$</span>candidate
+HipHop<span class="op">$</span>album_release_date</code></pre></div>
+<p>It’s important to understand the format/class of each variable (quantitative, categorical, date, etc) in both its meaning and its structure within RStudio:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(HipHop<span class="op">$</span>candidate)
+## [1] &quot;character&quot;
+<span class="kw">class</span>(HipHop<span class="op">$</span>album_release_date)
+## [1] &quot;integer&quot;</code></pre></div>
+<p>If a variable is categorical (either in <code>character</code> or <code>factor</code> format), we can determine its <code>levels</code> / category labels:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(HipHop<span class="op">$</span>candidate)
+## NULL
+<span class="kw">levels</span>(<span class="kw">factor</span>(HipHop<span class="op">$</span>candidate))
+## [1] &quot;Ben Carson&quot;      &quot;Bernie Sanders&quot;  &quot;Chris Christie&quot; 
+## [4] &quot;Donald Trump&quot;    &quot;Hillary Clinton&quot; &quot;Jeb Bush&quot;       
+## [7] &quot;Mike Huckabee&quot;   &quot;Ted Cruz&quot;</code></pre></div></li>
+</ul>
+<p><br></p>
+</div>
+<div id="univariate-graphical-summaries" class="section level4">
+<h4><span class="header-section-number">5.1.3.2</span> Univariate Graphical Summaries</h4>
+<p>Once we understand its structure, we can <em>examine</em> and <em>tell a story</em> with our data! Data visualization is the first natural step. Why?</p>
+<ul>
+<li>Visualizations help us understand what we’re working with: What are the scales of our variables? Are there any outliers, i.e. unusual cases? What are the patterns among our variables?<br />
+</li>
+<li>This understanding will inform our next steps: What statistical tool / model is appropriate?<br />
+</li>
+<li>Once our analysis is complete, visualizations are a powerful way to communicate our findings and tell a story.</li>
+</ul>
+<p>We’ll start with <strong>univariate</strong> visualizations using the <code>ggplot()</code> function. Though the learning curve is steep, its “grammar” is intuitive and generalizable once mastered. <code>ggplot()</code> is stored in the <code>ggplot2</code> package. You only have to type this once every time you open RStudio (and once in your markdown document):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)</code></pre></div>
+<p><strong>IMPORTANT:</strong> The best way to learn about <code>ggplot()</code> is to just play around - don’t worry about memorizing the syntax. Rather, focus on the <em>patterns</em> and <em>potential</em> of their application.</p>
+<div id="categorical-variables" class="section level5">
+<h5><span class="header-section-number">5.1.3.2.1</span> Categorical Variables</h5>
+<p>The appropriate visualization depends on whether the variable is <em>categorical</em> or <em>quantitative</em>. Consider the <em>categorical</em> <code>candidate</code> variable which contains the candidate mentioned in each song in the sample. A table provides a simple summary of the number of mentions of each candidate:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(HipHop<span class="op">$</span>candidate)
+## 
+##      Ben Carson  Bernie Sanders  Chris Christie    Donald Trump 
+##               1               2               2             268 
+## Hillary Clinton        Jeb Bush   Mike Huckabee        Ted Cruz 
+##              92               9               2               1</code></pre></div>
+<p>A <strong>bar chart</strong> provides a visualization of this table. In examining the bar chart, keep your eyes on <strong>variability</strong> (how are cases spread among the categories?) and <strong>take-home message</strong>. Try the code below that builds up from a simple to a customized bar chart. At each step determine how each piece of code contributes to the plot. Upon examining these plots, notice that Donald Trump is mentioned much more frequently than the other candidates. Hillary Clinton has far fewer mentions than Trump but far more than any other candidate.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+<span class="co"># set up a plotting frame</span>
+<span class="kw">ggplot</span>(HipHop, <span class="kw">aes</span>(<span class="dt">x =</span> candidate))
+
+<span class="co"># add a layer with the bars</span>
+<span class="kw">ggplot</span>(HipHop, <span class="kw">aes</span>(<span class="dt">x =</span> candidate)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_bar</span>()
+
+<span class="co"># add axis labels</span>
+<span class="kw">ggplot</span>(HipHop, <span class="kw">aes</span>(<span class="dt">x =</span> candidate)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Mentioned candidate&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Number of songs&quot;</span>)
+
+<span class="co"># rotate the text</span>
+<span class="kw">ggplot</span>(HipHop, <span class="kw">aes</span>(<span class="dt">x =</span> candidate)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Mentioned candidate&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Number of songs&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-62-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br> <br></p>
+</div>
+<div id="quantitative-variables" class="section level5">
+<h5><span class="header-section-number">5.1.3.2.2</span> Quantitative Variables</h5>
+<p>Let’s focus on just “Hillary Clinton” mentions in hip hop (don’t worry about the code for doing this yet):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">justHC &lt;-<span class="st"> </span>HipHop <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(candidate <span class="op">==</span><span class="st"> &quot;Hillary Clinton&quot;</span>)</code></pre></div>
+<p>The <em>quantitative</em> <code>album_release_date</code> variable contains the release date of each song that mentions Clinton. Quantitative variables require different summary tools than categorical variables. For example, a table of the quantitative <code>album_release_date</code> numbers isn’t very illuminating:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(justHC<span class="op">$</span>album_release_date)
+## 
+## 1993 1994 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2007 2008 
+##    2    2    2    2    2    3    3    3    1    1    2    2    4   17 
+## 2009 2010 2011 2012 2013 2014 2015 2016 
+##    5    5    4   11    8    4    6    3</code></pre></div>
+<p>Here we’ll focus on 2 of many methods for visualizing the distribution of a quantitative variable: <strong>histograms and density plots</strong>. In examining these viz, keep your eyes on the following:</p>
+<ul>
+<li><strong>center</strong> (what’s a typical value?)</li>
+<li><strong>variability</strong> (how spread out are the values?)</li>
+<li><strong>shape</strong> (how are values distributed?)</li>
+<li><strong>outliers</strong></li>
+<li><strong>take-home message</strong></li>
+</ul>
+<p><br></p>
+<div id="histograms" class="section level6">
+<h6><span class="header-section-number">5.1.3.2.2.1</span> Histograms</h6>
+<p>Histograms are constructed by (1) dividing up the observed range of the variable into ‘bins’ of equal width; and (2) counting up the number of cases that fall into each bin. Try out the code below that builds up from a simple to a customized histogram. At each step determine how each piece of code contributes to the plot. Upon examination, note the take-home message of the histograms: Clinton has been part of the hip hop landscape since the early 1990s, though her “popularity” peaked around 2008 and has decreased since.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+<span class="co"># set up a plotting frame</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date))
+
+<span class="co"># add a histogram</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>()
+
+<span class="co"># add axis labels</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Release date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Number of songs&quot;</span>)
+
+<span class="co"># make the bins wider</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="dv">5</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Release date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Number of songs&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-66-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="density-plots" class="section level4">
+<h4><span class="header-section-number">5.1.3.3</span> Density Plots</h4>
+<p>Density plots are essentially smooth versions of the histogram. Instead of sorting cases into discrete bins, the “density” of cases is calculated across the entire range of values. The greater the number of cases, the greater the density! The density is then scaled so that the area under the density curve <strong>always equals 1</strong> and the area under any fraction of the curve represents the fraction of cases that lie in that range. If you’ve taken Probability, you can think of the sample density curve as an estimate of the population probability density function. Try the following code.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+<span class="co"># set up the plotting frame</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date))
+
+<span class="co"># add a density curve</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_density</span>()
+
+<span class="co"># add color and transparency</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">fill=</span><span class="st">&quot;maroon&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">75</span>)
+
+<span class="co"># add axis labels</span>
+<span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">fill=</span><span class="st">&quot;maroon&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">75</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Album release date&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-68-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<p>After completing the above exercises, you should recognize some <code>ggplot()</code> patterns!</p>
+<blockquote>
+<p><strong>ggplot() patterns</strong> <code>ggplot()</code>, short for “grammar of graphics” plot, is a powerful function. We’ll focus on the <em>patterns</em> of this function over the memorization of its syntax. For example, all of our <code>ggplot()</code> code had the following patterns:</p>
+<ul>
+<li>Line 1 of the code specified the name of our data and the variable of interest within that data: <code>ggplot(MY DATA, aes(x = VARIABLE ON X AXIS))</code> where <code>aes</code> is short for <code>aesthetics</code>.<br />
+</li>
+<li>Except for the last line of the plot code, lines end with <code>+</code>. This tells RStudio that we’re not done with the plot code yet.<br />
+</li>
+<li>The second row of the code indicates what kind of plot we want to make. Thus far, we’ve seen <code>geom_bar()</code>, <code>geom_histogram()</code>, <code>geom_density()</code>.<br />
+</li>
+<li>We can change the x-axis and y-axis labels using <code>labs(x = &quot;MY X LABEL&quot;, y = &quot;MY Y LABEL&quot;)</code></li>
+</ul>
+</blockquote>
+<div id="numerical-summaries" class="section level6">
+<h6><span class="header-section-number">5.1.3.3.0.1</span> Numerical Summaries</h6>
+<p>We can also use RStudio to compute summary statistics, such as the mean, median, and standard deviation of a variable. Here is an example for the density plot above:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(justHC<span class="op">$</span>album_release_date)
+## [1] 2008
+<span class="kw">median</span>(justHC<span class="op">$</span>album_release_date)
+## [1] 2008
+<span class="kw">sd</span>(justHC<span class="op">$</span>album_release_date)
+## [1] 6.049</code></pre></div>
+<p>Recall that the mean and median are two measures of the <em>trend</em> or <em>typical</em> value of a variable:</p>
+<ul>
+<li><strong>mean</strong><br />
+The arithmetic average. Example: the mean of <span class="math inline">\((x_1,...,x_5) = (1, 6, 3, 20, 6)\)</span> is <span class="math display">\[\overline{x} = \frac{\sum_{i=1}^5 x_i}{5} = 7.2\]</span></li>
+<li><strong>median</strong><br />
+The 50th percentile. Example: the median of <span class="math inline">\((x_1,...,x_5) = (1, 6, 3, 20, 6)\)</span> is 6 since this is the middle number when we sort the sample: <span class="math inline">\((1, 3, 6, 6, 20)\)</span>.</li>
+</ul>
+<p>Beyond the simple range of scores, <strong>variance</strong> and <strong>standard deviation</strong> are common measures of <em>variability</em>. Suppose we have <span class="math inline">\(n\)</span> sample values <span class="math inline">\((x_1,...,x_n)\)</span> with a sample mean of <span class="math inline">\(\overline{x}\)</span>.</p>
+<ul>
+<li><p>Sample <strong>variance</strong> is loosely interpreted as the typical <em>squared</em> deviations of individual cases from the mean: <span class="math display">\[var(x) = \frac{\sum_{i=1}(x_i - \overline{x})^2}{n-1}\]</span><br />
+Note that the variance has (original units)<sup>2</sup></p></li>
+<li><p>Sample <strong>standard deviation</strong> is loosely interpreted as the typical deviation of individual cases from the mean: <span class="math display">\[sd(x) = \sqrt{var(x)}\]</span> Note that the standard deviation has units on the original scale, and is therefore easier to interpret than the variance!</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="r-markdown-and-reproducible-research" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> R Markdown and Reproducible Research</h3>
+<p>By this point, you’ve tried out some syntax in the RStudio console. There are pros and cons to the console:</p>
+<ul>
+<li>The console is <strong>good</strong> for testing out RStudio code and other temporary work.</li>
+<li>The console is <strong>bad</strong> for organizing, communicating, and saving your work.</li>
+</ul>
+<p>In the video below, you’ll learn about R Markdown which is <strong>great</strong> for organizing, communicating, and saving your work! In fact, this entire tutorial that you’re reading now was constructed using R Markdown! The basic idea is that you can use R Markdown to create an html / pdf file that includes your text, LaTeX equations, R code (what you type into RStudio), and R output (the corresponding results). In doing so…</p>
+<ul>
+<li>there’s no need to copy and paste between RStudio and Word</li>
+<li>you have documentation of how you arrived at your conclusions</li>
+<li>revisions are easy; you can change your code and update your entire document at the click of a button!</li>
+<li>your work is reproducible by others!</li>
+</ul>
+<blockquote>
+<p><strong>Reproducible research</strong> is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. - <a href="https://www.coursera.org/learn/reproducible-research">Reproducible Research, Coursera</a></p>
+</blockquote>
+<p>To use R Markdown, you will write an R Markdown formatted file in RStudio and then ask RStudio to <strong>knit</strong> it into an HTML document (or occasionally a PDF or MS Word document).</p>
+<p>The following video on R Markdown was compiled for a different course, but the majority of its content translates here!</p>
+<p><br></p>
+<p><a href="https://drive.google.com/open?id=0Bw_fNDSS255FUEdkY3o1MDEtcVU" title="Video 3"><img src="images/vid3.png" /></a></p>
+<p><br></p>
+<p>Other useful R Markdown resources:</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://rmarkdown.rstudio.com/authoring_quick_tour.html">R Markdown Quick Tour</a><br />
+</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">R Markdown Cheatsheet</a></li>
+</ol>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-70" class="exercise"><strong>Exercise 5.3  (Deduce the R Markdown Format)  </strong></span>Look at this <a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.Rmd">Sample RMarkdown</a> in RStudio, and the <a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html">HTML webpage</a> it creates.</p>
+<ol style="list-style-type: lower-alpha">
+<li>How are bullets, italics, and section headers represented in the R Markdown file?</li>
+<li>How does R code appear in the R Markdown file?</li>
+<li>In the HTML webpage, do you see the R code, the output of the R code, or both?</li>
+</ol>
+</div>
+
+</div>
+<div id="practice" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Practice</h3>
+<p>Work through each exercise below.</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-71" class="exercise"><strong>Exercise 5.4  (Install packages)  </strong></span>We’ll use several packages throughout the bootcamp. So that we can maximize our time together in class, it’s important that you install these packages before we meet. To this end, copy and paste the following into your RStudio <strong>CONSOLE</strong> (<em>not</em> an RMarkdown doc). It will take a while to run - better now than later!</p>
+</div>
+
+<pre><code>```
+install.packages(&quot;dplyr&quot;, dependencies = TRUE)
+install.packages(&quot;ggplot2&quot;, dependencies = TRUE)
+install.packages(&quot;fivethirtyeight&quot;, dependencies = TRUE)
+install.packages(&quot;devtools&quot;, dependencies = TRUE)
+install.packages(&quot;readr&quot;, dependencies = TRUE)
+install.packages(&quot;mosaic&quot;, dependencies = TRUE)
+install.packages(&quot;rvest&quot;, dependencies = TRUE)
+install.packages(&quot;tidyr&quot;, dependencies = TRUE)
+install.packages(&quot;DAAG&quot;, dependencies = TRUE)
+install.packages(&quot;infer&quot;, dependencies = TRUE)
+install.packages(&quot;boot&quot;, dependencies = TRUE)
+install.packages(&quot;gapminder&quot;, dependencies = TRUE)
+install.packages(&quot;lubridate&quot;, dependencies = TRUE)
+install.packages(&quot;ggmap&quot;, dependencies = TRUE)
+
+# Try but don&#39;t worry if the following don&#39;t work
+# We&#39;ll only use these a couple of times
+install.packages(&quot;choroplethr&quot;, dependencies = TRUE)
+install.packages(&quot;choroplethrMaps&quot;, dependencies = TRUE)
+```</code></pre>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-72" class="exercise"><strong>Exercise 5.5  (Start a new R Markdown document)  </strong></span>Open a new R Markdown document in which you’ll record your work (both code &amp; text). Give this document an appropriate title and author name (you!). Knit your document to an html to make sure that process works before you try anything else.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 5.6  (Require packages within your R Markdown file)  </strong></span>Even though you have installed packages on your computer, you need to tell RStudio which packages you want to actively use in each R Markdown file. In the code chunk that starts with <code>r setup</code> at the top of this document, add the following three lines to load the packages that you’ll need to complete the exercises:</p>
+</div>
+
+<pre><code>```
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+```    </code></pre>
+<p>You can also delete everything below that first code chunk. Knit again. Hot tip: Knit often. This will make it easier to debug your code / identify errors.</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-74" class="exercise"><strong>Exercise 5.7  (Load and explore data)  </strong></span>The “World Prison Brief” conducted by the <em>International Centre for Prison Studies</em> provides insight into how incarceration rates vary from country to country. Statistics from the 2010 brief (courtesy chartsbin.com) are stored at <a href="http://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv" class="uri">http://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv</a> where incarceration rates are reported as the number of present incarcerations per 100,000 persons. You will need to use this data for the remaining exercises. Since it’s stored as a <em>csv file</em> on the <em>internet</em>, you can import the data into RStudio and store it under the name <code>Prison</code> with the following:</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Prison &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv&quot;</span>)</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>What are the <em>cases</em> in this data set?<br />
+</li>
+<li>Use RStudio functions to:
+<ul>
+<li>summarize the number of cases in <code>Prison</code><br />
+</li>
+<li>examine the first 6 cases of <code>Prison</code><br />
+</li>
+<li>list out the names of all variables in <code>Prison</code></li>
+</ul></li>
+</ol>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-76" class="exercise"><strong>Exercise 5.8  (Explore a categorical variable)  </strong></span><br />
+a. Construct a table of the number of cases that fall into each continent.<br />
+b. Construct a single visualization of the table above. For practice, change the axis labels.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-77" class="exercise"><strong>Exercise 5.9  (Explore a quantitative variable)  </strong></span><br />
+a. Construct a histogram of all incarceration rates.<br />
+i. change the bin width to 0.5 per 100,000<br />
+ii. change the bin width to 500 per 100,000<br />
+b. Comment on the “goldilocks” problem of choosing a bin width that’s neither too small nor too big.<br />
+c. Construct a density plot of incarceration rates.<br />
+d. Examine the histogram and density plot. Which visualization do you prefer? Why? What are the pros and cons of each?</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-78" class="exercise"><strong>Exercise 5.10  (Summary statistics)  </strong></span>These plots allow us to eyeball age trends and variability. Let’s numerically summarize some of these features.<br />
+a. Calculate the mean and median incarceration rate across all countries. What are the units?<br />
+b. Calculate the variance and standard deviation of incarceration rates among all countries. What are the units?<br />
+c. Use <code>quantile()</code> to calculate the exact range of the middle 95% of ages.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-79" class="exercise"><strong>Exercise 5.11  (Modifications)  </strong></span>No class will teach you everything you need to know. Thus, being able to find help online is an important skill. To this end, learn how to make the following modifications to your histogram from above.<br />
+a. Add a title.<br />
+b. To better distinguish between the bars, use <code>color</code> to outline each bar in <code>&quot;white&quot;</code>.<br />
+c. Change the <code>fill</code> color of the bars from black (the default) to <code>&quot;red&quot;</code>.<br />
+d. Add two vertical lines, one representing the mean and the other representing the median incarceration rate. Use two different colors.<br />
+e. Change the limits of the x-axis to range from 0-1000.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-80" class="exercise"><strong>Exercise 5.12  (Knit document)  </strong></span>Knit your R Markdown document. It should yield an html file with all of your completed work.</p>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-81" class="exercise"><strong>Exercise 5.13  (Complete survey)  </strong></span>I’d like to learn a bit more about you before the start of our time together. Please complete <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjPLAmCor7z2mHgdEXBfToE3kL95uKaB2F3bbNj0lvR7vx8Q/viewform?usp=sf_link">this short survey</a> by June 26th.</p>
+</div>
+
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="homework.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework-1-visualizing-modeling-variability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
