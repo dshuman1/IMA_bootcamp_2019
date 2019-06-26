@@ -443,23 +443,29 @@ all_data &lt;- read.csv(&quot;https://www.macalester.edu/~ajohns24/Data/election
 <p><br> <br></p>
 <blockquote>
 <p><strong>THINK</strong></p>
-<p>Before visualizing the relationships among these variables, we need to understand what features these should have. How might we visualize the relationships among the following sets of variables:</p>
-<ul>
-<li><p><code>perrep_2016</code> vs <code>perrep_2012</code></p></li>
-<li><p><code>perrep_2016</code> vs <code>StateColor</code></p></li>
-<li><p><code>perrep_2016</code> vs <code>perrep_2012</code> <em>and</em> <code>StateColor</code> (in 1 plot)</p></li>
-<li><p><code>perrep_2016</code> vs <code>perrep_2012</code> <em>and</em> <code>median_rent</code> (in 1 plot)</p></li>
-<li><p><code>perrep_2016</code> vs <code>StateColor</code> <em>and</em> <code>winrep_2016</code> (in 1 plot)</p></li>
-</ul>
+<p>Before visualizing the relationships among these variables, we need to understand what features these should have.</p>
 </blockquote>
-<p><br> <br> <br> <br></p>
+<p><br> <br></p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Sketches</strong>: How might we visualize the relationships among the following sets of variables? For each one, draw a sketch of a graphic on paper.</li>
+</ol>
+<ul>
+<li><code>perrep_2016</code> vs <code>perrep_2012</code><br />
+</li>
+<li><code>perrep_2016</code> vs <code>StateColor</code><br />
+</li>
+<li><code>perrep_2016</code> vs <code>percent_white</code> <em>and</em> <code>StateColor</code> (in 1 plot)<br />
+</li>
+<li><code>perrep_2016</code> vs <code>percent_white</code> <em>and</em> <code>median_rent</code> (in 1 plot)</li>
+</ul>
+<p><br> <br></p>
 <p><br />
 <br />
 </p>
 <p>Run through the following exercises which introduce different approaches to visualizing <em>relationships</em>. In doing so, don’t just construct a plot, examine what it tells us about relationship <em>trends</em> &amp; <em>strength</em> (degree of variability from the trend) as well as <em>outliers</em> or deviations from the trend. For each plot, think: <em>what’s the take-home message</em>?</p>
 <p><br> <br></p>
-<ol start="5" style="list-style-type: decimal">
-<li><p><strong>Scatterplots of 2 quantitative variables</strong><br />
+<ol start="6" style="list-style-type: decimal">
+<li><p><strong>Scatterplots of 2 quantitative variables</strong>: <code>perrep_2016</code> vs <code>perrep_2012</code><br />
 Each quantitative variable has an axis. Each case is represented by a dot.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Start with a blank canvas</span>
 <span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> perrep_<span class="dv">2012</span>))
@@ -481,8 +487,8 @@ Each quantitative variable has an axis. Each case is represented by a dot.</p>
 <span class="st">    </span><span class="kw">geom_point</span>()</code></pre></div></li>
 </ol>
 <p><br> <br></p>
-<ol start="6" style="list-style-type: decimal">
-<li><p><strong>Side-by-side plots of 1 quantitative variable vs 1 categorical variable</strong></p>
+<ol start="7" style="list-style-type: decimal">
+<li><p><strong>Side-by-side plots of 1 quantitative variable vs 1 categorical variable</strong>: <code>perrep_2016</code> vs <code>StateColor</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Density plots by group</span>
 <span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_density</span>()
@@ -515,8 +521,8 @@ Each quantitative variable has an axis. Each case is represented by a dot.</p>
 <span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>))</code></pre></div></li>
 </ol>
 <p><br> <br></p>
-<ol start="7" style="list-style-type: decimal">
-<li><p><strong>Scatterplots of 1 quantitative variable vs 1 categorical &amp; 1 quantitative variable</strong><br />
+<ol start="8" style="list-style-type: decimal">
+<li><p><strong>Scatterplots of 1 quantitative variable vs 1 categorical &amp; 1 quantitative variable</strong>: <code>perrep_2016</code> vs <code>percent_white</code> <em>and</em> <code>StateColor</code><br />
 If <code>percent_white</code> and <code>StateColor</code> both explain some of the variability in <code>perrep_2016</code>, why not include both in our analysis?! Let’s.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Scatterplot colored by group</span>
 <span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> percent_white, <span class="dt">color =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
@@ -530,8 +536,8 @@ If <code>percent_white</code> and <code>StateColor</code> both explain some of t
 <span class="st">    </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>StateColor)</code></pre></div></li>
 </ol>
 <p><br> <br></p>
-<ol start="8" style="list-style-type: decimal">
-<li><p><strong>Plots of 3 quantitative variables</strong></p>
+<ol start="9" style="list-style-type: decimal">
+<li><p><strong>Plots of 3 quantitative variables</strong>: <code>perrep_2016</code> vs <code>percent_white</code> <em>and</em> <code>median_rent</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Scatterplot: use color to represent 3rd variable</span>
 <span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">x =</span> percent_white, <span class="dt">color =</span> median_rent)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="fl">0.5</span>)
@@ -541,7 +547,7 @@ If <code>percent_white</code> and <code>StateColor</code> both explain some of t
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div></li>
 </ol>
 <p><br> <br></p>
-<ol start="9" style="list-style-type: decimal">
+<ol start="10" style="list-style-type: decimal">
 <li><p><strong>Extra: Maps!</strong></p>
 <p>There is, of course, a geographical component to these data. Though we won’t cover spatial models in bootcamp, the visuals still help us tell a story. If the required <code>choroplethrMaps</code> package isn’t working for you, work with a neighbor (don’t spend too much time with this picky package).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load choroplethrMaps</span>
@@ -573,7 +579,7 @@ all_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_data, 
 <div id="linear-regression-models" class="section level3">
 <h3><span class="header-section-number">4.1.5</span> Linear Regression Models</h3>
 <p>Just as when exploring single variables, there are limitations in relying solely on visualizations to analyze relationships among 2+ variables. <em>Statistical models</em> provide rigorous numerical summaries of relationship trends. Before going into details, examine the plots below and draw a model that captures the trend of the relationships being illustrated.</p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-30-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-31-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br> <br> <br></p>
 <p><strong>Linear regression</strong> can be used to model each of these relationships. “Linear” here indicates that the linear regression model of a response variable is a <em>linear combination</em> of explanatory variables. It does <em>not</em> mean that the relationship itself is linear!! In general, let <span class="math inline">\(y\)</span> be our response variable and (<span class="math inline">\(x_1, x_2, ..., x_k\)</span>) be <span class="math inline">\(k\)</span> explanatory variables. Then the (population) linear regression model of <span class="math inline">\(y\)</span> vs the <span class="math inline">\(x_i\)</span> is</p>
 <p><span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k\]</span></p>
@@ -592,7 +598,7 @@ average <span class="math inline">\(y\)</span> value when <span class="math inli
 <p>Today we’ll focus on visualizing, constructing, and interpreting models. We’ll talk more tomorrow about model quality &amp; deviations from the model trend. <span style="color:red"><strong>IMPORTANT:</strong> Be sure to interpret the coefficients in a <em>contextually meaningful way</em> that tells the audience about the relationships of interest (as opposed to simply providing a definition). </span></p>
 <p><br />
 </p>
-<ol start="10" style="list-style-type: decimal">
+<ol start="11" style="list-style-type: decimal">
 <li><strong>Models with 1 quantitative predictor:</strong> <code>perrep_2016</code> vs <code>median_age</code>
 <ol style="list-style-type: lower-alpha">
 <li><p>Visualize the relationship, add a regression line, &amp; construct the regression model:</p>
@@ -605,49 +611,64 @@ model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span cla
 <li><p>Write out the estimated model formula:<br />
 <code>perrep_2016 = ___ + ___ median_age</code></p></li>
 <li><p>Interpret all model coefficients.</p></li>
+<li><p>What is the model’s estimate of the percentage that voted Republican in 2016 for a county with a median age of 40? a median age of 22?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Method 1</span>
+new_ages&lt;-<span class="kw">c</span>(<span class="dv">22</span>,<span class="dv">40</span>)
+model1<span class="op">$</span>coefficients[<span class="dv">1</span>]<span class="op">+</span>model1<span class="op">$</span>coefficients[<span class="dv">2</span>]<span class="op">*</span>new_ages
+
+<span class="co"># Method 2</span>
+new_vals=<span class="kw">data.frame</span>(<span class="dt">median_age=</span>new_ages)
+<span class="kw">predict</span>(model1,new_vals)
+
+<span class="co"># Method 3</span>
+<span class="kw">library</span>(mosaic)
+f&lt;-<span class="kw">makeFun</span>(model1)
+<span class="kw">f</span>(new_ages)</code></pre></div></li>
 </ol></li>
 </ol>
 <p><br></p>
-<ol start="11" style="list-style-type: decimal">
+<ol start="12" style="list-style-type: decimal">
 <li><strong>Models with 1 categorical predictor:</strong> <code>perrep_2016</code> vs <code>StateColor</code>
 <ol style="list-style-type: lower-alpha">
 <li><p>Visualize the relationship.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> perrep_<span class="dv">2016</span>, <span class="dt">fill =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)</code></pre></div></li>
-<li><p>It doesn’t make sense to capture the trend of this relationship by fitting a line to the data. Rather, the trend can be captured by the mean Trump support in each group (ie. the location of the densities). This requires new syntax:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Group by StateColor &amp; summarize the means</span>
-all_data <span class="op">%&gt;%</span><span class="st">  </span>
-<span class="st">    </span><span class="kw">group_by</span>(StateColor) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">summarize</span>(<span class="dt">means =</span> <span class="kw">mean</span>(perrep_<span class="dv">2016</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))      </code></pre></div></li>
+<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)<span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>))</code></pre></div></li>
 </ol>
+<!-- It doesn't make sense to capture the trend of this relationship by fitting a line to the data.  Rather, the trend can be captured by the mean Trump support in each group (ie. the location of the densities).  This requires new syntax:
+
+    ```r
+    # Group by StateColor & summarize the means
+    all_data %>%  
+        group_by(StateColor) %>% 
+        summarize(means = mean(perrep_2016, na.rm = TRUE))      
+    ```
+-->
 <!-- and detaching some `choroplethr` related libraries which overwrite `dplyr` (grrr).   -->
 <!--     #detach/unload libraries (a bug) -->
 <!--     detach(package:choroplethr) -->
 <!--     detach(package:acs) -->
 <!--     detach(package:plyr) -->
-<ol start="3" style="list-style-type: lower-alpha">
+<ol start="2" style="list-style-type: lower-alpha">
 <li><p>Construct the regression model and write out the estimated model formula:<br />
 <code>perrep_2016 = ___ + ___ StateColorpurple + ___ StateColorred</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>StateColor, <span class="dt">data =</span> all_data)
 <span class="kw">summary</span>(model2)</code></pre></div></li>
-<li>Huh?! RStudio splits categorical predictors up into a reference group (the first alphabetically) and indicators for the other groups. Here, <code>blue</code> states are the reference group and <span class="math display">\[\text{StateColorpurple} = \begin{cases} 1 &amp; \text{ if purple} \\ 0 &amp; \text{ otherwise} \\ \end{cases} \;\;\;\; \text{ and } \;\;\;\; \text{StateColorred} = \begin{cases} 1 &amp; \text{ if red} \\ 0 &amp; \text{ otherwise} \\ \end{cases}\]</span> In other words, the <code>StateColor</code> variable is turned into 3 “dummy variables”: <span class="math display">\[\left(\begin{array}{c} \text{red} \\ \text{purple} \\ \text{purple} \\ \text{blue} \\ \text{red} \end{array}\right) \;\;\; \to \;\;\; \text{StateColorblue} =  \left(\begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \\ 0 \end{array}\right), \;\; \text{StateColorpurple} =  \left(\begin{array}{c} 0 \\ 1 \\ 1 \\ 0 \\ 0 \end{array}\right), \;\; \text{StateColorred} =  \left(\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 1 \end{array}\right)\]</span> Since these sum to 1, we only need to put 2 into our model and leave the other out as a reference level. With these ideas in mind, interpret all coefficients in your model. HINTS:
-<ul>
-<li>plug in 0’s and 1’s to obtain 3 separate models for the blue, purple, and red states</li>
-<li>revisit the calculation of the group means</li>
-</ul></li>
+<li><p>Huh?! RStudio splits categorical predictors up into a reference group (the first alphabetically) and indicators for the other groups. Here, <code>blue</code> states are the reference group and <span class="math display">\[\text{StateColorpurple} = \begin{cases} 1 &amp; \text{ if purple} \\ 0 &amp; \text{ otherwise} \\ \end{cases} \;\;\;\; \text{ and } \;\;\;\; \text{StateColorred} = \begin{cases} 1 &amp; \text{ if red} \\ 0 &amp; \text{ otherwise} \\ \end{cases}\]</span> In other words, the <code>StateColor</code> variable is turned into 3 “dummy variables”: <span class="math display">\[\left(\begin{array}{c} \text{red} \\ \text{purple} \\ \text{purple} \\ \text{blue} \\ \text{red} \end{array}\right) \;\;\; \to \;\;\; \text{StateColorblue} =  \left(\begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \\ 0 \end{array}\right), \;\; \text{StateColorpurple} =  \left(\begin{array}{c} 0 \\ 1 \\ 1 \\ 0 \\ 0 \end{array}\right), \;\; \text{StateColorred} =  \left(\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \\ 1 \end{array}\right)\]</span> Since these sum to 1, we only need to put 2 into our model and leave the other out as a reference level. With these ideas in mind, interpret all coefficients in your model. With these ideas in mind, we can interpret all coefficients in our model. Specifically, we can plug in 0’s and 1’s to obtain 3 separate model values for the blue, purple, and red states. For example, for purple states, we have that the predicted value is <code>Intercept + 1*StateColorpurple + 0*StateColorred = 55.665309 + 6.476411 = 62.14172,</code> which not surprisingly is equal to the mean percentage Republican in all counties in purple states.</p></li>
 </ol></li>
 </ol>
 <p><br></p>
-<ol start="12" style="list-style-type: decimal">
+<ol start="13" style="list-style-type: decimal">
 <li><strong>Models with 1 quantitative predictor &amp; 1 categorical predictor:</strong> <code>perrep_2016</code> vs <code>median_age</code> and <code>StateColor</code>
 <ol style="list-style-type: lower-alpha">
-<li><p>Visualize the relationship, add a regression line, &amp; construct the regression model. NOTE: Unfortunately, as you’ll see in homework, the <code>geom_smooth</code> lines here don’t directly correspond to the model.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> median_age, <span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">color =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)
+<li><p>Construct the regression model, visualize the relationship, and add regression lines for each state color. NOTE: Unfortunately, as you’ll see in homework, the <code>geom_smooth</code> lines don’t directly correspond to the model, so we need to add lines manually.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_age <span class="op">+</span><span class="st"> </span>StateColor, <span class="dt">data =</span> all_data)
+<span class="kw">summary</span>(model3)
 
-model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_age <span class="op">+</span><span class="st"> </span>StateColor, <span class="dt">data =</span> all_data)
-<span class="kw">summary</span>(model3)</code></pre></div></li>
+<span class="kw">ggplot</span>(all_data, <span class="kw">aes</span>(<span class="dt">x =</span> median_age, <span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">color =</span> StateColor)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.25</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>model3<span class="op">$</span>fitted.values))<span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="dt">values=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;red&quot;</span>))</code></pre></div></li>
 <li><p>Write out the estimated model formula:<br />
 <code>perrep_2016 = ___ + ___ median_age + ___ StateColorpurple + ___ StateColorred</code></p></li>
 <li><p>Again, the presence of a categorical variable results in the separation of the model formula by group. To this end, plug in 0’s and 1’s to obtain <em>3 separate model formulas</em> for the blue, purple, and red states:</p>
@@ -661,7 +682,7 @@ model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span cla
 <p>The <code>median_age</code> coefficient in <code>model3</code> differs from that in <code>model1</code> and the <code>StateColor</code> coefficients in <code>model3</code> differ from those in <code>model2</code>. This is because a predictor’s coefficients are defined / interpreted differently depending on what other predictors are in the model.</p>
 </blockquote>
 <p><br></p>
-<ol start="13" style="list-style-type: decimal">
+<ol start="14" style="list-style-type: decimal">
 <li><strong>Models with 2 quantitative predictors:</strong> <code>perrep_2016</code> vs <code>median_age</code> and <code>median_rent</code>
 <ol style="list-style-type: lower-alpha">
 <li><p>Visualize the relationships and construct the regression model:</p>
@@ -673,11 +694,11 @@ model4 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span cla
 <li><p>Write out the estimated model formula:<br />
 <code>perrep_2016 = ___ + ___ median_age + ___ median_rent</code></p></li>
 <li><p>Is this the formula for a line? Multiple lines? A plane?</p></li>
-<li><p>Interpret all coefficients in your model.</p></li>
+<li><p>Interpret the coefficient on <code>median_age</code>.</p></li>
 </ol></li>
 </ol>
 <p><br></p>
-<ol start="14" style="list-style-type: decimal">
+<ol start="15" style="list-style-type: decimal">
 <li><p><strong>Models with 2 categorical predictors:</strong> <code>perrep_2016</code> vs <code>StateColor</code> and <code>income_bracket</code><br />
 For illustration’s sake, let’s split county <code>per_capita_income</code> (in $) into 2 income brackets: above or below $25,000:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Define income brackets</span>
@@ -692,12 +713,7 @@ all_data &lt;-<span class="st"> </span>all_data <span class="op">%&gt;%</span><s
 model5 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>StateColor <span class="op">+</span><span class="st"> </span>income_bracket, <span class="dt">data =</span> all_data)
 <span class="kw">summary</span>(model5)</code></pre></div></li>
 <li><p>Write out the estimated model formula.</p></li>
-<li>Interpret all coefficients in your model. HINTS:
-<ul>
-<li>plug in 0’s and 1’s for both the <code>StateColor</code> and <code>income_bracket</code> variables<br />
-</li>
-<li>how many possible combinations are there of these 2 variables?</li>
-</ul></li>
+<li><p>How many possible combinations are there of these two explanatory variables? What are the predicted values for all combinations?</p></li>
 </ol></li>
 </ol>
 <p><br> <br> <br> <br></p>
