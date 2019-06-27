@@ -149,6 +149,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
 <li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
 </ul></li>
+<li class="chapter" data-level="5.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html"><i class="fa fa-check"></i><b>5.4</b> Homework 2b: Model Building &amp; Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#warm-up"><i class="fa fa-check"></i><b>5.4.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.4.2" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#model-building-subset-selection"><i class="fa fa-check"></i><b>5.4.2</b> Model Building: Subset selection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>5.4.3</b> Bias-variance trade-off</a></li>
+<li class="chapter" data-level="5.4.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#extra"><i class="fa fa-check"></i><b>5.4.4</b> Extra</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -243,7 +249,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </blockquote>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-126" class="exercise"><strong>Exercise 5.1  (Warm Up)  </strong></span>Use RStudio as a simple calculator to do the following:<br />
+<p><span id="exr:unnamed-chunk-127" class="exercise"><strong>Exercise 5.1  (Warm Up)  </strong></span>Use RStudio as a simple calculator to do the following:<br />
 a. Perform a simple calculation: calculate <code>90/3</code>.<br />
 b. RStudio has built-in <em>functions</em> to which we supply the necessary <em>arguments</em>: <code>function(arguments)</code>. Use the built-in function <code>sqrt</code> to calculate the square root of 25.<br />
 c. Use the built-in function <code>rep</code> to repeat the number “5” eight times.<br />
@@ -396,7 +402,7 @@ HipHop<span class="op">$</span>album_release_date</code></pre></div>
 <span class="st">    </span><span class="kw">geom_bar</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Mentioned candidate&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Number of songs&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-137-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-138-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br> <br></p>
 </div>
 <div id="quantitative-variables" class="section level5">
@@ -441,7 +447,7 @@ HipHop<span class="op">$</span>album_release_date</code></pre></div>
 <span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="dv">5</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Release date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Number of songs&quot;</span>)</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-141-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-142-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br></p>
 </div>
 </div>
@@ -466,7 +472,7 @@ HipHop<span class="op">$</span>album_release_date</code></pre></div>
 <span class="kw">ggplot</span>(justHC, <span class="kw">aes</span>(<span class="dt">x =</span> album_release_date)) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">fill=</span><span class="st">&quot;maroon&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">75</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Album release date&quot;</span>)</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-143-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-144-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br></p>
 <p>After completing the above exercises, you should recognize some <code>ggplot()</code> patterns!</p>
 <blockquote>
@@ -536,7 +542,7 @@ Note that the variance has (original units)<sup>2</sup></p></li>
 </ol>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-145" class="exercise"><strong>Exercise 5.3  (Deduce the R Markdown Format)  </strong></span>Look at this <a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.Rmd">Sample RMarkdown</a> in RStudio, and the <a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html">HTML webpage</a> it creates.</p>
+<p><span id="exr:unnamed-chunk-146" class="exercise"><strong>Exercise 5.3  (Deduce the R Markdown Format)  </strong></span>Look at this <a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.Rmd">Sample RMarkdown</a> in RStudio, and the <a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html">HTML webpage</a> it creates.</p>
 <ol style="list-style-type: lower-alpha">
 <li>How are bullets, italics, and section headers represented in the R Markdown file?</li>
 <li>How does R code appear in the R Markdown file?</li>
@@ -550,7 +556,7 @@ Note that the variance has (original units)<sup>2</sup></p></li>
 <p>Work through each exercise below.</p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-146" class="exercise"><strong>Exercise 5.4  (Install packages)  </strong></span>We’ll use several packages throughout the bootcamp. So that we can maximize our time together in class, it’s important that you install these packages before we meet. To this end, copy and paste the following into your RStudio <strong>CONSOLE</strong> (<em>not</em> an RMarkdown doc). It will take a while to run - better now than later!</p>
+<p><span id="exr:unnamed-chunk-147" class="exercise"><strong>Exercise 5.4  (Install packages)  </strong></span>We’ll use several packages throughout the bootcamp. So that we can maximize our time together in class, it’s important that you install these packages before we meet. To this end, copy and paste the following into your RStudio <strong>CONSOLE</strong> (<em>not</em> an RMarkdown doc). It will take a while to run - better now than later!</p>
 </div>
 
 <pre><code>```
@@ -576,12 +582,12 @@ install.packages(&quot;choroplethrMaps&quot;, dependencies = TRUE)
 ```</code></pre>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-147" class="exercise"><strong>Exercise 5.5  (Start a new R Markdown document)  </strong></span>Open a new R Markdown document in which you’ll record your work (both code &amp; text). Give this document an appropriate title and author name (you!). Knit your document to an html to make sure that process works before you try anything else.</p>
+<p><span id="exr:unnamed-chunk-148" class="exercise"><strong>Exercise 5.5  (Start a new R Markdown document)  </strong></span>Open a new R Markdown document in which you’ll record your work (both code &amp; text). Give this document an appropriate title and author name (you!). Knit your document to an html to make sure that process works before you try anything else.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-148" class="exercise"><strong>Exercise 5.6  (Require packages within your R Markdown file)  </strong></span>Even though you have installed packages on your computer, you need to tell RStudio which packages you want to actively use in each R Markdown file. In the code chunk that starts with <code>r setup</code> at the top of this document, add the following three lines to load the packages that you’ll need to complete the exercises:</p>
+<p><span id="exr:unnamed-chunk-149" class="exercise"><strong>Exercise 5.6  (Require packages within your R Markdown file)  </strong></span>Even though you have installed packages on your computer, you need to tell RStudio which packages you want to actively use in each R Markdown file. In the code chunk that starts with <code>r setup</code> at the top of this document, add the following three lines to load the packages that you’ll need to complete the exercises:</p>
 </div>
 
 <pre><code>```
@@ -592,7 +598,7 @@ library(dplyr)
 <p>You can also delete everything below that first code chunk. Knit again. Hot tip: Knit often. This will make it easier to debug your code / identify errors.</p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-149" class="exercise"><strong>Exercise 5.7  (Load and explore data)  </strong></span>The “World Prison Brief” conducted by the <em>International Centre for Prison Studies</em> provides insight into how incarceration rates vary from country to country. Statistics from the 2010 brief (courtesy chartsbin.com) are stored at <a href="http://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv" class="uri">http://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv</a> where incarceration rates are reported as the number of present incarcerations per 100,000 persons. You will need to use this data for the remaining exercises. Since it’s stored as a <em>csv file</em> on the <em>internet</em>, you can import the data into RStudio and store it under the name <code>Prison</code> with the following:</p>
+<p><span id="exr:unnamed-chunk-150" class="exercise"><strong>Exercise 5.7  (Load and explore data)  </strong></span>The “World Prison Brief” conducted by the <em>International Centre for Prison Studies</em> provides insight into how incarceration rates vary from country to country. Statistics from the 2010 brief (courtesy chartsbin.com) are stored at <a href="http://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv" class="uri">http://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv</a> where incarceration rates are reported as the number of present incarcerations per 100,000 persons. You will need to use this data for the remaining exercises. Since it’s stored as a <em>csv file</em> on the <em>internet</em>, you can import the data into RStudio and store it under the name <code>Prison</code> with the following:</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Prison &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/WorldIncarceration.csv&quot;</span>)</code></pre></div>
@@ -610,14 +616,14 @@ library(dplyr)
 </ol>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-151" class="exercise"><strong>Exercise 5.8  (Explore a categorical variable)  </strong></span><br />
+<p><span id="exr:unnamed-chunk-152" class="exercise"><strong>Exercise 5.8  (Explore a categorical variable)  </strong></span><br />
 a. Construct a table of the number of cases that fall into each continent.<br />
 b. Construct a single visualization of the table above. For practice, change the axis labels.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-152" class="exercise"><strong>Exercise 5.9  (Explore a quantitative variable)  </strong></span><br />
+<p><span id="exr:unnamed-chunk-153" class="exercise"><strong>Exercise 5.9  (Explore a quantitative variable)  </strong></span><br />
 a. Construct a histogram of all incarceration rates.<br />
 i. change the bin width to 0.5 per 100,000<br />
 ii. change the bin width to 500 per 100,000<br />
@@ -628,7 +634,7 @@ d. Examine the histogram and density plot. Which visualization do you prefer? Wh
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-153" class="exercise"><strong>Exercise 5.10  (Summary statistics)  </strong></span>These plots allow us to eyeball age trends and variability. Let’s numerically summarize some of these features.<br />
+<p><span id="exr:unnamed-chunk-154" class="exercise"><strong>Exercise 5.10  (Summary statistics)  </strong></span>These plots allow us to eyeball age trends and variability. Let’s numerically summarize some of these features.<br />
 a. Calculate the mean and median incarceration rate across all countries. What are the units?<br />
 b. Calculate the variance and standard deviation of incarceration rates among all countries. What are the units?<br />
 c. Use <code>quantile()</code> to calculate the exact range of the middle 95% of ages.</p>
@@ -636,7 +642,7 @@ c. Use <code>quantile()</code> to calculate the exact range of the middle 95% of
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-154" class="exercise"><strong>Exercise 5.11  (Modifications)  </strong></span>No class will teach you everything you need to know. Thus, being able to find help online is an important skill. To this end, learn how to make the following modifications to your histogram from above.<br />
+<p><span id="exr:unnamed-chunk-155" class="exercise"><strong>Exercise 5.11  (Modifications)  </strong></span>No class will teach you everything you need to know. Thus, being able to find help online is an important skill. To this end, learn how to make the following modifications to your histogram from above.<br />
 a. Add a title.<br />
 b. To better distinguish between the bars, use <code>color</code> to outline each bar in <code>&quot;white&quot;</code>.<br />
 c. Change the <code>fill</code> color of the bars from black (the default) to <code>&quot;red&quot;</code>.<br />
@@ -646,12 +652,12 @@ e. Change the limits of the x-axis to range from 0-1000.</p>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-155" class="exercise"><strong>Exercise 5.12  (Knit document)  </strong></span>Knit your R Markdown document. It should yield an html file with all of your completed work.</p>
+<p><span id="exr:unnamed-chunk-156" class="exercise"><strong>Exercise 5.12  (Knit document)  </strong></span>Knit your R Markdown document. It should yield an html file with all of your completed work.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-156" class="exercise"><strong>Exercise 5.13  (Complete survey)  </strong></span>I’d like to learn a bit more about you before the start of our time together. Please complete <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjPLAmCor7z2mHgdEXBfToE3kL95uKaB2F3bbNj0lvR7vx8Q/viewform?usp=sf_link">this short survey</a> by June 26th.</p>
+<p><span id="exr:unnamed-chunk-157" class="exercise"><strong>Exercise 5.13  (Complete survey)  </strong></span>I’d like to learn a bit more about you before the start of our time together. Please complete <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjPLAmCor7z2mHgdEXBfToE3kL95uKaB2F3bbNj0lvR7vx8Q/viewform?usp=sf_link">this short survey</a> by June 26th.</p>
 </div>
 
 <p><br />

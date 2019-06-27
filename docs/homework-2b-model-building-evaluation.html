@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="homework-2a-data-wrangling.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#seasonality"><i class="fa fa-check"></i><b>5.3.1</b> Seasonality</a></li>
+<li class="chapter" data-level="5.3.2" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#day-of-the-week"><i class="fa fa-check"></i><b>5.3.2</b> Day of the Week</a></li>
+<li class="chapter" data-level="5.3.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#holidays"><i class="fa fa-check"></i><b>5.3.3</b> Holidays</a></li>
+<li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
+<li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html"><i class="fa fa-check"></i><b>5.4</b> Homework 2b: Model Building &amp; Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#warm-up"><i class="fa fa-check"></i><b>5.4.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.4.2" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#model-building-subset-selection"><i class="fa fa-check"></i><b>5.4.2</b> Model Building: Subset selection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>5.4.3</b> Bias-variance trade-off</a></li>
+<li class="chapter" data-level="5.4.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#extra"><i class="fa fa-check"></i><b>5.4.4</b> Extra</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="homework-2b-model-building-evaluation" class="section level2">
+<h2><span class="header-section-number">5.4</span> Homework 2b: Model Building &amp; Evaluation</h2>
+<p><br> <br></p>
+<p><strong>Directions:</strong></p>
+<ul>
+<li><strong>Install</strong> the <code>leaps</code>, <code>reshape2</code>, &amp; <code>broom</code> packages in your <strong>console</strong>:
+<ul>
+<li><code>install.packages(&quot;leaps&quot;, dependencies = TRUE)</code><br />
+</li>
+<li><code>install.packages(&quot;reshape2&quot;, dependencies = TRUE)</code><br />
+</li>
+<li><code>install.packages(&quot;broom&quot;, dependencies = TRUE)</code></li>
+</ul></li>
+<li><p>Start a new RMarkdown document.</p></li>
+<li><p>Load the following packages at the top of your Rmd: <code>dplyr</code>, <code>ggplot2</code>, <code>fivethirtyeight</code>, <code>leaps</code>, <code>reshape2</code>, <code>boot</code>, <code>broom</code></p></li>
+<li><p>Unlike the foundational &amp; generalizable <code>ggplot</code> and <code>dplyr</code> syntax, much of the syntax in this homework is very specialized / context specific. Just keep your eyes on the big ideas - if you get the big ideas it’s easy enough to do a search for the appropriate code.</p></li>
+<li><p>When interpreting visualizations, models, etc, be sure to do so in a contextually meaningful way.</p></li>
+<li><p>This homework is a resource for <em>you</em>. Record all work that is useful for your current learning &amp; future reference. Further, try your best, but don’t stay up all night trying to finish all of the exercises! We’ll discuss any questions / material you didn’t get to tomorrow.</p></li>
+</ul>
+<p><br> <br></p>
+<p><strong>Goals:</strong></p>
+<p>In this homework you will:</p>
+<ul>
+<li><p>apply residual analysis, <span class="math inline">\(R^2\)</span>, and cross validation techniques; and</p></li>
+<li>explore new concepts in the iterative process of model building &amp; model evaluation:
+<ul>
+<li><em>multicollinearity</em>;<br />
+</li>
+<li><em>subset selection</em>;<br />
+</li>
+<li><em>overfitting</em>; and<br />
+</li>
+<li><em>bias-variance trade-off</em>.</li>
+</ul></li>
+</ul>
+<p><br> <br></p>
+<div id="warm-up" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Warm-up</h3>
+<p>In January 2017, fivethirtyeight.com published <a href="https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/">an article on hate crime rates across the US</a>. Load the data <code>hate_crimes</code> they used in this article via the <code>fivethirtyeight</code> package and examine the codebook:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load data</span>
+<span class="kw">data</span>(hate_crimes)
+
+<span class="co"># Check out the codebook</span>
+?hate_crimes</code></pre></div>
+<p><br> <br></p>
+<p>We’ll start with a little review of data wrangling, visualization, &amp; modeling.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Define some new variables</strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>The pre-election hate crime rates (<code>avg_hatecrimes_per_100k_fbi</code>) are on a scale of 365 days. The post-election hate crime rates (<code>hate_crimes_per_100k_splc</code>) are on a scale of 10 days. Add variables <code>pre_crime</code> and <code>post_crime</code> to the data set that transform these orginal variables to <em>1 day hate crime rates</em>.</p>
+<p>Further, <code>share_vote_trump</code> is currently on a 0-1 scale. Convert this to a percent on a 0-100 scale. Name the new variable <code>trump_vote</code>.</p></li>
+<li><p>Before moving on, confirm that the features of your data match those here:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hate_crimes<span class="op">$</span>pre_crime)
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  0.0007  0.0035  0.0054  0.0065  0.0087  0.0300       1
+<span class="kw">summary</span>(hate_crimes<span class="op">$</span>post_crime)
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   0.007   0.014   0.023   0.030   0.036   0.152       4
+<span class="kw">summary</span>(hate_crimes<span class="op">$</span>trump_vote)
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     4.0    41.5    49.0    49.0    57.5    70.0</code></pre></div></li>
+<li>Using syntax (not simply leafing through the data), identify:
+<ul>
+<li>the states with the lowest &amp; highest pre-election hate crime rates;<br />
+</li>
+<li>the states with the lowest &amp; highest post-election hate crime rate.</li>
+</ul></li>
+<li><p>Skim the fivethirtyeight article. Summarize the drawbacks of the processes with which the pre- and post-election hate crime rates are measured. (These are the best data available, but it’s crucial to understand the limits of our analysis!)</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Outliers</strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>Construct &amp; interpret a visualization of <code>post_crime</code> rates vs <code>trump_vote</code>.</p></li>
+<li><p>You should notice an outlier. Identify the corresponding state using a <code>filter()</code>. What do you think about this outlier? Is it the result of a data entry typo or is there something unique about the outlying state?</p></li>
+<li><p>Remove the state corresponding to this outlier from the <code>hate_crimes</code> data set - if we didn’t, this one state could skew our analysis. Confirm that your dimensions now match those below. NOTE: States with missing change_rate data are also removed.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(hate_crimes)
+## [1] 46 15
+<span class="kw">mean</span>(hate_crimes<span class="op">$</span>post_crime, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+## [1] 0.02776</code></pre></div></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Starting simple</strong><br />
+We can start with a simple research question: how, if at all, are post-election hate crime rates associated with the election results?
+<ol style="list-style-type: lower-alpha">
+<li><p>Construct <em>and</em> visualize a model of <code>post_crime</code> by <code>trump_vote</code>.</p></li>
+<li><p>Of course, states with high <code>post_crime</code> rates might be the same ones with high <code>pre_crime</code> rates, no matter the outcome of the election. With this in mind, incorporate <code>pre_crime</code> as a covariate in your model (without an interaction): <code>post_crime ~ trump_vote + pre_crime</code>.</p></li>
+<li><p>Compare and contrast the <code>trump_vote</code> coefficients from your 2 models. What’s the take-home message?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+</div>
+<div id="model-building-subset-selection" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Model Building: Subset selection</h3>
+<p>In the exercise above, the appropriate model was clear. Our goal was to understand the relationship between <code>post_crime</code> and <code>trump_vote</code> <em>when controlling for</em> <code>pre_crime</code>, thus our model had the form <code>post_crime ~ trump_vote + pre_crime</code>. In other scenarios, the appropriate model is less clear. Consider a new goal: using any or all of the data available to us, develop the “best” model of <code>post_crime</code> rates. To satisfy this goal in general, we have to balance 2 sometimes conflicting criteria:</p>
+<ul>
+<li><p>prediction accuracy<br />
+build a model that’s generalizable to the broader population</p></li>
+<li>simplicity<br />
+build a model that uses the minimum number of “necessary” predictors. This model
+<ul>
+<li>will be easier to interpret;<br />
+</li>
+<li>eliminates unnecessary noise &amp; multicollinearity;</li>
+<li>cuts costs by not requiring the continued measurement of unnecessary predictors.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<p>With these criteria in mind, there are three broad model selection &amp; regularization methods.</p>
+<ul>
+<li><p>Subset selection<br />
+Identify a <em>subset</em> of predictors <span class="math inline">\(x_i\)</span> to include in our model of <span class="math inline">\(y\)</span>.</p></li>
+<li><p>Shrinkage / regularization<br />
+Fit a model with all <span class="math inline">\(x_i\)</span>, but shrink / regularize their coefficients toward or to 0 to create sparse models.</p></li>
+<li><p>Dimension reduction<br />
+Reduce the number of predictors by creating a new set of predictors that are linear combinations of the <span class="math inline">\(x_i\)</span>. (Thus the predictors tend to lose some meaning.)</p></li>
+</ul>
+<p><br />
+<br />
+</p>
+<p><strong>We’ll only discuss the first of these - subset selection!</strong> (You’ll address the third, dimension reduction, in your machine learning module.) In the context of the <code>hate_crimes</code> data, our next goal is to build the “best” model of <code>post_crime</code> using the available predictors. Our algorithms require a new data set, <code>hate_sub</code>, that removes the old redundant predictors (eg: <code>share_vote_trump</code>), the <code>state</code> label (it’s not a predictor), &amp; states with missing data:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hate_sub &lt;-<span class="st"> </span>hate_crimes <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(state, hate_crimes_per_100k_splc, avg_hatecrimes_per_100k_fbi, share_vote_trump))
+hate_sub &lt;-<span class="st"> </span><span class="kw">na.omit</span>(hate_sub)
+
+<span class="co"># Confirm that your datasets have these dimensions!</span>
+<span class="kw">dim</span>(hate_crimes)
+## [1] 46 15
+<span class="kw">dim</span>(hate_sub)
+## [1] 44 11</code></pre></div>
+<p>The following visualization captures the correlation between each of the 10 predictors with <code>post_crime</code> as well as with each other. Our goal will be to whittle the set of predictors down to only the essentials.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(reshape2)
+
+<span class="co"># Correlation matrix</span>
+cor_matrix &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">cor</span>(hate_sub), <span class="dv">2</span>)
+
+<span class="co"># Reshape the matrix</span>
+cor_melt &lt;-<span class="st"> </span><span class="kw">melt</span>(cor_matrix)
+
+<span class="co"># Visualize the correlation matrix</span>
+<span class="kw">ggplot</span>(cor_melt, <span class="kw">aes</span>(<span class="dt">x=</span>Var1, <span class="dt">y=</span>Var2, <span class="dt">fill=</span><span class="kw">abs</span>(value))) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_tile</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-204-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br> <br></p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Forward stepwise selection: by hand</strong><br />
+We’ll discuss two subset selection approaches. The first is forward stepwise selection. To get a feel for this intuitive algorithm, we’ll do the first few steps by hand.
+<ol style="list-style-type: lower-alpha">
+<li><p>There are 10 possible predictors of <code>post_crime</code>. Fit 10 separate models using these predictors. Record the predictor in the model with the highest <span class="math inline">\(R^2\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>median_house_inc, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>share_unemp_seas, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>share_pop_metro, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>share_pop_hs, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>share_non_citizen, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>share_white_poverty, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>gini_index, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>share_non_white, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>pre_crime, hate_sub))<span class="op">$</span>r.squared
+<span class="kw">summary</span>(<span class="kw">lm</span>(post_crime <span class="op">~</span><span class="st"> </span>trump_vote, hate_sub))<span class="op">$</span>r.squared</code></pre></div></li>
+<li><p><em>Keep</em> the predictor you identified in part a in your model. Identify which of the other 9 predictors would produce the greatest increase in <span class="math inline">\(R^2\)</span> if added to this model. This will require you to fit 9 models like this: <code>post_crime ~ part_a_predictor + other_predictor</code>.</p></li>
+<li><p><em>Keep</em> the predictors you identified in parts a &amp; b in your model. Identify which of the other 8 predictors would produce the greatest increase in <span class="math inline">\(R^2\)</span> if added to this model. This will require you to fit 8 models like this: <code>post_crime ~ part_a_predictor + part_b_predictor + other_predictor</code>.</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Forward stepwise selection in RStudio</strong><br />
+Now that you have the hang of it, let’s complete our forward stepwise selection using the <code>regsubsets()</code> function in the <code>leaps</code> package.
+<ol style="list-style-type: lower-alpha">
+<li><p>Execute the following code &amp; examine the output. The last table in <code>forward_summary</code> uses asterisks (<code>*</code>) to indicate the order in which it added variables to the model. Confirm that these match your work from above.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Do forward stepwise selection    </span>
+<span class="co"># nvmax = 10 indicates that we want to eventually use all 10 predictors</span>
+forward_step &lt;-<span class="st"> </span><span class="kw">regsubsets</span>(post_crime <span class="op">~</span><span class="st"> </span>., hate_sub, <span class="dt">method =</span> <span class="st">&quot;forward&quot;</span>, <span class="dt">nvmax =</span> <span class="dv">10</span>)
+
+<span class="co"># Store &amp; print the summary information</span>
+forward_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(forward_step)
+forward_summary</code></pre></div></li>
+<li><p>Forward stepwise selection presents us with 10 models, starting with a model with only 1 predictor and adding variables one by one until all 10 predictors are in the model. <code>forward_summary</code> and <code>forward_step</code> contain information about each of these models:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R^2 values for each model    </span>
+forward_summary<span class="op">$</span>rsq
+
+<span class="co"># R^2 value for the model with 5 predictors   </span>
+forward_summary<span class="op">$</span>rsq[<span class="dv">5</span>]
+
+<span class="co"># Coefficients of the model with 5 predictors)</span>
+<span class="kw">coef</span>(forward_step, <span class="dv">5</span>)</code></pre></div></li>
+<li><p>Construct a visualization of the <span class="math inline">\(R^2\)</span> values for the models of each subset size (1–10):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">forward_rsq &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">subset_size =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>), <span class="dt">rsq =</span> forward_summary<span class="op">$</span>rsq)
+<span class="kw">ggplot</span>(forward_rsq, <span class="kw">aes</span>(<span class="dt">x =</span> subset_size, <span class="dt">y =</span> rsq)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_line</span>()</code></pre></div></li>
+<li><p>This plot confirms what we already know: <span class="math inline">\(R^2\)</span> increases as we add new variables to our model. We can also use it to perform subset selection. Explain why this plot suggests that the 6-predictor model (or even the 3-predictor model) is optimal. Think: How does this compare to the 1-predictor and 10-predictor models?</p></li>
+<li><p>Finally, use <code>coef()</code> to identify which predictors are part of the 6-predictor model.</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Forward selection details</strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>There’s often <strong>multicollinearity</strong> among the predictors in a data set (ie. the predictors are correlated with one another). Why might this explain the plateau-ing in the <span class="math inline">\(R^2\)</span> plot?</p></li>
+<li><p>Note that <code>share_non_white</code> entered the model <em>before</em> <code>share_pop_hs</code> though we’ve seen that, alone, the latter is a better predictor of <code>post_crime</code>. Explain how this happened and why, accordingly, the “best” forward selection model might not include the “best” predictors.</p></li>
+<li><p>Backward selection is another stepwise technique. Can you guess how this differs from forward selection?</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Best subset selection</strong><br />
+Best subset selection provides an alternative to forward stepwise selection. As the name suggests, best subset selection takes the following steps. Suppose there are <span class="math inline">\(p\)</span> possible predictors:
+<ul>
+<li>Build all possible models that use any combination of predictors <span class="math inline">\(x_i\)</span>.<br />
+</li>
+<li>With respect to some chosen criterion (eg: <span class="math inline">\(R^2\)</span>, CV error, etc):
+<ul>
+<li>Find the “best” model with 1 predictor.<br />
+</li>
+<li>Find the “best” model with 2 predictors.<br />
+…<br />
+</li>
+<li>Find the “best” model with <span class="math inline">\(p\)</span> predictors.</li>
+</ul></li>
+<li>Choose among the best of the best models.</li>
+</ul>
+<p><br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Prove that there are 1,024 possible models we could construct using different combinations of the predictors in <code>hate_sub</code> (not including interaction or transformation terms).</p></li>
+<li><p>We can again use <code>regsubsets()</code> to perform best subset selection:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Perform best subsets</span>
+best_subsets &lt;-<span class="st"> </span><span class="kw">regsubsets</span>(post_crime <span class="op">~</span><span class="st"> </span>., hate_sub, <span class="dt">nvmax =</span> <span class="dv">10</span>)
+
+<span class="co"># Store the summary information</span>
+best_summary &lt;-<span class="st"> </span><span class="kw">summary</span>(best_subsets)
+best_summary    </code></pre></div></li>
+<li><p>Construct a visualization of the <span class="math inline">\(R^2\)</span> values for the models of each subset size (1–10).</p></li>
+<li><p>With this info in hand, identify which subset size you think is ‘optimal’ and which variables are part of this optimal subset. <em>Does this set of variables match those suggested by the forward stepwise selection?</em> (It might, it might not!)</p></li>
+<li><p>What are the trade-offs between the forward selection and best subsets algorithms?</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="8" style="list-style-type: decimal">
+<li><strong>Final model evaluation</strong><br />
+After identifying your “optimal” set of predictors…
+<ol style="list-style-type: lower-alpha">
+<li>Fit this model in R (using the <code>hate_crimes</code> not <code>hate_sub</code> data). Examine the coefficients - what’s the take-home message?<br />
+</li>
+<li>Report &amp; interpret the <span class="math inline">\(R^2\)</span> value for this model.<br />
+</li>
+<li>Calculate &amp; interpret the 10-fold CV error for this model.<br />
+</li>
+<li>Construct and comment on two plots that help you assess whether your model meets the assumption that <span class="math inline">\(\varepsilon \sim N(0, \sigma^2)\)</span>.</li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="bias-variance-trade-off" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Bias-variance trade-off</h3>
+<p>In today’s discussion &amp; homework, we’ve seen that there’s a goldilocks problem in model building: if we use too few predictors, we lose some explanatory power; if we use too many, we risk <em>overfitting</em> the model to our own sample data. This conundrum is related to the <strong>bias-variance trade-off</strong>.</p>
+<p>Suppose the <em>population model</em> of <span class="math inline">\(y\)</span> is a quadratic function of <span class="math inline">\(x\)</span>:</p>
+<p><span class="math display">\[y = f(x) + \varepsilon = x^2 + \varepsilon \;\;\;\; \text{ where } \varepsilon \sim N(0, 0.3^2)\]</span></p>
+<p>In practice, you would <em>not</em> have this information. Instead, you would take a <em>sample</em> of, say, size <span class="math inline">\(n=100\)</span> from this population and observe:</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-215-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>You consider 3 different models of <span class="math inline">\(y\)</span>. These are plotted below against the <em>true</em> model (<span class="math inline">\(f(x) = x^2\)</span>) for comparison (black line).</p>
+<p><span class="math display">\[\begin{array}{lcrl}
+\text{model 1 (orange): } &amp; &amp; \hat{f}(x)&amp; = \hat{\beta}_0 \\
+\text{model 2 (red): } &amp; &amp; \hat{f}(x)&amp; = \hat{\beta}_0 + \hat{\beta}_1 x  + \hat{\beta}_2 x^2\\
+\text{model 3 (blue): } &amp; &amp; \hat{f}(x)&amp; = \hat{\beta}_0 + \hat{\beta}_1 x  + \hat{\beta}_2 x^2 + \cdots + \hat{\beta}_{10} x^{10}\\    
+\end{array}\]</span></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-217-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Of course, had you gotten a different sample of data, your results would be different. Press play &amp; examine the simulation below:</p>
+<ul>
+<li>Which model appears to <em>vary</em> the most from sample to sample?<br />
+</li>
+<li>Which model appears to be the least <em>biased</em> in its approximation of the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>?</li>
+</ul>
+<center>
+<video width="\textwidth"  controls loop>
+<source src="IMA_book_2019_files/figure-html/unnamed-chunk-219.webm" />
+</video>
+</center>
+<p><br />
+<br />
+</p>
+<p>We can <em>measure</em> the bias-variance trade-off using the <strong>mean squared error</strong>. (Careful: mean squared error differs from mean squared <em>prediction</em> error.) First some notation. For some value <span class="math inline">\(x^*\)</span> of predictor <span class="math inline">\(x\)</span>, let</p>
+<p><span class="math display">\[\begin{split}
+f(x^*) &amp; = \text{ value of the &quot;true&quot; model at } x^* \\
+\hat{f}(x^*) &amp; = \text{ value of the estimated model at } x^* \\
+\end{split}\]</span></p>
+<p>As in the simulation above, the sample model <span class="math inline">\(\hat{f}(x)\)</span> varies from sample to sample. At any <span class="math inline">\(x^*\)</span>, the quality of <span class="math inline">\(\hat{f}(x^*)\)</span> can be measured by the <strong>mean squared error</strong>, the average or <em>expected</em> squared difference between <span class="math inline">\(f(x^*)\)</span> and <span class="math inline">\(\hat{f}(x^*)\)</span>:</p>
+<p><span class="math display">\[\begin{split}
+\text{MSE}\left(\hat{f}(x^*)\right) 
+&amp; = E\left[\left(f(x^*) - \hat{f}(x^*) \right)^2\right] = \text{Var}(\hat{f}(x^*)) + \left[\text{Bias}(\hat{f}(x^*))\right]^2 \\
+\end{split}\]</span></p>
+<p><strong>Properties of MSE</strong></p>
+<ul>
+<li>The smaller the MSE the better the model estimate.<br />
+</li>
+<li>MSE can be partitioned into two key pieces. <strong>Variance</strong> <span class="math inline">\(\text{Var}\left(\hat{f}(x^*)\right)\)</span> measures the variability in <span class="math inline">\(\hat{f}(x^*)\)</span> from sample to sample. <strong>Bias</strong> measures the average or <em>expected</em> difference between <span class="math inline">\(f(x^*)\)</span> and <span class="math inline">\(\hat{f}(x^*)\)</span>: <span class="math display">\[\text{Bias}\left(\hat{f}(x^*)\right) = E\left(f(x^*) - \hat{f}(x^*) \right)\]</span><br />
+</li>
+<li>Ideally, <span class="math inline">\(\hat{f}(x^*)\)</span> is <em>unbiased</em> (bias=0) and variance is small.</li>
+</ul>
+<p><br />
+<br />
+<br />
+</p>
+<p>Let’s apply these ideas to compare our 3 models using a <em>simulation study</em>. The syntax is complicated - we’ll take small steps in this direction during tomorrow’s class. For now, focus on the big ideas. If you have time, pick through the code. Our simulation proceeds as follows:</p>
+<ul>
+<li><p>Generate 1000 separate samples of 100 <span class="math inline">\((x,y)\)</span> values from the underlying “true” population model, <span class="math inline">\(f(y) = x^2 + \varepsilon\)</span> where <span class="math inline">\(\varepsilon \sim N(0, 0.3^2)\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Set the random number seed</span>
+<span class="kw">set.seed</span>(<span class="dv">2018</span>)
+
+<span class="co"># Simulate 1000 samples of size 100</span>
+sample   &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>), <span class="dt">each =</span> <span class="dv">100</span>)
+x        &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">100</span><span class="op">*</span><span class="dv">1000</span>)
+y        &lt;-<span class="st"> </span>x<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span><span class="op">*</span><span class="dv">1000</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="fl">0.3</span>)
+sim_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(sample, x, y)
+
+<span class="co"># Check it out</span>
+<span class="kw">head</span>(sim_data)</code></pre></div></li>
+<li><p>Using each of the 1000 separate samples, fit model 1. Subsequently, from each model, calculate the prediction <span class="math inline">\(\hat{f}(x^*)\)</span> of <span class="math inline">\(y\)</span> at <span class="math inline">\(x^*=0.9\)</span>. This produces 1000 total model 1 predictions (<code>x</code>), 1 from each sample.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod_1_pred &lt;-<span class="st"> </span>sim_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(sample) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">data =</span> .) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">predict</span>(., <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="fl">0.9</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>())</code></pre></div></li>
+<li><p>Repeat for models 2 &amp; 3.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod_2_pred &lt;-<span class="st"> </span>sim_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(sample) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(x, <span class="dv">2</span>, <span class="dt">raw =</span> <span class="ot">TRUE</span>), <span class="dt">data =</span> .) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">predict</span>(., <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="fl">0.9</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>())
+
+mod_3_pred &lt;-<span class="st"> </span>sim_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(sample) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(x, <span class="dv">10</span>, <span class="dt">raw =</span> <span class="ot">TRUE</span>), <span class="dt">data =</span> .) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">predict</span>(., <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="fl">0.9</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>())</code></pre></div></li>
+</ul>
+<p><br />
+<br />
+</p>
+<ol start="9" style="list-style-type: decimal">
+<li><strong>Calculating MSE</strong><br />
+Consider the 1000 predictions, <span class="math inline">\(\hat{f}(x^*)\)</span> at <span class="math inline">\(x^*=0.9\)</span>, calculated from <strong>model 2</strong>. These predictions are stored as variable <code>x</code> in <code>mod_2_pred</code>.
+<ol style="list-style-type: lower-alpha">
+<li>Check out the first 6 sample predictions &amp; construct a histogram of all 1000 model 2 predictions.<br />
+</li>
+<li>Variance: calculate the variance among the 1000 model 2 predictions.<br />
+</li>
+<li>Bias: calculate the average difference between the true model value (<span class="math inline">\(f(0.9) = 0.9^2 = 0.81\)</span>) &amp; the model predictions.<br />
+</li>
+<li>Combining parts b and c, calculate the (estimated) mean square error for model 2.</li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="10" style="list-style-type: decimal">
+<li><strong>Visually comparing model MSE</strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>Visually compare the 1000 predictions for each of the 3 models:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Combine all predictions into a single data frame</span>
+sim &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">est =</span> <span class="kw">c</span>(mod_1_pred<span class="op">$</span>x, mod_2_pred<span class="op">$</span>x, mod_3_pred<span class="op">$</span>x), <span class="dt">mod =</span> <span class="kw">as.factor</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">each =</span> <span class="dv">1000</span>)))
+<span class="kw">head</span>(sim)
+
+<span class="co"># Density plots of the predictions from each model</span>
+<span class="kw">ggplot</span>(sim, <span class="kw">aes</span>(<span class="dt">x =</span> est, <span class="dt">fill =</span> mod)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="fl">0.81</span>)</code></pre></div></li>
+<li><p>Which model produces the <em>most biased</em> estimates of <span class="math inline">\(f(x^*) = 0.81\)</span>? The <em>least biased</em>? Why does this make intuitive sense?</p></li>
+<li><p>Which model produces the <em>most variable</em> / least stable estimates of <span class="math inline">\(f(x^*)\)</span>? The <em>least variable</em>? Why does this make intuitive sense?</p></li>
+<li><p>Based on this plot alone, which model would you choose?</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="11" style="list-style-type: decimal">
+<li><strong>Comparing models via MSE</strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>We can support these observations by calculating the variance, bias, and MSE for each model. You did this “by hand” above for model 2. The <code>group_by()</code> and <code>summarize()</code> functions in <code>dplyr</code> provide a shortcut:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sim <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(mod) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">summarize</span>(<span class="dt">bias =</span> <span class="kw">mean</span>(<span class="fl">0.81</span> <span class="op">-</span><span class="st"> </span>est), <span class="dt">var =</span> <span class="kw">var</span>(est)) <span class="op">%&gt;%</span><span class="st">  </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">mse =</span> bias<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>var)            </code></pre></div></li>
+<li><p>Which model produces the most biased estimates?</p></li>
+<li><p>Which model produces the most variable / least stable estimates?</p></li>
+<li><p>Order the models from best to worst with respect to their MSE (<em>combined</em> bias and variance).</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="extra" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Extra</h3>
+<p><strong>IF</strong> you finish early and want to play around with the data some more, carefully read the <a href="https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/">fivethirtyeight article</a> that uses the <code>hate_crimes</code> data. Do you agree with the authors’ conclusions? (Answering this question might require you to fit new models.)</p>
+<p><br />
+</p>
+<p><strong>IF</strong> you have even more time, revisit the bodyfat data from today’s class. Build a model using your new model building &amp; evaluation tools.</p>
+<p> </p>
+<p><strong>IF</strong> you have even more time &amp; have a decent background in probability theory, prove that MSE can be written as the sum of Variance &amp; Bias<sup>2</sup>.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="homework-2a-data-wrangling.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
