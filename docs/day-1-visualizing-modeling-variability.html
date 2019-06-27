@@ -347,21 +347,21 @@ RedBlue &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <p><strong>Step 2: join the 3 datasets into a single dataset</strong></p>
 <p>The 3 data sets (<code>elect</code>, <code>df_county_demographics</code>, <code>RedBlue</code>) need to share a common identifying variable. In this case, they all contain the <code>region</code> variable, and we can join them according to it:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Join elect and df_county_demographics </span>
-all_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(df_county_demographics, elect,<span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;region&quot;</span>=<span class="st">&quot;region&quot;</span>))
+all_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(elect,df_county_demographics,<span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;region&quot;</span>=<span class="st">&quot;region&quot;</span>))
 
 <span class="co"># Join all_data with RedBlue</span>
 all_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(all_data, RedBlue,<span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;region&quot;</span>=<span class="st">&quot;region&quot;</span>))
 <span class="kw">names</span>(all_data)
-##  [1] &quot;region&quot;            &quot;total_population&quot;  &quot;percent_white&quot;    
-##  [4] &quot;percent_black&quot;     &quot;percent_asian&quot;     &quot;percent_hispanic&quot; 
-##  [7] &quot;per_capita_income&quot; &quot;median_rent&quot;       &quot;median_age&quot;       
-## [10] &quot;county&quot;            &quot;total_2008&quot;        &quot;dem_2008&quot;         
-## [13] &quot;gop_2008&quot;          &quot;oth_2008&quot;          &quot;total_2012&quot;       
-## [16] &quot;dem_2012&quot;          &quot;gop_2012&quot;          &quot;oth_2012&quot;         
-## [19] &quot;total_2016&quot;        &quot;dem_2016&quot;          &quot;gop_2016&quot;         
-## [22] &quot;oth_2016&quot;          &quot;perdem_2016&quot;       &quot;perrep_2016&quot;      
-## [25] &quot;winrep_2016&quot;       &quot;perdem_2012&quot;       &quot;perrep_2012&quot;      
-## [28] &quot;winrep_2012&quot;       &quot;polyname&quot;          &quot;abb&quot;              
+##  [1] &quot;region&quot;            &quot;county&quot;            &quot;total_2008&quot;       
+##  [4] &quot;dem_2008&quot;          &quot;gop_2008&quot;          &quot;oth_2008&quot;         
+##  [7] &quot;total_2012&quot;        &quot;dem_2012&quot;          &quot;gop_2012&quot;         
+## [10] &quot;oth_2012&quot;          &quot;total_2016&quot;        &quot;dem_2016&quot;         
+## [13] &quot;gop_2016&quot;          &quot;oth_2016&quot;          &quot;perdem_2016&quot;      
+## [16] &quot;perrep_2016&quot;       &quot;winrep_2016&quot;       &quot;perdem_2012&quot;      
+## [19] &quot;perrep_2012&quot;       &quot;winrep_2012&quot;       &quot;total_population&quot; 
+## [22] &quot;percent_white&quot;     &quot;percent_black&quot;     &quot;percent_asian&quot;    
+## [25] &quot;percent_hispanic&quot;  &quot;per_capita_income&quot; &quot;median_rent&quot;      
+## [28] &quot;median_age&quot;        &quot;polyname&quot;          &quot;abb&quot;              
 ## [31] &quot;StateColor&quot;</code></pre></div>
 <p><br />
 <br />
@@ -402,28 +402,12 @@ all_data &lt;- read.csv(&quot;https://www.macalester.edu/~ajohns24/Data/election
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">73.53</td>
-<td align="right">72.52</td>
-<td align="right">948</td>
-<td align="left">blue</td>
+<td align="right">87.94</td>
+<td align="right">83.75</td>
+<td align="right">367</td>
+<td align="left">red</td>
 <td align="left">TRUE</td>
-<td align="left">CO</td>
-</tr>
-<tr class="even">
-<td align="right">35.82</td>
-<td align="right">41.37</td>
-<td align="right">742</td>
-<td align="left">purple</td>
-<td align="left">FALSE</td>
-<td align="left">GA</td>
-</tr>
-<tr class="odd">
-<td align="right">46.55</td>
-<td align="right">44.91</td>
-<td align="right">582</td>
-<td align="left">blue</td>
-<td align="left">TRUE</td>
-<td align="left">MN</td>
+<td align="left">OK</td>
 </tr>
 <tr class="even">
 <td align="right">79.95</td>
@@ -434,6 +418,14 @@ all_data &lt;- read.csv(&quot;https://www.macalester.edu/~ajohns24/Data/election
 <td align="left">MS</td>
 </tr>
 <tr class="odd">
+<td align="right">35.82</td>
+<td align="right">41.37</td>
+<td align="right">742</td>
+<td align="left">purple</td>
+<td align="left">FALSE</td>
+<td align="left">GA</td>
+</tr>
+<tr class="even">
 <td align="right">80.15</td>
 <td align="right">72.84</td>
 <td align="right">420</td>
@@ -441,13 +433,21 @@ all_data &lt;- read.csv(&quot;https://www.macalester.edu/~ajohns24/Data/election
 <td align="left">TRUE</td>
 <td align="left">MO</td>
 </tr>
-<tr class="even">
-<td align="right">87.94</td>
-<td align="right">83.75</td>
-<td align="right">367</td>
-<td align="left">red</td>
+<tr class="odd">
+<td align="right">73.53</td>
+<td align="right">72.52</td>
+<td align="right">948</td>
+<td align="left">blue</td>
 <td align="left">TRUE</td>
-<td align="left">OK</td>
+<td align="left">CO</td>
+</tr>
+<tr class="even">
+<td align="right">46.55</td>
+<td align="right">44.91</td>
+<td align="right">582</td>
+<td align="left">blue</td>
+<td align="left">TRUE</td>
+<td align="left">MN</td>
 </tr>
 </tbody>
 </table>
