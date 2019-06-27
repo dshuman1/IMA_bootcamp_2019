@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="software-requirements.html">
-<link rel="next" href="course-notes.html">
+<link rel="prev" href="homework-1-visualizing-modeling-variability.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -167,37 +167,151 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="resources" class="section level1">
-<h1><span class="header-section-number"> 3</span> Resources</h1>
-<p><strong>Instructor contact info: </strong>David Shuman (<a href="mailto:dshuman@macalester.edu">dshuman@macalester.edu</a>)</p>
-<p><strong>Website with all course materials:</strong> <a href="https://www.macalester.edu/~dshuman1/ima/bootcamp/index.html" class="uri">https://www.macalester.edu/~dshuman1/ima/bootcamp/index.html</a></p>
-<p><strong>Additional resources</strong>:</p>
-<ul>
-<li><a href="http://r4ds.had.co.nz/">R for Data Science</a>, by Hadley Wickham and Garrett Grolemund, 2017<br />
-</li>
-<li><a href="https://mdsr-book.github.io/">Modern Data Science with R</a>, by Benjamin Baumer, Daniel Kaplan, and Nicholas Horton, 2017</li>
-<li><a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a>, Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani, 2013<br />
-</li>
-<li><a href="https://www.macalester.edu/~dshuman1/ima/bootcamp/Favorite_RStudio_Cheat_Sheets.pdf">Collection of favorite cheat sheets</a></li>
-<li><a href="https://www.rstudio.com/resources/cheatsheets/">All RStudio cheat sheets</a></li>
-<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> by Yihui Xie, J. J. Allaire, and Garrett Grolemund, 2018</li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown reference</a></li>
-<li><a href="http://ggplot2.tidyverse.org/reference/">ggplot2 reference</a></li>
-<li><a href="http://en.wikibooks.org/wiki/R_Programming">R Programming Wikibook</a></li>
-<li>Debugging in R: <a href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">document</a> and <a href="https://vimeo.com/99375765">video</a></li>
-<li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">Colors in R</a><br />
-</li>
-<li>A list of <a href="https://jumpingrivers.github.io/meetingsR/r-user-groups.html">useR groups</a> and <a href="https://jumpingrivers.github.io/meetingsR/r-ladies-groups.html">R-Ladies groups</a> around the world</li>
-</ul>
+<div id="homework-2a-data-wrangling" class="section level2">
+<h2><span class="header-section-number">5.3</span> Homework 2a: Data Wrangling</h2>
+<p>The number of daily births in the US varies over the year and from day to day. What’s surprising to many people is that the variation from one day to the next can be huge: some days have only about 80% as many births as others. Why? In this activity we’ll use basic data wrangling skills to understand some drivers of daily births.</p>
+<p>The data table <code>Birthdays</code> in the <code>mosaicData</code> package gives the number of births recorded on each day of the year in each state from 1969 to 1988.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
+<table>
+<caption><span id="tab:unnamed-chunk-190">Table 5.1: </span>A subset of the initial birthday data.</caption>
+<thead>
+<tr class="header">
+<th align="left">state</th>
+<th align="left">date</th>
+<th align="right">year</th>
+<th align="right">births</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AK</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">14</td>
+</tr>
+<tr class="even">
+<td align="left">AL</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">174</td>
+</tr>
+<tr class="odd">
+<td align="left">AR</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">78</td>
+</tr>
+<tr class="even">
+<td align="left">AZ</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">84</td>
+</tr>
+<tr class="odd">
+<td align="left">CA</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">824</td>
+</tr>
+<tr class="even">
+<td align="left">CO</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">100</td>
+</tr>
+</tbody>
+</table>
+<p>For this activity, we need to work with data aggregated across the states.</p>
 
+<div class="exercise">
+<p><span id="exr:us-daily-births" class="exercise"><strong>Exercise 5.14  (Total Across States)  </strong></span>Create a new data table, <code>DailyBirths</code>, that adds up all the births for each day across all the states. Your table should have 7305 rows and 2 columns. Plot out daily births vs date.</p>
+</div>
+
+<div id="seasonality" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Seasonality</h3>
+<p>Use your <code>DailyBirths</code> table from the first exercise as a starting point for all of the remaining exercises!</p>
+
+<div class="exercise">
+<p><span id="exr:seasonality" class="exercise"><strong>Exercise 5.15  (Examine Seasonality)  </strong></span>To examine seasonality in birth rates, look at the number of births by</p>
+<ol style="list-style-type: lower-alpha">
+<li>week of the year (1-53)</li>
+<li>month of the year (1-12)</li>
+<li>Julian day (1-366)</li>
+</ol>
+<p>When are the most babies born? The fewest? For each plot, you should end up with one data point per year.</p>
+</div>
+
+</div>
+<div id="day-of-the-week" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Day of the Week</h3>
+
+<div class="exercise">
+<p><span id="exr:weekday" class="exercise"><strong>Exercise 5.16  (Examine Patterns within the Week)  </strong></span>To examine patterns within the week, make a box plot showing the number of births by day of the week. Interpret your results.</p>
+</div>
+
+</div>
+<div id="holidays" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Holidays</h3>
+
+<div class="exercise">
+<p><span id="exr:two-year" class="exercise"><strong>Exercise 5.17  (Two Year Sample)  </strong></span>Pick a two-year span of the <code>Birthdays</code> that falls in the 1980s, say, 1980/1981. Extract out the data just in this interval, calling it <code>MyTwoYears</code>. (Hint: <code>filter()</code>, <code>year()</code>). Plot out the births in this two-year span day by day. Color each date according to its day of the week. Make sure to choose your font size, line widths, and color scheme to make your figure legible. Explain the pattern that you see.</p>
+</div>
+
+<p>The plot you generate for Exercise <a href="homework-2a-data-wrangling.html#exr:two-year">5.17</a> should be generally consistent with the weekend effect and seasonal patterns we have already seen; however, a few days each year stand out as excepetions. We are going to examine the hypothesis that these are holidays. You can find a data set listing US federal holidays at <code>https://www.macalester.edu/~dshuman1/data/112/US-Holidays.csv</code>. Read it in as follows:<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Holidays &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~dshuman1/data/112/US-Holidays.csv&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">as.POSIXct</span>(lubridate<span class="op">::</span><span class="kw">dmy</span>(date)))</code></pre></div>
+
+<div class="exercise">
+<p><span id="exr:holidays" class="exercise"><strong>Exercise 5.18  (Holidays)  </strong></span>Now let’s update the plot from Exercise <a href="homework-2a-data-wrangling.html#exr:two-year">5.17</a> to include the holidays.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Add a variable to <code>MyTwoYears</code> called <code>is_holiday</code>. It should be <code>TRUE</code> when the day is a holiday, and <code>FALSE</code> otherwise. One way to do this is with the transformation verb <code>%in%</code>, for instance, <code>is_holiday = date %in% Holidays$date</code>.<br />
+</li>
+<li>Add a <code>geom_point</code> layer to your plot that sets the color of the points based on the day of the week and the shape of the points based on whether or not the day is a holiday.<br />
+</li>
+<li>Finally, some holidays seem to have more of an effect than others. It would be helpful to label them. Use <code>geom_text</code> with the holiday data to add labels to each of the holidays. Hints: You’ll have to make up a y-coordinate for each label. You can set the orientation of each label with the <code>angle</code> aesthetic. You’ll also have to specify the separate data table for the holidays with a <code>data=XXX</code> inside of the <code>geom_text()</code>.</li>
+</ol>
+</div>
+
+</div>
+<div id="superstition" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Superstition</h3>
+<p>This <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/">article</a> from FiveThirtyEight demonstrates that fewer babies are born on the 13th of each month, and the effect is even stronger when the 13th falls on a Friday. If you have extra time or want some extra practice, you can try to recreate the first graphic in the article.</p>
+</div>
+<div id="geography" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> Geography</h3>
+
+<div class="exercise">
+<p><span id="exr:geography" class="exercise"><strong>Exercise 5.19  (Examine the Effect of Geography)  </strong></span>In any way you choose, explore the effect of geography on birth patterns. For example, do parents in Minnesota have fewer winter babies than in other states? Which states have the largest increases or decreases in their portion of US births over time? Is the weekend effect less strong for states with a higher percentage of their populations living in rural areas? Pick any issue (not all of these) that interests you, explore it, and create a graphic to illustrate your findings. You’ll have to start with <code>Birthdays</code> table, not <code>DailyBirths</code>.</p>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>The <code>fivethirtyeight</code> package has more recent data.<a href="homework-2a-data-wrangling.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>The point of the <code>lubridate::dmy()</code> function is to convert the character-string date stored in the CSV to a POSIX date-number.<a href="homework-2a-data-wrangling.html#fnref6">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="software-requirements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="course-notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="homework-1-visualizing-modeling-variability.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

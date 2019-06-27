@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="software-requirements.html">
-<link rel="next" href="course-notes.html">
+<link rel="prev" href="homework-2a-data-wrangling.html">
+<link rel="next" href="seasonality.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -142,13 +142,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
 <li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#seasonality"><i class="fa fa-check"></i><b>5.3.1</b> Seasonality</a></li>
-<li class="chapter" data-level="5.3.2" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#day-of-the-week"><i class="fa fa-check"></i><b>5.3.2</b> Day of the Week</a></li>
-<li class="chapter" data-level="5.3.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#holidays"><i class="fa fa-check"></i><b>5.3.3</b> Holidays</a></li>
-<li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
-<li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
+<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="us-births-1.html"><a href="us-births-1.html"><i class="fa fa-check"></i><b>6</b> US Births</a><ul>
+<li class="chapter" data-level="6.1" data-path="seasonality.html"><a href="seasonality.html"><i class="fa fa-check"></i><b>6.1</b> Seasonality</a></li>
+<li class="chapter" data-level="6.2" data-path="day-of-the-week.html"><a href="day-of-the-week.html"><i class="fa fa-check"></i><b>6.2</b> Day of the Week</a></li>
+<li class="chapter" data-level="6.3" data-path="holidays.html"><a href="holidays.html"><i class="fa fa-check"></i><b>6.3</b> Holidays</a></li>
+<li class="chapter" data-level="6.4" data-path="superstition.html"><a href="superstition.html"><i class="fa fa-check"></i><b>6.4</b> Superstition</a></li>
+<li class="chapter" data-level="6.5" data-path="geography.html"><a href="geography.html"><i class="fa fa-check"></i><b>6.5</b> Geography</a></li>
 </ul></li>
 </ul>
 
@@ -167,37 +168,79 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="resources" class="section level1">
-<h1><span class="header-section-number"> 3</span> Resources</h1>
-<p><strong>Instructor contact info: </strong>David Shuman (<a href="mailto:dshuman@macalester.edu">dshuman@macalester.edu</a>)</p>
-<p><strong>Website with all course materials:</strong> <a href="https://www.macalester.edu/~dshuman1/ima/bootcamp/index.html" class="uri">https://www.macalester.edu/~dshuman1/ima/bootcamp/index.html</a></p>
-<p><strong>Additional resources</strong>:</p>
-<ul>
-<li><a href="http://r4ds.had.co.nz/">R for Data Science</a>, by Hadley Wickham and Garrett Grolemund, 2017<br />
-</li>
-<li><a href="https://mdsr-book.github.io/">Modern Data Science with R</a>, by Benjamin Baumer, Daniel Kaplan, and Nicholas Horton, 2017</li>
-<li><a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a>, Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani, 2013<br />
-</li>
-<li><a href="https://www.macalester.edu/~dshuman1/ima/bootcamp/Favorite_RStudio_Cheat_Sheets.pdf">Collection of favorite cheat sheets</a></li>
-<li><a href="https://www.rstudio.com/resources/cheatsheets/">All RStudio cheat sheets</a></li>
-<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> by Yihui Xie, J. J. Allaire, and Garrett Grolemund, 2018</li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown reference</a></li>
-<li><a href="http://ggplot2.tidyverse.org/reference/">ggplot2 reference</a></li>
-<li><a href="http://en.wikibooks.org/wiki/R_Programming">R Programming Wikibook</a></li>
-<li>Debugging in R: <a href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">document</a> and <a href="https://vimeo.com/99375765">video</a></li>
-<li><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">Colors in R</a><br />
-</li>
-<li>A list of <a href="https://jumpingrivers.github.io/meetingsR/r-user-groups.html">useR groups</a> and <a href="https://jumpingrivers.github.io/meetingsR/r-ladies-groups.html">R-Ladies groups</a> around the world</li>
-</ul>
+<div id="us-births-1" class="section level1">
+<h1><span class="header-section-number"> 6</span> US Births</h1>
+<p>The number of daily births in the US varies over the year and from day to day. What’s surprising to many people is that the variation from one day to the next can be huge: some days have only about 80% as many births as others. Why? In this activity we’ll use basic data wrangling skills to understand some drivers of daily births.</p>
+<p>The data table <code>Birthdays</code> in the <code>mosaicData</code> package gives the number of births recorded on each day of the year in each state from 1969 to 1988.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
+<table>
+<caption><span id="tab:unnamed-chunk-190">Table 6.1: </span>A subset of the initial birthday data.</caption>
+<thead>
+<tr class="header">
+<th align="left">state</th>
+<th align="left">date</th>
+<th align="right">year</th>
+<th align="right">births</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AK</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">14</td>
+</tr>
+<tr class="even">
+<td align="left">AL</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">174</td>
+</tr>
+<tr class="odd">
+<td align="left">AR</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">78</td>
+</tr>
+<tr class="even">
+<td align="left">AZ</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">84</td>
+</tr>
+<tr class="odd">
+<td align="left">CA</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">824</td>
+</tr>
+<tr class="even">
+<td align="left">CO</td>
+<td align="left">1969-01-01</td>
+<td align="right">1969</td>
+<td align="right">100</td>
+</tr>
+</tbody>
+</table>
+<p>For this activity, we need to work with data aggregated across the states.</p>
 
+<div class="exercise">
+<p><span id="exr:us-daily-births" class="exercise"><strong>Exercise 6.1  (Total Across States)  </strong></span>Create a new data table, <code>DailyBirths</code>, that adds up all the births for each day across all the states. Your table should have 7305 rows and 2 columns. Plot out daily births vs date.</p>
+</div>
+ 
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>The <code>fivethirtyeight</code> package has more recent data.<a href="us-births-1.html#fnref5">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="software-requirements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="course-notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="homework-2a-data-wrangling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="seasonality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
