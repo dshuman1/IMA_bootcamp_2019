@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="day-2a-data-wrangling.html">
+<link rel="next" href="homework.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2-model-assumptions-measuring-model-quality.html"><a href="day-2-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2-model-assumptions-measuring-model-quality.html"><a href="day-2-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2-model-assumptions-measuring-model-quality.html"><a href="day-2-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2-model-assumptions-measuring-model-quality.html"><a href="day-2-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2-model-assumptions-measuring-model-quality.html"><a href="day-2-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="day-2-model-assumptions-measuring-model-quality" class="section level2">
+<h2><span class="header-section-number">4.3</span> Day 2: Model Assumptions &amp; Measuring Model Quality</h2>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p><strong>MOTIVATION</strong></p>
+<p>One of the most famous quotes in statistics is the following from George Box (1919–2013):</p>
+<blockquote>
+<p>“All models are wrong, but some are useful.”</p>
+</blockquote>
+<p>Thus far, we’ve constructed models from sample data &amp; used these to tell stories about the relationships among variables of interest. We haven’t yet discussed the <em>quality</em> of these models. Today, we’ll focus on the following questions:</p>
+<ul>
+<li><p>Does our model meet the model assumptions?</p></li>
+<li><p>How well does our model explain the variability in the response?</p></li>
+<li><p>How accurate are the predictions calculated from this model?</p></li>
+</ul>
+<p><br> <br> <br> <br> <br> <br></p>
+<div id="regression-assumptions-residual-analysis" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Regression Assumptions &amp; Residual Analysis</h3>
+<p>Let <span class="math inline">\(y\)</span> be a response variable with a set of <span class="math inline">\(k\)</span> predictors <span class="math inline">\((x_{1}, x_{2}, ..., x_{k})\)</span>. Then the population linear regression model is</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x_{1} + \beta_2 x_{2} + \cdots + \beta_k x_{k} + \varepsilon\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(\beta_0 + \beta_1 x_{1} + \beta_2 x_{2} + \cdots + \beta_k x_{k}\)</span> captures the trend of the relationship</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> reflects individual deviation from the trend (residual)</p></li>
+</ul>
+<p><br> <br></p>
+<p>In “ordinary” least squares regression, there are 2 key assumptions:</p>
+<ul>
+<li><strong>Assumption 1:</strong><br />
+The observations of (<span class="math inline">\(y,x_1,x_2,...,x_k\)</span>) for any case are independent of the observations for any other case.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Assumption 2:</strong><br />
+At any set of predictor values <span class="math inline">\((x_{1}^*, x_{2}^*, \ldots, x_{k}^*)\)</span>,<br />
+<span class="math display">\[\varepsilon \sim N(0,\sigma^2)\]</span> That is:
+<ol style="list-style-type: lower-alpha">
+<li><p>the expected value of the residuals is <span class="math inline">\(E(\varepsilon) =0\)</span><br />
+In words: Across the entire model, responses are balanced above &amp; below the trend. Thus the model accurately describes the “shape” and “location” of the trend.</p></li>
+<li><p><em>homoskedasticity</em>: the variance of the residuals <span class="math inline">\(Var(\varepsilon) = \sigma^2\)</span><br />
+In words: Across the entire model, variability from the trend is roughly constant.</p></li>
+<li><p>the <span class="math inline">\(\varepsilon\)</span> are <em>normally distributed</em><br />
+In words: individual responses are normally distributed around the trend (closer to the trend and then tapering off)</p></li>
+</ol></li>
+</ul>
+<p><br> <br></p>
+<ol style="list-style-type: decimal">
+<li>Let’s build some intuition for these assumptions.
+<ol style="list-style-type: lower-alpha">
+<li><p>Come up with some examples that violate Assumption 1.</p></li>
+<li><p>For the plots below, indicate which parts of Assumption 2 hold.<br />
+<img src="IMA_book_2019_files/figure-html/unnamed-chunk-84-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
+<li><p>For each part a, b, and c of Assumption 2, discuss the consequences/severity of violating the assumption.</p></li>
+</ol>
+<!-- transform x --></li>
+</ol>
+<p><br> <br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Checking the model assumptions</strong><br />
+Recall Galton’s examination of the relationship between a person’s height and the height of their father:<br />
+<!-- discuss history of regression --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(Galton)
+<span class="kw">ggplot</span>(Galton, <span class="kw">aes</span>(<span class="dt">y =</span> height, <span class="dt">x =</span> father)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-86-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">galton_mod &lt;-<span class="st"> </span><span class="kw">lm</span>(height <span class="op">~</span><span class="st"> </span>father, <span class="dt">data =</span> Galton)
+<span class="kw">summary</span>(galton_mod)
+## 
+## Call:
+## lm(formula = height ~ father, data = Galton)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -10.268  -2.669  -0.209   2.634  11.933 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  39.1104     3.2271   12.12   &lt;2e-16 ***
+## father        0.3994     0.0466    8.57   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.45 on 896 degrees of freedom
+## Multiple R-squared:  0.0758, Adjusted R-squared:  0.0748 
+## F-statistic: 73.5 on 1 and 896 DF,  p-value: &lt;2e-16</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Do the assumptions appear to hold for this model?</p></li>
+<li><p>We quickly lose the ability to visualize a model as the number of predictors increases. Instead of checking the assumptions by eye, we can construct <strong>residual plots</strong>. First, put the data together:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Combine the observed responses, predictions, &amp; residuals</span>
+mod_results &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">observed =</span> Galton<span class="op">$</span>height, <span class="dt">predicted =</span> galton_mod<span class="op">$</span>fitted.values, <span class="dt">residual =</span> galton_mod<span class="op">$</span>residuals)
+<span class="kw">head</span>(mod_results, <span class="dv">3</span>)
+##   observed predicted residual
+## 1     73.2     70.46    2.738
+## 2     69.2     70.46   -1.262
+## 3     69.0     70.46   -1.462</code></pre></div>
+<p>We can then check out two plots:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot residuals vs predictions    </span>
+<span class="kw">ggplot</span>(mod_results, <span class="kw">aes</span>(<span class="dt">y =</span> residual, <span class="dt">x =</span> predicted)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>)
+
+<span class="co">#a Q-Q plot of the residuals</span>
+<span class="kw">ggplot</span>(mod_results, <span class="kw">aes</span>(<span class="dt">sample =</span> residual)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_qq</span>()</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-89-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<p><strong>Residual Analysis Summary</strong></p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="19%" />
+<col width="29%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumption</th>
+<th>Consequence</th>
+<th>Diagnostic</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>independence</td>
+<td>inaccurate inference</td>
+<td>common sense / context</td>
+<td>use a different modeling technique</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(E(\varepsilon)=0\)</span></td>
+<td>lack of model fit</td>
+<td>plot of residuals vs predictions</td>
+<td>transform <span class="math inline">\(x\)</span> and/or <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Var(\varepsilon)=\sigma^2\)</span></td>
+<td>inaccurate inference</td>
+<td>plot of residuals vs predictions</td>
+<td>transform <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td>normality of <span class="math inline">\(\varepsilon\)</span></td>
+<td>if extreme, inaccurate inference</td>
+<td>Q-Q plot</td>
+<td>if extreme, transform <span class="math inline">\(y\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+<div id="measuring-model-quality-r2-mspe" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</h3>
+<p><br></p>
+<p>Meeting the model assumptions isn’t the only important piece of the model evaluation process. We also need a sense of the accuracy in using this model to understand and make predictions about <span class="math inline">\(y\)</span>. For this exercise, we’ll use data from the fivethirtyeight article <a href="http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/">The Ultimate Halloween Candy Power Ranking</a>. These data were produced from <a href="http://walthickey.com/2017/10/18/whats-the-best-halloween-candy/">this experiment</a> which presented subjects with a series of head-to-head candy matchups and asked them to indicate which candy they preferred. You can load these data from the <code>fivethirtyeight</code> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;candy_rankings&quot;</span>)
+?candy_rankings
+
+<span class="co"># Store under a shorter name</span>
+candy &lt;-<span class="st"> </span>candy_rankings</code></pre></div>
+<p>Let’s explore the structure of these data!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check out the head</span>
+<span class="kw">head</span>(candy)
+
+<span class="co"># Arrange from least to most popular</span>
+candy <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">arrange</span>(winpercent)
+
+<span class="co"># Arrange from most to least popular</span>
+candy <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(winpercent))</code></pre></div>
+<p><br />
+</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Models</strong><br />
+Our ultimate goal is to understand the variability in <code>winpercent</code> from candy to candy:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(candy, <span class="kw">aes</span>(<span class="dt">x =</span> winpercent)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">binwidth =</span> <span class="dv">5</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-93-1.png" width="\textwidth" style="display: block; margin: auto;" /> Visualize the following relationships. Which appears to be best?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot: winpercent vs chocolate</span>
+
+<span class="co"># model_1: winpercent vs chocolate</span>
+
+<span class="co"># Plot: winpercent vs sugarpercent</span>
+
+<span class="co"># model_2: winpercent vs sugarpercent</span>
+
+<span class="co"># Plot: winpercent vs chocolate &amp; sugarpercent</span>
+
+<span class="co"># model_3: winpercent vs chocolate &amp; sugarpercent (NO interaction)</span></code></pre></div>
+<p>Check out the residuals. Which model did the best job of predicting the <code>winpercent</code> for 100 Grand, the first candy in the dataset?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># First model_1 residuals</span>
+
+<span class="co"># First model_2 residuals</span>
+
+<span class="co"># First model_3 residuals</span></code></pre></div></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p><strong>Mean Squared Prediction Error (MSPE)</strong><br />
+To measure the <em>overall</em> quality of the models, we need to combine the residuals for <em>all</em> of the cases / candy. It might be tempting to calculate the mean residual but this is always 0 within rounding:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(model_<span class="dv">1</span><span class="op">$</span>residual)
+## [1] 7.755e-16</code></pre></div>
+<p>We’ll consider 2 different methods, the first being the <em>mean square prediction error</em>:<br />
+<span class="math display">\[MSPE = \frac{1}{n}\sum_{i=1}^n (y_i - \hat{y}_i)^2 = \frac{(y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \cdots (y_n - \hat{y}_n)^2}{n}\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculate the MSPE for model_1</span>
+
+<span class="co"># Calculate the MSPE for model_2</span>
+
+<span class="co"># Calculate the MSPE for model_3</span></code></pre></div></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p><strong>R<sup>2</sup></strong><br />
+<span class="math inline">\(R^2\)</span> is a more interpretable measure of model quality. <span class="math inline">\(R^2\)</span> is restricted to be between 0 and 1 - it is the <em>proportion</em> of the variability in <span class="math inline">\(y\)</span> that’s explained by the model. Thus an <span class="math inline">\(R^2\)</span> of 0 indicates that the model doesn’t explain <em>any</em> of the variability in <span class="math inline">\(y\)</span>; an <span class="math inline">\(R^2\)</span> of 1 indicates that the model <em>perfectly</em> explains the variability in <span class="math inline">\(y\)</span>:</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-101-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+<p>In fact, <span class="math inline">\(R^2\)</span> is related to MSPE! Letting <span class="math inline">\(\overline{y} = \frac{1}{n} \sum_{i=1}^n y_i\)</span> denote the sample mean of <span class="math inline">\(y\)</span>, the <em>total sum of squares</em> measures the total squared deviations of <span class="math inline">\(y_i\)</span> from <span class="math inline">\(\overline{y}\)</span>:<br />
+<span class="math display">\[TSS = \sum_{i=1}^n (y_i - \overline{y})^2 = (y_1 - \overline{y})^2 + (y_2 - \overline{y})^2 + \cdots (y_n - \overline{y})^2\]</span> Then <span class="math inline">\(R^2\)</span> can be calculated by the MSPE and TSS: <span class="math display">\[R^2 = 1 - \frac{MSPE}{TSS/n} = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \overline{y})^2}\]</span></p>
+<p>We don’t have to calculate this by hand. It’s reported in the model <code>summary()</code> table:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(model_<span class="dv">1</span>)
+<span class="kw">summary</span>(model_<span class="dv">2</span>)
+<span class="kw">summary</span>(model_<span class="dv">3</span>)</code></pre></div>
+<p><br />
+<strong>NOTE:</strong> <span class="math inline">\(R^2\)</span> can also be calculated by a ratio of variances: <span class="math display">\[R^2 = \frac{\text{Var}(\hat{y}_i)}{\text{Var}(y_i)} = 1 - \frac{\text{Var}( y_i - \hat{y}_i)}{\text{Var}(y_i)}\]</span></p></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>In conclusion (so far)</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Which of the models is “best” with respect to MSPE? With respect to <span class="math inline">\(R^2\)</span>?<br />
+</li>
+<li>In general, what happens to MSPE &amp; <span class="math inline">\(R^2\)</span> as we add more terms to the model?</li>
+</ol></li>
+</ol>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+<div id="an-experiment" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> An experiment</h3>
+<ul>
+<li><p>Split up into 6 groups.</p></li>
+<li><p>Each group will be given their own set of data that includes measurements on 40 adult males, including a measure of body fat percentage, <code>fatSiri</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">group_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/bodyfat?????.csv&quot;</span>)
+
+<span class="co"># Remove 2 variables so you&#39;re tempted to use them</span>
+group_data &lt;-<span class="st"> </span>group_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(fatBrozek, fatFreeWeight))</code></pre></div>
+<!-- 50, 143, 86, 160, 174, 182 --></li>
+<li><p>Working within your group, use these data to develop the best predictive model of <code>fatSiri</code>. (For example, what model would you give to a doctor that wished to predict body fat percentage from physical measurements?) The rules: Even if you know some clever tools and techniques that would help with this task, stick to intuition &amp; tools you’ve learned in the bootcamp thus far.</p></li>
+<li>Record the following in <a href="https://docs.google.com/spreadsheets/d/1oFe2TAdnVbeYWs3Fk0LZ5xXBV6XvbWq35rgsZn7Ib2E/edit?usp=sharing">this Google sheet</a>:
+<ul>
+<li>A name for your group.<br />
+</li>
+<li>Your estimated sample model, specifying both your chosen set of predictors <span class="math inline">\(x_i\)</span> &amp; sample coefficients <span class="math inline">\(\hat{\beta}_i\)</span>: <span class="math display">\[\text{fatSiri} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + \cdots + \hat{\beta}_k x_k\]</span><br />
+</li>
+<li>Your model’s MSPE.</li>
+</ul></li>
+</ul>
+<!-- Using each of the 5 other groups' models, predict the body fat percentage for each subject in *your* sample, calculate the corresponding MSPE, & record these 5 MSPEs in the table.  -->
+<!-- attach(group_data) -->
+<!-- pred_4 <- -342.20 - 1.03*weight + 4.16*height -->
+<!-- resid_4 <- group_data$fatSiri - pred_4 -->
+<!-- mean(resid_4^2) -->
+<!-- Relative to its predictive accuracy, which group had the best model?     -->
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="measuring-model-quality-cross-validation" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Measuring model quality: cross validation</h3>
+<p>Our post-experiment discussions highlight a couple of important themes:</p>
+<ul>
+<li><p><strong>Training</strong> and <strong>testing</strong> our model using the same data results in overly optimistic assessments of model quality. For example, <strong>in-sample</strong> or <strong>training errors</strong> (ie. MSPE calculated using the same data that we used to train the model) tend to be smaller than <strong>testing errors</strong> (ie. MSPE calculated using data not used to train the model).</p></li>
+<li><p>Adding terms to a model might improve measures of model quality calculated using the same data that were used to build the model, but can result in <strong>overfitting</strong>.</p></li>
+</ul>
+<p><br />
+<br />
+</p>
+<p>We’ll consider a different measure of model quality that addresses some of these concerns: <strong>cross validation</strong>. Throughout this discussion, we’ll all use the same data and compare the following 2 models:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">body_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/bodyfat50.csv&quot;</span>)
+
+<span class="co"># Fit models    </span>
+model_<span class="dv">1</span>  &lt;-<span class="st"> </span><span class="kw">lm</span>(fatSiri <span class="op">~</span><span class="st"> </span>weight, body_data)
+model_<span class="dv">12</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(fatSiri <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(weight,<span class="dv">12</span>), body_data) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot the models    </span>
+<span class="kw">ggplot</span>(body_data, <span class="kw">aes</span>(<span class="dt">y =</span> fatSiri, <span class="dt">x =</span> weight)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">stat_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">se=</span><span class="ot">FALSE</span>)
+
+<span class="kw">ggplot</span>(body_data, <span class="kw">aes</span>(<span class="dt">y =</span> fatSiri, <span class="dt">x =</span> weight)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">stat_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">formula=</span>y<span class="op">~</span><span class="kw">poly</span>(x, <span class="dv">12</span>), <span class="dt">se=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-107-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>You can but don’t have to confirm the in-sample <span class="math inline">\(R^2\)</span> and MSPE for these 2 models:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Model</th>
+<th align="left">In-sample <span class="math inline">\(R^2\)</span></th>
+<th align="left">In-sample MSPE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>model_1</code></td>
+<td align="left">0.5424</td>
+<td align="left">32.48</td>
+</tr>
+<tr class="even">
+<td align="left"><code>model_12</code></td>
+<td align="left">0.6403</td>
+<td align="left">25.53</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Think</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Which model, <code>model_1</code> or <code>model_12</code>, has the “best” <span class="math inline">\(R^2\)</span> and MSPE measurements?<br />
+</li>
+<li>Suppose we observe 50 more adults. Which model do you think would do a better job at predicting these adults’ <code>fatSiri</code> from their <code>weight</code>? Why?</li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="8" style="list-style-type: decimal">
+<li><p><strong>Validation</strong><br />
+In practice, we only have one sample of data. We need to use this one sample to both train and test our model. Consider a simple strategy where we randomly select half of the sample to <em>train</em> the model and <em>test</em> the model on the other half. To ensure that we all get the same samples and can <strong>reproduce</strong> our results, we’ll <em>set the random number generating seed</em> to the same number (2000). We’ll discuss this in detail as a class!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># There are 40 people</span>
+<span class="kw">dim</span>(body_data)    
+## [1] 40 19
+
+<span class="co"># Set the random number seed</span>
+<span class="kw">set.seed</span>(<span class="dv">2000</span>)
+
+<span class="co"># Randomly sample half (20) of these for training</span>
+data_train &lt;-<span class="st"> </span><span class="kw">sample_n</span>(body_data, <span class="dt">size =</span> <span class="dv">20</span>)
+<span class="kw">dim</span>(data_train)
+## [1] 20 19
+
+<span class="co"># Take the the other 20 for testing</span>
+data_test &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">setdiff</span>(body_data, data_train)
+<span class="kw">dim</span>(data_test)
+## [1] 20 19</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p><strong>Using the training data</strong>: Fit the model of <code>fatSiri</code> by <code>weight</code> (the simple one) and calculate the training MSPE.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fit the model</span>
+train_mod &lt;-<span class="st"> </span><span class="kw">lm</span>(fatSiri <span class="op">~</span><span class="st"> </span>weight, <span class="dt">data =</span> ___)
+
+<span class="co"># Calculate training MSPE</span></code></pre></div></li>
+<li><p>How well does this model generalize to the test set? Use the training model to predict <code>fatSiri</code> for the <strong>test cases</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Make predictions</span>
+test_predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(train_mod, <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">weight =</span> ___))
+
+<span class="co"># Calculate residuals</span>
+test_residuals &lt;-<span class="st"> </span>___
+
+<span class="co"># Calculate testing MSPE</span>
+<span class="kw">mean</span>(test_residuals<span class="op">^</span><span class="dv">2</span>)</code></pre></div></li>
+<li><p>Compare the MSPE of the training and test sets. Did the training model over- or under-estimate its prediction error? That is, are the results better or worse than what was promised by the training model? Extra evidence: Compare the regression model for the training set (blue) to that for the test set (red): <img src="IMA_book_2019_files/figure-html/unnamed-chunk-114-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
+<li><p>We <em>could</em> use the MSPE for the test set to measure how well our model generalizes to the population. But what might be the flaws in this approach? Can you think of a better idea? <strong>We’ll discuss this as a class before moving on…</strong></p></li>
+</ol></li>
+</ol>
+<!-- - These comparisons are based on the training and test sets we happened to get.  Obviously, if we chose new training and test sets, we would get different answers!   -->
+<!-- - We're only using half of the data to train the model.  We'd get better predictions if we used more.  Tends to overestimate erro (p178) -->
+<p><br> <br></p>
+<ol start="9" style="list-style-type: decimal">
+<li><strong>2-fold cross validation</strong><br />
+The validation approach we used above used <code>data_train</code> to build the model and then tested this model on <code>data_test</code>. Let’s reverse the roles!
+<ol style="list-style-type: lower-alpha">
+<li>Fit the model using <code>data_test</code> and test it on <code>data_train</code>. (Calculate the testing MSPE.)<br />
+</li>
+<li>Part a gave you a new measure of model quality. Instead of picking either this measure or the one you calculated in the previous exercise (when the roles were reversed), average them! This average is an estimate of the <strong>2-fold cross validation error</strong>. The general k-fold cross validation algorithm is described below.</li>
+</ol></li>
+</ol>
+<p><br> <br> <br> <br> <br> <br></p>
+<blockquote>
+<p><strong><span class="math inline">\(k\)</span>-Fold Cross Validation (CV)</strong></p>
+<ol style="list-style-type: decimal">
+<li>Divide the data into <span class="math inline">\(k\)</span> groups / folds of equal size.</li>
+</ol>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Repeat the following procedures for each fold <span class="math inline">\(j \in \{1,2,...,k\}\)</span>:</p>
+<ul>
+<li>Divide the data into a test set (fold <span class="math inline">\(j\)</span>) &amp; training set (the other <span class="math inline">\(k-1\)</span> folds).</li>
+<li>Fit a model using the training set.</li>
+<li>Use this model to predict the responses for the <span class="math inline">\(n_j\)</span> cases in fold <span class="math inline">\(j\)</span>: <span class="math inline">\(\hat{y}_1, ..., \hat{y}_{n_j}\)</span></li>
+<li>Calculate the MSPE for fold <span class="math inline">\(j\)</span>: <span class="math display">\[\text{MSPE}_j = \frac{1}{n_j}\sum_{i=1}^{n_j} (y_i - \hat{y}_i)^2\]</span></li>
+</ul></li>
+</ol>
+<p><br></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Calculate the “cross validation error”, ie. the average MSPE from the <span class="math inline">\(k\)</span> folds: <span class="math display">\[\text{CV}_{(k)} = \frac{1}{k} \sum_{j=1}^k \text{MSPE}_j\]</span></li>
+</ol>
+<p><strong>In pictures:</strong> 10-fold CV</p>
+</blockquote>
+<p><img src="images/kfold.png" height="450px" /></p>
+<p><br> <br></p>
+<ol start="10" style="list-style-type: decimal">
+<li><strong>40-fold cross validation, aka “Leave-one-out CV (LOOCV)”</strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>Using the tools you learned in your earlier programming module, you could write a for-loop to perform cross validation. However, somebody already did that work! The <code>cv.glm()</code> function in the <code>boot</code> package calculates cross validation error for us. First, use it to calculate the 40-fold cross validation error.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># First refit the model using ALL data &amp; glm()</span>
+model_1_glm   &lt;-<span class="st"> </span><span class="kw">glm</span>(fatSiri <span class="op">~</span><span class="st"> </span>weight, body_data, <span class="dt">family =</span> <span class="st">&quot;gaussian&quot;</span>)
+
+<span class="co"># Then calculate the error</span>
+model_1_cv40  &lt;-<span class="st"> </span><span class="kw">cv.glm</span>(body_data, model_1_glm, <span class="dt">K =</span> <span class="dv">40</span>)
+
+<span class="co"># The error is the first reported value</span>
+model_1_cv40<span class="op">$</span>delta
+## [1] 35.35 35.31</code></pre></div></li>
+<li><p>Explain why, for <em>this</em> data, a 40-fold cross validation procedure would also be called “leave-one-out”. Hint: There are 40 cases in our dataset.</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="11" style="list-style-type: decimal">
+<li>In practice, <span class="math inline">\(k=10\)</span> and <span class="math inline">\(k=7\)</span> are common choices for cross validation. This has been shown to hit the ‘sweet spot’ between the extremes of <span class="math inline">\(k = n\)</span> (LOOCV) and <span class="math inline">\(k=2\)</span>. Why? What advantages do you think 10-fold CV has over 2-fold CV? What advantages do you think 10-fold CV has over LOOCV?</li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="12" style="list-style-type: decimal">
+<li><strong>Using CV to compare models</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate 10-fold cross validation errors for both of our original models:
+<ul>
+<li><code>model_1</code>: <code>fatSiri ~ weight</code><br />
+</li>
+<li><code>model_12</code>: <code>fatSiri ~ poly(weight,12)</code><br />
+NOTE: since the 10 folds are <em>randomly</em> chosen, set the random number seed so that you get the same folds each time.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model_1_glm   &lt;-<span class="st"> </span><span class="kw">glm</span>(fatSiri <span class="op">~</span><span class="st"> </span>weight, body_data, <span class="dt">family =</span> <span class="st">&quot;gaussian&quot;</span>)
+model_12_glm   &lt;-<span class="st"> </span><span class="kw">glm</span>(fatSiri <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(weight,<span class="dv">12</span>), body_data, <span class="dt">family =</span> <span class="st">&quot;gaussian&quot;</span>)    
+
+<span class="co"># Set the seed</span>
+<span class="kw">set.seed</span>(<span class="dv">2018</span>)
+
+<span class="co"># 10-fold CV error for model_1_glm</span>
+model_1_cv10  &lt;-<span class="st"> </span>___
+model_1_cv10<span class="op">$</span>delta
+
+<span class="co"># 10-fold CV error for model_12_glm</span>
+model_12_cv10  &lt;-<span class="st"> </span>___
+model_12_cv10<span class="op">$</span>delta</code></pre></div></li>
+<li>Recall that <code>model_1</code> had an in-sample MSPE of 32.48 and <code>model_12</code> had an in-sample MSPE of 25.53.
+<ul>
+<li>Within both models, how do the in-sample errors compare to the CV errors?<br />
+</li>
+<li>Which model has the best in-sample errors?<br />
+</li>
+<li>Which model has the best CV error?<br />
+</li>
+<li>Which model would you choose?</li>
+</ul></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<blockquote>
+<p><strong>Parsimonious Models</strong></p>
+<p>Reflecting back, these exercises illustrate the importance of <em>parsimony</em> in a statistical analysis. A <em>parsimonious</em> analysis is one that balances simplicity with the desire for the highest <span class="math inline">\(R^2\)</span> (for example). In the case of model building, increasing the number of predictors increases <span class="math inline">\(R^2\)</span>. BUT:</p>
+<ul>
+<li><p>The greater the number of predictors, the more complicated the model is to implement and interpret;</p></li>
+<li><p>The greater the number of predictors, the greater the risk of <em>overfitting</em> the model to our particular sample of data. That is, the greater the risk of our model losing the general trend, hence, the model’s generalizability to the greater population.</p></li>
+</ul>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="day-2a-data-wrangling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

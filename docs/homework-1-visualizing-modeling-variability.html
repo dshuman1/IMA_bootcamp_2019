@@ -117,6 +117,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
 <li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
 </ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
 <li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
@@ -215,7 +226,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The votes received varies by candidate. Our goal is to explain some of this variability:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(campaigns, <span class="kw">aes</span>(<span class="dt">x =</span> votes1st)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-86-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-158-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br> <br></p>
 <ol style="list-style-type: decimal">
 <li><strong>Warm-Up:</strong> Votes vs Incumbency<br />
@@ -259,8 +270,8 @@ Let’s add campaign spending to our analysis.</p>
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">1031</span>, <span class="dt">slope =</span> <span class="fl">0.1745</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">3795</span>, <span class="dt">slope =</span> <span class="fl">0.1745</span>, <span class="dt">color =</span> <span class="st">&quot;cyan3&quot;</span>)</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-93-1.png" width="\textwidth" style="display: block; margin: auto;" /> Since the lines are parallel, this model assumes that incumbents and challengers enjoy the same return on campaign spending. However, notice from the plot that this may not be the best assumption. Rather, without the parallel model constraint, the trend looks more like this (you’ll make this plot later):<br />
-<img src="IMA_book_2019_files/figure-html/unnamed-chunk-94-1.png" width="\textwidth" style="display: block; margin: auto;" /> To allow our models for challengers and incumbents to have different intercepts <em>and</em> different slopes, we can type <code>totalexp * incumb</code> instead of <code>totalexp + incumb</code> in the <code>lm</code> function:</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-165-1.png" width="\textwidth" style="display: block; margin: auto;" /> Since the lines are parallel, this model assumes that incumbents and challengers enjoy the same return on campaign spending. However, notice from the plot that this may not be the best assumption. Rather, without the parallel model constraint, the trend looks more like this (you’ll make this plot later):<br />
+<img src="IMA_book_2019_files/figure-html/unnamed-chunk-166-1.png" width="\textwidth" style="display: block; margin: auto;" /> To allow our models for challengers and incumbents to have different intercepts <em>and</em> different slopes, we can type <code>totalexp * incumb</code> instead of <code>totalexp + incumb</code> in the <code>lm</code> function:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new_model &lt;-<span class="st"> </span><span class="kw">lm</span>(votes1st <span class="op">~</span><span class="st"> </span>totalexp <span class="op">*</span><span class="st"> </span>incumb, campaigns)
 <span class="kw">summary</span>(new_model)</code></pre></div>
 <ol style="list-style-type: lower-alpha">
@@ -298,7 +309,7 @@ Let’s add campaign spending to our analysis.</p>
 <h3><span class="header-section-number">5.2.2</span> Covariates</h3>
 <p>In examining multivariate models, we’ve seen that adding explanatory variables to the model helps to better explain variability in the response. For example, compare the plot on the left which ignores the grouping variable vs the plot on the right that includes it:</p>
 <p><br></p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-98-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-170-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>However, explaining variability isn’t the <em>only</em> reason to include multiple predictors in a model. When exploring the relationship between response <span class="math inline">\(y\)</span> and predictor <span class="math inline">\(x_1\)</span>, there are typically <strong>covariates</strong> for which we want to control. For example, in comparing the effectiveness of 2 drug treatments, we might want to control for patients’ ages, health statuses, etc.</p>
 <p>We’ll explore the concept of controlling for covariates using the <code>CPS85</code> data in the <code>mosaic</code> package. These data, obtained through the Current Population Survey, contains labor force characteristics for a sample of workers in 1985. Though out of date, these data provide important illustrations of key modeling concepts:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(CPS85)
@@ -312,7 +323,7 @@ Let’s add campaign spending to our analysis.</p>
 <p>We’ll use these data to explore the pay gap between married and single workers, illustrated and modeled below:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(CPS85, <span class="kw">aes</span>(<span class="dt">y=</span>wage, <span class="dt">x=</span>married)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_boxplot</span>()</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-101-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-173-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cpsmod1 &lt;-<span class="st"> </span><span class="kw">lm</span>(wage <span class="op">~</span><span class="st"> </span>married, <span class="dt">data =</span> CPS85)
 <span class="kw">msummary</span>(cpsmod1)
 ##               Estimate Std. Error t value Pr(&gt;|t|)    
@@ -381,7 +392,7 @@ If you’d like extra practice, answer the following questions related to the co
 <p>Note that the <span class="math inline">\(\beta_i\)</span> represent the <em>population coefficients</em>. Galton didn’t have data for the entire population of interest thus didn’t know the “true” values of the <span class="math inline">\(\beta_i\)</span>. Rather, he used <em>sample data</em> to estimate the <span class="math inline">\(\beta_i\)</span> by <span class="math inline">\(\hat{\beta}_i\)</span>. That is, the sample estimate of the population model is</p>
 <p><span class="math display">\[y = \hat{\beta}_0 + \hat{\beta}_1 x_1\]</span></p>
 <p>In choosing the “best” estimates <span class="math inline">\(\hat{\beta}_i\)</span>, he was looking for the coefficients that best described the relationship among the sample subjects. In the visual below, we can see that the red line does a better job at capturing this relationship than the blue line does:</p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-110-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-182-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>Mainly, on average, the individual points fall closer to the red line than the blue line. The distance between an individual observation and its model value (prediction) is called a <strong>residual</strong>.</p>
 <p><br> <br></p>
 <blockquote>
@@ -415,7 +426,7 @@ If you’d like extra practice, answer the following questions related to the co
 <pre><code>##     family father mother sex height nkids
 ## 14       4     75     64   F   64.5     5
 ## 849    193     65     64   M   67.0     6</code></pre>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-113-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-185-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>Calculate the residuals (the length of the vertical lines) for both of these subjects.</p></li>
 </ol>
 <p><br> <br></p>
@@ -467,7 +478,16 @@ X = \left(\begin{array}{ccccc} 1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_
 
 </div>
 </div>
-<!-- </div> -->
+</div>
+
+
+
+
+
+
+
+
+<!--  -->
             </section>
 
           </div>

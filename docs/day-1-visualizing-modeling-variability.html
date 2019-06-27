@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="course-notes.html">
-<link rel="next" href="homework.html">
+<link rel="next" href="day-2a-data-wrangling.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -117,6 +117,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
 <li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
 </ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
 <li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
@@ -155,7 +166,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><br></p>
 <div id="getting-started" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Getting Started</h3>
-<p><strong>If you arrive early, now’s a good time to get started!</strong> Find today’s notes at <a href="https://ajohns24.github.io/IMA_bootcamp_2018/day-1-visualizing-modeling-variability.html" class="uri">https://ajohns24.github.io/IMA_bootcamp_2018/day-1-visualizing-modeling-variability.html</a> &amp; take the following steps:</p>
+<p><strong>If you arrive early, now’s a good time to get started!</strong> Find today’s notes at <a href="https://dshuman1.github.io/IMA_bootcamp_2019/day-1-visualizing-modeling-variability.html" class="uri">https://dshuman1.github.io/IMA_bootcamp_2019/day-1-visualizing-modeling-variability.html</a> &amp; take the following steps:</p>
 <p><br />
 </p>
 <ul>
@@ -179,7 +190,7 @@ library(choroplethr)
 <p><br />
 </p>
 <ul>
-<li><p><strong>Knit</strong> your document! It’s helpful to do this early and often. If you get any errors, it’s likely because you haven’t yet installed the packages above. If this is the case, return to <a href="https://ajohns24.github.io/IMA_bootcamp_2018/homework.html#homework-1">Exercise 1 of the pre-bootcamp homework</a>.</p>
+<li><p><strong>Knit</strong> your document! It’s helpful to do this early and often. If you get any errors, it’s likely because you haven’t yet installed the packages above. If this is the case, return to <a href="https://dshuman1.github.io/IMA_bootcamp_2019/pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html">Exercise 5.4 of the pre-bootcamp homework</a>.</p>
 <p><img src="images/knit_it.png" height="400px" /></p></li>
 </ul>
 <p><br />
@@ -579,7 +590,7 @@ all_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_data, 
 <div id="linear-regression-models" class="section level3">
 <h3><span class="header-section-number">4.1.5</span> Linear Regression Models</h3>
 <p>Just as when exploring single variables, there are limitations in relying solely on visualizations to analyze relationships among 2+ variables. <em>Statistical models</em> provide rigorous numerical summaries of relationship trends. Before going into details, examine the plots below and draw a model that captures the trend of the relationships being illustrated.</p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-31-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-33-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br> <br> <br></p>
 <p><strong>Linear regression</strong> can be used to model each of these relationships. “Linear” here indicates that the linear regression model of a response variable is a <em>linear combination</em> of explanatory variables. It does <em>not</em> mean that the relationship itself is linear!! In general, let <span class="math inline">\(y\)</span> be our response variable and (<span class="math inline">\(x_1, x_2, ..., x_k\)</span>) be <span class="math inline">\(k\)</span> explanatory variables. Then the (population) linear regression model of <span class="math inline">\(y\)</span> vs the <span class="math inline">\(x_i\)</span> is</p>
 <p><span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k\]</span></p>
@@ -731,17 +742,15 @@ model5 &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span cla
 <br />
 <br />
 </p>
-
 </div>
 </div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
 <a href="course-notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="day-2a-data-wrangling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
