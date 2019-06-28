@@ -128,6 +128,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
 <li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html"><i class="fa fa-check"></i><b>4.4</b> Day 3a: More Data Wrangling - Changing Cases</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#spread-gather-and-wide-and-narrow-data-formats"><i class="fa fa-check"></i><b>4.4.1</b> Spread, Gather, and Wide and Narrow Data Formats</a></li>
+<li class="chapter" data-level="4.4.2" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#summary-graphic"><i class="fa fa-check"></i><b>4.4.2</b> Summary Graphic</a></li>
+<li class="chapter" data-level="4.4.3" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#the-daily-show-guests"><i class="fa fa-check"></i><b>4.4.3</b> The Daily Show Guests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#gathering-practice"><i class="fa fa-check"></i><b>4.4.4</b> Gathering Practice</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
 <li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
@@ -320,7 +326,7 @@ cor_melt &lt;-<span class="st"> </span><span class="kw">melt</span>(cor_matrix)
 <span class="kw">ggplot</span>(cor_melt, <span class="kw">aes</span>(<span class="dt">x=</span>Var1, <span class="dt">y=</span>Var2, <span class="dt">fill=</span><span class="kw">abs</span>(value))) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_tile</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">60</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-204-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-225-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br> <br></p>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Forward stepwise selection: by hand</strong><br />
@@ -449,14 +455,14 @@ After identifying your “optimal” set of predictors…
 <p>Suppose the <em>population model</em> of <span class="math inline">\(y\)</span> is a quadratic function of <span class="math inline">\(x\)</span>:</p>
 <p><span class="math display">\[y = f(x) + \varepsilon = x^2 + \varepsilon \;\;\;\; \text{ where } \varepsilon \sim N(0, 0.3^2)\]</span></p>
 <p>In practice, you would <em>not</em> have this information. Instead, you would take a <em>sample</em> of, say, size <span class="math inline">\(n=100\)</span> from this population and observe:</p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-215-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-236-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>You consider 3 different models of <span class="math inline">\(y\)</span>. These are plotted below against the <em>true</em> model (<span class="math inline">\(f(x) = x^2\)</span>) for comparison (black line).</p>
 <p><span class="math display">\[\begin{array}{lcrl}
 \text{model 1 (orange): } &amp; &amp; \hat{f}(x)&amp; = \hat{\beta}_0 \\
 \text{model 2 (red): } &amp; &amp; \hat{f}(x)&amp; = \hat{\beta}_0 + \hat{\beta}_1 x  + \hat{\beta}_2 x^2\\
 \text{model 3 (blue): } &amp; &amp; \hat{f}(x)&amp; = \hat{\beta}_0 + \hat{\beta}_1 x  + \hat{\beta}_2 x^2 + \cdots + \hat{\beta}_{10} x^{10}\\    
 \end{array}\]</span></p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-217-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-238-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>Of course, had you gotten a different sample of data, your results would be different. Press play &amp; examine the simulation below:</p>
 <ul>
 <li>Which model appears to <em>vary</em> the most from sample to sample?<br />
@@ -465,7 +471,7 @@ After identifying your “optimal” set of predictors…
 </ul>
 <center>
 <video width="\textwidth"  controls loop>
-<source src="IMA_book_2019_files/figure-html/unnamed-chunk-219.webm" />
+<source src="IMA_book_2019_files/figure-html/unnamed-chunk-240.webm" />
 </video>
 </center>
 <p><br />

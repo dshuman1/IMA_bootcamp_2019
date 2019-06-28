@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="day-2b-model-assumptions-measuring-model-quality.html">
+<link rel="next" href="homework.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html"><i class="fa fa-check"></i><b>4.4</b> Day 3a: More Data Wrangling - Changing Cases</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#spread-gather-and-wide-and-narrow-data-formats"><i class="fa fa-check"></i><b>4.4.1</b> Spread, Gather, and Wide and Narrow Data Formats</a></li>
+<li class="chapter" data-level="4.4.2" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#summary-graphic"><i class="fa fa-check"></i><b>4.4.2</b> Summary Graphic</a></li>
+<li class="chapter" data-level="4.4.3" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#the-daily-show-guests"><i class="fa fa-check"></i><b>4.4.3</b> The Daily Show Guests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#gathering-practice"><i class="fa fa-check"></i><b>4.4.4</b> Gathering Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#seasonality"><i class="fa fa-check"></i><b>5.3.1</b> Seasonality</a></li>
+<li class="chapter" data-level="5.3.2" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#day-of-the-week"><i class="fa fa-check"></i><b>5.3.2</b> Day of the Week</a></li>
+<li class="chapter" data-level="5.3.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#holidays"><i class="fa fa-check"></i><b>5.3.3</b> Holidays</a></li>
+<li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
+<li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html"><i class="fa fa-check"></i><b>5.4</b> Homework 2b: Model Building &amp; Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#warm-up"><i class="fa fa-check"></i><b>5.4.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.4.2" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#model-building-subset-selection"><i class="fa fa-check"></i><b>5.4.2</b> Model Building: Subset selection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>5.4.3</b> Bias-variance trade-off</a></li>
+<li class="chapter" data-level="5.4.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#extra"><i class="fa fa-check"></i><b>5.4.4</b> Extra</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="day-3a-more-data-wrangling---changing-cases" class="section level2">
+<h2><span class="header-section-number">4.4</span> Day 3a: More Data Wrangling - Changing Cases</h2>
+<div id="spread-gather-and-wide-and-narrow-data-formats" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Spread, Gather, and Wide and Narrow Data Formats</h3>
+<p>Additional reading:</p>
+<ul>
+<li><a href="http://r4ds.had.co.nz/tidy-data.html#spreading-and-gathering">Wickham and Grolemund on spreading and gathering</a>, or</li>
+<li>Chapter 11 of Data Computing by Kaplan</li>
+</ul>
+<p>As we are transforming data, it is important to keep in mind what constitutes each case (row) of the data. For example, in the initial <code>BabyName</code> data below, each case is a single name-sex-year combination. So if we have the same name and sex but a different year, that would be a different case.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-125">Table 4.5: </span>Each case is one name-sex-year combination.</caption>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="left">sex</th>
+<th align="left">name</th>
+<th align="right">count</th>
+<th align="right">prop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Mary</td>
+<td align="right">7065</td>
+<td align="right">0.0724</td>
+</tr>
+<tr class="even">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Anna</td>
+<td align="right">2604</td>
+<td align="right">0.0267</td>
+</tr>
+<tr class="odd">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Emma</td>
+<td align="right">2003</td>
+<td align="right">0.0205</td>
+</tr>
+<tr class="even">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Elizabeth</td>
+<td align="right">1939</td>
+<td align="right">0.0199</td>
+</tr>
+<tr class="odd">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Minnie</td>
+<td align="right">1746</td>
+<td align="right">0.0179</td>
+</tr>
+<tr class="even">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Margaret</td>
+<td align="right">1578</td>
+<td align="right">0.0162</td>
+</tr>
+</tbody>
+</table>
+<p>It is often necessary to rearrange your data in order to create visualizations, run statistical analysis, etc. We have already seen some ways to rearrange the data to change the case. For example, what is the case after performing the following command?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BabyNamesTotal&lt;-BabyNames <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(name,sex) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total=</span><span class="kw">sum</span>(count))</code></pre></div>
+<p>Each case now represents one name-sex combination:</p>
+<table>
+<caption><span id="tab:unnamed-chunk-127">Table 4.6: </span>Narrow format where each case is one name-sex combination.</caption>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">sex</th>
+<th align="right">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Aaban</td>
+<td align="left">M</td>
+<td align="right">87</td>
+</tr>
+<tr class="even">
+<td align="left">Aabha</td>
+<td align="left">F</td>
+<td align="right">28</td>
+</tr>
+<tr class="odd">
+<td align="left">Aabid</td>
+<td align="left">M</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Aabriella</td>
+<td align="left">F</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">Aada</td>
+<td align="left">F</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Aadam</td>
+<td align="left">M</td>
+<td align="right">218</td>
+</tr>
+</tbody>
+</table>
+<p>In this activity, we are going to learn two new operations to reshape and reorganize the data: <code>spread()</code> and <code>gather()</code>.</p>
+<div id="spread" class="section level4">
+<h4><span class="header-section-number">4.4.1.1</span> Spread</h4>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-128" class="example"><strong>Example 4.5  </strong></span>We want to find the common names that are the most gender neutral (used roughly equally for males and females). How should we rearrange the data? Well, one nice way would be to have a single row for each name, and then have separate variables for the number of times that name is used for males and females. Using these two columns, we can then compute a third column that gives the ratio between these two columns. That is, we’d like to transform the data into a <strong>wide format</strong> with each of the possible values of the <code>sex</code> variable becoming its own column. The operation we need to perform this transformation is <strong><code>spread()</code></strong>. It takes a value (<code>total</code> in this case) representing the variable to be divided into multiple new variables, and a key (the original variable <code>sex</code> in this case) that identifies the variable in the initial narrow format data whose values should become the names of the new variables in the wide format data. The entry <code>fill=0</code> specifies that if there are, e.g., no females named Aadam, we should include a zero in the corresponding entry of the wide format table.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BabyWide&lt;-BabyNamesTotal <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">spread</span>(<span class="dt">key=</span>sex,<span class="dt">value=</span>total,<span class="dt">fill=</span><span class="dv">0</span>)</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-130">Table 4.7: </span>A wide format with one case per name enables us to examine gender balance.</caption>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="right">F</th>
+<th align="right">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Aaban</td>
+<td align="right">0</td>
+<td align="right">87</td>
+</tr>
+<tr class="even">
+<td align="left">Aabha</td>
+<td align="right">28</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Aabid</td>
+<td align="right">0</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">Aabriella</td>
+<td align="right">15</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">Aada</td>
+<td align="right">5</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Aadam</td>
+<td align="right">0</td>
+<td align="right">218</td>
+</tr>
+</tbody>
+</table>
+<p>Now we can choose common names with frequency greater than 25,000 for both males and females, and sort by the ratio to identify gender-neutral names.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Neutral&lt;-BabyWide <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(M<span class="op">&gt;</span><span class="dv">25000</span>,F<span class="op">&gt;</span><span class="dv">25000</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> <span class="kw">pmin</span>(M<span class="op">/</span>F,F<span class="op">/</span>M)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(ratio))</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-132">Table 4.8: </span>The most gender-neutral common names, in wide format.</caption>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="right">F</th>
+<th align="right">M</th>
+<th align="right">ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Kerry</td>
+<td align="right">48476</td>
+<td align="right">49482</td>
+<td align="right">0.9797</td>
+</tr>
+<tr class="even">
+<td align="left">Riley</td>
+<td align="right">87347</td>
+<td align="right">89585</td>
+<td align="right">0.9750</td>
+</tr>
+<tr class="odd">
+<td align="left">Jackie</td>
+<td align="right">90427</td>
+<td align="right">78245</td>
+<td align="right">0.8653</td>
+</tr>
+<tr class="even">
+<td align="left">Frankie</td>
+<td align="right">32626</td>
+<td align="right">40105</td>
+<td align="right">0.8135</td>
+</tr>
+<tr class="odd">
+<td align="left">Jaime</td>
+<td align="right">49552</td>
+<td align="right">66314</td>
+<td align="right">0.7472</td>
+</tr>
+<tr class="even">
+<td align="left">Peyton</td>
+<td align="right">62481</td>
+<td align="right">45428</td>
+<td align="right">0.7271</td>
+</tr>
+<tr class="odd">
+<td align="left">Casey</td>
+<td align="right">75402</td>
+<td align="right">109122</td>
+<td align="right">0.6910</td>
+</tr>
+<tr class="even">
+<td align="left">Pat</td>
+<td align="right">40124</td>
+<td align="right">26732</td>
+<td align="right">0.6662</td>
+</tr>
+<tr class="odd">
+<td align="left">Jessie</td>
+<td align="right">166088</td>
+<td align="right">109560</td>
+<td align="right">0.6597</td>
+</tr>
+<tr class="even">
+<td align="left">Kendall</td>
+<td align="right">54919</td>
+<td align="right">33334</td>
+<td align="right">0.6070</td>
+</tr>
+<tr class="odd">
+<td align="left">Jody</td>
+<td align="right">55655</td>
+<td align="right">31109</td>
+<td align="right">0.5590</td>
+</tr>
+<tr class="even">
+<td align="left">Avery</td>
+<td align="right">100768</td>
+<td align="right">49216</td>
+<td align="right">0.4884</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="gather" class="section level4">
+<h4><span class="header-section-number">4.4.1.2</span> Gather</h4>
+<p>Next, let’s filter these names to keep only those with a ratio of 0.5 or greater (no more than 2 to 1), and then switch back to narrow format. We can do this with the following <strong><code>gather()</code></strong> operation. It gathers the columns listed (<code>F</code>,<code>M</code>) at the end into a single column whose name is given by the key (<code>sex</code>), and includes the values in a column called <code>total</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NeutralNarrow&lt;-Neutral <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(ratio<span class="op">&gt;=</span>.<span class="dv">5</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span>sex,<span class="dt">value=</span>total,F,M)<span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(name,sex,total)<span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(name)</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-134">Table 4.9: </span>Narrow format for the most gender-neutral common names.</caption>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">sex</th>
+<th align="right">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Casey</td>
+<td align="left">F</td>
+<td align="right">75402</td>
+</tr>
+<tr class="even">
+<td align="left">Casey</td>
+<td align="left">M</td>
+<td align="right">109122</td>
+</tr>
+<tr class="odd">
+<td align="left">Frankie</td>
+<td align="left">F</td>
+<td align="right">32626</td>
+</tr>
+<tr class="even">
+<td align="left">Frankie</td>
+<td align="left">M</td>
+<td align="right">40105</td>
+</tr>
+<tr class="odd">
+<td align="left">Jackie</td>
+<td align="left">F</td>
+<td align="right">90427</td>
+</tr>
+<tr class="even">
+<td align="left">Jackie</td>
+<td align="left">M</td>
+<td align="right">78245</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="summary-graphic" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Summary Graphic</h3>
+<p>Here is a nice summary graphic of <code>gather</code> and <code>spread</code> from the <a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf">RStudio cheat sheet on data import</a>:</p>
+<p><img src="images/fig-spread-gather.jpeg" height="375px" /></p>
+</div>
+<div id="the-daily-show-guests" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> The Daily Show Guests</h3>
+<p>The data associated with <a href="https://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/">this article</a> is available in the <code>fivethirtyeight</code> package, and is loaded into <code>Daily</code> below. It includes a list of every guest to ever appear on Jon Stewart’s The Daily Show. Note that when multiple people appeared together, each person receives their own line.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Daily&lt;-daily_show_guests</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="left">google_knowledge_occupation</th>
+<th align="left">show</th>
+<th align="left">group</th>
+<th align="left">raw_guest_list</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">singer</td>
+<td align="left">1999-07-26</td>
+<td align="left">Musician</td>
+<td align="left">Donny Osmond</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">actress</td>
+<td align="left">1999-07-27</td>
+<td align="left">Acting</td>
+<td align="left">Wendie Malick</td>
+</tr>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">vocalist</td>
+<td align="left">1999-07-28</td>
+<td align="left">Musician</td>
+<td align="left">Vince Neil</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">film actress</td>
+<td align="left">1999-07-29</td>
+<td align="left">Acting</td>
+<td align="left">Janeane Garofalo</td>
+</tr>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">comedian</td>
+<td align="left">1999-08-10</td>
+<td align="left">Comedy</td>
+<td align="left">Dom Irrera</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">actor</td>
+<td align="left">1999-08-11</td>
+<td align="left">Acting</td>
+<td align="left">Pierce Brosnan</td>
+</tr>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">director</td>
+<td align="left">1999-08-12</td>
+<td align="left">Media</td>
+<td align="left">Eduardo Sanchez and Daniel Myrick</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">film director</td>
+<td align="left">1999-08-12</td>
+<td align="left">Media</td>
+<td align="left">Eduardo Sanchez and Daniel Myrick</td>
+</tr>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">american television personality</td>
+<td align="left">1999-08-16</td>
+<td align="left">Media</td>
+<td align="left">Carson Daly</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">actress</td>
+<td align="left">1999-08-17</td>
+<td align="left">Acting</td>
+<td align="left">Molly Ringwald</td>
+</tr>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">actress</td>
+<td align="left">1999-08-18</td>
+<td align="left">Acting</td>
+<td align="left">Sarah Jessica Parker</td>
+</tr>
+</tbody>
+</table>
+<div id="popular-guests" class="section level4">
+<h4><span class="header-section-number">4.4.3.1</span> Popular guests</h4>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-137" class="exercise"><strong>Exercise 4.8  </strong></span>Create the following table containing 19 columns. The first column should have the ten guests with the highest number of total apperances on the show, listed in descending order of number of appearances. The next 17 columns should show the number of appearances of the corresponding guest in each year from 1999 to 2015 (one per column). The final column should show the total number of appearances for the corresponding guest over the entire duration of the show (these entries should be in decreasing order). Hint: the function <code>rowSums()</code> adds up all of the entries in each row of a table. Try using it in a <code>mutate</code>.</p>
+</div>
+
+</div>
+<div id="recreating-a-graphic" class="section level4">
+<h4><span class="header-section-number">4.4.3.2</span> Recreating a graphic</h4>
+<p>The original data has 18 different entries for the <code>group</code> variable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(Daily<span class="op">$</span>group)
+##  [1] &quot;Acting&quot;         &quot;Comedy&quot;         &quot;Musician&quot;       &quot;Media&quot;         
+##  [5] NA               &quot;Politician&quot;     &quot;Athletics&quot;      &quot;Business&quot;      
+##  [9] &quot;Advocacy&quot;       &quot;Political Aide&quot; &quot;Misc&quot;           &quot;Academic&quot;      
+## [13] &quot;Government&quot;     &quot;media&quot;          &quot;Clergy&quot;         &quot;Science&quot;       
+## [17] &quot;Consultant&quot;     &quot;Military&quot;</code></pre></div>
+<p>In order to help you recreate the first figure from <a href="https://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/">the article</a>, I have added a new variable with three broader groups: (i) entertainment; (ii) politics, business, and government, and (iii) commentators. We will learn in the next activity what the <code>inner_join</code> in this code chunk is doing.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DailyGroups&lt;-<span class="kw">read_csv</span>(<span class="st">&quot;https://www.macalester.edu/~dshuman1/data/112/daily-group-assignment.csv&quot;</span>)
+Daily&lt;-Daily<span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">inner_join</span>(DailyGroups,<span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;group&quot;</span>=<span class="st">&quot;group&quot;</span>))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="left">google_knowledge_occupation</th>
+<th align="left">show</th>
+<th align="left">group</th>
+<th align="left">raw_guest_list</th>
+<th align="left">broad_group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">actor</td>
+<td align="left">1999-01-11</td>
+<td align="left">Acting</td>
+<td align="left">Michael J. Fox</td>
+<td align="left">Entertainment</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">comedian</td>
+<td align="left">1999-01-12</td>
+<td align="left">Comedy</td>
+<td align="left">Sandra Bernhard</td>
+<td align="left">Entertainment</td>
+</tr>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">television actress</td>
+<td align="left">1999-01-13</td>
+<td align="left">Acting</td>
+<td align="left">Tracey Ullman</td>
+<td align="left">Entertainment</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">film actress</td>
+<td align="left">1999-01-14</td>
+<td align="left">Acting</td>
+<td align="left">Gillian Anderson</td>
+<td align="left">Entertainment</td>
+</tr>
+<tr class="odd">
+<td align="right">1999</td>
+<td align="left">actor</td>
+<td align="left">1999-01-18</td>
+<td align="left">Acting</td>
+<td align="left">David Alan Grier</td>
+<td align="left">Entertainment</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">actor</td>
+<td align="left">1999-01-19</td>
+<td align="left">Acting</td>
+<td align="left">William Baldwin</td>
+<td align="left">Entertainment</td>
+</tr>
+</tbody>
+</table>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-141" class="exercise"><strong>Exercise 4.9  </strong></span>Using the group assignments contained in the <code>broad_group</code> variable, recreate the graphic from the article, with three different lines showing the fraction of guests in each group over time. Hint: first think about what your case should be for the glyph-ready form.</p>
+</div>
+
+</div>
+</div>
+<div id="gathering-practice" class="section level3">
+<h3><span class="header-section-number">4.4.4</span> Gathering Practice</h3>
+<p>A typical situation that requires a <code>gather</code> command is when the columns represent the possible values of a variable. Table <a href="day-3a-more-data-wrangling-changing-cases.html#tab:lesotho-table">4.10</a> shows example data set from <a href="http://dataportal.opendataforafrica.org/">opendataforafrica.org</a> with different years in different columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Lesotho&lt;-<span class="kw">read_csv</span>(<span class="st">&quot;https://www.macalester.edu/~dshuman1/data/112/Lesotho.csv&quot;</span>)</code></pre></div>
+<table>
+<caption><span id="tab:lesotho-table">Table 4.10: </span>Financial statistics about Lesotho.</caption>
+<thead>
+<tr class="header">
+<th align="left">Category</th>
+<th align="right">2010</th>
+<th align="right">2011</th>
+<th align="right">2012</th>
+<th align="right">2013</th>
+<th align="right">2014</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Total Population</td>
+<td align="right">2.01</td>
+<td align="right">2.03</td>
+<td align="right">2.05</td>
+<td align="right">2.07</td>
+<td align="right">2.10</td>
+</tr>
+<tr class="even">
+<td align="left">Gross Domestic Product</td>
+<td align="right">2242.30</td>
+<td align="right">2560.99</td>
+<td align="right">2494.60</td>
+<td align="right">2267.96</td>
+<td align="right">1929.28</td>
+</tr>
+<tr class="odd">
+<td align="left">Average Interest Rate on Loans</td>
+<td align="right">11.22</td>
+<td align="right">10.43</td>
+<td align="right">10.12</td>
+<td align="right">9.92</td>
+<td align="right">10.34</td>
+</tr>
+<tr class="even">
+<td align="left">Inflation Rate</td>
+<td align="right">3.60</td>
+<td align="right">4.98</td>
+<td align="right">6.10</td>
+<td align="right">5.03</td>
+<td align="right">4.94</td>
+</tr>
+<tr class="odd">
+<td align="left">Average Interest Rate on Deposits</td>
+<td align="right">3.68</td>
+<td align="right">2.69</td>
+<td align="right">2.85</td>
+<td align="right">2.85</td>
+<td align="right">2.73</td>
+</tr>
+</tbody>
+</table>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-143" class="exercise"><strong>Exercise 4.10  (Gathering practice)  </strong></span>Make a side-by-side bar chart with the <code>year</code> on the horizontal axis, and three side-by-side vertical columns for average interest rate on deposits, average interest rate on loans, and inflation rate for each year. In order to get the data into glyph-ready form, you’ll need to use <code>gather</code>. Hint: <code>gather</code> uses the <code>dplyr::select()</code> notation, so you can, e.g., list the columns you want to select, use colon notation, or use <code>contains(a string)</code>. See <a href="http://r4ds.had.co.nz/transform.html#select-columns-with-select">Wickham and Grolemund</a> for more information.</p>
+</div>
+
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="day-2b-model-assumptions-measuring-model-quality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
