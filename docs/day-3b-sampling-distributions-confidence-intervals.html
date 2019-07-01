@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="day-3a-more-data-wrangling-changing-cases.html">
+<link rel="next" href="homework.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html"><i class="fa fa-check"></i><b>4.4</b> Day 3a: More Data Wrangling - Changing Cases</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#spread-gather-and-wide-and-narrow-data-formats"><i class="fa fa-check"></i><b>4.4.1</b> Spread, Gather, and Wide and Narrow Data Formats</a></li>
+<li class="chapter" data-level="4.4.2" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#summary-graphic"><i class="fa fa-check"></i><b>4.4.2</b> Summary Graphic</a></li>
+<li class="chapter" data-level="4.4.3" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#the-daily-show-guests"><i class="fa fa-check"></i><b>4.4.3</b> The Daily Show Guests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#gathering-practice"><i class="fa fa-check"></i><b>4.4.4</b> Gathering Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html"><i class="fa fa-check"></i><b>4.5</b> Day 3b: Sampling Distributions &amp; Confidence Intervals</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#simulation-study-sampling-variability"><i class="fa fa-check"></i><b>4.5.1</b> Simulation study: sampling variability</a></li>
+<li class="chapter" data-level="4.5.2" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#reporting-estimates-with-measures-of-error"><i class="fa fa-check"></i><b>4.5.2</b> Reporting estimates with measures of error</a></li>
+<li class="chapter" data-level="4.5.3" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#confidence-interval-simulation-study"><i class="fa fa-check"></i><b>4.5.3</b> Confidence interval simulation study</a></li>
+<li class="chapter" data-level="4.5.4" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#extra"><i class="fa fa-check"></i><b>4.5.4</b> Extra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#seasonality"><i class="fa fa-check"></i><b>5.3.1</b> Seasonality</a></li>
+<li class="chapter" data-level="5.3.2" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#day-of-the-week"><i class="fa fa-check"></i><b>5.3.2</b> Day of the Week</a></li>
+<li class="chapter" data-level="5.3.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#holidays"><i class="fa fa-check"></i><b>5.3.3</b> Holidays</a></li>
+<li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
+<li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html"><i class="fa fa-check"></i><b>5.4</b> Homework 2b: Model Building &amp; Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#warm-up"><i class="fa fa-check"></i><b>5.4.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.4.2" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#model-building-subset-selection"><i class="fa fa-check"></i><b>5.4.2</b> Model Building: Subset selection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>5.4.3</b> Bias-variance trade-off</a></li>
+<li class="chapter" data-level="5.4.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#extra-1"><i class="fa fa-check"></i><b>5.4.4</b> Extra</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="day-3b-sampling-distributions-confidence-intervals" class="section level2">
+<h2><span class="header-section-number">4.5</span> Day 3b: Sampling Distributions &amp; Confidence Intervals</h2>
+<p><br />
+</p>
+<p><br> <br></p>
+<p><strong>MOTIVATION</strong></p>
+<p>Thus far, our analyses have been <em>exploratory</em> in nature. We’ve used sample data to visualize relationships, build models of relationship trends, and evaluate those models:</p>
+<p><img src="images/concept_map.png" height="550px" /></p>
+<p><br />
+<br />
+<br />
+</p>
+<p><strong>Motivating Example</strong></p>
+<p>Scientists are developing a new pregnancy test. Doctors gave both the new test and the “gold standard” to a group of 100 pregnant women. The new test was accurate for 88 of these women whereas the standard test was only accurate for 86.</p>
+<ul>
+<li><p><strong>Exploratory question</strong><br />
+What trends did we observe in our sample of data? Was the new test more accurate than the old in detecting pregnancy among pregnant women?</p></li>
+<li><p><strong>Inferential question</strong><br />
+Do these data provide enough evidence to conclude that the new test is better at detecting pregnancy among pregnant women?</p></li>
+</ul>
+<p>The point: we’ll start looking beyond just the trends of our sample data and exploring how to <strong>use sample data to make inferences about the larger population of interest</strong>. The first step in reaching this goal is understanding sampling distributions, a reflection of the potential error in our sample information.</p>
+<p><br> <br></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<div id="simulation-study-sampling-variability" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Simulation study: sampling variability</h3>
+<p>Recall the 2016 election returns for the <em>population of “all” counties</em> outside Alaska:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">politics &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/electionDemographics16.csv&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-152-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>And features of each county, such as median rent:</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-153-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Based on these <strong>complete population data</strong> on all counties outside Alaska, we know that the relationship trend between Trump’s 2016 support and the median rent in a county is:</p>
+<p><span class="math display">\[\text{perrep_2016} = 84.583 - 0.041 * \text{median_rent}\]</span></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-154-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<div id="different-samples-different-estimates" class="section level4">
+<h4><span class="header-section-number">4.5.1.1</span> Different Samples, Different Estimates</h4>
+<p><br></p>
+<p><strong>FORGET THAT YOU KNOW ALL OF THE ABOVE.</strong></p>
+<p>Let’s <strong>pretend</strong> that we are working within the typical scenario - we do not have access to the entire population of interest. Instead, we need to <strong>estimate</strong> the true trend (regression line) using data from a randomly selected <strong>sample</strong> of counties. That is, we’ll <em>use the sample model to estimate the true, but unknown population model</em>.</p>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-155" class="exercise"><strong>Exercise 4.11  (Sampling and randomness in RStudio)  </strong></span>We’ll be taking some <em>random samples</em> of counties throughout this activity. The underlying <em>random number generator</em> plays a role in the random sample we happen to get:</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Try the following chunk A FEW TIMES</span>
+<span class="kw">sample_n</span>(politics, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Try the following FULL chunk A FEW TIMES</span>
+<span class="kw">set.seed</span>(<span class="dv">155</span>)
+<span class="kw">sample_n</span>(politics, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p><br> <br></p>
+<p><strong>NOTE:</strong> If we <code>set.seed(some positive integer)</code> before taking a random sample, we’ll get the same results. This <strong>reproducibility</strong> is important:</p>
+<ul>
+<li>we get the same results every time we knit the Rmd<br />
+</li>
+<li>we can share our work with others and ensure they get our same answers<br />
+</li>
+<li>it would not be great if you submitted your work to, say, a journal, and weren’t able to back up / confirm / reproduce your results!</li>
+</ul>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-158" class="exercise"><strong>Exercise 4.12  (Class experiment)  </strong></span>Let’s each take a sample and see what we get.<br />
+a. Let your seed be your birthday month (1 or 2 digits) and day (2 digits). For example January 5 is 105, September 10 is 910, October 5 is 1005, and December 10 is 1210. Set this in RStudio:</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(YOURSEED)</code></pre></div>
+<p>b. Take a random sample of <strong>10</strong> counties using the syntax above, and save it as <code>sample1</code>.<br />
+c. Construct and plot your sample model. How close is this <strong>estimate</strong> to the actual population model (<code>perrep_2016 = 84.58 - 0.04 * median_rent</code>)?<br />
+d. Take <em>another</em> sample of 10 counties, save it as <code>sample2</code>, and repeat part (c). How does this compare to the population model? The sample model calculated from <code>sample_1</code>?<br />
+e. Indicate your <code>sample_1</code> and <code>sample_2</code> intercept and slope <em>estimates</em> in <a href="https://docs.google.com/forms/d/e/1FAIpQLSf67W-V0CZuwaU_ZdkVXArFc1km1Ru9WLpF7DniSrm8MWD-kw/viewform?usp=sf_link">this survey</a>.</p>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-160" class="exercise"><strong>Exercise 4.13  (Comparing estimates)  </strong></span>Import each student’s estimates from Google sheets:</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">gsheet2tbl</span>(<span class="st">&#39;https://docs.google.com/spreadsheets/d/1UxlQgAX5OWOz7DVfx2nxbPapnHMFlrpnwkxml6MVfk0/edit?usp=sharing&#39;</span>)</code></pre></div>
+<p>Compare the intercepts:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(results, <span class="kw">aes</span>(<span class="dt">x =</span> intercept)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</code></pre></div>
+<p>Compare the slopes:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(results, <span class="kw">aes</span>(<span class="dt">x =</span> slope)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</code></pre></div>
+<p>Compare the resulting models to the <em>true</em> population model in red:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(politics, <span class="kw">aes</span>(<span class="dt">x =</span> median_rent, <span class="dt">y =</span> perrep_<span class="dv">2016</span>)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">data =</span> results, <span class="kw">aes</span>(<span class="dt">intercept =</span> intercept, <span class="dt">slope =</span> slope), <span class="dt">alpha =</span> <span class="fl">0.75</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p><br> <br></p>
+</div>
+<div id="simulation-study" class="section level4">
+<h4><span class="header-section-number">4.5.1.2</span> Simulation Study</h4>
+<p>Our little experiment reflects very few of the more than <span class="math inline">\(_{3112}C_{10} &gt; 2.3*10^{28}\)</span> different samples of 10 counties that we could get from the entire population of 3112 counties!! In this section, you’ll run a <em>simulation</em> to study just how different these estimates could be.</p>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-165" class="exercise"><strong>Exercise 4.14  (Taking multiple samples)  </strong></span>Whereas <code>sample_n()</code> takes a single sample of size <span class="math inline">\(n\)</span> from a dataset, <code>rep_sample_n</code> takes <em>multiple</em> samples of size <span class="math inline">\(n\)</span>. To get a feel for it, take <strong>4</strong> samples of size <strong>2</strong>. The <code>replicate</code> variable in the output indicates the sample (1, 2, 3, 4) to which each sampled case corresponds.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">example1 &lt;-<span class="st"> </span><span class="kw">rep_sample_n</span>(politics, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">reps =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)
+<span class="kw">dim</span>(example1)
+example1</code></pre></div>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-167" class="exercise"><strong>Exercise 4.15  (500 samples of size 10)  </strong></span><br />
+a. To get a sense for the wide variety of samples we might get, take <strong>500</strong> samples of size <span class="math inline">\(n\)</span> = <strong>10</strong>. Store these as <code>samples_10</code>.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">155</span>)
+samples_<span class="dv">10</span> &lt;-<span class="st"> </span><span class="kw">rep_sample_n</span>(politics, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">reps =</span> <span class="dv">500</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p>b. Each sample produces a different estimate of the population model between <code>perrep_2016</code> and <code>median_rent</code>. Plot these <strong>500</strong> sample model estimates on the same frame:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(samples_<span class="dv">10</span>, <span class="kw">aes</span>(<span class="dt">x =</span> median_rent, <span class="dt">y =</span> perrep_<span class="dv">2016</span>, <span class="dt">group =</span> replicate)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">size =</span> <span class="fl">0.5</span>) </code></pre></div>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-170" class="exercise"><strong>Exercise 4.16  (500 sample slopes)  </strong></span>Let’s focus on the slopes of these 500 sample models.<br />
+a. Save the 500 <code>median_rent</code> (slope) coefficients, stored under the <code>estimate</code> variable in the <code>slopes_10</code> data frame.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">slopes_<span class="dv">10</span> &lt;-<span class="st"> </span>samples_<span class="dv">10</span> <span class="op">%&gt;%</span><span class="st">    </span>
+<span class="st">    </span><span class="kw">group_by</span>(replicate) <span class="op">%&gt;%</span><span class="st">     </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_rent, <span class="dt">data=</span>.) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;median_rent&quot;</span>)
+
+<span class="co"># Check it out</span>
+<span class="kw">head</span>(slopes_<span class="dv">10</span>)
+<span class="kw">dim</span>(slopes_<span class="dv">10</span>)</code></pre></div>
+<p>b. Construct a histogram of the 500 sample estimates of the true slope. This histogram approximates a <strong>sampling distribution</strong> of the sample slopes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(slopes_<span class="dv">10</span>, <span class="kw">aes</span>(<span class="dt">x =</span> estimate)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.01</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">lims</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.20</span>, <span class="fl">0.15</span>))</code></pre></div>
+<p>c. Describe the sampling distribution: What’s its general shape? Where is it centered? Roughly what is its spread? i.e., what is the range of estimates you observed?</p>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-173" class="exercise"><strong>Exercise 4.17  (Increasing sample size)  </strong></span>Suppose we increased our sample size from <code>n=10</code> to <code>n=50</code>. What impact do you anticipate this having on the sampling distribution of sample slopes:</p>
+<ul>
+<li>Around what value would you expect the distribution of sample slopes to be centered?<br />
+</li>
+<li>What general shape would you expect the distribution to have?<br />
+</li>
+<li><p>In comparison to estimates based on the samples of size 10, do you think the estimates based on samples of size 50 will be closer to or farther from the true slope (on average)? Why?</p>
+</div>
+</li>
+</ul>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-174" class="exercise"><strong>Exercise 4.18  (500 samples of size 50)  </strong></span>Test your intuition. Fill in the blanks to repeat the simulation process with samples of size n = 50.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Take 500 samples of size n = 50</span>
+<span class="kw">set.seed</span>(<span class="dv">155</span>)
+samples_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">rep_sample_n</span>(politics, <span class="dt">size =</span> ___, <span class="dt">reps =</span> ___, <span class="dt">replace =</span> <span class="ot">FALSE</span>)
+
+<span class="co"># Plot the 500 sample model estimates</span>
+<span class="kw">ggplot</span>(___, <span class="kw">aes</span>(<span class="dt">x =</span> ___, <span class="dt">y =</span> ___, <span class="dt">group =</span> ___)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">size =</span> <span class="fl">0.5</span>) 
+
+<span class="co"># Store the 500 slope estimates</span>
+slopes_<span class="dv">50</span> &lt;-<span class="st"> </span>___ <span class="op">%&gt;%</span><span class="st">    </span>
+<span class="st">    </span><span class="kw">group_by</span>(___) <span class="op">%&gt;%</span><span class="st">     </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">lm</span>(___ <span class="op">~</span><span class="st"> </span>___, <span class="dt">data =</span> .) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;median_rent&quot;</span>)
+
+<span class="co"># Construct a histogram of the 500 sample slope estimates.    </span>
+<span class="kw">ggplot</span>(___, <span class="kw">aes</span>(<span class="dt">x =</span> estimate)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.01</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">lims</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.20</span>, <span class="fl">0.15</span>))</code></pre></div>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-176" class="exercise"><strong>Exercise 4.19  (500 samples of size 200)  </strong></span>Finally, repeat the simulation process with samples of size <span class="math inline">\(n\)</span> = 200.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Take 500 samples of size n = 200</span>
+<span class="kw">set.seed</span>(<span class="dv">155</span>)
+samples_<span class="dv">200</span> &lt;-<span class="st"> </span><span class="kw">rep_sample_n</span>(politics, <span class="dt">size =</span> ___, <span class="dt">reps =</span> ___, <span class="dt">replace =</span> <span class="ot">FALSE</span>)
+
+<span class="co"># Plot the 500 sample model estimates</span>
+<span class="kw">ggplot</span>(___, <span class="kw">aes</span>(<span class="dt">x =</span> ___, <span class="dt">y =</span> ___, <span class="dt">group =</span> ___)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">size =</span> <span class="fl">0.5</span>) 
+
+<span class="co"># Store the 500 slope estimates</span>
+slopes_<span class="dv">200</span> &lt;-<span class="st"> </span>___ <span class="op">%&gt;%</span><span class="st">    </span>
+<span class="st">    </span><span class="kw">group_by</span>(___) <span class="op">%&gt;%</span><span class="st">     </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">lm</span>(___ <span class="op">~</span><span class="st"> </span>___, <span class="dt">data=</span>.) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;median_rent&quot;</span>)
+
+<span class="co"># Construct a histogram of the 500 sample slope estimates.    </span>
+<span class="kw">ggplot</span>(___, <span class="kw">aes</span>(<span class="dt">x =</span> estimate)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.01</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">lims</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.20</span>, <span class="fl">0.15</span>))</code></pre></div>
+<p><br> <br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-178" class="exercise"><strong>Exercise 4.20  (Impact of sample size)  </strong></span><br />
+a. Compare the sampling distributions of the sample slopes for the estimates based on sizes 10, 50, and 200 by plotting them on the same frame:</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Combine the estimates &amp; sample size into a new data set</span>
+simulation_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
+  <span class="dt">estimates =</span> <span class="kw">c</span>(slopes_<span class="dv">10</span><span class="op">$</span>estimate, slopes_<span class="dv">50</span><span class="op">$</span>estimate, slopes_<span class="dv">200</span><span class="op">$</span>estimate), 
+  <span class="dt">sample_size =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;10&quot;</span>,<span class="st">&quot;50&quot;</span>,<span class="st">&quot;200&quot;</span>), <span class="dt">each =</span> <span class="dv">500</span>))
+
+<span class="co">#Construct density plot</span>
+<span class="kw">ggplot</span>(simulation_data, <span class="kw">aes</span>(<span class="dt">x =</span> estimates, <span class="dt">color =</span> sample_size)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;SAMPLING Distributions&quot;</span>)</code></pre></div>
+<p>b. Calculate the <strong>mean</strong> and <strong>standard deviation</strong> in sample slopes calculated from samples of size 10, 50, and 200. <strong>NOTE:</strong> We call the standard deviation <strong>“standard error”</strong> here – an estimate’s deviation from the mean reflects its <em>error</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">simulation_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(sample_size) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">summarize</span>(<span class="kw">mean</span>(estimates), <span class="kw">sd</span>(estimates))</code></pre></div>
+<p>c. <em>Interpret</em> the three standard errors.</p>
+<p><br> <br></p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-181" class="exercise"><strong>Exercise 4.21  (Properties of sampling distributions)  </strong></span>In light of your these investigations, complete the following statements.<br />
+a. For all sample sizes, the shape of the sampling distribution is ???.<br />
+b. As sample size increases:<br />
+The average sample slope estimate INCREASES / DECREASES / IS FAIRLY STABLE.<br />
+The standard deviation of the sample slopes INCREASES / DECREASES / IS FAIRLY STABLE.<br />
+c. Thus, as sample size increases, our sample slopes become MORE RELIABLE / LESS RELIABLE.
+</div>
+
+<p><br> <br></p>
+</div>
+<div id="reflection" class="section level4">
+<h4><span class="header-section-number">4.5.1.3</span> Reflection</h4>
+<p>Consider a simple population model</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x\]</span></p>
+<p>In general, we don’t know <span class="math inline">\(\beta_0\)</span> or <span class="math inline">\(\beta_1\)</span>. We are either working with (<span class="math inline">\(x,y\)</span>) data on a <em>sample</em> of subjects from the broader population of interest or with a population that is in flux. Thus, our sample data give us an <strong>estimate</strong> of the population model:</p>
+<p><span class="math display">\[y = \hat{\beta}_0 + \hat{\beta}_1 x\]</span></p>
+<p>What we know about the sample model:</p>
+<ul>
+<li>our estimates <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> will vary depending upon what data we happen to get<br />
+</li>
+<li>there is error in these estimates</li>
+</ul>
+<p>These concepts are captured in the <strong>sampling distribution</strong> of a sample estimate <span class="math inline">\(\hat{\beta}\)</span> (eg: <span class="math inline">\(\hat{\beta}_0\)</span> or <span class="math inline">\(\hat{\beta_1}\)</span>). Specifically, the sampling distribution of <span class="math inline">\(\hat{\beta}\)</span> is a distribution of all possible <span class="math inline">\(\hat{\beta}\)</span> we could observe based on all possible samples of the same size <span class="math inline">\(n\)</span> from the population. It captures how <span class="math inline">\(\hat{\beta}\)</span> can vary from sample to sample.</p>
+<center>
+<img src="images/sampling_dist.png" height="250px"/>
+</center>
+<p><br> <br></p>
+<p><strong>Impact of sample size</strong></p>
+<p>Below are sampling distributions of the sample slopes and sample models calculated from sample sizes of 10, 50, and 200 counties. Notice that as sample size n increases:</p>
+<ul>
+<li>there is less variability (and more consistency) in the possible estimates from different samples</li>
+<li>we are less likely to get estimates that are far from the truth</li>
+</ul>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-182-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br> <br></p>
+<p><strong>Standard error of <span class="math inline">\(\hat{\beta}\)</span></strong></p>
+<p>The standard deviation of the sampling distribution, which is called the <strong>standard error</strong>, measures the typical error in the sample slopes calculated from sample to sample. The greater the standard error, the less “reliable” the sample estimate. As we’ve seen, standard error decreases as sample size <span class="math inline">\(n\)</span> increases. For example, in our simulation, our estimates based on samples of size 10, 50, &amp; 200 had the following standard deviations:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(slopes_<span class="dv">10</span><span class="op">$</span>estimate)
+## [1] 0.03433
+<span class="kw">sd</span>(slopes_<span class="dv">50</span><span class="op">$</span>estimate)
+## [1] 0.01141
+<span class="kw">sd</span>(slopes_<span class="dv">200</span><span class="op">$</span>estimate)
+## [1] 0.00528</code></pre></div>
+<p>These observed standard deviations are merely approximations of the “true” standard error. In linear algebraic notation:</p>
+<p><span class="math display">\[\begin{array}{ll}
+\text{population model}: &amp; y = X \beta \\
+\text{sample estimate of $\beta$}: &amp; \hat{\beta} = \left(X^TX\right)^{-1}X^Ty \\
+\text{standard error of $\hat{\beta}$}: &amp; s.e.\left(\hat{\beta}\right) = \sqrt{\sigma^2\left(X^TX\right)^{-1}}  \\
+\end{array}\]</span></p>
+<p>where <span class="math inline">\(\sigma^2\)</span> is the variance of the residuals. When the linear regression model assumptions are met, the standard error <span class="math inline">\(\hat{\beta}\)</span> is proportional to <span class="math inline">\(\frac{1}{\sqrt{n}}\)</span> where <span class="math inline">\(n\)</span> is the number of observations in the sample.</p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p><strong>One hitch</strong></p>
+<p>The simulation above was just pretend. In practice we do NOT take 500 samples from the population - we take and use only <strong>ONE sample</strong>. Thus, we can’t actually observe the sampling distribution. However, the properties of the sampling distributions that we observed are guaranteed by Probability theory. <strong>IF</strong> the regression model assumptions are met and our sample size <span class="math inline">\(n\)</span> is “big enough”, then the <strong>Central Limit Theorem (CLT)</strong> guarantees that the sampling distribution of <em>all</em> possible <span class="math inline">\(\hat{\beta}_i\)</span> we could observe from <em>all</em> possible samples of size <span class="math inline">\(n\)</span> is approximately Normally distributed around <span class="math inline">\(\beta_i\)</span> with standard error <span class="math inline">\(s.e.(\hat{\beta}_i)\)</span>:</p>
+<p><span class="math display">\[\hat{\beta}_i \stackrel{\cdot}{\sim} N(\beta_i, s.e.(\hat{\beta}_i))\]</span></p>
+<p>The CLT for the sampling distribution of <span class="math inline">\(\hat{\beta}_i\)</span> in pictures:</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-184-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Connecting this to the 68-95-99.7 Rule, the CLT guarantees that (approximately)…</p>
+<ul>
+<li><p><strong>68%</strong> of samples will produce <span class="math inline">\(\hat{\beta}_i\)</span> within <strong>1 st. err.</strong> of <span class="math inline">\(\beta_i\)</span></p></li>
+<li><p><strong>95%</strong> of samples will produce <span class="math inline">\(\hat{\beta}_i\)</span> within <strong>2 st. err.</strong> of <span class="math inline">\(\beta_i\)</span></p></li>
+<li><p><strong>99.7%</strong> of samples will produce <span class="math inline">\(\hat{\beta}_i\)</span> within <strong>3 st. err.</strong> of <span class="math inline">\(\beta_i\)</span> quantity</p></li>
+</ul>
+<p><br />
+<img src="IMA_book_2019_files/figure-html/unnamed-chunk-185-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+</div>
+<div id="reporting-estimates-with-measures-of-error" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Reporting estimates with measures of error</h3>
+<p>Again, <strong>PRETEND</strong> we don’t have access to the population data and instead have to observe data on <strong>ONE</strong> sample of 50 counties. Be sure to use the exact code below!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Sample 50 counties</span>
+<span class="kw">set.seed</span>(<span class="dv">18</span>)
+sample_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">sample_n</span>(politics, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p>Calculate a sample model estimate using <code>sample_50</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sample_mod &lt;-<span class="st"> </span><span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_rent, sample_<span class="dv">50</span>)
+<span class="kw">coef</span>(<span class="kw">summary</span>(sample_mod))
+##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept) 86.78205   3.563150  24.355 1.141e-28
+## median_rent -0.04489   0.006022  -7.455 1.483e-09</code></pre></div>
+<p><br />
+<br />
+</p>
+<p>When interpreting and reporting our estimated sample model, it’s crucial to incorporate a measure of the potential error in these estimates. This is commonly done using <strong>standard errors</strong> &amp; <strong>confidence intervals</strong>. In fact, we see confidence intervals reported in everyday news. Example: On June 18, 2017, Gallup reported that Trump’s approval rating is at 45% with a “margin of sampling error of <span class="math inline">\(\pm\)</span> 3 percentage points at the 95% confidence level.”</p>
+<ul>
+<li><p>Use this info to calculate a confidence interval for Trump’s approval rating among all Americans.</p></li>
+<li><p>Does this evidence support the claim that less than half of Americans approve of the job Trump’s doing?</p></li>
+</ul>
+<p><br />
+<br />
+<br />
+</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-188" class="exercise"><strong>Exercise 4.22  (Estimating the standard error)  </strong></span>Our sample estimate of slope <span class="math inline">\(\beta_1\)</span> is <span class="math inline">\(\hat{\beta}_1 =-0.04489\)</span>. With only 1 sample of data (not 500), we can estimate <span class="math inline">\(\text{s.e.}(\hat{\beta}_1)\)</span> by <span class="math inline">\(\sqrt{\hat{\sigma}^2(X^TX)^{-1}}\)</span>. This estimate is reported in the <code>Std. Error</code> column of the summary table.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Report this error rounded to 5 decimal places.<br />
+</li>
+<li>How close is this error estimate to the standard deviation we observed in the <code>slopes_50$estimate</code>, 0.006022?<br />
+</li>
+<li>Interpret the standard error. Does this seem big or small relative to the slope? (Looking ahead: confidence intervals provide some perspective here.)
+</div>
+</li>
+</ol>
+<br />
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-189" class="exercise"><strong>Exercise 4.23  (Constructing confidence intervals)  </strong></span>In light of the standard error 0.006022 that you reported in part (a) above, the CLT for <span class="math inline">\(\hat{\beta}_1\)</span> guarantees that <span class="math display">\[\hat{\beta}_1 \stackrel{\cdot}{\sim} N\left(\beta_1, 0.006022^2\right)\]</span> where <span class="math inline">\(\beta_1\)</span> is the <strong>“unknown”</strong> population slope. Thus by the 68-95-99.7 Rule, approximately 95% of samples will produce an estimate <span class="math inline">\(\hat{\beta}_1\)</span> that’s within 2 standard errors (0.060) of <span class="math inline">\(\beta_1\)</span>. In turn, <span class="math inline">\(\beta_1\)</span> is within 2 standard errors of 95% of all possible <span class="math inline">\(\hat{\beta}_1\)</span>.<br />
+
+</div>
+
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the range of values that are within 2 standard errors of OUR sample slope (<span class="math inline">\(\hat{\beta}_1\)</span> = -0.04489):<br />
+<span class="math display">\[\begin{split}
+    \hat{\beta_1} \pm 2 s.e.(\hat{\beta}_1) &amp; =  \hspace{2in}\\
+    \end{split}\]</span></li>
+</ol>
+<p>This is the <strong>95% confidence interval (CI)</strong> for <span class="math inline">\(\beta_1\)</span>! That is: though we don’t know <span class="math inline">\(\beta_1\)</span> (pretend), we are “95% confident” that it falls within the range of this interval.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>We can get a more accurate confidence interval in RStudio:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(sample_mod)</code></pre></div>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Use the confidence interval to evaluate the claim that <span class="math inline">\(\beta_1 &lt; 0\)</span>, ie. that there’s a negative association between the median rent and the Republican votes in 2016.</li>
+</ol>
+<p><br> <br></p>
+<p><br />
+<br />
+</p>
+</div>
+<div id="confidence-interval-simulation-study" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> Confidence interval simulation study</h3>
+<p><br />
+</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-191" class="exercise"><strong>Exercise 4.24  </strong></span>As we saw in our simulation study of 500 samples, some samples are lucky and some aren’t. Is <code>sample_50</code> one of the lucky samples? That is, did this sample produce a confidence interval that contains the true slope <span class="math inline">\(\beta_1 = -0.0409\)</span>?</p>
+</div>
+
+<p><br></p>
+<p><br />
+</p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-192" class="exercise"><strong>Exercise 4.25  </strong></span>The use of “95% confidence” (instead of 100% confidence) indicates that such unlucky samples are possible. But what exactly does “<strong>95% confidence</strong>” mean? To answer this question, let’s repeat our experiment 100 times. Try this on your own first. Hints are provided below as is a complete solution.<br />
+
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Set the seed to 2018</span>
+
+
+<span class="co"># Take 100 samples of size 50 from politics</span>
+samples_<span class="dv">50</span> &lt;-<span class="st"> </span>
+
+<span class="co"># From each sample: calculate a confidence interval for the slope</span>
+<span class="co"># (Only keep the slope CIs, not the intercept CIs)</span>
+CIs_<span class="dv">50</span> &lt;-<span class="st">     </span>
+
+<span class="co"># Give meaningful variable names</span>
+<span class="kw">names</span>(CIs_<span class="dv">50</span>) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;replicate&quot;</span>, <span class="st">&quot;variable&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;upper&quot;</span>)
+
+<span class="co"># Define new variables: </span>
+<span class="co"># lucky = whether the CI covers -0.0409</span>
+<span class="co"># estimate = sample slope estimate</span>
+CIs_<span class="dv">50</span> &lt;-<span class="st"> </span>
+
+<span class="co"># Check it out</span>
+<span class="kw">head</span>(CIs_<span class="dv">50</span>)</code></pre></div>
+<p><br> <br> <br> <br></p>
+<p><strong>HINTS</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Set the seed to 2018</span>
+
+
+<span class="co"># Take 100 samples of size 50 from politics</span>
+samples_<span class="dv">50</span> &lt;-<span class="st"> </span>___
+
+<span class="co"># From each sample: calculate a confidence interval for the slope</span>
+<span class="co"># (Only keep the slope CIs, not the intercept CIs)</span>
+CIs_<span class="dv">50</span> &lt;-<span class="st"> </span>___ <span class="op">%&gt;%</span><span class="st">    </span>
+<span class="st">    </span><span class="kw">group_by</span>(___) <span class="op">%&gt;%</span><span class="st">     </span>
+<span class="st">    </span><span class="kw">do</span>(___ <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(___)    
+
+<span class="co"># Give meaningful variable names</span>
+<span class="kw">names</span>(CIs_<span class="dv">50</span>) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;replicate&quot;</span>, <span class="st">&quot;variable&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;upper&quot;</span>)
+
+<span class="co"># Define new variables: </span>
+<span class="co"># lucky = whether the CI covers -0.0409</span>
+<span class="co"># estimate = sample slope estimate</span>
+CIs_<span class="dv">50</span> &lt;-<span class="st"> </span>CIs_<span class="dv">50</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">___</span>(<span class="dt">lucky =</span> ___, <span class="dt">estimate =</span> ___)
+
+<span class="co"># Check it out</span>
+<span class="kw">head</span>(CIs_<span class="dv">50</span>)</code></pre></div>
+<p><br> <br> <br> <br></p>
+<p><strong>SOLUTIONS</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Set the seed to 2018</span>
+<span class="kw">set.seed</span>(<span class="dv">2018</span>)
+
+<span class="co"># Take 100 samples of size 50</span>
+samples_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw">rep_sample_n</span>(politics, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">reps =</span> <span class="dv">100</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)
+
+<span class="co"># From each sample: calculate a confidence interval for the slope</span>
+<span class="co"># (Only keep the slope CIs, not the intercept CIs)</span>
+CIs_<span class="dv">50</span> &lt;-<span class="st"> </span>samples_<span class="dv">50</span> <span class="op">%&gt;%</span><span class="st">    </span>
+<span class="st">    </span><span class="kw">group_by</span>(replicate) <span class="op">%&gt;%</span><span class="st">     </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">confint</span>(<span class="kw">lm</span>(perrep_<span class="dv">2016</span> <span class="op">~</span><span class="st"> </span>median_rent, <span class="dt">data=</span>.), <span class="dt">level =</span> <span class="fl">0.95</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(.rownames <span class="op">==</span><span class="st"> &quot;median_rent&quot;</span>)    
+
+<span class="co"># Give meaningful variable names</span>
+<span class="kw">names</span>(CIs_<span class="dv">50</span>) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;replicate&quot;</span>, <span class="st">&quot;variable&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;upper&quot;</span>)
+
+<span class="co"># Define new variables: </span>
+<span class="co"># lucky = whether the CI covers -0.0409</span>
+<span class="co"># estimate = sample slope estimate</span>
+CIs_<span class="dv">50</span> &lt;-<span class="st"> </span>CIs_<span class="dv">50</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">lucky =</span> (lower <span class="op">&lt;</span><span class="st"> </span><span class="op">-</span><span class="fl">0.0409</span> <span class="op">&amp;</span><span class="st"> </span>upper <span class="op">&gt;</span><span class="st"> </span><span class="op">-</span><span class="fl">0.0409</span>), <span class="dt">estimate =</span> (upper <span class="op">+</span><span class="st"> </span>lower) <span class="op">/</span><span class="st"> </span><span class="dv">2</span>)
+
+<span class="co"># Check it out</span>
+<span class="kw">head</span>(CIs_<span class="dv">50</span>)</code></pre></div>
+<p><br />
+<br />
+</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-196" class="exercise"><strong>Exercise 4.26  (Visualizing the simulated CIs)  </strong></span>The code above produced 100 different 95% confidence intervals from 100 different samples of size 50. Check out a plot of these 100 intervals. In this plot, the 100 horizontal lines represent the 100 95% CIs. Each interval is centered at the corresponding sample slope <span class="math inline">\(\hat{\beta}_1\)</span> (represented by a dot). Intervals that do NOT cover the true <span class="math inline">\(\beta = -0.0409\)</span> are highlighted in red. Based on this plot, explain the meaning of “95% confidence”.</p>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(CIs_<span class="dv">50</span>, <span class="kw">aes</span>(<span class="dt">y =</span> replicate, <span class="dt">x =</span> lower, <span class="dt">color =</span> lucky)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_segment</span>(<span class="kw">aes</span>(<span class="dt">x =</span> lower, <span class="dt">xend =</span> upper, <span class="dt">y =</span> replicate, <span class="dt">yend =</span> replicate)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> estimate, <span class="dt">y =</span> replicate)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">lims</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.20</span>, <span class="fl">0.15</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="op">-</span><span class="fl">0.0409</span>)</code></pre></div>
+<p><br />
+<br />
+</p>
+<blockquote>
+<p><strong>Interpreting CIs &amp; Confidence Levels</strong></p>
+<ol style="list-style-type: decimal">
+<li>The easy (but vague) way:<br />
+We are ‘95% confident’ that <span class="math inline">\(\beta_1\)</span> is between the lower &amp; upper bounds of this CI.</li>
+</ol>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>The correct way:<br />
+Using this CI method, approximately 95% of all possible samples will produce 95% CI’s that cover <span class="math inline">\(\beta_1\)</span>. The other 5% are based on unlucky samples that produce unusually low or high estimates <span class="math inline">\(\hat{\beta}_1\)</span>. Mathematically: <span class="math display">\[P(\hat{\beta}_1 \in (\beta_1 \pm 2 s.e.(\hat{\beta}_1))) \approx 0.95\]</span></p></li>
+<li><p>The <strong>incorrect way</strong>:<br />
+We <strong>cannot</strong> say that “there’s a 95% chance that <span class="math inline">\(\beta_1\)</span> is in the 95% CI.” Technically, <span class="math inline">\(\beta_1\)</span> is either in the interval or it’s not, so the probability is simply 1 or 0. Mathematically: <span class="math display">\[P(\beta_1 \in (\hat{\beta}_1 \pm 2 s.e.(\hat{\beta}_1))) \in \{0,1\} \]</span> NOTE: This is a consequence of using <em>frequentist</em> methods. There’s a competing <em>Bayesian</em> philosophy which is outside the scope of this workshop.</p></li>
+</ol>
+</blockquote>
+<p><br />
+<br />
+</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-198" class="exercise"><strong>Exercise 4.27  (Impact of sample size)  </strong></span>Suppose we increase our sample size from 50 to 200 counties. What does your intuition say will happen to the 95% CIs?</p>
+<ol style="list-style-type: lower-alpha">
+<li>Will the new CIs be narrower or wider? Approximately what percentage of these will cover <span class="math inline">\(\beta_1 = -0.0409\)</span>?<br />
+</li>
+<li><p>Check your intuition. Rerun the simulation with a sample size of 200.</p>
+</div>
+</li>
+</ol>
+<p><br />
+<br />
+</p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-199" class="exercise"><strong>Exercise 4.28  (Impact of confidence level)  </strong></span>Traditionally, people typically use a 95% confidence level.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Consider lowering the confidence level from 95% to 68%. What does your intuition say will happen to the CIs? Will the new CIs be narrower or wider?Approximately what percentage of these will cover <span class="math inline">\(\beta_1 = -0.0409\)</span>?<br />
+</li>
+<li>Similarly, what would happen if we increased the confidence level from 95% to 99.97% CIs?<br />
+</li>
+<li><p>Test your intuition. Repeat the simulation, changing the <code>level</code> argument in the <code>do()</code> statement.</p>
+</div>
+</li>
+</ol>
+<p><br />
+ <br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="extra" class="section level3">
+<h3><span class="header-section-number">4.5.4</span> Extra</h3>
+<p>Above, you ran a simulation under a few different sample sizes. Any time you want to perform a similar operation multiple times, you can streamline the process by <strong>writing a function</strong>. Try the following.</p>
+<ul>
+<li><p>Write a function named <code>add_ab()</code> that calculates the sum of two given numbers, <code>a</code> and <code>b</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">add_ab &lt;-<span class="st"> </span><span class="cf">function</span>(a,b){     <span class="co">#define add_ab as a function of two arguments, a &amp; b </span>
+    a <span class="op">+</span><span class="st"> </span>b                   <span class="co">#what you want the function to do</span>
+}                           <span class="co">#a right bracket to end the function definition    </span>
+
+<span class="co"># Try it out!</span>
+<span class="kw">add_ab</span>(<span class="dt">a=</span><span class="dv">2</span>, <span class="dt">b=</span><span class="dv">3</span>)
+<span class="kw">add_ab</span>(<span class="dt">a=</span><span class="dv">1</span>, <span class="dt">b=</span><span class="op">-</span><span class="dv">2</span>)</code></pre></div></li>
+</ul>
+<p><br />
+<br />
+</p>
+<ul>
+<li><p>Write a function that calculates more than one quantity, say the sum and difference of <code>a</code> and <code>b</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new_ab &lt;-<span class="st"> </span><span class="cf">function</span>(a,b){
+ sum_ab  &lt;-<span class="st"> </span>a <span class="op">+</span><span class="st"> </span>b
+ diff_ab &lt;-<span class="st"> </span>a <span class="op">-</span><span class="st"> </span>b
+ <span class="kw">return</span>(<span class="kw">data.frame</span>(sum_ab, diff_ab))
+}
+
+<span class="co">#try it out!</span>
+tryit &lt;-<span class="st"> </span><span class="kw">new_ab</span>(<span class="dt">a=</span><span class="dv">2</span>, <span class="dt">b=</span><span class="dv">3</span>)
+tryit
+tryit<span class="op">$</span>sum_ab
+tryit<span class="op">$</span>diff_ab</code></pre></div></li>
+</ul>
+<p><br />
+<br />
+</p>
+<ul>
+<li>Write a function that runs the CI simulation for a sample of size <code>n</code> &amp; confidence level <code>cl</code>.</li>
+</ul>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="day-3a-more-data-wrangling-changing-cases.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
