@@ -181,6 +181,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.3" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#confidence-prediction-bands"><i class="fa fa-check"></i><b>5.5.3</b> Confidence &amp; Prediction Bands</a></li>
 <li class="chapter" data-level="5.5.4" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#extra-3"><i class="fa fa-check"></i><b>5.5.4</b> Extra</a></li>
 </ul></li>
+<li class="chapter" data-level="5.6" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html"><i class="fa fa-check"></i><b>5.6</b> Homework 4: Hypothesis Testing</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#bootstrap-hypothesis-testing-multicollinearity"><i class="fa fa-check"></i><b>5.6.1</b> Bootstrap hypothesis testing + Multicollinearity</a></li>
+<li class="chapter" data-level="5.6.2" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.6.2</b> Simpson’s Paradox</a></li>
+<li class="chapter" data-level="5.6.3" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#multiple-testing"><i class="fa fa-check"></i><b>5.6.3</b> Multiple Testing</a></li>
+<li class="chapter" data-level="5.6.4" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#statistical-vs-practical-significance"><i class="fa fa-check"></i><b>5.6.4</b> Statistical vs Practical Significance</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -629,7 +635,7 @@ all_data &lt;-<span class="st"> </span><span class="kw">mutate</span>(all_data, 
 <div id="linear-regression-models" class="section level3">
 <h3><span class="header-section-number">4.1.5</span> Linear Regression Models</h3>
 <p>Just as when exploring single variables, there are limitations in relying solely on visualizations to analyze relationships among 2+ variables. <em>Statistical models</em> provide rigorous numerical summaries of relationship trends. Before going into details, examine the plots below and draw a model that captures the trend of the relationships being illustrated.</p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-39-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-40-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br> <br> <br></p>
 <p><strong>Linear regression</strong> can be used to model each of these relationships. “Linear” here indicates that the linear regression model of a response variable is a <em>linear combination</em> of explanatory variables. It does <em>not</em> mean that the relationship itself is linear!! In general, let <span class="math inline">\(y\)</span> be our response variable and (<span class="math inline">\(x_1, x_2, ..., x_k\)</span>) be <span class="math inline">\(k\)</span> explanatory variables. Then the (population) linear regression model of <span class="math inline">\(y\)</span> vs the <span class="math inline">\(x_i\)</span> is</p>
 <p><span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k\]</span></p>

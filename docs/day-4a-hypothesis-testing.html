@@ -181,6 +181,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.5.3" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#confidence-prediction-bands"><i class="fa fa-check"></i><b>5.5.3</b> Confidence &amp; Prediction Bands</a></li>
 <li class="chapter" data-level="5.5.4" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#extra-3"><i class="fa fa-check"></i><b>5.5.4</b> Extra</a></li>
 </ul></li>
+<li class="chapter" data-level="5.6" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html"><i class="fa fa-check"></i><b>5.6</b> Homework 4: Hypothesis Testing</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#bootstrap-hypothesis-testing-multicollinearity"><i class="fa fa-check"></i><b>5.6.1</b> Bootstrap hypothesis testing + Multicollinearity</a></li>
+<li class="chapter" data-level="5.6.2" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.6.2</b> Simpson’s Paradox</a></li>
+<li class="chapter" data-level="5.6.3" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#multiple-testing"><i class="fa fa-check"></i><b>5.6.3</b> Multiple Testing</a></li>
+<li class="chapter" data-level="5.6.4" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#statistical-vs-practical-significance"><i class="fa fa-check"></i><b>5.6.4</b> Statistical vs Practical Significance</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -294,12 +300,7 @@ Given the potential error in this sample information, what can we conclude about
 <p><strong>EXAMPLE</strong></p>
 <p>Let’s do some inference. Extraterrestrials have landed and scientists are busy studying their physical characteristics (put aside your ethics for now). Ignore everything you know about humans - ETs are different.</p>
 <p><br />
-</p>
-<div class="figure">
-<img src="http://www.startrek.com/uploads/assets/db_articles/ff89500284cdbd26b2e5e2602ac774399505d484.jpg" alt="Talosian" />
-<p class="caption">Talosian</p>
-</div>
-<p><br />
+<br />
 </p>
 <p>Examine the following plots of the relationship between the ETs “brain” weight, “hand” length, and height that were calculated from a sample of ETs.</p>
 <blockquote>
@@ -307,7 +308,7 @@ Given the potential error in this sample information, what can we conclude about
 </blockquote>
 <p><br />
 </p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-206-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-207-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br />
 <br />
 <br />
@@ -332,7 +333,7 @@ Given the potential error in this sample information, what can we conclude about
 </blockquote>
 <p><br />
 </p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-207-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-208-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(mod_height)
 ##                2.5 % 97.5 %
 ## (Intercept) -39.6174 15.601
@@ -360,7 +361,7 @@ Given the potential error in this sample information, what can we conclude about
 </blockquote>
 <p><br />
 </p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-209-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-210-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(mod_height)
 ##               2.5 % 97.5 %
 ## (Intercept) -6.6081 0.7504
@@ -388,7 +389,7 @@ Given the potential error in this sample information, what can we conclude about
 </blockquote>
 <p><br />
 </p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-211-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-212-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(mod_height)
 ##              2.5 %  97.5 %
 ## (Intercept) -4.715 -3.0658
@@ -514,7 +515,7 @@ brain_mod_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="k
 <span class="kw">ggplot</span>(brain, <span class="kw">aes</span>(<span class="dt">x=</span>Height, <span class="dt">y=</span>MRICount)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-215-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-216-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br />
 <br />
 </p>
@@ -628,7 +629,7 @@ For the brain hypotheses, the reported <strong>test statistic</strong> is <code>
 ## (Intercept)   175332     167806   1.045 0.3030573
 ## Height         10690       2448   4.366 0.0001023</code></pre></div>
 <p>It might help to reexamine the <em>sampling distribution</em> of slopes we’d expect to observe if <span class="math inline">\(H_0\)</span> were true (left) and the <em>standardized theoretical version</em> (from the Central Limit Theorem, not simulation):</p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-225-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-226-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
 </ol>
 <p><br />
 <br />
@@ -661,7 +662,7 @@ The p-value measures the compatibility of our data with <span class="math inline
 <li><strong>p-values</strong>
 <ul>
 <li>Reexamine the sampling distribution of slopes we’d expect to observe if <span class="math inline">\(H_0\)</span> were true. Based on either of these pictures alone, <em>approximate</em> the p-value.<br />
-<img src="IMA_book_2019_files/figure-html/unnamed-chunk-226-1.png" width="\textwidth" style="display: block; margin: auto;" /></li>
+<img src="IMA_book_2019_files/figure-html/unnamed-chunk-227-1.png" width="\textwidth" style="display: block; margin: auto;" /></li>
 </ul>
 <p><br />
 </p>

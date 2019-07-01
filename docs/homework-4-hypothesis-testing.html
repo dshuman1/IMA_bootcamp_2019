@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="homework-3-confidence-intervals-bootstrapping.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html"><i class="fa fa-check"></i><b>4.4</b> Day 3a: More Data Wrangling - Changing Cases</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#spread-gather-and-wide-and-narrow-data-formats"><i class="fa fa-check"></i><b>4.4.1</b> Spread, Gather, and Wide and Narrow Data Formats</a></li>
+<li class="chapter" data-level="4.4.2" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#summary-graphic"><i class="fa fa-check"></i><b>4.4.2</b> Summary Graphic</a></li>
+<li class="chapter" data-level="4.4.3" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#the-daily-show-guests"><i class="fa fa-check"></i><b>4.4.3</b> The Daily Show Guests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#gathering-practice"><i class="fa fa-check"></i><b>4.4.4</b> Gathering Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html"><i class="fa fa-check"></i><b>4.5</b> Day 3b: Sampling Distributions &amp; Confidence Intervals</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#simulation-study-sampling-variability"><i class="fa fa-check"></i><b>4.5.1</b> Simulation study: sampling variability</a></li>
+<li class="chapter" data-level="4.5.2" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#reporting-estimates-with-measures-of-error"><i class="fa fa-check"></i><b>4.5.2</b> Reporting estimates with measures of error</a></li>
+<li class="chapter" data-level="4.5.3" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#confidence-interval-simulation-study"><i class="fa fa-check"></i><b>4.5.3</b> Confidence interval simulation study</a></li>
+<li class="chapter" data-level="4.5.4" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#extra"><i class="fa fa-check"></i><b>4.5.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html"><i class="fa fa-check"></i><b>4.6</b> Day 4a: Hypothesis Testing</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#warm-up"><i class="fa fa-check"></i><b>4.6.1</b> Warm-up</a></li>
+<li class="chapter" data-level="4.6.2" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#warning"><i class="fa fa-check"></i><b>4.6.2</b> Warning</a></li>
+<li class="chapter" data-level="4.6.3" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#hypothesis-testing-concepts"><i class="fa fa-check"></i><b>4.6.3</b> Hypothesis testing concepts</a></li>
+<li class="chapter" data-level="4.6.4" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#hypothesis-testing-practice"><i class="fa fa-check"></i><b>4.6.4</b> Hypothesis Testing Practice</a></li>
+<li class="chapter" data-level="4.6.5" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#potential-errors-in-hypothesis-testing"><i class="fa fa-check"></i><b>4.6.5</b> Potential Errors in Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.6.6" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#extra-1"><i class="fa fa-check"></i><b>4.6.6</b> Extra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#seasonality"><i class="fa fa-check"></i><b>5.3.1</b> Seasonality</a></li>
+<li class="chapter" data-level="5.3.2" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#day-of-the-week"><i class="fa fa-check"></i><b>5.3.2</b> Day of the Week</a></li>
+<li class="chapter" data-level="5.3.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#holidays"><i class="fa fa-check"></i><b>5.3.3</b> Holidays</a></li>
+<li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
+<li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html"><i class="fa fa-check"></i><b>5.4</b> Homework 2b: Model Building &amp; Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#warm-up-1"><i class="fa fa-check"></i><b>5.4.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.4.2" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#model-building-subset-selection"><i class="fa fa-check"></i><b>5.4.2</b> Model Building: Subset selection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>5.4.3</b> Bias-variance trade-off</a></li>
+<li class="chapter" data-level="5.4.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#extra-2"><i class="fa fa-check"></i><b>5.4.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html"><i class="fa fa-check"></i><b>5.5</b> Homework 3: Confidence Intervals &amp; Bootstrapping</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#warm-up-2"><i class="fa fa-check"></i><b>5.5.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.5.2" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#bootstrapping"><i class="fa fa-check"></i><b>5.5.2</b> Bootstrapping</a></li>
+<li class="chapter" data-level="5.5.3" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#confidence-prediction-bands"><i class="fa fa-check"></i><b>5.5.3</b> Confidence &amp; Prediction Bands</a></li>
+<li class="chapter" data-level="5.5.4" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#extra-3"><i class="fa fa-check"></i><b>5.5.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html"><i class="fa fa-check"></i><b>5.6</b> Homework 4: Hypothesis Testing</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#bootstrap-hypothesis-testing-multicollinearity"><i class="fa fa-check"></i><b>5.6.1</b> Bootstrap hypothesis testing + Multicollinearity</a></li>
+<li class="chapter" data-level="5.6.2" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.6.2</b> Simpson’s Paradox</a></li>
+<li class="chapter" data-level="5.6.3" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#multiple-testing"><i class="fa fa-check"></i><b>5.6.3</b> Multiple Testing</a></li>
+<li class="chapter" data-level="5.6.4" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#statistical-vs-practical-significance"><i class="fa fa-check"></i><b>5.6.4</b> Statistical vs Practical Significance</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="homework-4-hypothesis-testing" class="section level2">
+<h2><span class="header-section-number">5.6</span> Homework 4: Hypothesis Testing</h2>
+<p><br> <br></p>
+<p><strong>Directions:</strong></p>
+<ul>
+<li><p>Install the <code>lubridate</code> and <code>ggmap</code> packages in your <strong>console</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)
+<span class="kw">install.packages</span>(<span class="st">&quot;ggmap&quot;</span>)</code></pre></div></li>
+<li><p>Start a new RMarkdown document.</p></li>
+<li><p>Load the following packages at the top of your Rmd: <code>dplyr</code>, <code>ggplot2</code>, <code>fivethirtyeight</code>, <code>infer</code>, <code>broom</code>, <code>lubridate</code>, <code>ggmap</code></p></li>
+</ul>
+<p><br> <br></p>
+<p><strong>Goals:</strong></p>
+<p>In this homework you will</p>
+<ul>
+<li>solidify your understanding of hypothesis tests;<br />
+</li>
+<li>take a bootstrapping approach to hypothesis testing; and<br />
+</li>
+<li>explore some common snags in hypothesis testing.</li>
+</ul>
+<p><br> <br> <br> <br> <br> <br></p>
+<div id="bootstrap-hypothesis-testing-multicollinearity" class="section level3">
+<h3><span class="header-section-number">5.6.1</span> Bootstrap hypothesis testing + Multicollinearity</h3>
+<p>The <code>bf</code> data contains body measurements on 250 adult males. The original data are from K. Penrose, A. Nelson, and A. Fisher (1985), ”Generalized Body Composition Prediction Equation for Men Using Simple Measurement Techniques” (abstract), Medicine and Science in Sports and Exercise, 17(2), 189.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bf &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/bodyfatsub.csv&quot;</span>)</code></pre></div>
+<ol style="list-style-type: decimal">
+<li><strong>BodyFat vs Hip &amp; Weight</strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>Construct the sample model of body fat percentage (<code>BodyFat</code>) by <code>Hip</code> circumference (cm) and <code>Weight</code> (lb). Review the <code>Weight</code> coefficient before moving on.</p></li>
+<li><p>Report &amp; interpret the test statistic for the <code>Weight</code> coefficient.</p></li>
+<li><p>Report &amp; interpret the p-value corresponding to the hypothesis that <code>Weight</code> is positively associated with <code>BodyFat</code>.</p></li>
+<li><p>Recall that this p-value is calculated under the assumption that the CLT holds: IF <span class="math inline">\(H_0: \beta = 0\)</span> holds, then <span class="math inline">\(\hat{\beta} \sim N(0, 0.0417^2)\)</span>. Thus the p-value is represented by the area of the shaded region below. Calculate this Normal probability using <code>pnorm()</code>. Bonus: use <code>pt()</code> for the <span class="math inline">\(t\)</span> probability that’s actually reported in the summary table.</p>
+<dl>
+<dt><img src="IMA_book_2019_files/figure-html/unnamed-chunk-376-1.png" width="\textwidth" style="display: block; margin: auto;" /></dt>
+<dd>
+</dd>
+</dl></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Bootstrap hypothesis tests</strong><br />
+Our hypothesis test conclusions depend in part on the p-value which depends upon the CLT which depends upon the validity of our model assumptions. Instead of relying on the parametric CLT assumption, we can calculate a bootstrap p-value.
+<ol style="list-style-type: lower-alpha">
+<li>Obtain 1000 bootstrap estimates of the <code>Weight</code> parameter (for the same model as above with both <code>Weight</code> and <code>Hip</code> as explanatory variables).<br />
+</li>
+<li>Create a new variable of <code>null_slopes</code> which shifts your bootstrap <code>Weight</code> coefficients so that they’re centered at 0, the null hypothesis value of the <code>Weight</code> coefficient. Construct and describe a density plot of the 1000 bootstrap <code>null_slopes</code>.<br />
+</li>
+<li>Using only the 1000 <code>null_slopes</code> with <em>no</em> CLT assumptions, approximate a p-value for the hypothesis test above. (This should be within <span class="math inline">\(\pm 0.03\)</span> of what you observed for the classical approach!)</li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>A new model</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Noting that the p-value of the <code>Weight</code> coefficient is rather high, your friend concludes that weight isn’t associated with body fat percentage. Construct a model that refutes your friend’s mistake, report the model summary table, and provide specific evidence from this table that contradicts your friend’s claim.<br />
+</li>
+<li>Explain <em>why</em> this happened, i.e. why the original model and your new model provide two different insights into the relationship between body fat percentage and weight.</li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<blockquote>
+<p><strong>TAKE HOME WARNING</strong></p>
+<p>The coefficient-related hypothesis tests reported in the model summary table must be interpreted in light of the other variables in the model. They indicate the significance of a term <em>on top of</em> / <em>when controlling for</em> other variables in the model, not simply the significance of a term on its own. This is especially important to keep in mind when working with <strong>multicollinear</strong> predictors. Thus it’s a good idea to start simple - examine models with fewer terms before jumping right into more complicated models!</p>
+</blockquote>
+<p><br> <br> <br></p>
+</div>
+<div id="simpsons-paradox" class="section level3">
+<h3><span class="header-section-number">5.6.2</span> Simpson’s Paradox</h3>
+<p>The data set</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">diam &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/Diamonds.csv&quot;</span>)</code></pre></div>
+<p>contains data on <code>price</code>, <code>carat</code> (size), <code>color</code>, and <code>clarity</code> of 308 diamonds. We want to explore the association between clarity &amp; price. Clarity is classified as follows (in order from best to worst):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Clarity</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">IF</td>
+<td align="left">internally flawless (no internal imperfections)</td>
+</tr>
+<tr class="even">
+<td align="left">VVS1</td>
+<td align="left">very very slightly imperfect</td>
+</tr>
+<tr class="odd">
+<td align="left">VVS2</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">VS1</td>
+<td align="left">very slightly imperfect</td>
+</tr>
+<tr class="odd">
+<td align="left">VS2</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Before answering the questions below, think about what relationships you’d expect to see among these variables!</p>
+<p><br></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Consider the relationship between <code>price</code> &amp; <code>clarity</code>.
+<ol style="list-style-type: lower-alpha">
+<li><p>Construct &amp; describe a plot of the relationship between price and clarity.</p></li>
+<li><p>Construct a sample estimate of the model of <code>price</code> by <code>clarity</code>.</p></li>
+<li><p>Which clarity has the highest predicted value (and what is this value)? Which clarity has the lowest predicted value (and what is this value)? Why are these results surprising? HINT: Don’t forget about the reference level.</p></li>
+<li><p>Examine the p-values for each coefficient in the model. What do you conclude?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="5" style="list-style-type: decimal">
+<li>The surprising results above can be explained by a <strong>confounding variable</strong>: <code>carat</code>.
+<ol style="list-style-type: lower-alpha">
+<li>Construct &amp; describe a visualization of the relationship between <code>price</code>, <code>clarity</code>, and <code>carat</code>.<br />
+</li>
+<li>Fit the model of <code>price ~ clarity + carat</code>.<br />
+</li>
+<li><p>If you want the extra practice (if not, move on): Interpret every coefficient, predict the price of a 0.5 carat VVS2 diamond, and write out a model of <code>price</code> by <code>carat</code> for the VVS2 group.</p></li>
+<li><p>When controlling for carat, which clarity has the highest expected price? Which has the lowest expected price?</p></li>
+<li><p>The models with &amp; without <code>carat</code> lead to different conclusions about the relationship between <code>price</code> and <code>clarity</code>. This is called a <strong>Simpson’s Paradox</strong>. <em>Explain</em> why this happened. Construct a graphic to back you up.</p></li>
+</ol></li>
+</ol>
+<p><br> <br> <br> <br></p>
+</div>
+<div id="multiple-testing" class="section level3">
+<h3><span class="header-section-number">5.6.3</span> Multiple Testing</h3>
+<p>In a paper published in the <em>Proceedings of the Royal Society B - Biological Sciences</em> (a reputable journal), Matthews et. al. asked mothers about their consumption of 132 different foods. For each food, they tested for an association with a higher incidence of male or female babies. Letting <span class="math inline">\(p\)</span> be the proportion of babies that are male:</p>
+<p><span class="math display">\[
+\begin{split}
+H_0: &amp; p = 0.5 \\
+H_a: &amp; p \ne 0.5 \\
+\end{split}
+\]</span></p>
+<p>NOTE: This test is concerned with a single population proportion (that of male babies). The foundations of this test are the same as for those we’ve discussed in class!</p>
+<p><br></p>
+<p>Suppose that NONE of the 132 foods are truly linked to rates of male and female babies (i.e. <span class="math inline">\(H_0\)</span> is true in all 132 cases). Below you’ll <em>simulate</em> what might happen when we test each of these 132 hypotheses, each using data from a different random sample of 50 mothers.</p>
+<p><br></p>
+<p>To begin, import the list of 132 types of food:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">foods &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/Data/BabyBoyFood.csv&quot;</span>)
+<span class="kw">head</span>(foods)
+##                                                               Type
+## 1 Beef, ground, regular, pan-cooked                               
+## 2 Shredded wheat cereal                                           
+## 3 BF, cereal, rice w/apples, dry, prep w/ water                   
+## 4 BF, sweet potatoes                                              
+## 5 Pear, raw (w/ peel)                                             
+## 6 Celery, raw</code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Let’s run an experiment. For each of the 132 foods, we’ll randomly assign 50 expectant mothers to a diet heavy in that food. We’ll then record the number of male/female babies born in each food treatment group.
+<ol style="list-style-type: lower-alpha">
+<li><p>For each of the 132 food groups, randomly generate the sex of the 50 babies born to mothers in that group:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Set the seed</span>
+<span class="kw">set.seed</span>(<span class="dv">2018</span>)
+
+<span class="co"># Randomly generate the number of male &amp; female babies for each food</span>
+births &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nmales =</span> <span class="kw">rbinom</span>(<span class="dt">n =</span> <span class="dv">132</span>, <span class="dt">size =</span> <span class="dv">50</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">nfemales =</span> <span class="dv">50</span> <span class="op">-</span><span class="st"> </span>nmales) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">food =</span> foods<span class="op">$</span>Type)</code></pre></div></li>
+<li><p>Notice that <code>births</code> contains 132 rows. Each row indicates which food you fed to the 50 expectant mothers and the number of male/female babies born to these mothers. Which foods have the greatest discrepancy between male/female babies?</p></li>
+<li>It’s reasonable to assume that, in the broader population from which we generated these data, there’s no association between birth sex and diet for any of these food groups. Yet for each food, we’ll use our sample data to test whether the birth rate of males significantly differs from 0.5. In doing so we might make a Type I error. What does this mean in our setting?
+<ul>
+<li>Conclude that a food is linked to birth sex when it’s not.<br />
+</li>
+<li>Conclude that a food is not linked to birth sex when it is.</li>
+</ul></li>
+<li><p>Use the following syntax to test each food group for a significant association with birth sex and add the corresponding p-values to your data set:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">get_p &lt;-<span class="st"> </span>births <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">prop.test</span>(<span class="dt">x =</span> .<span class="op">$</span>nmales, <span class="dt">n =</span> <span class="dv">50</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>()) 
+
+births &lt;-<span class="st"> </span>births <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">p.value =</span> get_p<span class="op">$</span>p.value)</code></pre></div></li>
+<li><p>Check out your <code>births</code> data again. What proportion of the 132 tests produced Type I errors, i.e. had <code>p.value</code> &lt; 0.05 despite the fact that <span class="math inline">\(H_0\)</span> is true? To what foods do these belong? Can you imagine the newspaper headlines that would trumpet these results?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="7" style="list-style-type: decimal">
+<li>In the original Matthews’ study, the researchers found and trumpeted a correlation between male babies &amp; mothers that eat breakfast cereal. The “findings” were picked up in popular media (<a href="https://www.newscientist.com/article/dn13754-breakfast-cereals-boost-chances-of-conceiving-boys/">just 1 example</a>). The <strong>multiple testing</strong> performed in the study &amp; replicated in our simulation is a real concern. In many applications, we might run <em>thousands</em> of hypothesis tests (eg: gene sequencing). Let’s explore the math behind this phenomenon. Assume we conduct each hypothesis test at the <span class="math inline">\(\alpha=0.05\)</span> level.
+<ol style="list-style-type: lower-alpha">
+<li><p>If we conduct any single test, what’s the probability of making a Type I error when <span class="math inline">\(H_0\)</span> is true? (Think back to the notes!)</p></li>
+<li><p>What if we conduct <em>two</em> tests? Assuming <span class="math inline">\(H_0\)</span> is true for both, what’s the probability that <em>at least 1</em> results in a Type I error?</p></li>
+<li><p>What if we conduct <em>100</em> tests?</p></li>
+<li><p>In general, as the number of tests increase, the chance of observing at least one Type I error increases. One solution is to <em>inflate</em> the observed p-value from each test. For example, the (very simple) <strong>Bonferroni method</strong> penalizes for testing “too many” hypotheses by artificially inflating the p-value: <span class="math display">\[\text{ Bonferroni-adjusted p-value } = \text{ observed p-value } * \text{ total # of tests} \]</span> Calculate the Bonferroni-adjusted p-values for our 132 tests. Of your 132 tests, what percent are still significant? That is, what is the overall Type I error rate?</p></li>
+<li><p>This is better. But can you think of any trade-offs of the Bonferroni correction?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<blockquote>
+<p><strong>TAKE HOME WARNING</strong></p>
+<p>Don’t fish for significance! If you test enough hypotheses, something will surely pop out as “significant” just by random chance. That is, the more hypotheses you test, the more likely you are to make a Type I error. Interpret others’ work with this in mind - were they fishing for significance? Is it possible that they’re reporting a Type I error? Do you think that you could reproduce their results in a new experiment?</p>
+</blockquote>
+<p><br> <br></p>
+</div>
+<div id="statistical-vs-practical-significance" class="section level3">
+<h3><span class="header-section-number">5.6.4</span> Statistical vs Practical Significance</h3>
+<p><strong>WARNING:</strong> Expect RStudio to run a bit slowly in this section. It’s the biggest data set we’ve worked with. If you choose, you can research the <code>cache=TRUE</code> argument for code chunks. If you choose to do so, you need to take care to “uncache” and then “recache” your cached code any time you make changes to that chunk.</p>
+<p>You’ve likely seen the “NiceRide” bike stations around the UM campus! They’re the bright green bikes that members and casual riders can rent for short rides. NiceRide shared data <a href="https://www.niceridemn.org/data/">here</a> on <em>every single rental</em> in 2016. The <code>Rides</code> data below is a subset of just 40,000 of the &gt;1,000,000 rides.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rides &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/Data/NiceRide2016sub.csv&quot;</span>)
+<span class="kw">dim</span>(Rides)
+## [1] 40000     8
+<span class="kw">head</span>(Rides, <span class="dv">3</span>)
+##        Start.date             Start.station Start.station.number
+## 1                                                               
+## 2                                                               
+## 3 8/21/2016 11:49 15th Ave SE &amp; Como Ave SE                30110
+##          End.date              End.station End.station.number
+## 1                                                            
+## 2                                                            
+## 3 8/21/2016 11:55 4th Street &amp; 13th Ave SE              30009
+##   Total.duration..seconds. Account.type
+## 1                        0             
+## 2                        0             
+## 3                      343       Member</code></pre></div>
+<p>A quick codebook:</p>
+<ul>
+<li><code>Start.date</code> = time/date at which the bike rental began<br />
+</li>
+<li><code>Start.station</code> = where the bike was picked up<br />
+</li>
+<li><code>End.date</code> = time/date at which the bike rental ended<br />
+</li>
+<li><code>End.station</code> = where the bike was dropped off<br />
+</li>
+<li><code>Total.duration..seconds.</code> = duration of the rental/ride in seconds<br />
+</li>
+<li><code>Account.type</code> = whether the rider is a NiceRide member or just a casual rider</li>
+</ul>
+<p><br> <br></p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Let’s clean up this data. Try to do the following in 1 continuous series of pipes <code>%&gt;%</code>:</p>
+<ul>
+<li>Rename “<code>Total.duration..seconds.</code>” as “<code>duration</code>” (or just add a new variable called <code>duration</code>).<br />
+</li>
+<li>Keep only the <code>Start.date</code>, <code>Start.station</code>, <code>End.station</code>, <code>duration</code>, and <code>Account.type</code> variables. HINT: Investigate the <code>select()</code> function OR use indexing.<br />
+</li>
+<li>Keep only the rides that lasted &gt; 0 seconds.<br />
+</li>
+<li><p>Currently, the <code>Start.date</code> is a factor variable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(Rides<span class="op">$</span>Start.date)</code></pre></div>
+<p>Create 2 variables from this infomation, a variable <code>hours</code> that pulls the hour and a <em>factor</em> variable <code>months</code> that pulls the month. The following will come in handy:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydate &lt;-<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">c</span>(<span class="st">&quot;10/26/2016 13:20&quot;</span>))
+<span class="kw">as.factor</span>(<span class="kw">hour</span>(<span class="kw">mdy_hm</span>(mydate)))
+<span class="kw">as.factor</span>(<span class="kw">month</span>(<span class="kw">mdy_hm</span>(mydate)))</code></pre></div></li>
+</ul></li>
+</ol>
+<p><br> <br></p>
+<ol start="9" style="list-style-type: decimal">
+<li><strong>Duration vs Membership Status</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Construct a visualization of the relationship between a ride’s log(duration) and the membership status of the rider. (Why <em>log</em>? Try using <code>duration</code> first.)<br />
+</li>
+<li>Construct a model of <code>log(duration)</code> by membership status. Summarize the estimated difference in the typical duration of rides for casual riders vs members. Be sure to interpret on the non-log scale. Contextually, what do you think explains this difference?<br />
+</li>
+<li>Do these data provide statistically significant evidence that casual riders tend to take longer rides?</li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="10" style="list-style-type: decimal">
+<li><strong>Duration vs Month</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Construct a visualization of the relationship between a ride’s <code>log(duration)</code> and the month in which the ride took place. NOTE: be sure that <code>months</code> is a factor/categorical variable!<br />
+</li>
+<li>Construct a model of <code>log(duration)</code> by month. Summarize the estimated difference in the typical duration of rides in April and May. On the non-log scale, you should find a difference of about <strong>1 minute</strong>. Personally, this isn’t enough for me to think “Wow, people take longer rides in April!” That is, the difference is not <em>practically significant</em>.<br />
+</li>
+<li>Do these data provide <em>statistically significant</em> evidence that casual riders tend to take longer rides? HINT: Check out the p-value.<br />
+</li>
+<li>Parts b &amp; c illustrate the difference between <strong>statistical significance</strong> and <strong>practical significance</strong>:
+<ul>
+<li>Results are only <strong>practically significant</strong> if the observed <strong>effect size</strong> (observed difference between means, the magnitude of a regression coefficient, etc) is large enough to have practical meaning.<br />
+</li>
+<li>Results are <strong>statistically significant</strong> if the p-value is small. However, a small p-value merely reflects the <em>presence</em> of an effect, not necessarily a meaningful magnitude of that effect.</li>
+</ul>
+Explain <em>why</em> this happened. This is, when might we observe statistically significant results that aren’t practically significant?</li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="11" style="list-style-type: decimal">
+<li><strong>Play Around!</strong><br />
+There are a lot of other features of the NiceRide data!
+<ol style="list-style-type: lower-alpha">
+<li><p>Merge the <code>Rides</code> with the locations of the <code>Stations</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Stations &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/Data/NiceRideStations.csv&quot;</span>)
+
+<span class="co">#join the Stations and Rides    </span>
+MergedRides &lt;-<span class="st"> </span>Rides <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">left_join</span>(Stations, <span class="dt">by=</span><span class="kw">c</span>(<span class="dt">Start.station =</span> <span class="st">&quot;Station&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">rename</span>(<span class="dt">start_lat=</span>Latitude, <span class="dt">start_long=</span>Longitude) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">left_join</span>(Stations, <span class="dt">by=</span><span class="kw">c</span>(<span class="dt">End.station =</span> <span class="st">&quot;Station&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">rename</span>(<span class="dt">end_lat=</span>Latitude, <span class="dt">end_long=</span>Longitude)</code></pre></div></li>
+<li><p>Plot a map of the NiceRides around Minneapolis:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MN &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="st">&quot;Minneapolis&quot;</span>, <span class="dt">zoom=</span><span class="dv">13</span>)
+<span class="kw">ggmap</span>(MN) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_segment</span>(<span class="dt">data=</span>MergedRides, <span class="kw">aes</span>(<span class="dt">x=</span>start_long, <span class="dt">y=</span>start_lat,
+    <span class="dt">xend=</span>end_long, <span class="dt">yend=</span>end_lat), <span class="dt">alpha=</span><span class="fl">0.07</span>)</code></pre></div></li>
+<li><p>Do the route distributions/choice differ by membership status? (Construct a visualization.)</p></li>
+<li><p>How if at all does duration change by time of day? By time of day and membership status?</p></li>
+<li><p>What other questions might we ask? Play around and see if you have any insight to add about riding patterns.</p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="homework-3-confidence-intervals-bootstrapping.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
