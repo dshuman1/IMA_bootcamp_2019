@@ -504,7 +504,7 @@ MergedRides &lt;-<span class="st"> </span>Rides <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">left_join</span>(Stations, <span class="dt">by=</span><span class="kw">c</span>(<span class="dt">End.station =</span> <span class="st">&quot;Station&quot;</span>)) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">rename</span>(<span class="dt">end_lat=</span>Latitude, <span class="dt">end_long=</span>Longitude)</code></pre></div></li>
 <li><p>Plot a map of the NiceRides around Minneapolis:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MN &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="st">&quot;Minneapolis&quot;</span>, <span class="dt">zoom=</span><span class="dv">13</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MN&lt;-<span class="kw">get_stamenmap</span>(<span class="kw">c</span>(<span class="op">-</span><span class="fl">93.375</span>,<span class="fl">44.86</span>,<span class="op">-</span><span class="fl">93.05</span>,<span class="fl">45.04</span>),<span class="dt">zoom=</span><span class="dv">14</span>,<span class="dt">maptype=</span><span class="st">&quot;terrain&quot;</span>)
 <span class="kw">ggmap</span>(MN) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_segment</span>(<span class="dt">data=</span>MergedRides, <span class="kw">aes</span>(<span class="dt">x=</span>start_long, <span class="dt">y=</span>start_lat,
     <span class="dt">xend=</span>end_long, <span class="dt">yend=</span>end_lat), <span class="dt">alpha=</span><span class="fl">0.07</span>)</code></pre></div></li>
