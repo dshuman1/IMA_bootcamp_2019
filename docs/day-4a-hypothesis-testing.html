@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="day-3b-sampling-distributions-confidence-intervals.html">
+<link rel="next" href="homework.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html"><i class="fa fa-check"></i><b>4.4</b> Day 3a: More Data Wrangling - Changing Cases</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#spread-gather-and-wide-and-narrow-data-formats"><i class="fa fa-check"></i><b>4.4.1</b> Spread, Gather, and Wide and Narrow Data Formats</a></li>
+<li class="chapter" data-level="4.4.2" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#summary-graphic"><i class="fa fa-check"></i><b>4.4.2</b> Summary Graphic</a></li>
+<li class="chapter" data-level="4.4.3" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#the-daily-show-guests"><i class="fa fa-check"></i><b>4.4.3</b> The Daily Show Guests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#gathering-practice"><i class="fa fa-check"></i><b>4.4.4</b> Gathering Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html"><i class="fa fa-check"></i><b>4.5</b> Day 3b: Sampling Distributions &amp; Confidence Intervals</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#simulation-study-sampling-variability"><i class="fa fa-check"></i><b>4.5.1</b> Simulation study: sampling variability</a></li>
+<li class="chapter" data-level="4.5.2" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#reporting-estimates-with-measures-of-error"><i class="fa fa-check"></i><b>4.5.2</b> Reporting estimates with measures of error</a></li>
+<li class="chapter" data-level="4.5.3" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#confidence-interval-simulation-study"><i class="fa fa-check"></i><b>4.5.3</b> Confidence interval simulation study</a></li>
+<li class="chapter" data-level="4.5.4" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#extra"><i class="fa fa-check"></i><b>4.5.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html"><i class="fa fa-check"></i><b>4.6</b> Day 4a: Hypothesis Testing</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#warm-up"><i class="fa fa-check"></i><b>4.6.1</b> Warm-up</a></li>
+<li class="chapter" data-level="4.6.2" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#warning"><i class="fa fa-check"></i><b>4.6.2</b> Warning</a></li>
+<li class="chapter" data-level="4.6.3" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#hypothesis-testing-concepts"><i class="fa fa-check"></i><b>4.6.3</b> Hypothesis testing concepts</a></li>
+<li class="chapter" data-level="4.6.4" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#hypothesis-testing-practice"><i class="fa fa-check"></i><b>4.6.4</b> Hypothesis Testing Practice</a></li>
+<li class="chapter" data-level="4.6.5" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#potential-errors-in-hypothesis-testing"><i class="fa fa-check"></i><b>4.6.5</b> Potential Errors in Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.6.6" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#extra-1"><i class="fa fa-check"></i><b>4.6.6</b> Extra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#seasonality"><i class="fa fa-check"></i><b>5.3.1</b> Seasonality</a></li>
+<li class="chapter" data-level="5.3.2" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#day-of-the-week"><i class="fa fa-check"></i><b>5.3.2</b> Day of the Week</a></li>
+<li class="chapter" data-level="5.3.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#holidays"><i class="fa fa-check"></i><b>5.3.3</b> Holidays</a></li>
+<li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
+<li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html"><i class="fa fa-check"></i><b>5.4</b> Homework 2b: Model Building &amp; Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#warm-up-1"><i class="fa fa-check"></i><b>5.4.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.4.2" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#model-building-subset-selection"><i class="fa fa-check"></i><b>5.4.2</b> Model Building: Subset selection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>5.4.3</b> Bias-variance trade-off</a></li>
+<li class="chapter" data-level="5.4.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#extra-2"><i class="fa fa-check"></i><b>5.4.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html"><i class="fa fa-check"></i><b>5.5</b> Homework 3: Confidence Intervals &amp; Bootstrapping</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#warm-up-2"><i class="fa fa-check"></i><b>5.5.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.5.2" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#bootstrapping"><i class="fa fa-check"></i><b>5.5.2</b> Bootstrapping</a></li>
+<li class="chapter" data-level="5.5.3" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#confidence-prediction-bands"><i class="fa fa-check"></i><b>5.5.3</b> Confidence &amp; Prediction Bands</a></li>
+<li class="chapter" data-level="5.5.4" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#extra-3"><i class="fa fa-check"></i><b>5.5.4</b> Extra</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="day-4a-hypothesis-testing" class="section level2">
+<h2><span class="header-section-number">4.6</span> Day 4a: Hypothesis Testing</h2>
+<!-- address the first part of `shuffles` simulation - seems weird but works -->
+<p><br />
+<br />
+</p>
+<!-- permutations for multiple regression: https://www.ohbmbrainmappingblog.com/blog/a-brief-overview-of-permutation-testing-with-examples -->
+<!-- In the Freedman-Lane method, we regress out all nuisance variables from the hippocampal volume measurements to obtain the residuals of this nuisance-only model, and use the permuted residuals as the new dependent variable in the multiple regression, from which we construct the permutation distribution for the test statistic (i.e., the regression coefficient of interest). Intuitively, once the nuisance has been regressed out, what remains should be indistinguishable between AD patients and controls if the null hypothesis is true, and thus, can be permuted. -->
+<p><strong>Getting started:</strong></p>
+<p>As you settle in, start a new Rmd and load the following packages at the top.</p>
+<pre><code>```{r warning = FALSE, message = FALSE}    
+library(ggplot2)    
+library(dplyr)  
+library(infer)
+library(broom)
+library(mosaic)
+```</code></pre>
+<p><br> <br></p>
+<p><strong>Today’s plan:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Discuss Day 3 homework &amp; tie up any other loose ends</p></li>
+<li><p>Hypothesis testing</p></li>
+<li><p>More advanced visualization techniques</p></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<div id="warm-up" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Warm-up</h3>
+<p><br />
+<br />
+</p>
+<p><strong>Conditional Probabilities</strong></p>
+<p>What’s the relationship between each of the following pairs of unconditional (<span class="math inline">\(P(A)\)</span>) &amp; conditional (<span class="math inline">\(P(A|B)\)</span>) probabilities?</p>
+<p><span class="math display">\[\begin{array}{lcl}
+P(\text{lung cancer}) &amp; \hspace{.4in} &amp; P(\text{lung cancer} \; | \; \text{smoke}) \\
+P(\text{eat at McD&#39;s}) &amp;  &amp; P(\text{eat at McD&#39;s} \; | \; \text{vegan}) \\
+P(\text{Queen of Hearts} | \text{Hearts}) &amp;  &amp; P(\text{Hearts} \; | \; \text{Queen of Hearts}) \\
+\end{array}\]</span></p>
+<p><br> <br></p>
+<p><br />
+<br />
+</p>
+<p><strong>Exploratory analysis vs inference</strong></p>
+<p>Recall the difference between exploratory and inferential questions:</p>
+<ul>
+<li><strong>Exploratory question</strong><br />
+What trends did we observe <em>in our sample of data</em>?
+</li></li>
+<li><strong>Inferential question</strong><br />
+Given the potential error in this sample information, what can we conclude about the trends <em>in the broader population</em>? To this end, we can calculate standard errors, construct confidence intervals, and <strong>conduct hypothesis tests</strong>.</li>
+</ul>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>Regression Models (Thus Far)</strong></p>
+<p><span class="math display">\[\begin{array}{ll}
+\text{population model:} &amp; y = X \beta + \varepsilon \;\; \text{ where } \varepsilon \sim N(0,\sigma^2) \\ 
+&amp; y \text{ is an $n \times 1$ vector of responses} \\
+&amp; X \text{ is an $n \times (k+1)$ matrix of predictors} \\
+&amp; \beta \text{ is a $k \times 1$ vector of coefficients} \\
+&amp; \varepsilon \text{ is an $n \times 1$ vector of residuals} \\
+&amp; \\
+\text{sample estimate of $\beta$}: &amp; \hat{\beta} = (X^TX)^{-1}X^Ty \\
+\text{standard error of $\hat{\beta}$:} &amp; s.e.(\hat{\beta}) = \sqrt{\sigma^2(X^TX)^{-1}} \\
+&amp; \\
+\text{prediction of $y$ at $x$:} &amp; \hat{y} = x^T \hat{\beta} \\
+\text{s.e. for a prediction of trend at $x$:} &amp; s.e.(\hat{y}) = \sqrt{\sigma^2 x^T (X^TX)^{-1} x} \\
+\text{s.e. for a prediction of individual case at $x$:} &amp; s.e.(\hat{y}) = \sqrt{\sigma^2(1 + x^T (X^TX)^{-1} x)} \\
+&amp; \\
+\text{Approximately:} &amp; \hat{\beta}_i \stackrel{\cdot}{\sim} N(\beta_i, (s.e.(\hat{\beta}_i)^2) \\
+&amp; \hat{y} \stackrel{\cdot}{\sim} N(y, (s.e.(\hat{y}))^2) \\
+\end{array}\]</span></p>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p><strong>EXAMPLE</strong></p>
+<p>Let’s do some inference. Extraterrestrials have landed and scientists are busy studying their physical characteristics (put aside your ethics for now). Ignore everything you know about humans - ETs are different.</p>
+<p><br />
+</p>
+<div class="figure">
+<img src="http://www.startrek.com/uploads/assets/db_articles/ff89500284cdbd26b2e5e2602ac774399505d484.jpg" alt="Talosian" />
+<p class="caption">Talosian</p>
+</div>
+<p><br />
+</p>
+<p>Examine the following plots of the relationship between the ETs “brain” weight, “hand” length, and height that were calculated from a sample of ETs.</p>
+<blockquote>
+<p>Is there a “significant” relationship between brain weight &amp; height? What about between brain weight &amp; hand length?</p>
+</blockquote>
+<p><br />
+</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-206-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p>Those were trick questions - we can’t assess the significance of a relationship without an understanding of the potential error in our sample model. The following output includes the observed sample data for 7 ETs, the estimated model calculated from these 7 ETs, <strong>confidence bands</strong> that reflect the potential error in the estimated model trend, &amp; CIs for the slope coefficients.</p>
+<blockquote>
+<p>Is there a “significant” relationship between brain weight &amp; height? What about between brain weight &amp; hand length?</p>
+</blockquote>
+<p><br />
+</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-207-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(mod_height)
+##                2.5 % 97.5 %
+## (Intercept) -39.6174 15.601
+## height       -0.2714  2.371
+<span class="kw">confint</span>(mod_hand)
+##               2.5 % 97.5 %
+## (Intercept) -29.622 41.031
+## hand         -2.255  2.854</code></pre></div>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p>More ETs have landed! There are 25 now.</p>
+<blockquote>
+<p>Is there a “significant” relationship between brain weight &amp; height? What about between brain weight &amp; hand length?</p>
+</blockquote>
+<p><br />
+</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-209-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(mod_height)
+##               2.5 % 97.5 %
+## (Intercept) -6.6081 0.7504
+## height       0.4633 0.8190
+<span class="kw">confint</span>(mod_hand)
+##              2.5 % 97.5 %
+## (Intercept) -4.195 13.176
+## hand        -0.246  1.136</code></pre></div>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p>More ETs have landed! There are 500 in total.</p>
+<blockquote>
+<p>Is there a “significant” relationship between brain weight &amp; height? What about between brain weight &amp; hand length?</p>
+</blockquote>
+<p><br />
+</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-211-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(mod_height)
+##              2.5 %  97.5 %
+## (Intercept) -4.715 -3.0658
+## height       0.659  0.7385
+<span class="kw">confint</span>(mod_hand)
+##              2.5 % 97.5 %
+## (Intercept) 4.4557 7.9347
+## hand        0.1881 0.4512</code></pre></div>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="warning" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> Warning</h3>
+<p>We answered the above inferential questions using CIs alone. CIs are great - they both give us a sense for a potential <em>magnitude of the effect</em> we’re estimating as well as whether the effect is <em>significant</em>. Unfortunately, many people mistakenly emphasize the importance of the latter over the former. This leads to bad practices:</p>
+<ul>
+<li><p><a href="http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Why most published research findings are false</a></p></li>
+<li><p><a href="https://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1154108#.Vt2XIOaE2MN">The ASA’s Statement on p-values</a></p></li>
+<li><p><a href="https://mchankins.wordpress.com/2013/04/21/still-not-significant-2/">Still not significant</a></p></li>
+</ul>
+<p>Let’s keep this in mind as we explore <em>hypothesis testing</em> so that we don’t make the same mistakes.</p>
+<p><br> <br> <br><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="hypothesis-testing-concepts" class="section level3">
+<h3><span class="header-section-number">4.6.3</span> Hypothesis testing concepts</h3>
+<p>Let’s switch gears to human subjects. Early explorations of the relationship between human brain size and IQ were plagued by crude measurements (weighing brains after death). Willeman et al. developed a study that would use magnetic resonance imaging (MRI) to measure brain size. The MRI scans consisted of 18 horizontal MR images that were 5 mm thick and 2.5 mm apart. Further, each image covered a 256 x 256 pixel area. Any pixel with a non-zero gray scale was considered to be “part of the brain”.</p>
+<div class="figure">
+<img src="https://media.gettyimages.com/photos/brain-scan-mri-scan-picture-id172591291" />
+
+</div>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<div id="step-1-set-up-the-hypotheses" class="section level4">
+<h4><span class="header-section-number">4.6.3.1</span> Step 1: Set up the hypotheses</h4>
+<p>First, we’ll consider the relationship between brain size (<span class="math inline">\(y\)</span>) and height (<span class="math inline">\(x\)</span>):</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x + \varepsilon\]</span></p>
+<p>Researchers had a hypothesis: taller people tend to have bigger brains. We can formalize this hypothesis and connect it to our model parameters.</p>
+<p><br />
+<br />
+</p>
+<blockquote>
+<p><strong><span class="math inline">\(H_0\)</span>: Null Hypothesis</strong><br />
+Status quo hypothesis. Typically represents <em>no effect</em>.</p>
+<p><strong><span class="math inline">\(H_a:\)</span> Alternative Hypothesis</strong><br />
+Claim being made about the population.</p>
+<p><strong>NOTE</strong><br />
+In a statistical hypothesis test, we assume “innocent until proven guilty.” That is, assume <span class="math inline">\(H_0\)</span> is true and put the burden of proof on <span class="math inline">\(H_a\)</span>.</p>
+</blockquote>
+<p><br />
+<br />
+</p>
+<p><strong>What are <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span> in our example?</strong></p>
+<p><br> <br></p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="step-2-compare-sample-results-to-h_0" class="section level4">
+<h4><span class="header-section-number">4.6.3.2</span> Step 2: Compare sample results to <span class="math inline">\(H_0\)</span></h4>
+<p>To evaluate their hypothesis, Willeman et al. collected the following data on 38 subjects:</p>
+<p><br />
+</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>MRICount</code></td>
+<td align="left">total pixel count of non-zero gray scale in 18 MRI scans (the larger the count, the larger the brain!)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Height</code></td>
+<td align="left">subject’s height in inches</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>VIQ</code></td>
+<td align="left">verbal IQ score</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load data</span>
+brain &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/BrainEESEE.csv&quot;</span>)
+
+<span class="co"># Fit sample model</span>
+brain_mod_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(MRICount <span class="op">~</span><span class="st"> </span>Height, <span class="dt">data=</span>brain)
+<span class="kw">coef</span>(<span class="kw">summary</span>(brain_mod_<span class="dv">1</span>))
+##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)   175332     167806   1.045 0.3030573
+## Height         10690       2448   4.366 0.0001023</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot sample model</span>
+<span class="kw">ggplot</span>(brain, <span class="kw">aes</span>(<span class="dt">x=</span>Height, <span class="dt">y=</span>MRICount)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-215-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br />
+<br />
+</p>
+<p><strong>Quick review:</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># CIs of model coefficients</span>
+<span class="kw">confint</span>(brain_mod_<span class="dv">1</span>, <span class="dt">level=</span><span class="fl">0.95</span>)
+##               2.5 % 97.5 %
+## (Intercept) -164994 515658
+## Height         5724  15656
+
+<span class="co"># CIs of average brain size among all 72 inch people</span>
+<span class="kw">predict</span>(brain_mod_<span class="dv">1</span>, <span class="dt">newdata=</span><span class="kw">data.frame</span>(<span class="dt">Height=</span><span class="dv">72</span>), <span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>, <span class="dt">level=</span><span class="fl">0.95</span>)
+##      fit    lwr    upr
+## 1 945013 918578 971448
+
+<span class="co"># CI of brain size for Jo, a specific 72 inch person</span>
+<span class="kw">predict</span>(brain_mod_<span class="dv">1</span>, <span class="dt">newdata=</span><span class="kw">data.frame</span>(<span class="dt">Height=</span><span class="dv">72</span>), <span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>, <span class="dt">level=</span><span class="fl">0.95</span>)
+##      fit    lwr     upr
+## 1 945013 821516 1068510</code></pre></div>
+<p><br />
+<br />
+<br />
+</p>
+<p><strong>How consistent is <em>our</em> sample with <span class="math inline">\(H_0\)</span>, ie. no association between brain size and height?</strong> Let’s conduct an experiment &amp; simulation!</p>
+<p><br />
+<br />
+</p>
+<ol style="list-style-type: decimal">
+<li><strong>Class shuffle</strong><br />
+You’ve each been given the <code>MRICount</code> and <code>Height</code> for 1-2 cases in our sample of 38 subjects.
+<ul>
+<li><p>Tear your paper into 2 pieces, separating the <code>MRICount</code> value from the <code>Height</code> value. Hand your <code>Height</code> to the person on your left.</p></li>
+<li><p>If we re-plotted these data, what do you think we’d see? Would the patterns reflect <span class="math inline">\(H_0: \; \beta_1 = 0\)</span> or <span class="math inline">\(H_a: \; \beta_1 &gt; 0\)</span>?</p></li>
+<li><p>We can simulate this experiment in RStudio by reshuffling the <code>Height</code> values:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Shuffle the brain size y</span>
+shuffled_brain &lt;-<span class="st"> </span>brain <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">MRICount =</span> <span class="kw">sample</span>(MRICount, <span class="dt">size =</span> <span class="dv">38</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>))
+
+<span class="co"># Compare the first 2 rows of original and shuffled data</span>
+<span class="kw">head</span>(brain, <span class="dv">2</span>)
+<span class="kw">head</span>(shuffled_brain, <span class="dv">2</span>)
+
+<span class="co"># Plot the shuffled data    </span>
+<span class="kw">ggplot</span>(shuffled_brain, <span class="kw">aes</span>(<span class="dt">x =</span> Height, <span class="dt">y =</span> MRICount)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">175332</span>, <span class="dt">slope =</span> <span class="dv">10690</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>)</code></pre></div></li>
+<li><p>Repeat! Pass your <code>Height</code> data to the person on your left.</p></li>
+</ul></li>
+</ol>
+<p><br> <br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Repeated shuffling</strong></p>
+<p><strong>Simulate 100 sets of sample data we’d expect if <span class="math inline">\(H_0\)</span> were true</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2000</span>)
+
+<span class="co"># Get 100 shuffled samples of size 38</span>
+shuffles &lt;-<span class="st"> </span><span class="kw">rep_sample_n</span>(___) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(___)</code></pre></div>
+<p><br />
+<br />
+<strong>Examine sample models we’d expect if <span class="math inline">\(H_0\)</span> were true</strong><br />
+Plot the model of <code>MRICount</code> by <code>Height</code> for each of the 100 shuffled samples. <em>FIRST:</em> What do you anticipate these will look like?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(___, <span class="kw">aes</span>(___)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">175332</span>, <span class="dt">slope =</span> <span class="dv">10690</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>)</code></pre></div>
+<p><br />
+<br />
+</p>
+<p><strong>Examine the sampling distribution of sample slopes assuming <span class="math inline">\(H_0\)</span> were true</strong><br />
+Store and plot the slopes from the 100 shuffled sample models. <em>FIRST</em>: What do you anticipate these will look like?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">slopes &lt;-<span class="st"> </span>shuffles <span class="op">%&gt;%</span><span class="st">    </span>
+<span class="st">    </span><span class="kw">group_by</span>(___) <span class="op">%&gt;%</span><span class="st">     </span>
+<span class="st">    </span><span class="kw">do</span>(___) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(___)
+
+<span class="kw">ggplot</span>(slopes, <span class="kw">aes</span>(___)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">binwidth =</span> <span class="dv">1500</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">lims</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">12000</span>, <span class="dv">12000</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">10690</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>)</code></pre></div>
+<p><br />
+<br />
+</p>
+<p><strong>Compare OUR sample results to those we’d expect IF <span class="math inline">\(H_0\)</span> were true</strong><br />
+Is our sample slope compatible with <span class="math inline">\(H_0\)</span>? How can you quantify this assessment?</p></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>Test Statistic</strong><br />
+A one-number summary calculated from the sample data that measures the <em>compatibility</em> of the data with <span class="math inline">\(H_0\)</span>.</p>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p><br> <br></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Connecting to <code>lm()</code> output</strong><br />
+For the brain hypotheses, the reported <strong>test statistic</strong> is <code>4.366</code> (the <code>t value</code>). How was this calculated &amp; how do we interpret it?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">coef</span>(<span class="kw">summary</span>(brain_mod_<span class="dv">1</span>))
+##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)   175332     167806   1.045 0.3030573
+## Height         10690       2448   4.366 0.0001023</code></pre></div>
+<p>It might help to reexamine the <em>sampling distribution</em> of slopes we’d expect to observe if <span class="math inline">\(H_0\)</span> were true (left) and the <em>standardized theoretical version</em> (from the Central Limit Theorem, not simulation):</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-225-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>p-value</strong><br />
+Test statistics and their interpretations vary from setting to setting, test to test. The <em>p-value</em> provides a universal summary of the compatibility of our data with <span class="math inline">\(H_0\)</span>. It is the probability of observing a test statistic as or more extreme than ours (relative to <span class="math inline">\(H_a\)</span>) if <span class="math inline">\(H_0\)</span> were indeed true:</p>
+<p><span class="math display">\[\text{p-value } = P\left(\text{test statistic } \; | \; H_0 \right)\]</span></p>
+<p><br></p>
+<p><strong>Common Misconception</strong><br />
+The p-value measures the compatibility of our data with <span class="math inline">\(H_0\)</span>, <em>not</em> the compatibility of <span class="math inline">\(H_0\)</span> with our data. Thus the p-value <em>cannot</em> be interpreted as the probability that <span class="math inline">\(H_0\)</span> is true:</p>
+<p><span class="math display">\[\text{p-value } = P\left(\text{test statistic } \; | \; H_0 \right) \ne P\left(H_0 \; | \; \text{ test statistic}\right)\]</span></p>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>p-values</strong>
+<ul>
+<li>Reexamine the sampling distribution of slopes we’d expect to observe if <span class="math inline">\(H_0\)</span> were true. Based on either of these pictures alone, <em>approximate</em> the p-value.<br />
+<img src="IMA_book_2019_files/figure-html/unnamed-chunk-226-1.png" width="\textwidth" style="display: block; margin: auto;" /></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p>In fact, for our hypothesis test <span class="math display">\[\text{p-value} = 0.000051\]</span> <strong>Interpret</strong> this p-value and identify how this p-value for our “one-sided” test was calculated from the “two-sided” p-value provided in RStudio.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(brain_mod_<span class="dv">1</span>)
+## 
+## Call:
+## lm(formula = MRICount ~ Height, data = brain)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -103641  -44146  -12740   40782  155916 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   175332     167806    1.04    3e-01    
+## Height         10690       2448    4.37    1e-04 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 59500 on 36 degrees of freedom
+## Multiple R-squared:  0.346,  Adjusted R-squared:  0.328 
+## F-statistic: 19.1 on 1 and 36 DF,  p-value: 0.000102</code></pre></div>
+<p>How is the p-value reported in the model summary table calculated (using theory, not simulation)?! By the Normal CLT, or more accurately, the “t” distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">10690</span>, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">2448</span>, <span class="dt">lower =</span> <span class="ot">FALSE</span>) <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
+## [1] 1.261e-05
+<span class="kw">pnorm</span>(<span class="fl">4.37</span>, <span class="dt">lower =</span> <span class="ot">FALSE</span>) <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
+## [1] 1.242e-05
+<span class="kw">pt</span>(<span class="fl">4.37</span>, <span class="dt">df =</span> <span class="dv">36</span>, <span class="dt">lower =</span> <span class="ot">FALSE</span>) <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
+## [1] 0.0001011</code></pre></div></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li>Based on this p-value, what would your conclusion be - is there significant evidence of an association between height and brain size?!</li>
+</ul></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>Interpreting p-value</strong></p>
+<p>The smaller the p-value, the more evidence we have against <span class="math inline">\(H_0\)</span>:</p>
+<ul>
+<li>Small p-value:<br />
+Data like ours would be uncommon if <span class="math inline">\(H_0\)</span> were indeed true, i.e. our data are not compatible with <span class="math inline">\(H_0\)</span>.<br />
+</li>
+<li>Large p-value:<br />
+Data like ours would be typical if <span class="math inline">\(H_0\)</span> were indeed true, i.e. our data are compatible with <span class="math inline">\(H_0\)</span>.</li>
+</ul>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="step-3-form-a-conclusion" class="section level4">
+<h4><span class="header-section-number">4.6.3.3</span> Step 3: Form a conclusion</h4>
+<p>Forming a conclusion is a nuanced process - it should not be seen as a black-and-white decision.</p>
+<p><br />
+</p>
+<p><strong>To BEGIN</strong></p>
+<p>To get a sense of scale, people often compare the p-value to a chosen <strong>significance level</strong> (typically 0.05) to determine whether our data provide sufficient evidence against <span class="math inline">\(H_0\)</span>.</p>
+<ul>
+<li><p>p-value <span class="math inline">\(&lt; 0.05\)</span><br />
+Results are <em>statistically significant</em> at the 0.05 level. (Reject <span class="math inline">\(H_0\)</span> in favor of <span class="math inline">\(H_a\)</span>.)</p></li>
+<li><p>p-value <span class="math inline">\(\ge 0.05\)</span><br />
+Results are not statistically significant at the 0.05 level. (Fail to reject <span class="math inline">\(H_0\)</span>.)</p></li>
+</ul>
+<p><br />
+</p>
+<p><strong>To FOLLOW UP</strong><br />
+The above guidance is nice, but alone it produces an incomplete conclusion. p-values MUST be supplemented with information about the <em>magnitude</em> of the sample estimate and its corresponding standard error.</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p><strong>Conclusion</strong><br />
+In light of the p-value = 0.000102/2 = 0.000051 for our brain hypotheses</p>
+<p><span class="math display">\[\begin{split}
+H_0: &amp; \beta = 0 \\
+H_a: &amp; \beta &gt; 0 \\
+\end{split}
+\]</span></p>
+<p>what would your conclusion be?</p></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>Hypothesis Testing Framework</strong></p>
+<p>It’s impossible (and repetitive) to cover every type of hypothesis test. Rather, we’ll focus on the foundations of hypothesis testing that transfer to every hypothesis test. Though goals vary from test to test, all hypothesis tests share a common structure:</p>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li><strong>Set up hypotheses</strong>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: Null Hypothesis<br />
+Status quo hypothesis. Typically represents <em>no effect</em>.<br />
+</li>
+<li><span class="math inline">\(H_a:\)</span> Alternative Hypothesis<br />
+Claim being made about the population parameter.</li>
+</ul>
+<br> NOTE: In a statistical hypothesis test, we assume “innocent until proven guilty.” That is, assume <span class="math inline">\(H_0\)</span> is true and put the burden of proof on <span class="math inline">\(H_a\)</span>.</li>
+</ol>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Compare our sample results to the null hypothesis</strong>
+<ul>
+<li>A <strong>test statistic</strong> is a one-number summary of the data that we use to assess <span class="math inline">\(H_0\)</span>. This number is a quick measure of the compatibility of the data with <span class="math inline">\(H_0\)</span>.<br />
+</li>
+<li>A <strong>p-value</strong> is the probability of observing a test statistic as or more extreme than ours <em>if</em> <span class="math inline">\(H_0\)</span> were indeed true: <span class="math inline">\(\text{p-value} = P(\text{test statistic } \; | \; H_0)\)</span></li>
+</ul></li>
+</ol>
+<p><br></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Make some sort of recommendation / conclusion</strong>
+<ul>
+<li>Examine the effect size - is it meaningful?<br />
+</li>
+<li><p>Examine the p-value. The smaller the p-value, the more evidence we have against <span class="math inline">\(H_0\)</span>:</p>
+<ul>
+<li>Small p-value <span class="math inline">\(\Rightarrow\)</span> our data are not compatible with <span class="math inline">\(H_0\)</span>.<br />
+</li>
+<li>Large p-value <span class="math inline">\(\Rightarrow\)</span> our data are compatible with <span class="math inline">\(H_0\)</span>.</li>
+</ul></li>
+</ul></li>
+</ol>
+</blockquote>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+</div>
+<div id="hypothesis-testing-practice" class="section level3">
+<h3><span class="header-section-number">4.6.4</span> Hypothesis Testing Practice</h3>
+<p>Let’s apply &amp; extend these ideas in a new context.</p>
+<p><br> <br></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p><strong>A simple model of <code>wage</code> by <code>married</code></strong><br />
+Consider the following <em>population</em> model of a person’s wage by their marital status: <span class="math display">\[\text{wage} = \beta_0 + \beta_1 \text{marriedSingle} + \varepsilon\]</span> where the population coefficients <span class="math inline">\(\beta_i\)</span> are unknown. Let’s test the following hypotheses about the <code>marriedSingle</code> coefficient: <span class="math display">\[\begin{split}
+H_0: &amp; \;\; \beta_1 = 0 \\
+H_a: &amp; \;\; \beta_1 &lt; 0 \\
+\end{split}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Interpret <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span>.<br />
+</li>
+<li>On a separate paper, sketch the sampling distribution of the sample estimates <span class="math inline">\(\hat{\beta}_1\)</span> that we would <em>expect</em> to see if <span class="math inline">\(H_0\)</span> were true (i.e. if <span class="math inline">\(\beta_1=0\)</span>). NOTE: Focus on the shape and center. We’ll take care of the spread next.<br />
+</li>
+<li><p>Let’s test these hypotheses with the <code>CPS85</code> sample data in the <code>mosaic</code> package. Based on the CIs alone, do you think we have enough evidence to “reject” <span class="math inline">\(H_0\)</span>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wage_mod_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(wage <span class="op">~</span><span class="st"> </span>married, <span class="dt">data =</span> CPS85)
+<span class="kw">summary</span>(wage_mod_<span class="dv">1</span>)</code></pre></div></li>
+<li><p>Let’s do a formal test. Report &amp; interpret the test statistic (as given by <code>summary()</code>).</p></li>
+<li>Using this test statistic with the 68-95-99.7 Rule, which of the following is true:
+<ul>
+<li>0 &lt; p-value &lt; 0.0015<br />
+</li>
+<li>0.0015 &lt; p-value &lt; 0.025<br />
+</li>
+<li>0.025 &lt; p-value &lt; 0.16<br />
+</li>
+<li>p-value &gt; 0.16</li>
+</ul></li>
+<li><p>Report &amp; interpret the more accurate p-value (as given by <code>summary()</code>).</p></li>
+<li><p>What’s your conclusion about the hypotheses?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="7" style="list-style-type: decimal">
+<li><p><strong>Controlling for age</strong><br />
+Of course, since we haven’t controlled for important covariates, we should be wary of using the above result to argue that there’s wage discrimination against single people. To this end, consider the relationship between <code>wage</code> and <code>married</code> when controlling for <code>age</code>:</p>
+<p><span class="math display">\[\text{wage} = \beta_0 + \beta_1\text{ marriedSingle} + \beta_2\text{ age} + \varepsilon\]</span></p>
+<p>You’ll test the following hypotheses:<br />
+<span class="math display">\[
+\begin{split}
+H_0:&amp; \;\; \beta_1 = 0 \\
+H_a:&amp; \;\; \beta_1 &lt; 0 \\
+\end{split}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Interpret <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span>. How does this differ from the previous model?</p></li>
+<li><p>Construct the sample model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wage_mod_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(wage <span class="op">~</span><span class="st"> </span>married <span class="op">+</span><span class="st"> </span>age, <span class="dt">data=</span>CPS85)
+<span class="kw">coef</span>(<span class="kw">summary</span>(wage_mod_<span class="dv">2</span>))
+##               Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)    6.62427    0.80953   8.183 2.063e-15
+## marriedSingle -0.60000    0.47981  -1.250 2.117e-01
+## age            0.07077    0.01946   3.636 3.040e-04
+<span class="kw">confint</span>(wage_mod_<span class="dv">2</span>)
+##                  2.5 % 97.5 %
+## (Intercept)    5.03400 8.2145
+## marriedSingle -1.54257 0.3426
+## age            0.03253 0.1090</code></pre></div></li>
+<li>Report &amp; interpret both the test statistic &amp; p-value. What’s your conclusion?<br />
+</li>
+<li>Explain the main difference between your conclusions regarding wages and marriage status from <code>wage_mod_1</code> and <code>wage_mod_2</code>. NOTE: Don’t just say that one is significant and the other is not. Explain why this makes intuitive sense.<br />
+</li>
+<li><p>We’ve been focusing on whether there’s a significant association/correlation between wages and marital status, when and when not controlling for age. This is a different question than “is there a <em>strong</em> association/correlation?”. How would you answer the latter question?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>Summary: “t”-Tests for Model coefficients in RStudio</strong></p>
+<p>Consider a population model <span class="math display">\[y = \beta_0 + \beta_1x_1 + \cdots + \beta_k x_k\]</span> where population coefficients <span class="math inline">\(\beta_i\)</span> are unknown. Then the p-value given in the last column of the <span class="math inline">\(x_i\)</span> row of the model summary table corresponds to the following test: <span class="math display">\[
+\begin{split}
+H_0: &amp; \beta_i = 0 \\
+H_a: &amp; \beta_i \ne 0 \\ 
+\end{split}
+\]</span> In words:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span> represents “no <span class="math inline">\(x_i\)</span> effect”, i.e. in the presence of the other <span class="math inline">\(x_j\)</span> predictors, there’s no significant relationship between <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y\)</span>.<br />
+</li>
+<li><span class="math inline">\(H_a\)</span> represents an “<span class="math inline">\(x_i\)</span> effect”, i.e. even in the presence of the other <span class="math inline">\(x_j\)</span> predictors, there’s a significant relationship between <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y\)</span>.</li>
+</ul>
+<p>Typically, we test a one-sided alternative <span class="math inline">\(H_a: \beta_i &lt; 0\)</span> or <span class="math inline">\(H_a: \beta_i &gt; 0\)</span>. In this case, we divide the reported p-value by 2.</p>
+<p>Finally, RStudio uses a starring system to indicate significant explanatory terms. A key is given at the bottom of the summary table:</p>
+<ul>
+<li><code>***</code> if p-value &lt; 0.001<br />
+</li>
+<li><code>**</code> if p-value is between 0.001 and 0.01<br />
+</li>
+<li><code>*</code> if p-value is between 0.01 and 0.05<br />
+</li>
+<li><code>.</code> if p-value is between 0.05 and 0.1</li>
+</ul>
+</blockquote>
+<p><br> <br> <br></p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+<div id="potential-errors-in-hypothesis-testing" class="section level3">
+<h3><span class="header-section-number">4.6.5</span> Potential Errors in Hypothesis Testing</h3>
+<p>Just as there’s error in our sample estimates and confidence intervals, there’s the potential for error in hypothesis testing. We’ll distinguish between 2 types of errors:</p>
+<ul>
+<li><p><strong>Type I error (false positive)</strong><br />
+Reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is actually true.</p></li>
+<li><p><strong>Type II error (false negative)</strong><br />
+Don’t reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is actually false.</p></li>
+</ul>
+<p>To explore these concepts, you’ll run another simulation study which studies the relationship between generic variables <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>:</p>
+<p><span class="math display">\[y = \beta x + \varepsilon, \;\; \varepsilon \sim N(0, \sigma^2)\]</span></p>
+<p>We’ll explore the following hypotheses under different scenarios:</p>
+<p><span class="math display">\[\begin{split}
+H_0: &amp; \beta = 0 \\
+H_a: &amp; \beta \ne 0 \\
+\end{split}\]</span></p>
+<p>To generate data under different scenarios, copy and paste the <code>data_sim()</code> function. When called, this randomly generates 100 data sets of size <code>n</code> with pairs (<code>x</code>,<code>y</code>) where the relationship between these have <span class="math inline">\(\beta\)</span> = <code>b</code> and <span class="math inline">\(\sigma\)</span> = <code>sig</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data_sim &lt;-<span class="st"> </span><span class="cf">function</span>(n, b, sig){
+    x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span> <span class="op">*</span><span class="st"> </span>n)
+    y &lt;-<span class="st"> </span>b <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span> <span class="op">*</span><span class="st"> </span>n, <span class="dt">sd =</span> sig)
+    <span class="kw">data.frame</span>(<span class="dt">replicate =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">each =</span> n), x, y)
+}</code></pre></div>
+<p><br />
+<br />
+</p>
+<p><br> <br></p>
+<ol start="8" style="list-style-type: decimal">
+<li><p><strong>Simulating Type I error rates</strong><br />
+Suppose <span class="math inline">\(H_0\)</span> is true, ie. <span class="math inline">\(\beta = 0\)</span>. Under this scenario, simulate 100 samples of size 50 with residual standard deviation <span class="math inline">\(\sigma = 1\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2018</span>)
+sim_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">data_sim</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">b =</span> <span class="dv">0</span>, <span class="dt">sig =</span> <span class="dv">1</span>)
+<span class="kw">head</span>(sim_<span class="dv">0</span>, <span class="dv">3</span>)
+##   replicate        x       y
+## 1         1 -0.42298  0.6974
+## 2         1 -1.54988  0.2453
+## 3         1 -0.06443 -0.1675</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Plot the relationship between <code>y</code> and <code>x</code> for each of the <code>100</code> replicates:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(sim_<span class="dv">0</span>, <span class="kw">aes</span>(<span class="dt">y =</span> y, <span class="dt">x =</span> x, <span class="dt">group =</span> replicate)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div></li>
+<li><p>For each of these 100 samples, test &amp; store the hypotheses related to the <code>x</code> term:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p_vals_<span class="dv">0</span> &lt;-<span class="st"> </span>sim_<span class="dv">0</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(replicate) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">do</span>(<span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">data =</span> .) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tidy</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;x&quot;</span>) </code></pre></div></li>
+<li><p>Construct a histogram of the 100 p-values. Draw a line at the <span class="math inline">\(\alpha = 0.05\)</span> significance level.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(p_vals_<span class="dv">0</span>, <span class="kw">aes</span>(<span class="dt">x =</span> p.value)) <span class="op">+</span><span class="st">        </span>
+<span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="fl">0.05</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)</code></pre></div></li>
+<li><p>Any p-value <em>below</em> the red line (<span class="math inline">\(&lt; 0.05\)</span>) represents a Type I error! These correspond to samples that were generated from the <span class="math inline">\(H_0\)</span> population (with <span class="math inline">\(\beta = 0\)</span>), yet had sample slopes <span class="math inline">\(\hat{\beta}\)</span> that were far enough away from 0 to lead to a rejection of <span class="math inline">\(H_0\)</span>. Use the <code>mean()</code> function to calculate the proportion of samples that produce Type I errors:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(p_vals_<span class="dv">0</span><span class="op">$</span>p.value <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.05</span>)</code></pre></div>
+<p><strong>NOTE:</strong> This is an estimate of the Type I error rate!</p></li>
+<li><p>Suppose we changed sample size <code>n</code> or residual standard deviation <code>sig</code>. What impact would this have on the Type I error rate? (Rerun the simulation if you need to convince yourself!)</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="9" style="list-style-type: decimal">
+<li><p><strong>Simulating Type II error rates: <span class="math inline">\(\beta = 0.25\)</span></strong><br />
+Suppose <span class="math inline">\(H_0\)</span> is false, ie. <span class="math inline">\(\beta \ne 0\)</span>. For example, assume <span class="math inline">\(\beta = 0.25\)</span>. Simulate 100 samples of size 50 with this parameter value &amp; residual standard deviation <span class="math inline">\(\sigma = 1\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2018</span>)
+sim_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">data_sim</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">b =</span> <span class="fl">0.25</span>, <span class="dt">sig =</span> <span class="dv">1</span>)
+<span class="kw">head</span>(sim_<span class="dv">1</span>, <span class="dv">3</span>)</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Plot the relationship between <code>y</code> and <code>x</code> for each of the <code>100</code> replicates.</p></li>
+<li><p>For each of these 100 samples, test &amp; store the hypotheses related to the <code>x</code> term.</p></li>
+<li><p>Construct a histogram of the 100 p-values. Draw a line at the <span class="math inline">\(\alpha = 0.05\)</span> significance level.</p></li>
+<li><p>Any p-value <em>above</em> the red line (<span class="math inline">\(&gt; 0.05\)</span>) represents a Type II error! These correspond to samples that were generated from the <span class="math inline">\(H_a\)</span> population with <span class="math inline">\(\beta = 0.25\)</span>, yet had sample slopes <span class="math inline">\(\hat{\beta}\)</span> that were too close 0 to reject <span class="math inline">\(H_0\)</span>. Use the <code>mean()</code> function to calculate the proportion of samples that produce Type II errors. <strong>NOTE:</strong> This is an estimate of the Type II error rate!</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="10" style="list-style-type: decimal">
+<li><strong>Simulating Type II error rates: <span class="math inline">\(\beta = 1\)</span></strong><br />
+Repeat the previous exercise, but assuming that <span class="math inline">\(\beta = 1\)</span>.</li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="11" style="list-style-type: decimal">
+<li><strong>Impact of sample size and residual standard deviation</strong><br />
+Return to the simulation with <span class="math inline">\(\beta = 0.25\)</span>. Play around using different sample sizes <code>n</code> and residual standard deviations <code>sig</code>. Summarize the impact of these features on the Type II error rate.</li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="12" style="list-style-type: decimal">
+<li>In conclusion…
+<ol style="list-style-type: lower-alpha">
+<li><p>What’s the relationship between our chosen significance level (<span class="math inline">\(\alpha=0.05\)</span>) and the corresponding probability of making a Type I error?</p></li>
+<li><p>Explain the impact of “effect size” (<span class="math inline">\(\beta\)</span>), sample size, and residual standard deviation on Type II error.</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="extra-1" class="section level3">
+<h3><span class="header-section-number">4.6.6</span> Extra</h3>
+<p>The following data set will be on homework. Let’s play around with it now if we have time. <strong>WARNING:</strong> Expect RStudio to run a bit slowly in this section. It’s the biggest data set we’ve worked with. If you choose, you can research the <code>cache=TRUE</code> argument for code chunks. If you choose to do so, you need to take care to “uncache” and then “recache” your cached code any time you make changes to that chunk.</p>
+<p>You’ve likely seen the “NiceRide” bike stations around the UM campus! They’re the bright green bikes that members and casual riders can rent for short rides. NiceRide shared data <a href="https://www.niceridemn.org/data/">here</a> on <em>every single rental</em> in 2016. The <code>Rides</code> data below is a subset of just 40,000 of the &gt;1,000,000 rides.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Rides &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/Data/NiceRide2016sub.csv&quot;</span>)
+<span class="kw">dim</span>(Rides)
+<span class="kw">head</span>(Rides, <span class="dv">3</span>)</code></pre></div>
+<p>A quick codebook:</p>
+<ul>
+<li><code>Start.date</code> = time/date at which the bike rental began<br />
+</li>
+<li><code>Start.station</code> = where the bike was picked up<br />
+</li>
+<li><code>End.date</code> = time/date at which the bike rental ended<br />
+</li>
+<li><code>End.station</code> = where the bike was dropped off<br />
+</li>
+<li><code>Total.duration..seconds.</code> = duration of the rental/ride in seconds<br />
+</li>
+<li><code>Account.type</code> = whether the rider is a NiceRide member or just a casual rider</li>
+</ul>
+<p><br> <br></p>
+<p>Consider the following set of questions. You’ll need to clean up some of the variables before answering them. You’ll also need to <strong>install</strong> &amp; <strong>load</strong> the <code>lubridate</code> and <code>ggmap</code> packages.</p>
+<ul>
+<li><p>Visualize &amp; model the relationship between a ride’s duration &amp; the membership status of the rider. Is it significant?</p></li>
+<li><p>Visualize &amp; model the relationship between a ride’s duration &amp; the month in which the ride took place. Is it significant? Specifically, what if you compare April vs May?</p></li>
+<li><p>Play around! There are a lot of other features of the NiceRide data! Merge the <code>Rides</code> with the locations of the <code>Stations</code>. What kind of research questions can you ask / patterns can you detect?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Stations &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/Data/NiceRideStations.csv&quot;</span>)
+
+<span class="co">#join the Stations and Rides    </span>
+MergedRides &lt;-<span class="st"> </span>Rides <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">left_join</span>(Stations, <span class="dt">by=</span><span class="kw">c</span>(<span class="dt">Start.station =</span> <span class="st">&quot;Station&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">rename</span>(<span class="dt">start_lat=</span>Latitude, <span class="dt">start_long=</span>Longitude) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">left_join</span>(Stations, <span class="dt">by=</span><span class="kw">c</span>(<span class="dt">End.station =</span> <span class="st">&quot;Station&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">rename</span>(<span class="dt">end_lat=</span>Latitude, <span class="dt">end_long=</span>Longitude)
+
+<span class="co">#plot a map of rides around Mpls</span>
+MN &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="st">&quot;Minneapolis&quot;</span>, <span class="dt">zoom=</span><span class="dv">13</span>)
+<span class="kw">ggmap</span>(MN) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_segment</span>(<span class="dt">data=</span>MergedRides, <span class="kw">aes</span>(<span class="dt">x=</span>start_long, <span class="dt">y=</span>start_lat,
+    <span class="dt">xend=</span>end_long, <span class="dt">yend=</span>end_lat), <span class="dt">alpha=</span><span class="fl">0.07</span>)</code></pre></div>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><p>Do the route distributions/choice differ by membership status? (Construct a visualization.)</p></li>
+<li><p>How if at all does duration change by time of day? By time of day and membership status?</p></li>
+<li><p>What other questions might we ask? Play around and see if you have any insight to add about riding patterns.</p></li>
+</ol></li>
+</ul>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<!--chapter:end:03-notes.Rmd--></p>
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="day-3b-sampling-distributions-confidence-intervals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
