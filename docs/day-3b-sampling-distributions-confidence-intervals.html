@@ -280,14 +280,14 @@ a. Let your seed be your birthday month (1 or 2 digits) and day (2 digits). For 
 <p>b. Take a random sample of <strong>10</strong> counties using the syntax above, and save it as <code>sample1</code>.<br />
 c. Construct and plot your sample model. How close is this <strong>estimate</strong> to the actual population model (<code>perrep_2016 = 84.58 - 0.04 * median_rent</code>)?<br />
 d. Take <em>another</em> sample of 10 counties, save it as <code>sample2</code>, and repeat part (c). How does this compare to the population model? The sample model calculated from <code>sample_1</code>?<br />
-e. Indicate your <code>sample_1</code> and <code>sample_2</code> intercept and slope <em>estimates</em> in <a href="https://docs.google.com/forms/d/e/1FAIpQLSf67W-V0CZuwaU_ZdkVXArFc1km1Ru9WLpF7DniSrm8MWD-kw/viewform?usp=sf_link">this survey</a>.</p>
+e. Indicate your <code>sample_1</code> and <code>sample_2</code> intercept and slope <em>estimates</em> in <a href="https://docs.google.com/forms/d/e/1FAIpQLSextsGgTZCV2Dw7usDyPbTqsd8FrgZht4u96tkPp1QCYof_AQ/viewform?usp=sf_link">this survey</a>.</p>
 <p><br> <br></p>
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-161" class="exercise"><strong>Exercise 4.13  (Comparing estimates)  </strong></span>Import each student’s estimates from Google sheets:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">gsheet2tbl</span>(<span class="st">&#39;https://docs.google.com/spreadsheets/d/1UxlQgAX5OWOz7DVfx2nxbPapnHMFlrpnwkxml6MVfk0/edit?usp=sharing&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">gsheet2tbl</span>(<span class="st">&#39;https://docs.google.com/spreadsheets/d/1HN8ccQEFLflaBSwygRD-f7UEun7Xi8qx_rMsiguMMsI/edit?usp=sharing&#39;</span>)</code></pre></div>
 <p>Compare the intercepts:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(results, <span class="kw">aes</span>(<span class="dt">x =</span> intercept)) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</code></pre></div>
