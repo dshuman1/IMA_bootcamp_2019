@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IMA Math-to-Industry Bootcamp 2019: Statistics!</title>
+  <meta name="description" content="IMA Math-to-Industry Bootcamp 2019: Statistics!">
+  <meta name="generator" content="bookdown 0.4.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="dshuman1/IMA_bootcamp_2019/docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="IMA Math-to-Industry Bootcamp 2019: Statistics!" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="day-4a-hypothesis-testing.html">
+<link rel="next" href="homework.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Home</a></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-bootcamp-goals-and-approach.html"><a href="statistics-bootcamp-goals-and-approach.html"><i class="fa fa-check"></i><b>2.1</b> Statistics Bootcamp Goals and Approach</a></li>
+<li class="chapter" data-level="2.2" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i><b>2.2</b> Schedule</a></li>
+<li class="chapter" data-level="2.3" data-path="software-requirements.html"><a href="software-requirements.html"><i class="fa fa-check"></i><b>2.3</b> Software Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>3</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="course-notes.html"><a href="course-notes.html"><i class="fa fa-check"></i><b>4</b> Course Notes</a><ul>
+<li class="chapter" data-level="4.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>4.1</b> Day 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#getting-started"><i class="fa fa-check"></i><b>4.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="4.1.2" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#pre-boot-camp-review"><i class="fa fa-check"></i><b>4.1.2</b> Pre-Boot Camp Review</a></li>
+<li class="chapter" data-level="4.1.3" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#explaining-variability"><i class="fa fa-check"></i><b>4.1.3</b> Explaining Variability</a></li>
+<li class="chapter" data-level="4.1.4" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#visualizing-relationships"><i class="fa fa-check"></i><b>4.1.4</b> Visualizing Relationships</a></li>
+<li class="chapter" data-level="4.1.5" data-path="day-1-visualizing-modeling-variability.html"><a href="day-1-visualizing-modeling-variability.html#linear-regression-models"><i class="fa fa-check"></i><b>4.1.5</b> Linear Regression Models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html"><i class="fa fa-check"></i><b>4.2</b> Day 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#us-births"><i class="fa fa-check"></i><b>4.2.1</b> US Births</a></li>
+<li class="chapter" data-level="4.2.2" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#data-wrangling-introduction"><i class="fa fa-check"></i><b>4.2.2</b> Data Wrangling Introduction</a></li>
+<li class="chapter" data-level="4.2.3" data-path="day-2a-data-wrangling.html"><a href="day-2a-data-wrangling.html#exercises-baby-names"><i class="fa fa-check"></i><b>4.2.3</b> Exercises: Baby Names</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html"><i class="fa fa-check"></i><b>4.3</b> Day 2b: Model Assumptions &amp; Measuring Model Quality</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#regression-assumptions-residual-analysis"><i class="fa fa-check"></i><b>4.3.1</b> Regression Assumptions &amp; Residual Analysis</a></li>
+<li class="chapter" data-level="4.3.2" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-r2-mspe"><i class="fa fa-check"></i><b>4.3.2</b> Measuring model quality: <span class="math inline">\(R^2\)</span> &amp; MSPE</a></li>
+<li class="chapter" data-level="4.3.3" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#an-experiment"><i class="fa fa-check"></i><b>4.3.3</b> An experiment</a></li>
+<li class="chapter" data-level="4.3.4" data-path="day-2b-model-assumptions-measuring-model-quality.html"><a href="day-2b-model-assumptions-measuring-model-quality.html#measuring-model-quality-cross-validation"><i class="fa fa-check"></i><b>4.3.4</b> Measuring model quality: cross validation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html"><i class="fa fa-check"></i><b>4.4</b> Day 3a: More Data Wrangling - Changing Cases</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#spread-gather-and-wide-and-narrow-data-formats"><i class="fa fa-check"></i><b>4.4.1</b> Spread, Gather, and Wide and Narrow Data Formats</a></li>
+<li class="chapter" data-level="4.4.2" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#summary-graphic"><i class="fa fa-check"></i><b>4.4.2</b> Summary Graphic</a></li>
+<li class="chapter" data-level="4.4.3" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#the-daily-show-guests"><i class="fa fa-check"></i><b>4.4.3</b> The Daily Show Guests</a></li>
+<li class="chapter" data-level="4.4.4" data-path="day-3a-more-data-wrangling-changing-cases.html"><a href="day-3a-more-data-wrangling-changing-cases.html#gathering-practice"><i class="fa fa-check"></i><b>4.4.4</b> Gathering Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html"><i class="fa fa-check"></i><b>4.5</b> Day 3b: Sampling Distributions &amp; Confidence Intervals</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#simulation-study-sampling-variability"><i class="fa fa-check"></i><b>4.5.1</b> Simulation study: sampling variability</a></li>
+<li class="chapter" data-level="4.5.2" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#reporting-estimates-with-measures-of-error"><i class="fa fa-check"></i><b>4.5.2</b> Reporting estimates with measures of error</a></li>
+<li class="chapter" data-level="4.5.3" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#confidence-interval-simulation-study"><i class="fa fa-check"></i><b>4.5.3</b> Confidence interval simulation study</a></li>
+<li class="chapter" data-level="4.5.4" data-path="day-3b-sampling-distributions-confidence-intervals.html"><a href="day-3b-sampling-distributions-confidence-intervals.html#extra"><i class="fa fa-check"></i><b>4.5.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html"><i class="fa fa-check"></i><b>4.6</b> Day 4a: Hypothesis Testing</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#warm-up"><i class="fa fa-check"></i><b>4.6.1</b> Warm-up</a></li>
+<li class="chapter" data-level="4.6.2" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#warning"><i class="fa fa-check"></i><b>4.6.2</b> Warning</a></li>
+<li class="chapter" data-level="4.6.3" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#hypothesis-testing-concepts"><i class="fa fa-check"></i><b>4.6.3</b> Hypothesis testing concepts</a></li>
+<li class="chapter" data-level="4.6.4" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#hypothesis-testing-practice"><i class="fa fa-check"></i><b>4.6.4</b> Hypothesis Testing Practice</a></li>
+<li class="chapter" data-level="4.6.5" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#potential-errors-in-hypothesis-testing"><i class="fa fa-check"></i><b>4.6.5</b> Potential Errors in Hypothesis Testing</a></li>
+<li class="chapter" data-level="4.6.6" data-path="day-4a-hypothesis-testing.html"><a href="day-4a-hypothesis-testing.html#extra-1"><i class="fa fa-check"></i><b>4.6.6</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="day-5-logistic-regression.html"><a href="day-5-logistic-regression.html"><i class="fa fa-check"></i><b>4.7</b> Day 5: Logistic Regression</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="day-5-logistic-regression.html"><a href="day-5-logistic-regression.html#classification"><i class="fa fa-check"></i><b>4.7.1</b> Classification</a></li>
+<li class="chapter" data-level="4.7.2" data-path="day-5-logistic-regression.html"><a href="day-5-logistic-regression.html#motivating-example"><i class="fa fa-check"></i><b>4.7.2</b> Motivating Example</a></li>
+<li class="chapter" data-level="4.7.3" data-path="day-5-logistic-regression.html"><a href="day-5-logistic-regression.html#bechdel-test"><i class="fa fa-check"></i><b>4.7.3</b> Bechdel test</a></li>
+<li class="chapter" data-level="4.7.4" data-path="day-5-logistic-regression.html"><a href="day-5-logistic-regression.html#classifying-cases"><i class="fa fa-check"></i><b>4.7.4</b> Classifying cases</a></li>
+<li class="chapter" data-level="4.7.5" data-path="day-5-logistic-regression.html"><a href="day-5-logistic-regression.html#classification-using-1-predictor"><i class="fa fa-check"></i><b>4.7.5</b> Classification Using &gt;1 Predictor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>5</b> Homework</a><ul>
+<li class="chapter" data-level="5.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><i class="fa fa-check"></i><b>5.1</b> Pre-Bootcamp Homework: Intro to R, RStudio, and R Markdown</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#objectives"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#introduction-to-rstudio"><i class="fa fa-check"></i><b>5.1.2</b> Introduction to RStudio</a></li>
+<li class="chapter" data-level="5.1.3" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#working-with-data-in-rstudio"><i class="fa fa-check"></i><b>5.1.3</b> Working with Data in RStudio</a></li>
+<li class="chapter" data-level="5.1.4" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#r-markdown-and-reproducible-research"><i class="fa fa-check"></i><b>5.1.4</b> R Markdown and Reproducible Research</a></li>
+<li class="chapter" data-level="5.1.5" data-path="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html"><a href="pre-bootcamp-homework-intro-to-r-rstudio-and-r-markdown.html#practice"><i class="fa fa-check"></i><b>5.1.5</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html"><i class="fa fa-check"></i><b>5.2</b> Homework 1: Visualizing &amp; Modeling Variability</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#interaction"><i class="fa fa-check"></i><b>5.2.1</b> Interaction</a></li>
+<li class="chapter" data-level="5.2.2" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#covariates"><i class="fa fa-check"></i><b>5.2.2</b> Covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="homework-1-visualizing-modeling-variability.html"><a href="homework-1-visualizing-modeling-variability.html#least-squares-estimation"><i class="fa fa-check"></i><b>5.2.3</b> Least Squares Estimation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html"><i class="fa fa-check"></i><b>5.3</b> Homework 2a: Data Wrangling</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#seasonality"><i class="fa fa-check"></i><b>5.3.1</b> Seasonality</a></li>
+<li class="chapter" data-level="5.3.2" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#day-of-the-week"><i class="fa fa-check"></i><b>5.3.2</b> Day of the Week</a></li>
+<li class="chapter" data-level="5.3.3" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#holidays"><i class="fa fa-check"></i><b>5.3.3</b> Holidays</a></li>
+<li class="chapter" data-level="5.3.4" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#superstition"><i class="fa fa-check"></i><b>5.3.4</b> Superstition</a></li>
+<li class="chapter" data-level="5.3.5" data-path="homework-2a-data-wrangling.html"><a href="homework-2a-data-wrangling.html#geography"><i class="fa fa-check"></i><b>5.3.5</b> Geography</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html"><i class="fa fa-check"></i><b>5.4</b> Homework 2b: Model Building &amp; Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#warm-up-1"><i class="fa fa-check"></i><b>5.4.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.4.2" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#model-building-subset-selection"><i class="fa fa-check"></i><b>5.4.2</b> Model Building: Subset selection</a></li>
+<li class="chapter" data-level="5.4.3" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#bias-variance-trade-off"><i class="fa fa-check"></i><b>5.4.3</b> Bias-variance trade-off</a></li>
+<li class="chapter" data-level="5.4.4" data-path="homework-2b-model-building-evaluation.html"><a href="homework-2b-model-building-evaluation.html#extra-2"><i class="fa fa-check"></i><b>5.4.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html"><i class="fa fa-check"></i><b>5.5</b> Homework 3: Confidence Intervals &amp; Bootstrapping</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#warm-up-2"><i class="fa fa-check"></i><b>5.5.1</b> Warm-up</a></li>
+<li class="chapter" data-level="5.5.2" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#bootstrapping"><i class="fa fa-check"></i><b>5.5.2</b> Bootstrapping</a></li>
+<li class="chapter" data-level="5.5.3" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#confidence-prediction-bands"><i class="fa fa-check"></i><b>5.5.3</b> Confidence &amp; Prediction Bands</a></li>
+<li class="chapter" data-level="5.5.4" data-path="homework-3-confidence-intervals-bootstrapping.html"><a href="homework-3-confidence-intervals-bootstrapping.html#extra-3"><i class="fa fa-check"></i><b>5.5.4</b> Extra</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html"><i class="fa fa-check"></i><b>5.6</b> Homework 4: Hypothesis Testing</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#bootstrap-hypothesis-testing-multicollinearity"><i class="fa fa-check"></i><b>5.6.1</b> Bootstrap hypothesis testing + Multicollinearity</a></li>
+<li class="chapter" data-level="5.6.2" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#simpsons-paradox"><i class="fa fa-check"></i><b>5.6.2</b> Simpson’s Paradox</a></li>
+<li class="chapter" data-level="5.6.3" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#multiple-testing"><i class="fa fa-check"></i><b>5.6.3</b> Multiple Testing</a></li>
+<li class="chapter" data-level="5.6.4" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#statistical-vs-practical-significance"><i class="fa fa-check"></i><b>5.6.4</b> Statistical vs Practical Significance</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">IMA Math-to-Industry Bootcamp 2019: Statistics!</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="day-5-logistic-regression" class="section level2">
+<h2><span class="header-section-number">4.7</span> Day 5: Logistic Regression</h2>
+<p><br />
+</p>
+<p><br> <br></p>
+<p><strong>Getting started:</strong></p>
+<p>As you settle in,</p>
+<ul>
+<li><p><strong>install the <code>mlbench</code> package</strong></p></li>
+<li><p>start a new Rmd and load the following packages at the top.</p>
+<pre><code>```{r warning = FALSE, message = FALSE}    
+library(ggplot2)    
+library(dplyr)  
+library(fivethirtyeight)
+library(mlbench)
+```</code></pre></li>
+</ul>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<p><strong>Today’s plan:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Discuss Day 4 homework &amp; tie up any other loose ends</p></li>
+<li><p>Extend the previous module concepts in a new model setting: logistic regression</p></li>
+<li><p>Exploratory data analysis and group mini-project</p></li>
+</ol>
+<p><br> <br></p>
+<p><br> <br> <br> <br></p>
+<div id="classification" class="section level3">
+<h3><span class="header-section-number">4.7.1</span> Classification</h3>
+<p>Thus far, we’ve focused on <strong>regression</strong> tasks where we’ve examined the association between a <strong>quantitative response</strong> <span class="math inline">\(y\)</span> and predictors (<span class="math inline">\(x_1,...,x_k\)</span>):</p>
+<p><br />
+<br />
+</p>
+<p><img src="images/concept_map.png" height="550px" /></p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p><strong>Classification</strong> tasks are required when we want to examine the association between a <strong>categorical response</strong> <span class="math inline">\(y\)</span> and predictors (<span class="math inline">\(x_1,...,x_k\)</span>). For each of the classification tasks below:</p>
+<ul>
+<li><p>specify response variable <span class="math inline">\(y\)</span> and its levels / categories</p></li>
+<li><p>specify predictors <span class="math inline">\(x\)</span> that would be useful in our classification</p></li>
+</ul>
+<p><br />
+<br />
+</p>
+<ol style="list-style-type: decimal">
+<li><p>disease classification</p>
+<p><strong>Note:</strong> Models are a powerful tool in diagnosing disease. Later in this activity we’ll develop models that can be used to diagnose breast cancer. Though a sensitive topic, this is an important, broad area of application. Throughout, it’s important to keep in mind that each data point corresponds to a real person.</p></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>spam filters</p>
+Spam or not spam?<br />
+
+<center>
+<div class="image">
+<p><img src="images/Classification/spam.png" style="width: 800px"/></p>
+</div>
+</center>
+<br />
+<br />
+Spam or not spam?<br />
+
+<center>
+<div class="image">
+<p><img src="images/Classification/momemail.png" style="width: 800px"/></p>
+</div>
+</center></li>
+</ol>
+<p><br />
+<br />
+</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="motivating-example" class="section level3">
+<h3><span class="header-section-number">4.7.2</span> Motivating Example</h3>
+<p>In 1986, NASA’s Challenger shuttle exploded 73 seconds after liftoff, killing all 7 crew members on board. An investigation found that an “O-ring” failure was the cause. At the time, NASA used six O-rings (seals) in each shuttle to prevent hot gases from coming into contact with fuel supply lines.</p>
+<br />
+
+<center>
+<img src="images/challenger.jpg" style="width: 250px"/>
+</center>
+<p><br />
+</p>
+<p>The temperature on the day of the Challenger launch was a chilly 31<sup>o</sup> F, much colder than the launch temperatures of all previous NASA flights which ranged from 53 to 81<sup>o</sup> F. Prior to lift-off, engineers warned of potential O-ring failure under such low temperatures. However, upon analyzing data on the temperature and O-ring performance from the 23 previous flights, NASA thought it was safe to go forward. Let’s examine their data. Each case in the <code>oring</code> data set represents a single O-ring for one of the 23 flights, thus there are 6*23=138 cases in total.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oring &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/NASA.csv&quot;</span>)
+<span class="kw">head</span>(oring, <span class="dv">3</span>)
+##   Broken Temp Flight
+## 1      1   53      1
+## 2      1   53      1
+## 3      0   53      1</code></pre></div>
+<p>On the left is an ordinary regression model of <code>Broken</code> (whether the O-ring broke) by <code>Temp</code> (temperature on the day of the launch). On the right is a logistic regression model of the <em>probability</em> of <code>Broken</code> by <code>Temp</code>. Explain why the logistic model is preferable.</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-245-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<blockquote>
+<p><strong>Ordinary vs Logistic Regression</strong></p>
+<ul>
+<li><strong>ordinary regression assumptions</strong><br />
+<span class="math inline">\(y\)</span> is a quantitative response variable with<br />
+<span class="math display">\[y \stackrel{ind}{\sim} N(\beta_0 + \beta_1 x_1 + \cdots + \beta_kx_k, \sigma^2)\]</span> Equivalently, <span class="math display">\[y = \beta_0 + \beta_1 x_1 + \cdots + \beta_kx_k + \varepsilon \;\;\; \text{ where } \varepsilon \stackrel{ind}{\sim} N(0, \sigma^2)\]</span></li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>logistic regression assumptions</strong><br />
+<span class="math inline">\(y\)</span> is a binary response variable: <span class="math display">\[y \stackrel{ind}{\sim} \text{Bernoulli}(p(x)) \;\;\; \text{ i.e. } y = \begin{cases}
+1 &amp; \text{ w/ probability } p(x) \\ 0 &amp; \text{ w/ probability } 1-p(x) \\ \end{cases}\]</span> where <span class="math display">\[\log \left(\frac{p(x)}{1-p(x)} \right) = \log \left(\text{odds}(x) \right) = \beta_0 + \beta_1 x_1 + \cdots + \beta_kx_k\]</span> equivalently <span class="math display">\[p(x) = \frac{e^{\beta_0 + \beta_1 x_1 + \cdots + \beta_kx_k}}{1 + e^{\beta_0 + \beta_1 x_1 + \cdots + \beta_kx_k}}\]</span><br />
+NOTE: in statistics, “log” is the natural log (ln) by default</li>
+</ul>
+</blockquote>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<p><br> <br></p>
+<p><br />
+<br />
+</p>
+<blockquote>
+<p><strong>Generalized Linear Models</strong></p>
+<p>Logistic regression and (ordinary) linear regression are both special cases of the broader set of “generalized linear models”. In general, all generalized linear models assume that the model trend, i.e. the expected value of the response <span class="math inline">\(E(Y)\)</span>, can be “linked” to a linear combination of predictors via some link function <span class="math inline">\(g()\)</span>: <span class="math display">\[\begin{split} g(E(Y)) &amp; = X\beta \\ E(Y) &amp; = g^{-1}(X\beta) \\ \end{split}\]</span> In the case of ordinary linear regression, <span class="math inline">\(g()\)</span> is the identity function: <span class="math display">\[Y \sim N(X\beta, \sigma^2) \;\;\; \text{ with } \;\;\; E(Y) = X\beta\]</span> In the case of logistic regression, <span class="math inline">\(g()\)</span> is the logit function: <span class="math display">\[Y \sim Bern(p) \;\;\; \text{ with } \;\;\;  log\left(\frac{E(Y)}{1-E(Y)}\right) = log\left(\frac{p}{1-p}\right) = X\beta\]</span></p>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="bechdel-test" class="section level3">
+<h3><span class="header-section-number">4.7.3</span> Bechdel test</h3>
+<p><a href="https://en.wikipedia.org/wiki/Bechdel_test#/media/File:Dykes_to_Watch_Out_For_(Bechdel_test_origin).jpg">This cartoon</a> by Alison Bechdel inspired the “Bechdel test”. A movie passes the test if it meets the following criteria:</p>
+<ul>
+<li>there are <span class="math inline">\(\ge 2\)</span> female characters<br />
+</li>
+<li>the female characters talk to each other<br />
+</li>
+<li>at least 1 time, they talk about something <em>other than a male character</em></li>
+</ul>
+<p><br></p>
+<p>We’ll work with the <code>bechdel</code> data in the <code>fivethirtyeight</code> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
+<span class="kw">data</span>(bechdel)
+?bechdel</code></pre></div>
+<p>The <code>binary</code> variable records whether each movie is a <code>FAIL</code> or <code>PASS</code> on the Bechdel test. Define the corresponding response <span class="math display">\[y = \begin{cases} 1 &amp;  \text{ PASS (with probability $p(x)$)} \\
+0 &amp; \text{ FAIL (with probability $1-p(x)$)} \\
+\end{cases}\]</span><br />
+NOTE: By default, RStudio assigns the first alphabetical group (<code>FAIL</code>) to the reference category “0”.</p>
+<p><br />
+<br />
+</p>
+<ol style="list-style-type: decimal">
+<li><strong>Logistic regression of <code>binary</code> by <code>year</code></strong>
+<ol style="list-style-type: lower-alpha">
+<li><p>Construct the logistic regression model using the <code>glm()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">binary_mod &lt;-<span class="st"> </span><span class="kw">glm</span>(<span class="kw">as.factor</span>(binary) <span class="op">~</span><span class="st"> </span>year, bechdel, <span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>)
+<span class="kw">summary</span>(binary_mod)</code></pre></div>
+Notes:
+<ul>
+<li>We’ve worked with <code>glm()</code> before! To use it for <em>logistic</em> regression we specify <code>family=&quot;binomial&quot;</code> (which is a generalization of “Bernoulli”)<br />
+</li>
+<li>Since <code>binary</code> is a character variable, we have to specify that it should be treated <code>as.factor</code>.</li>
+</ul></li>
+<li><p>The coefficients in the model <code>summary()</code> correspond to the <strong>log-odds</strong> model. Write down the corresponding model formula: <span class="math display">\[\text{log(odds of passing the test)} = \hat{\beta}_0 + \hat{\beta}_1 \text{year}\]</span><br />
+Subsequently, translate the model on the <code>odds</code> and <code>probability</code> scales:<br />
+<span class="math display">\[\begin{split}
+\text{odds of passing} &amp; = ??? \\
+\text{P(pass)} &amp; = ??? \\
+\end{split}\]</span></p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Logistic predictions &amp; model visualizations</strong><br />
+We now have the <em>same</em> model of <code>binary</code> by <code>year</code>, but on 3 different scales.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>For each movie in <code>bechdel</code>, use these 3 models to make predictions for the log(odds), odds, and probability that the movie passes the Bechdel test.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># predictions on probability scale (stored as the fitted.values)   </span>
+prob_pred &lt;-<span class="st"> </span>binary_mod<span class="op">$</span>fitted.values
+
+<span class="co"># predictions on odds scale</span>
+odds_pred &lt;-<span class="st"> </span>___
+
+<span class="co"># predictions on log(odds) scale    </span>
+log_pred &lt;-<span class="st"> </span>___
+
+<span class="co"># include the 3 sets of predictions in the data    </span>
+bechdel &lt;-<span class="st"> </span>bechdel <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">log_pred=</span>log_pred, <span class="dt">odds_pred=</span>odds_pred, <span class="dt">prob_pred=</span>prob_pred)</code></pre></div></li>
+<li><p>Visualize &amp; interpret these 3 models. NOTE: All of these models look fairly linear across the observed years. However, the probability model would take on a “s” shape if we zoomed out.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Plot the log(odds) model  </span>
+<span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x=</span>year, <span class="dt">y=</span>log_pred)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;log(odds of passing the test)&quot;</span>)
+
+<span class="co">#Plot the odds model  </span>
+<span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x=</span>year, <span class="dt">y=</span>odds_pred)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;odds of passing the test&quot;</span>)
+
+<span class="co">#Plot the probability model</span>
+<span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x=</span>year, <span class="dt">y=</span>prob_pred)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;probability of passing the test&quot;</span>)
+
+<span class="co">#We could also do this without calculating the predictions first!!</span>
+<span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x=</span>year, <span class="dt">y=</span>(<span class="kw">as.numeric</span>(<span class="kw">as.factor</span>(binary))<span class="op">-</span><span class="dv">1</span>))) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;glm&quot;</span>, <span class="dt">method.args=</span><span class="kw">list</span>(<span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>), <span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;probability of passing the test&quot;</span>)
+
+<span class="co">#...and zoom out to see the s shape</span>
+<span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x=</span>year, <span class="dt">y=</span>(<span class="kw">as.numeric</span>(<span class="kw">as.factor</span>(binary))<span class="op">-</span><span class="dv">1</span>))) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;glm&quot;</span>, <span class="dt">method.args=</span><span class="kw">list</span>(<span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>), <span class="dt">se=</span><span class="ot">FALSE</span>, <span class="dt">fullrange=</span><span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;probability of passing the test&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">lims</span>(<span class="dt">x=</span><span class="kw">c</span>(<span class="dv">1800</span>,<span class="dv">2200</span>))</code></pre></div></li>
+<li><p>“Fast and Furious 6” premiered in 2013. The predicted log(odds), odds, and probability that this movie would pass the Bechdel test are below. It might come as a surprise that Fast &amp; Furious <em>did</em> pass the Bechdel test. Calculate the residual / prediction error for this movie.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(title <span class="op">==</span><span class="st"> &quot;Fast and Furious 6&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">select</span>(log_pred, odds_pred, prob_pred)
+## # A tibble: 1 x 3
+##   log_pred odds_pred prob_pred
+##      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1  0.00294      1.00     0.501</code></pre></div></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Interpreting logistic coefficients</strong><br />
+The model of the log(odds) of passing the test is <em>linear</em>. Thus we can interpret the <code>year</code> coefficient as a slope on the log(odds) scale:</p>
+<p><br />
+<em>Each year, the log(odds) of movies passing the Bechdel test increase by <code>0.020647</code> on average.</em></p>
+<p> </p>
+<p>The problem with this interpretation is that nobody really thinks on log(odds) scales!</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Using the logistic regression notation that <span class="math inline">\(\text{log(odds)} = \hat{\beta}_0 + \hat{\beta}_1 x\)</span>, we can prove that <span class="math inline">\(\hat{\beta}_1\)</span> can be interpreted on the odds scale as follows: <span class="math display">\[100(e^{\hat{\beta}_1} - 1) = \text{ estimated percentage change in odds per 1 unit increase in $x$}\]</span> With this in mind, reinterpret the <code>year</code> coefficient in a meaningful way. (<strong>If</strong> you have time, prove that <span class="math inline">\(100(e^{\beta_1}−1)\)</span> can be interpreted as the <em>percentage</em> change in <em>odds</em> associated with a 1 unit increase in <span class="math inline">\(x\)</span>.)</p></li>
+<li><p>What do you conclude from the hypothesis test in the <code>year</code> row?</p></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p><strong>Logistic regression with a categorical predictor</strong><br />
+Define a <code>bigbudget</code> which categorizes movies’ budget (in 2013 inflation adjusted dollars) into 2 groups: movies with budgets that are greater than the median (TRUE) and those without (FALSE):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel &lt;-<span class="st"> </span>bechdel <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">bigbudget=</span>(budget_<span class="dv">2013</span> <span class="op">&gt;</span><span class="st"> </span><span class="kw">median</span>(budget_<span class="dv">2013</span>)))</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Incorporate <code>bigbudget</code> into our model <em>with</em> an interaction term. What’s the take-home message from the coefficients &amp; their corresponding hypothesis tests?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdelmod_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">glm</span>(<span class="kw">as.factor</span>(binary) <span class="op">~</span><span class="st"> </span>year <span class="op">*</span><span class="st"> </span>bigbudget, bechdel, <span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>)
+<span class="kw">summary</span>(bechdelmod_<span class="dv">2</span>)</code></pre></div></li>
+<li><p>Plot the model!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#store predictions on probability scale</span>
+bechdel &lt;-<span class="st"> </span>bechdel <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">probPredictions =</span> bechdelmod_<span class="dv">2</span><span class="op">$</span>fitted.values)
+
+<span class="co">#plot</span>
+<span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x=</span>year, <span class="dt">y=</span>probPredictions, <span class="dt">color=</span>bigbudget)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;probability of passing the Bechdel test&quot;</span>)</code></pre></div></li>
+</ol></li>
+</ol>
+<p><br> <br></p>
+<blockquote>
+<p><strong>Details</strong></p>
+<p>The concept of measuring a “residual” on any single case doesn’t quite make sense in a logistic model. On each individual response, we observe <span class="math inline">\(y \in \{0,1\}\)</span> yet our predictions are on the probability scale. Thus, logistic regression requires different strategies for coefficient estimation (the “least squares” strategy minimizes the sum of squared residuals!) and measuring model quality (<span class="math inline">\(R^2\)</span> is calculated from the variance of the residuals!).</p>
+<ul>
+<li><p><strong>Building the model: calculating coefficient estimates</strong><br />
+A common strategy is to use iterative processes to identify coefficient estimates <span class="math inline">\(\hat{\beta}\)</span> that <em>maximize the likelihood function</em> <span class="math display">\[L(\hat{\beta}) = \prod_{i=1}^{n} p_i^{y_i}(1-p_i)^{1-y_i} \;\; \text{ where } \;\; log\left(\frac{p_i}{1-p_i}\right) = x_i^T \hat{\beta}\]</span></p></li>
+<li><p><strong>Measuring model quality</strong><br />
+We can evaluate logistic models relative to their ability to <em>classify</em> cases into binary categories using CV, sensitivity, &amp; specificity (which we’ll do below).</p></li>
+</ul>
+</blockquote>
+<!-- You'll also notice that RStudio reports a measure of *Akaike's Information Criterion*: $$\text{AIC} = \text{-(likelihood of our model)} + 2(k+1)$$ where $k$ is the number of non-intercept coefficients.  The AIC useful for *comparing models* - smaller the AIC the better!  -->
+<p><br> <br></p>
+<p><br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="classifying-cases" class="section level3">
+<h3><span class="header-section-number">4.7.4</span> Classifying cases</h3>
+<p><br />
+In the remainder of this activity, we’ll use logistic regression to diagnose a breast cancer tumor as malignant (cancerous) or benign (non-cancerous). Traditionally, this requires invasive surgical procedure. “Fine needle aspiration,” which only draws a small sample of tissue, provides a less invasive alternative. To assess the effectiveness of this procedure, tissue samples were collected from 699 patients with potentially cancerous tumors. For each sample, a doctor observed and rated the tissue on a scale from 1 (normal) to 10 (most abnormal) with respect to a series of characteristics.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;BreastCancer&quot;</span>)
+?BreastCancer
+<span class="kw">head</span>(BreastCancer, <span class="dv">3</span>)
+##        Id Cl.thickness Cell.size Cell.shape Marg.adhesion Epith.c.size
+## 1 1000025            5         1          1             1            2
+## 2 1002945            5         4          4             5            7
+## 3 1015425            3         1          1             1            2
+##   Bare.nuclei Bl.cromatin Normal.nucleoli Mitoses  Class
+## 1           1           3               1       1 benign
+## 2          10           3               2       1 benign
+## 3           2           3               1       1 benign</code></pre></div>
+<p><br />
+<br />
+<br />
+</p>
+<p>Let’s use logistic regression to model tumor <code>Class</code> by <code>Cl.thickness</code> alone.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#note that Cl.thickness isn&#39;t a numeric vector</span>
+<span class="co">#replace it with a numeric copy</span>
+<span class="kw">class</span>(BreastCancer<span class="op">$</span>Cl.thickness)
+## [1] &quot;ordered&quot; &quot;factor&quot;
+BreastCancer &lt;-<span class="st"> </span>BreastCancer <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Cl.thickness=</span><span class="kw">as.numeric</span>(Cl.thickness))
+
+
+mod_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">glm</span>(Class <span class="op">~</span><span class="st"> </span>Cl.thickness, BreastCancer, <span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>)
+<span class="kw">ggplot</span>(BreastCancer, <span class="kw">aes</span>(<span class="dt">x=</span>Cl.thickness, <span class="dt">y=</span>(<span class="kw">as.numeric</span>(<span class="kw">as.factor</span>(Class))<span class="op">-</span><span class="dv">1</span>))) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;glm&quot;</span>, <span class="dt">method.args=</span><span class="kw">list</span>(<span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>), <span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;P(malignant)&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-258-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br />
+<br />
+</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Suppose a patient’s tumor has a thickness measurement of 8. We can use the model to estimate the probability that the tumor is malignant. Based on these calculations, <strong>how would you classify / diagnose this patient</strong>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># log(odds) prediction</span>
+<span class="kw">predict</span>(mod_<span class="dv">1</span>, <span class="dt">newdata=</span><span class="kw">data.frame</span>(<span class="dt">Cl.thickness=</span><span class="dv">8</span>), <span class="dt">type=</span><span class="st">&quot;link&quot;</span>)
+##     1 
+## 2.324
+
+<span class="co"># probability prediction</span>
+<span class="kw">predict</span>(mod_<span class="dv">1</span>, <span class="dt">newdata=</span><span class="kw">data.frame</span>(<span class="dt">Cl.thickness=</span><span class="dv">8</span>), <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)
+##      1 
+## 0.9108</code></pre></div></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>Using logistic regression for classification</strong></p>
+<p>For a new case with predictors <span class="math inline">\(x^*\)</span>, we can use the logistic regression model to classify <span class="math inline">\(y^*\)</span>:</p>
+<ul>
+<li><span class="math inline">\(p(x^*) \ge c\)</span> <span class="math inline">\(\Rightarrow\)</span> <em>classify</em> <span class="math inline">\(y^*\)</span> as 1<br />
+</li>
+<li><span class="math inline">\(p(x^*) &lt; c\)</span> <span class="math inline">\(\Rightarrow\)</span> <em>classify</em> <span class="math inline">\(y^*\)</span> as 0</li>
+</ul>
+<p>The quality of these classifications depends upon our choice of cut-off parameter <span class="math inline">\(c\)</span> <em>and</em> provides a measure of the model quality itself.</p>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Experiment</strong>
+<ul>
+<li><p>The <code>mod_1</code> <code>fitted</code> values contain the predictions, P(malignant), for all patients in the dataset. Store these predictions as <code>prob_pred</code> &amp; store the true test case classes as <code>true_class</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">prob_pred  &lt;-<span class="st"> </span>mod_<span class="dv">1</span><span class="op">$</span>fitted
+true_class &lt;-<span class="st"> </span>___</code></pre></div></li>
+<li><p>Suppose we use a proability cut-off of 0.5 to classify tumors as malignant. Examine the following results that compare the classifications to the <code>true_class</code>. Note: <code>TRUE</code> means that a tumor was classified as “malignant” by our 0.5 cut-off rule.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">raw_table &lt;-<span class="st"> </span><span class="kw">table</span>(true_class, prob_pred <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.5</span>)
+raw_table
+<span class="kw">prop.table</span>(raw_table, <span class="dt">margin=</span><span class="dv">1</span>)</code></pre></div></li>
+<li><p>Play around with the cut-off: which cut-off (eg: 0.5) provides the “best” classifications? NOTE: writing a function might be an efficient approach to trying out different cut-offs.</p></li>
+</ul></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<blockquote>
+<p><strong>Sensitivity vs Specificity</strong></p>
+<p>Model predictions and classifications aren’t perfect. We can measure the quality of a binary classification tool (eg: logistic regression) using sensitivity and specificity: <span class="math display">\[\begin{split}
+\text{overall accuracy} &amp; = \text{probability of making a correct classification} \\
+\text{sensitivity} &amp; = \text{true positive rate}\\
+&amp;  = \text{probability of correctly classifying $y=1$ as $y=1$} \\
+\text{specificity} &amp; = \text{true negative rate} \\
+&amp; =  \text{probability of correctly classifying $y=0$ as $y=0$} \\
+\text{1 - specificity} &amp; = \text{false positive rate} \\
+&amp;  = \text{probability of classifying $y=0$ as $y=1$} \\
+\end{split}\]</span></p>
+<p>In the experiment above, we saw a trade-off: increasing the sensitivity of our classification rule results in a decreasing specificity (and vice versa)</p>
+</blockquote>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p><strong>sensitivity vs specificity</strong><br />
+For the following scenarios, which is more important: increased sensitivity or increased specificity? What factors are you considering in your answer?</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Classify a room as having carbon monoxide (<span class="math inline">\(y=1\)</span>) or not (<span class="math inline">\(y=1\)</span>).</p></li>
+<li><p>Classify an email as spam (<span class="math inline">\(y=1\)</span>) or not spam (<span class="math inline">\(y=0\)</span>).</p></li>
+<li><p>Classify a tumor as malignant (<span class="math inline">\(y=1\)</span>) or benign (<span class="math inline">\(y=0\)</span>).</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Continuing with <code>mod_1</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">coef</span>(<span class="kw">summary</span>(mod_<span class="dv">1</span>))
+##              Estimate Std. Error z value  Pr(&gt;|z|)
+## (Intercept)   -5.1602    0.37795  -13.65 1.937e-42
+## Cl.thickness   0.9355    0.07377   12.68 7.521e-37</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Consider classifying tumors using a 0.5 cut-off:</p>
+<ul>
+<li>if P(malignant) <span class="math inline">\(\ge 0.5\)</span> <span class="math inline">\(\Rightarrow\)</span> classify as malignant</li>
+<li>if P(malignant) <span class="math inline">\(&lt; 0.5\)</span> <span class="math inline">\(\Rightarrow\)</span> classify as benign</li>
+</ul>
+<p>Translate this classification rule into one based on the actual <code>Cl.thickness</code> measurements:</p>
+<ul>
+<li>if <code>Cl.thickness</code> is ??? <span class="math inline">\(\Rightarrow\)</span> classify as malignant</li>
+<li>if <code>Cl.thickness</code> is ??? <span class="math inline">\(\Rightarrow\)</span> classify as benign</li>
+</ul>
+<p><br />
+HINT:</p>
+<p>Use the logistic model to detemine the <code>Cl.thickness</code> value that corresponds to a probability prediction of 0.5. You can also visualize this value on the following plot.</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-263-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
+<li><p>Check out a density plot of <code>Cl.thickness</code> by <code>Class</code> with a vertical line drawn at the thickness cut-off you derived above: <img src="IMA_book_2019_files/figure-html/unnamed-chunk-264-1.png" width="\textwidth" style="display: block; margin: auto;" /> In the experiment, you calculated that this rule had a corresponding sensitivity of 0.68 &amp; specificity of 0.95. On a scratch piece of paper, shade in the areas on the side-by-side density plots that correspond to the sensitivity and specificity.</p></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Given the consequences of misclassifying a malignant tumor as benign, we might find the sensitivity of the above classification rule to be too low. To increase sensitivity, we could decrease the probability cut-off used to classify a tumor as malignant from 0.5 to 0.2.
+<ol style="list-style-type: lower-alpha">
+<li>Translate the 0.2 probability classification rule into one based on the actual <code>Cl.thickness</code> measurements:
+<ul>
+<li>if <code>Cl.thickness</code> is ??? <span class="math inline">\(\Rightarrow\)</span> classify as malignant</li>
+<li>if <code>Cl.thickness</code> is ??? <span class="math inline">\(\Rightarrow\)</span> classify as benign</li>
+</ul>
+<p>You can visualize this value on the following plot.</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-265-1.png" width="\textwidth" style="display: block; margin: auto;" /></p></li>
+<li><p>Check out a density plot of <code>Cl.thickness</code> by <code>Class</code> with a vertical line drawn at the thickness cut-off you derived above: <img src="IMA_book_2019_files/figure-html/unnamed-chunk-266-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Shade in the regions corresponding to the sensitivity and specificity of this rule.</p></li>
+<li><p>Calculate the sensitivity and specificity of this classification rule.</p></li>
+</ol>
+<br />
+<strong>COMMENT:</strong> In comparison to using 0.5 as our cut-off, you should notice that we increased sensitivity at the cost of decreasing specificity.</li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+</div>
+<div id="classification-using-1-predictor" class="section level3">
+<h3><span class="header-section-number">4.7.5</span> Classification Using &gt;1 Predictor</h3>
+<p>As you might imagine, classification improves with more information. That is, we can classify tumors with higher accuracy if we consider two measurements as opposed to just one. For example, consider classifying tumor status by both <code>Cl.thickness</code> and <code>Cell.size</code>. Note that the cases have been <em>jittered</em> in order to observe multiple cases at each coordinate:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># First make Cell.size numeric</span>
+BreastCancer &lt;-<span class="st"> </span>BreastCancer <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Cell.size=</span><span class="kw">as.numeric</span>(Cell.size))
+
+<span class="kw">ggplot</span>(BreastCancer, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">jitter</span>(Cl.thickness,<span class="fl">0.75</span>), <span class="dt">y =</span> <span class="kw">jitter</span>(Cell.size,<span class="fl">0.75</span>), <span class="dt">color =</span> Class)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Cl.thickness&quot;</span>, <span class="dt">y=</span><span class="st">&quot;Cell.size&quot;</span>)</code></pre></div>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-267-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><br> <br></p>
+<ol start="10" style="list-style-type: decimal">
+<li><p><strong>Modeling <code>Class</code> by <code>Cl.thickness</code> and <code>Cell.size</code></strong><br />
+Fit the following logistic model of tumor <code>Class</code> by <code>Cl.thickness</code> and <code>Cell.size</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">glm</span>(Class <span class="op">~</span><span class="st"> </span>Cl.thickness <span class="op">+</span><span class="st"> </span>Cell.size, BreastCancer, <span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>)
+<span class="kw">summary</span>(mod_<span class="dv">2</span>)</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Use <code>mod_2</code> with a probability cut-off of 0.5 to define a classification border between the benign and malignant classification groups. To this end, specify the correct values for <code>a</code> and <code>b</code> below:
+<ul>
+<li>If <code>Cell.size</code> <span class="math inline">\(\ge\)</span> <code>a</code> + <code>b</code> <code>Cl.thickness</code>, conclude the tumor is malignant.<br />
+</li>
+<li>If <code>Cell.size</code> <span class="math inline">\(&lt;\)</span> <code>a</code> + <code>b</code> <code>Cl.thickness</code>, conclude the tumor is benign.</li>
+</ul></li>
+<li><p>Adapt the code below to include your classification border on a plot of the observed data. This line represents the “best” linear separation of the benign and malignant groups. In examining this plot, what limitations do you notice?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(BreastCancer, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">jitter</span>(Cl.thickness, <span class="fl">0.75</span>), <span class="dt">y =</span> <span class="kw">jitter</span>(Cell.size, <span class="fl">0.75</span>), <span class="dt">color =</span> Class)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> ___, <span class="dt">slope =</span> ___)</code></pre></div></li>
+<li><p>Estimate the sensitivity and specificity of this classification rule. NOTE: These should be higher than for the model with <code>Cl.thickness</code> alone!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(BreastCancer<span class="op">$</span>Class, mod_<span class="dv">2</span><span class="op">$</span>fitted <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.5</span>), <span class="dt">margin =</span> <span class="dv">1</span>)</code></pre></div></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+</p>
+<ol start="11" style="list-style-type: decimal">
+<li><p>Consider a final model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Convert all predictors to numeric. Remove 1st &amp; 7th variables.</span>
+BreastCancer[,<span class="dv">2</span><span class="op">:</span><span class="dv">10</span>] &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">apply</span>(BreastCancer[<span class="dv">2</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> as.numeric))    
+BreastCancer &lt;-<span class="st"> </span>BreastCancer[,<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">7</span>)]
+
+<span class="co"># Model Class by all remaining variables</span>
+mod_<span class="dv">3</span> &lt;-<span class="st"> </span><span class="kw">glm</span>(Class <span class="op">~</span><span class="st"> </span>., <span class="dt">data =</span> BreastCancer, <span class="dt">family =</span> <span class="st">&quot;binomial&quot;</span>)</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Calculate the sensitivity &amp; specificity for <code>mod_3</code>.</p></li>
+<li><p>Thus far, we’ve calculated <em>in-sample</em> sensitivity &amp; specificity for <code>mod1</code>, <code>mod_2</code>, &amp; <code>mod_3</code>. To get a better sense of how well these models generalize to new patients, we can calculate and compare their 10-fold CV errors. If you had to pick 1 of these 3 models, which would it be and why?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)
+<span class="kw">cv.glm</span>(BreastCancer, mod_<span class="dv">1</span>, <span class="dt">K =</span> <span class="dv">10</span>)<span class="op">$</span>delta
+<span class="kw">cv.glm</span>(BreastCancer, mod_<span class="dv">2</span>, <span class="dt">K =</span> <span class="dv">10</span>)<span class="op">$</span>delta
+<span class="kw">cv.glm</span>(BreastCancer, mod_<span class="dv">3</span>, <span class="dt">K =</span> <span class="dv">10</span>)<span class="op">$</span>delta</code></pre></div></li>
+</ol></li>
+</ol>
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="day-4a-hypothesis-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section",
+"depth": 3,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
