@@ -194,6 +194,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.6.3" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#multiple-testing"><i class="fa fa-check"></i><b>5.6.3</b> Multiple Testing</a></li>
 <li class="chapter" data-level="5.6.4" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#statistical-vs-practical-significance"><i class="fa fa-check"></i><b>5.6.4</b> Statistical vs Practical Significance</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html"><i class="fa fa-check"></i><b>5.7</b> Homework 5: Exploratory Data Analysis &amp; Group Mini-Project</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.7.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="5.7.2" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html#homework-assignment-group-mini-project"><i class="fa fa-check"></i><b>5.7.2</b> Homework Assignment: Group Mini-Project</a></li>
+<li class="chapter" data-level="5.7.3" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html#flight-data-example"><i class="fa fa-check"></i><b>5.7.3</b> Flight Data Example</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -247,12 +252,12 @@ Do these data provide enough evidence to conclude that the new test is better at
 <h3><span class="header-section-number">4.5.1</span> Simulation study: sampling variability</h3>
 <p>Recall the 2016 election returns for the <em>population of “all” counties</em> outside Alaska:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">politics &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.macalester.edu/~ajohns24/data/electionDemographics16.csv&quot;</span>)</code></pre></div>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-156-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
-<p>And features of each county, such as median rent:</p>
 <p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-157-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>And features of each county, such as median rent:</p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-158-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>Based on these <strong>complete population data</strong> on all counties outside Alaska, we know that the relationship trend between Trump’s 2016 support and the median rent in a county is:</p>
 <p><span class="math display">\[\text{perrep_2016} = 84.583 - 0.041 * \text{median_rent}\]</span></p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-158-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-159-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br />
 <br />
 <br />
@@ -273,7 +278,7 @@ Do these data provide enough evidence to conclude that the new test is better at
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-159" class="exercise"><strong>Exercise 4.11  (Sampling and randomness in RStudio)  </strong></span>We’ll be taking some <em>random samples</em> of counties throughout this activity. The underlying <em>random number generator</em> plays a role in the random sample we happen to get:</p>
+<p><span id="exr:unnamed-chunk-160" class="exercise"><strong>Exercise 4.11  (Sampling and randomness in RStudio)  </strong></span>We’ll be taking some <em>random samples</em> of counties throughout this activity. The underlying <em>random number generator</em> plays a role in the random sample we happen to get:</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Try the following chunk A FEW TIMES</span>
@@ -293,7 +298,7 @@ Do these data provide enough evidence to conclude that the new test is better at
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-162" class="exercise"><strong>Exercise 4.12  (Class experiment)  </strong></span>Let’s each take a sample and see what we get.<br />
+<p><span id="exr:unnamed-chunk-163" class="exercise"><strong>Exercise 4.12  (Class experiment)  </strong></span>Let’s each take a sample and see what we get.<br />
 a. Let your seed be your birthday month (1 or 2 digits) and day (2 digits). For example January 5 is 105, September 10 is 910, October 5 is 1005, and December 10 is 1210. Set this in RStudio:</p>
 </div>
 
@@ -305,7 +310,7 @@ e. Indicate your <code>sample_1</code> and <code>sample_2</code> intercept and s
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-164" class="exercise"><strong>Exercise 4.13  (Comparing estimates)  </strong></span>Import each student’s estimates from Google sheets:</p>
+<p><span id="exr:unnamed-chunk-165" class="exercise"><strong>Exercise 4.13  (Comparing estimates)  </strong></span>Import each student’s estimates from Google sheets:</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">gsheet2tbl</span>(<span class="st">&#39;https://docs.google.com/spreadsheets/d/1HN8ccQEFLflaBSwygRD-f7UEun7Xi8qx_rMsiguMMsI/edit?usp=sharing&#39;</span>)</code></pre></div>
@@ -327,7 +332,7 @@ e. Indicate your <code>sample_1</code> and <code>sample_2</code> intercept and s
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-169" class="exercise"><strong>Exercise 4.14  (Taking multiple samples)  </strong></span>Whereas <code>sample_n()</code> takes a single sample of size <span class="math inline">\(n\)</span> from a dataset, <code>rep_sample_n</code> takes <em>multiple</em> samples of size <span class="math inline">\(n\)</span>. To get a feel for it, take <strong>4</strong> samples of size <strong>2</strong>. The <code>replicate</code> variable in the output indicates the sample (1, 2, 3, 4) to which each sampled case corresponds.</p>
+<p><span id="exr:unnamed-chunk-170" class="exercise"><strong>Exercise 4.14  (Taking multiple samples)  </strong></span>Whereas <code>sample_n()</code> takes a single sample of size <span class="math inline">\(n\)</span> from a dataset, <code>rep_sample_n</code> takes <em>multiple</em> samples of size <span class="math inline">\(n\)</span>. To get a feel for it, take <strong>4</strong> samples of size <strong>2</strong>. The <code>replicate</code> variable in the output indicates the sample (1, 2, 3, 4) to which each sampled case corresponds.</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">example1 &lt;-<span class="st"> </span><span class="kw">rep_sample_n</span>(politics, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">reps =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)
@@ -336,7 +341,7 @@ example1</code></pre></div>
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-171" class="exercise"><strong>Exercise 4.15  (500 samples of size 10)  </strong></span><br />
+<p><span id="exr:unnamed-chunk-172" class="exercise"><strong>Exercise 4.15  (500 samples of size 10)  </strong></span><br />
 a. To get a sense for the wide variety of samples we might get, take <strong>500</strong> samples of size <span class="math inline">\(n\)</span> = <strong>10</strong>. Store these as <code>samples_10</code>.</p>
 </div>
 
@@ -348,7 +353,7 @@ samples_<span class="dv">10</span> &lt;-<span class="st"> </span><span class="kw
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-174" class="exercise"><strong>Exercise 4.16  (500 sample slopes)  </strong></span>Let’s focus on the slopes of these 500 sample models.<br />
+<p><span id="exr:unnamed-chunk-175" class="exercise"><strong>Exercise 4.16  (500 sample slopes)  </strong></span>Let’s focus on the slopes of these 500 sample models.<br />
 a. Save the 500 <code>median_rent</code> (slope) coefficients, stored under the <code>estimate</code> variable in the <code>slopes_10</code> data frame.</p>
 </div>
 
@@ -368,7 +373,7 @@ a. Save the 500 <code>median_rent</code> (slope) coefficients, stored under the 
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-177" class="exercise"><strong>Exercise 4.17  (Increasing sample size)  </strong></span>Suppose we increased our sample size from <code>n=10</code> to <code>n=50</code>. What impact do you anticipate this having on the sampling distribution of sample slopes:</p>
+<p><span id="exr:unnamed-chunk-178" class="exercise"><strong>Exercise 4.17  (Increasing sample size)  </strong></span>Suppose we increased our sample size from <code>n=10</code> to <code>n=50</code>. What impact do you anticipate this having on the sampling distribution of sample slopes:</p>
 <ul>
 <li>Around what value would you expect the distribution of sample slopes to be centered?<br />
 </li>
@@ -381,7 +386,7 @@ a. Save the 500 <code>median_rent</code> (slope) coefficients, stored under the 
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-178" class="exercise"><strong>Exercise 4.18  (500 samples of size 50)  </strong></span>Test your intuition. Fill in the blanks to repeat the simulation process with samples of size n = 50.</p>
+<p><span id="exr:unnamed-chunk-179" class="exercise"><strong>Exercise 4.18  (500 samples of size 50)  </strong></span>Test your intuition. Fill in the blanks to repeat the simulation process with samples of size n = 50.</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Take 500 samples of size n = 50</span>
@@ -405,7 +410,7 @@ slopes_<span class="dv">50</span> &lt;-<span class="st"> </span>___ <span class=
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-180" class="exercise"><strong>Exercise 4.19  (500 samples of size 200)  </strong></span>Finally, repeat the simulation process with samples of size <span class="math inline">\(n\)</span> = 200.</p>
+<p><span id="exr:unnamed-chunk-181" class="exercise"><strong>Exercise 4.19  (500 samples of size 200)  </strong></span>Finally, repeat the simulation process with samples of size <span class="math inline">\(n\)</span> = 200.</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Take 500 samples of size n = 200</span>
@@ -429,7 +434,7 @@ slopes_<span class="dv">200</span> &lt;-<span class="st"> </span>___ <span class
 <p><br> <br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-182" class="exercise"><strong>Exercise 4.20  (Impact of sample size)  </strong></span><br />
+<p><span id="exr:unnamed-chunk-183" class="exercise"><strong>Exercise 4.20  (Impact of sample size)  </strong></span><br />
 a. Compare the sampling distributions of the sample slopes for the estimates based on sizes 10, 50, and 200 by plotting them on the same frame:</p>
 </div>
 
@@ -450,7 +455,7 @@ simulation_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>
 <p><br> <br></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-185" class="exercise"><strong>Exercise 4.21  (Properties of sampling distributions)  </strong></span>In light of your these investigations, complete the following statements.<br />
+<span id="exr:unnamed-chunk-186" class="exercise"><strong>Exercise 4.21  (Properties of sampling distributions)  </strong></span>In light of your these investigations, complete the following statements.<br />
 a. For all sample sizes, the shape of the sampling distribution is ???.<br />
 b. As sample size increases:<br />
 The average sample slope estimate INCREASES / DECREASES / IS FAIRLY STABLE.<br />
@@ -483,7 +488,7 @@ c. Thus, as sample size increases, our sample slopes become MORE RELIABLE / LESS
 <li>there is less variability (and more consistency) in the possible estimates from different samples</li>
 <li>we are less likely to get estimates that are far from the truth</li>
 </ul>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-186-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-187-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br> <br></p>
 <p><strong>Standard error of <span class="math inline">\(\hat{\beta}\)</span></strong></p>
 <p>The standard deviation of the sampling distribution, which is called the <strong>standard error</strong>, measures the typical error in the sample slopes calculated from sample to sample. The greater the standard error, the less “reliable” the sample estimate. As we’ve seen, standard error decreases as sample size <span class="math inline">\(n\)</span> increases. For example, in our simulation, our estimates based on samples of size 10, 50, &amp; 200 had the following standard deviations:</p>
@@ -509,7 +514,7 @@ c. Thus, as sample size increases, our sample slopes become MORE RELIABLE / LESS
 <p>The simulation above was just pretend. In practice we do NOT take 500 samples from the population - we take and use only <strong>ONE sample</strong>. Thus, we can’t actually observe the sampling distribution. However, the properties of the sampling distributions that we observed are guaranteed by Probability theory. <strong>IF</strong> the regression model assumptions are met and our sample size <span class="math inline">\(n\)</span> is “big enough”, then the <strong>Central Limit Theorem (CLT)</strong> guarantees that the sampling distribution of <em>all</em> possible <span class="math inline">\(\hat{\beta}_i\)</span> we could observe from <em>all</em> possible samples of size <span class="math inline">\(n\)</span> is approximately Normally distributed around <span class="math inline">\(\beta_i\)</span> with standard error <span class="math inline">\(s.e.(\hat{\beta}_i)\)</span>:</p>
 <p><span class="math display">\[\hat{\beta}_i \stackrel{\cdot}{\sim} N(\beta_i, s.e.(\hat{\beta}_i))\]</span></p>
 <p>The CLT for the sampling distribution of <span class="math inline">\(\hat{\beta}_i\)</span> in pictures:</p>
-<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-188-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="IMA_book_2019_files/figure-html/unnamed-chunk-189-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>Connecting this to the 68-95-99.7 Rule, the CLT guarantees that (approximately)…</p>
 <ul>
 <li><p><strong>68%</strong> of samples will produce <span class="math inline">\(\hat{\beta}_i\)</span> within <strong>1 st. err.</strong> of <span class="math inline">\(\beta_i\)</span></p></li>
@@ -517,7 +522,7 @@ c. Thus, as sample size increases, our sample slopes become MORE RELIABLE / LESS
 <li><p><strong>99.7%</strong> of samples will produce <span class="math inline">\(\hat{\beta}_i\)</span> within <strong>3 st. err.</strong> of <span class="math inline">\(\beta_i\)</span> quantity</p></li>
 </ul>
 <p><br />
-<img src="IMA_book_2019_files/figure-html/unnamed-chunk-189-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<img src="IMA_book_2019_files/figure-html/unnamed-chunk-190-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p><br />
 <br />
 <br />
@@ -555,7 +560,7 @@ sample_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw"
 </p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-192" class="exercise"><strong>Exercise 4.22  (Estimating the standard error)  </strong></span>Our sample estimate of slope <span class="math inline">\(\beta_1\)</span> is <span class="math inline">\(\hat{\beta}_1 =-0.04489\)</span>. With only 1 sample of data (not 500), we can estimate <span class="math inline">\(\text{s.e.}(\hat{\beta}_1)\)</span> by <span class="math inline">\(\sqrt{\hat{\sigma}^2(X^TX)^{-1}}\)</span>. This estimate is reported in the <code>Std. Error</code> column of the summary table.</p>
+<p><span id="exr:unnamed-chunk-193" class="exercise"><strong>Exercise 4.22  (Estimating the standard error)  </strong></span>Our sample estimate of slope <span class="math inline">\(\beta_1\)</span> is <span class="math inline">\(\hat{\beta}_1 =-0.04489\)</span>. With only 1 sample of data (not 500), we can estimate <span class="math inline">\(\text{s.e.}(\hat{\beta}_1)\)</span> by <span class="math inline">\(\sqrt{\hat{\sigma}^2(X^TX)^{-1}}\)</span>. This estimate is reported in the <code>Std. Error</code> column of the summary table.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Report this error rounded to 5 decimal places.<br />
 </li>
@@ -568,7 +573,7 @@ sample_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw"
 <br />
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-193" class="exercise"><strong>Exercise 4.23  (Constructing confidence intervals)  </strong></span>In light of the standard error 0.006022 that you reported in part (a) above, the CLT for <span class="math inline">\(\hat{\beta}_1\)</span> guarantees that <span class="math display">\[\hat{\beta}_1 \stackrel{\cdot}{\sim} N\left(\beta_1, 0.006022^2\right)\]</span> where <span class="math inline">\(\beta_1\)</span> is the <strong>“unknown”</strong> population slope. Thus by the 68-95-99.7 Rule, approximately 95% of samples will produce an estimate <span class="math inline">\(\hat{\beta}_1\)</span> that’s within 2 standard errors of <span class="math inline">\(\beta_1\)</span>. In turn, <span class="math inline">\(\beta_1\)</span> is within 2 standard errors of 95% of all possible <span class="math inline">\(\hat{\beta}_1\)</span>.<br />
+<span id="exr:unnamed-chunk-194" class="exercise"><strong>Exercise 4.23  (Constructing confidence intervals)  </strong></span>In light of the standard error 0.006022 that you reported in part (a) above, the CLT for <span class="math inline">\(\hat{\beta}_1\)</span> guarantees that <span class="math display">\[\hat{\beta}_1 \stackrel{\cdot}{\sim} N\left(\beta_1, 0.006022^2\right)\]</span> where <span class="math inline">\(\beta_1\)</span> is the <strong>“unknown”</strong> population slope. Thus by the 68-95-99.7 Rule, approximately 95% of samples will produce an estimate <span class="math inline">\(\hat{\beta}_1\)</span> that’s within 2 standard errors of <span class="math inline">\(\beta_1\)</span>. In turn, <span class="math inline">\(\beta_1\)</span> is within 2 standard errors of 95% of all possible <span class="math inline">\(\hat{\beta}_1\)</span>.<br />
 
 </div>
 
@@ -597,7 +602,7 @@ sample_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw"
 </p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-195" class="exercise"><strong>Exercise 4.24  </strong></span>As we saw in our simulation study of 500 samples, some samples are lucky and some aren’t. Is <code>sample_50</code> one of the lucky samples? That is, did this sample produce a confidence interval that contains the true slope <span class="math inline">\(\beta_1 = -0.0409\)</span>?</p>
+<p><span id="exr:unnamed-chunk-196" class="exercise"><strong>Exercise 4.24  </strong></span>As we saw in our simulation study of 500 samples, some samples are lucky and some aren’t. Is <code>sample_50</code> one of the lucky samples? That is, did this sample produce a confidence interval that contains the true slope <span class="math inline">\(\beta_1 = -0.0409\)</span>?</p>
 </div>
 
 <p><br></p>
@@ -605,7 +610,7 @@ sample_<span class="dv">50</span> &lt;-<span class="st"> </span><span class="kw"
 </p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-196" class="exercise"><strong>Exercise 4.25  </strong></span>The use of “95% confidence” (instead of 100% confidence) indicates that such unlucky samples are possible. But what exactly does “<strong>95% confidence</strong>” mean? To answer this question, let’s repeat our experiment 100 times. Try this on your own first. Hints are provided below as is a complete solution.<br />
+<span id="exr:unnamed-chunk-197" class="exercise"><strong>Exercise 4.25  </strong></span>The use of “95% confidence” (instead of 100% confidence) indicates that such unlucky samples are possible. But what exactly does “<strong>95% confidence</strong>” mean? To answer this question, let’s repeat our experiment 100 times. Try this on your own first. Hints are provided below as is a complete solution.<br />
 
 </div>
 
@@ -686,7 +691,7 @@ CIs_<span class="dv">50</span> &lt;-<span class="st"> </span>CIs_<span class="dv
 </p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-200" class="exercise"><strong>Exercise 4.26  (Visualizing the simulated CIs)  </strong></span>The code above produced 100 different 95% confidence intervals from 100 different samples of size 50. Check out a plot of these 100 intervals. In this plot, the 100 horizontal lines represent the 100 95% CIs. Each interval is centered at the corresponding sample slope <span class="math inline">\(\hat{\beta}_1\)</span> (represented by a dot). Intervals that do NOT cover the true <span class="math inline">\(\beta = -0.0409\)</span> are highlighted in red. Based on this plot, explain the meaning of “95% confidence”.</p>
+<p><span id="exr:unnamed-chunk-201" class="exercise"><strong>Exercise 4.26  (Visualizing the simulated CIs)  </strong></span>The code above produced 100 different 95% confidence intervals from 100 different samples of size 50. Check out a plot of these 100 intervals. In this plot, the 100 horizontal lines represent the 100 95% CIs. Each interval is centered at the corresponding sample slope <span class="math inline">\(\hat{\beta}_1\)</span> (represented by a dot). Intervals that do NOT cover the true <span class="math inline">\(\beta = -0.0409\)</span> are highlighted in red. Based on this plot, explain the meaning of “95% confidence”.</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(CIs_<span class="dv">50</span>, <span class="kw">aes</span>(<span class="dt">y =</span> replicate, <span class="dt">x =</span> lower, <span class="dt">color =</span> lucky)) <span class="op">+</span><span class="st"> </span>
@@ -716,7 +721,7 @@ We <strong>cannot</strong> say that “there’s a 95% chance that <span class="
 </p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-202" class="exercise"><strong>Exercise 4.27  (Impact of sample size)  </strong></span>Suppose we increase our sample size from 50 to 200 counties. What does your intuition say will happen to the 95% CIs?</p>
+<p><span id="exr:unnamed-chunk-203" class="exercise"><strong>Exercise 4.27  (Impact of sample size)  </strong></span>Suppose we increase our sample size from 50 to 200 counties. What does your intuition say will happen to the 95% CIs?</p>
 <ol style="list-style-type: lower-alpha">
 <li>Will the new CIs be narrower or wider? Approximately what percentage of these will cover <span class="math inline">\(\beta_1 = -0.0409\)</span>?<br />
 </li>
@@ -729,7 +734,7 @@ We <strong>cannot</strong> say that “there’s a 95% chance that <span class="
 </p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-203" class="exercise"><strong>Exercise 4.28  (Impact of confidence level)  </strong></span>Traditionally, people typically use a 95% confidence level.</p>
+<p><span id="exr:unnamed-chunk-204" class="exercise"><strong>Exercise 4.28  (Impact of confidence level)  </strong></span>Traditionally, people typically use a 95% confidence level.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Consider lowering the confidence level from 95% to 68%. What does your intuition say will happen to the CIs? Will the new CIs be narrower or wider?Approximately what percentage of these will cover <span class="math inline">\(\beta_1 = -0.0409\)</span>?<br />
 </li>

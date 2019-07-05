@@ -194,6 +194,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.6.3" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#multiple-testing"><i class="fa fa-check"></i><b>5.6.3</b> Multiple Testing</a></li>
 <li class="chapter" data-level="5.6.4" data-path="homework-4-hypothesis-testing.html"><a href="homework-4-hypothesis-testing.html#statistical-vs-practical-significance"><i class="fa fa-check"></i><b>5.6.4</b> Statistical vs Practical Significance</a></li>
 </ul></li>
+<li class="chapter" data-level="5.7" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html"><i class="fa fa-check"></i><b>5.7</b> Homework 5: Exploratory Data Analysis &amp; Group Mini-Project</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.7.1</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="5.7.2" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html#homework-assignment-group-mini-project"><i class="fa fa-check"></i><b>5.7.2</b> Homework Assignment: Group Mini-Project</a></li>
+<li class="chapter" data-level="5.7.3" data-path="homework-5-exploratory-data-analysis-group-mini-project.html"><a href="homework-5-exploratory-data-analysis-group-mini-project.html#flight-data-example"><i class="fa fa-check"></i><b>5.7.3</b> Flight Data Example</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -252,7 +257,7 @@ library(boot)</code></pre>
 <p>The number of daily births in the US varies over the year and from day to day. What’s surprising to many people is that the variation from one day to the next can be huge: some days have only about 80% as many births as others. Why? In this activity we’ll use basic data wrangling skills to understand some drivers of daily births.</p>
 <p>The data table <code>Birthdays</code> in the <code>mosaicData</code> package gives the number of births recorded on each day of the year in each state from 1969 to 1988.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 <table>
-<caption><span id="tab:unnamed-chunk-62">Table 4.1: </span>A subset of the initial birthday data.</caption>
+<caption><span id="tab:unnamed-chunk-63">Table 4.1: </span>A subset of the initial birthday data.</caption>
 <thead>
 <tr class="header">
 <th align="left">state</th>
@@ -342,7 +347,7 @@ library(boot)</code></pre>
 <p><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-63" class="example"><strong>Example 4.1  (select and mutate)  </strong></span></p>
+<p><span id="exm:unnamed-chunk-64" class="example"><strong>Example 4.1  (select and mutate)  </strong></span></p>
 <ol style="list-style-type: lower-alpha">
 <li>Add two new variables to the <code>Birthdays</code> data: one that has only the last two digits of the year, and one that states whether there were more than 100 births in the given state on the given date.<br />
 </li>
@@ -417,7 +422,7 @@ MABirths1979Sorted &lt;-<span class="st"> </span><span class="kw">arrange</span>
 <p><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-71" class="example"><strong>Example 4.3  (Grouped summary)  </strong></span></p>
+<p><span id="exm:unnamed-chunk-72" class="example"><strong>Example 4.3  (Grouped summary)  </strong></span></p>
 <ol style="list-style-type: lower-alpha">
 <li>Find the average number of daily births (per state) in each year.</li>
 <li>Find the average number of daily births in each year, by state.</li>
@@ -511,7 +516,7 @@ MABirths1979Sorted &lt;-<span class="st"> </span><span class="kw">arrange</span>
          <span class="dt">weekday=</span><span class="kw">wday</span>(date,<span class="dt">label=</span><span class="ot">TRUE</span>))</code></pre></div>
 <p>Here is what the data table looks like with our new columns:</p>
 <table>
-<caption><span id="tab:unnamed-chunk-77">Table 4.2: </span>A subset of the birthday data with additional variables.</caption>
+<caption><span id="tab:unnamed-chunk-78">Table 4.2: </span>A subset of the birthday data with additional variables.</caption>
 <thead>
 <tr class="header">
 <th align="left">state</th>
@@ -576,7 +581,7 @@ MABirths1979Sorted &lt;-<span class="st"> </span><span class="kw">arrange</span>
 <p><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-78" class="example"><strong>Example 4.4  </strong></span>Make a table showing the five states with the most births between September 9, 1979 and September 11, 1979, inclusive. Arrange the table in descending order of births.</p>
+<p><span id="exm:unnamed-chunk-79" class="example"><strong>Example 4.4  </strong></span>Make a table showing the five states with the most births between September 9, 1979 and September 11, 1979, inclusive. Arrange the table in descending order of births.</p>
 </div>
 
 
@@ -597,7 +602,7 @@ MABirths1979Sorted &lt;-<span class="st"> </span><span class="kw">arrange</span>
 <span class="st">  and September 11, 1979, inclusive.&#39;</span>
 )</code></pre></div>
 <table>
-<caption><span id="tab:unnamed-chunk-81">Table 4.3: </span>States with the most births between September 9, 1979 and September 11, 1979, inclusive.</caption>
+<caption><span id="tab:unnamed-chunk-82">Table 4.3: </span>States with the most births between September 9, 1979 and September 11, 1979, inclusive.</caption>
 <thead>
 <tr class="header">
 <th align="left">state</th>
@@ -634,7 +639,7 @@ MABirths1979Sorted &lt;-<span class="st"> </span><span class="kw">arrange</span>
 <h3><span class="header-section-number">4.2.3</span> Exercises: Baby Names</h3>
 <p>We are going to practice the six data verbs on the <code>babynames</code> dataset:</p>
 <table>
-<caption><span id="tab:unnamed-chunk-82">Table 4.4: </span>A subset of the babynames data, which runs from 1880-2015 and is provided by the US Social Security Administration.</caption>
+<caption><span id="tab:unnamed-chunk-83">Table 4.4: </span>A subset of the babynames data, which runs from 1880-2015 and is provided by the US Social Security Administration.</caption>
 <thead>
 <tr class="header">
 <th align="right">year</th>
@@ -692,37 +697,37 @@ MABirths1979Sorted &lt;-<span class="st"> </span><span class="kw">arrange</span>
 <p><br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-83" class="exercise"><strong>Exercise 4.1  </strong></span>Add a new boolean (true or false) variable called <code>has2000</code> that indicates whether there were more than 2000 babies of that sex with that name in each year. Display the first six rows of your new table.</p>
+<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 4.1  </strong></span>Add a new boolean (true or false) variable called <code>has2000</code> that indicates whether there were more than 2000 babies of that sex with that name in each year. Display the first six rows of your new table.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-84" class="exercise"><strong>Exercise 4.2  </strong></span>Find the number of total babies per year, sorted by most babies to least babies.</p>
+<p><span id="exr:unnamed-chunk-85" class="exercise"><strong>Exercise 4.2  </strong></span>Find the number of total babies per year, sorted by most babies to least babies.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-85" class="exercise"><strong>Exercise 4.3  </strong></span>Find the twelve most popular names overall (i.e., totaled over all year and sexes), ordered by popularity.</p>
+<p><span id="exr:unnamed-chunk-86" class="exercise"><strong>Exercise 4.3  </strong></span>Find the twelve most popular names overall (i.e., totaled over all year and sexes), ordered by popularity.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-86" class="exercise"><strong>Exercise 4.4  </strong></span>Find the most popular names for males, over all years and ordered by popularity.</p>
+<p><span id="exr:unnamed-chunk-87" class="exercise"><strong>Exercise 4.4  </strong></span>Find the most popular names for males, over all years and ordered by popularity.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-87" class="exercise"><strong>Exercise 4.5  </strong></span>Find the most popular names for females, over all years and ordered by popularity.</p>
+<p><span id="exr:unnamed-chunk-88" class="exercise"><strong>Exercise 4.5  </strong></span>Find the most popular names for females, over all years and ordered by popularity.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-88" class="exercise"><strong>Exercise 4.6  </strong></span>Calculate the number of babies born each decade, and arrange them in descending order. Calculating the decade may be the trickiest part of this question!</p>
+<p><span id="exr:unnamed-chunk-89" class="exercise"><strong>Exercise 4.6  </strong></span>Calculate the number of babies born each decade, and arrange them in descending order. Calculating the decade may be the trickiest part of this question!</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-89" class="exercise"><strong>Exercise 4.7  </strong></span>Calculate the most popular name for each year. Print out the answer for the years 2006-2015. This is tricky, but try Googling for hints if you are stuck.</p>
+<p><span id="exr:unnamed-chunk-90" class="exercise"><strong>Exercise 4.7  </strong></span>Calculate the most popular name for each year. Print out the answer for the years 2006-2015. This is tricky, but try Googling for hints if you are stuck.</p>
 </div>
 
 <p><br />
